@@ -15,8 +15,7 @@ export default function HomePage() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 4000); // 4 second delay per image
-
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
@@ -38,39 +37,6 @@ export default function HomePage() {
           layout="fill"
           objectFit="cover"
           unoptimized
-          style={{ opacity: 0.7 }} // adjust as needed
+          style={{ opacity: 0.7 }}
           priority
         />
-        <div className="absolute inset-0 bg-white bg-opacity-20" />
-      </div>
-
-      {/* Navigation */}
-      <header className="absolute top-0 right-0 p-6 z-10 text-sm tracking-widest">
-        <nav className="space-x-6 uppercase font-inter">
-          <Link href="#about" className="hover:underline">About Me</Link>
-          <Link href="#projects" className="hover:underline">Projects</Link>
-          <Link href="#shop" className="hover:underline">Shop My Home</Link>
-        </nav>
-      </header>
-
-      {/* Centered Title */}
-      <div className="absolute inset-0 z-10 flex items-center justify-center">
-        <h1 className="text-white text-[72px] md:text-[120px] tracking-widest font-playfair text-center">
-          Halcyon Haus
-        </h1>
-      </div>
-
-      <style jsx global>{`
-        body {
-          margin: 0;
-        }
-        .font-playfair {
-          font-family: 'Playfair Display', serif;
-        }
-        .font-inter {
-          font-family: 'Inter', sans-serif;
-        }
-      `}</style>
-    </div>
-  );
-}
