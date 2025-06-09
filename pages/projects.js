@@ -5,22 +5,32 @@ import Image from "next/image";
 const projects = [
   {
     title: "Canyon Modern",
-    image: "/images/project1.jpg",
+    image: "/images/DFF440A7-0193-47CF-9773-5436061404B9.jpeg",
     link: "#",
   },
   {
-    title: "Desert Bungalow",
-    image: "/images/project2.jpg",
+    title: "Halcyon Haus Bedroom",
+    image: "/images/DSC01677.jpeg",
     link: "#",
   },
   {
-    title: "Spanish Revival",
-    image: "/images/project3.jpg",
+    title: "Canyon Cottage Kitchen",
+    image: "/images/DSC02043.jpeg",
     link: "#",
   },
   {
-    title: "Palm Springs Poolhouse",
-    image: "/images/project4.jpg",
+    title: "Canyon Cottage Primary Bath",
+    image: "/images/DSC02081.jpeg",
+    link: "#",
+  },
+  {
+    title: "Two-Toned Kitchen",
+    image: "/images/DSC02223.jpeg",
+    link: "#",
+  },
+   {
+    title: "Styling",
+    image: "/images/DSC02489.jpeg",
     link: "#",
   },
 ];
