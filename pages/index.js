@@ -31,19 +31,17 @@ export default function HomePage() {
       </Head>
 
       {/* Slideshow Background */}
-    <div className="absolute inset-0 z-0">
-  <div className="absolute inset-0 z-0 animate-fade">
-    <Image
-      src={images[currentImageIndex]}
-      alt="Slideshow"
-      layout="fill"
-      objectFit="cover"
-      priority
-    />
-  </div>
-  {/* Persistent black overlay */}
-  <div className="absolute inset-0 bg-black bg-opacity-80 z-10" />
-</div>
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={images[currentIndex]}
+          alt="Slideshow Image"
+          layout="fill"
+          objectFit="cover"
+          className="opacity-50"
+          priority
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-50" />
+      </div>
 
       {/* Navigation */}
       <header className="absolute top-0 right-0 p-6 z-10 text-sm tracking-widest">
