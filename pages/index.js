@@ -63,7 +63,7 @@ export default function HomePage() {
        <h1
   className="text-white text-[48px] md:text-[72px] font-light tracking-widest text-center font-inter"
         >
-  Halcyon Haus
+  HALCYON HAUS
       </h1>
       </div>
 
