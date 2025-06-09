@@ -38,7 +38,7 @@ export default function HomePage() {
       layout="fill"
       objectFit="cover"
       unoptimized
-      style={{ opacity: 0.6 }} // adjust this value as needed
+      style={{ opacity: 0.8 }} // adjust this value as needed
       priority
         />
       </div>
