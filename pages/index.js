@@ -1,27 +1,21 @@
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-
-const images = [
-  "/images/photo1.png",
-  "/images/photo2.png",
-  "/images/photo3.png"
-];
 
 export default function HomePage() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const images = ["/images/photo1.png", "/images/photo2.png", "/images/photo3.png"];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 4000); // 4 second delay per image
-
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 4000); // 4 seconds
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-black text-white font-sans">
+    <div className="relative min-h-screen bg-black text-white font-sans overflow-hidden">
       <Head>
         <title>Halcyon Haus</title>
         <link
@@ -30,17 +24,18 @@ export default function HomePage() {
         />
       </Head>
 
-      {/* Slideshow Background */}
+      {/* Fading Background Slideshow */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src={images[currentIndex]}
-          alt="Slideshow Image"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-50"
-          priority
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-50" />
+        <div className="absolute inset-0 opacity-50 transition-opacity duration-1000">
+          <Image
+            key={images[currentImageIndex]} // ensures fade reloads
+            src={images[currentImageIndex]}
+            alt="Background"
+            layout="fill"
+            objectFit="cover"
+            priority
+          />
+        </div>
       </div>
 
       {/* Navigation */}
@@ -59,6 +54,7 @@ export default function HomePage() {
         </h1>
       </div>
 
+      {/* Global Fonts */}
       <style jsx global>{`
         body {
           margin: 0;
