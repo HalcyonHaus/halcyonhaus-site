@@ -24,8 +24,8 @@ export default function HomePage() {
       <Head>
         <title>Halcyon Haus</title>
         <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
-          rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap"
+  rel="stylesheet"
         />
       </Head>
 
@@ -61,8 +61,9 @@ export default function HomePage() {
       {/* Centered Title */}
       <div className="absolute inset-0 z-10 flex items-center justify-center">
        <h1
-  className="text-white text-[48px] md:text-[72px] font-bold tracking-widest text-center font-inter"
-        >
+  className="text-white text-[48px] md:text-[72px] font-bold tracking-widest text-center uppercase"
+  style={{ fontFamily: "'Cormorant Garamond', serif" }}
+>
   HALCYON HAUS
       </h1>
       </div>
