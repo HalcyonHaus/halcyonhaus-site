@@ -54,7 +54,7 @@ export default function HomePage() {
       <header className="absolute top-0 right-0 p-6 z-10 text-sm tracking-widest">
         <nav className="space-x-6 uppercase font-inter">
           <Link href="#about" className="hover:underline">About Me</Link>
-          <Link href="#projects" className="hover:underline">Projects</Link>
+          <Link href="/projects" className="underline">Projects</Link>
           <Link href="#shop" className="hover:underline">Shop My Home</Link>
         </nav>
       </header>
