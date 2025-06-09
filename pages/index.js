@@ -61,7 +61,7 @@ export default function HomePage() {
       {/* Centered Title */}
       <div className="absolute inset-0 z-10 flex items-center justify-center">
        <h1
-  className="text-white text-[48px] md:text-[72px] font-light tracking-widest text-center font-inter"
+  className="text-white text-[48px] md:text-[72px] font-bold tracking-widest text-center font-inter"
         >
   HALCYON HAUS
       </h1>
