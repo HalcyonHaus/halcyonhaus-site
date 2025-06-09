@@ -4,9 +4,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const images = [
+  "/images/photo3.png"
   "/images/photo1.png",
   "/images/photo2.png",
-  "/images/photo3.png"
 ];
 
 export default function HomePage() {
@@ -21,14 +21,11 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-black text-white font-sans">
-      <Head>
-        <title>Halcyon Haus</title>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
+ <div className="absolute inset-0 z-10 flex items-center justify-center">
+  <h1 className="text-white text-[72px] md:text-[120px] tracking-widest font-playfair text-center">
+    Halcyon Haus
+  </h1>
+</div>
 
       {/* Slideshow Background */}
       <div className="absolute inset-0 z-0">
@@ -38,7 +35,7 @@ export default function HomePage() {
       layout="fill"
       objectFit="cover"
       unoptimized
-      style={{ opacity: 0.8 }} // adjust this value as needed
+      style={{ opacity: 0.7 }} // adjust this value as needed
       priority
         />
       </div>
