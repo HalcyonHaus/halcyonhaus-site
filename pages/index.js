@@ -47,7 +47,7 @@ export default function HomePage() {
       priority={index === currentIndex}
     />
   ))}
-  <div className="absolute inset-0 bg-black bg-opacity-20" />
+  <div className="absolute inset-0 bg-white bg-opacity-20" />
 </div>
 
       {/* Navigation */}
