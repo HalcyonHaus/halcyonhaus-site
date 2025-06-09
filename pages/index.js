@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Image from 'public/image'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Home() {
@@ -24,7 +24,7 @@ export default function Home() {
       <section className="relative w-full h-screen flex items-center justify-center text-center px-6 pt-24">
         <div className="absolute inset-0">
           <Image
-            src="public/images/photo1.png"
+            src="public/images/photo3.png"
             alt="Halcyon Haus Hero"
             layout="fill"
             objectFit="cover"
@@ -62,7 +62,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="overflow-hidden rounded-2xl shadow-lg">
             <Image
-              src="/images/photo1.png"
+              src="public/images/photo1.png"
               alt="Interior Design Project 1"
               width={800}
               height={600}
@@ -80,7 +80,7 @@ export default function Home() {
           </div>
           <div className="overflow-hidden rounded-2xl shadow-lg">
             <Image
-              src="/images/photo3.png"
+              src="public/images/photo3.png"
               alt="Interior Design Project 3"
               width={800}
               height={600}
