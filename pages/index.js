@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
+import { useEffect, useState } from "react";
+
+const images = ["/images/photo1.png", "/images/photo2.png", "/images/photo3.png"];
 
 export default function HomePage() {
-  const images = ["/images/photo1.png", "/images/photo2.png", "/images/photo3.png"];
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000); // 4 seconds
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
@@ -24,26 +24,29 @@ export default function HomePage() {
         />
       </Head>
 
-      {/* Fading Background Slideshow */}
+      {/* Background Slideshow */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 opacity-50 transition-opacity duration-1000">
+        {images.map((src, index) => (
           <Image
-            key={images[currentImageIndex]} // ensures fade reloads
-            src={images[currentImageIndex]}
-            alt="Background"
+            key={src}
+            src={src}
+            alt={`Slide ${index}`}
             layout="fill"
             objectFit="cover"
-            priority
+            className={`transition-opacity duration-1000 ease-in-out absolute inset-0 ${
+              index === current ? "opacity-50" : "opacity-0"
+            }`}
+            priority={index === 0}
           />
-        </div>
+        ))}
       </div>
 
       {/* Navigation */}
       <header className="absolute top-0 right-0 p-6 z-10 text-sm tracking-widest">
         <nav className="space-x-6 uppercase font-inter">
-          <Link href="#about" className="hover:underline">About Me</Link>
-          <Link href="#projects" className="hover:underline">Projects</Link>
-          <Link href="#shop" className="hover:underline">Shop My Home</Link>
+          <a href="#about" className="hover:underline">About Me</a>
+          <a href="#projects" className="hover:underline">Projects</a>
+          <a href="#shop" className="hover:underline">Shop My Home</a>
         </nav>
       </header>
 
@@ -54,7 +57,6 @@ export default function HomePage() {
         </h1>
       </div>
 
-      {/* Global Fonts */}
       <style jsx global>{`
         body {
           margin: 0;
