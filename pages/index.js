@@ -39,7 +39,7 @@ export default function HomePage() {
           objectFit="cover"
           priority
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50" />
+        <div className="absolute inset-0 bg-black bg-opacity-80" />
       </div>
 
       {/* Navigation */}
