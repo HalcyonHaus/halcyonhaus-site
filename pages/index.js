@@ -5,8 +5,9 @@ import { useEffect, useState } from "react";
 
 const images = [
   "/images/photo3.png",
-  "/images/photo1.png",
   "/images/photo2.png",
+  "/images/photo1.png",
+  "/images/photo4.png",
 ];
 
 export default function HomePage() {
