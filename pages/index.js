@@ -29,17 +29,25 @@ export default function HomePage() {
         />
       </Head>
 
-      {/* Slideshow Background */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={images[currentIndex]}
-          alt="Slideshow Image"
-          fill
-          style={{ objectFit: "cover", opacity: 0.7 }}
-          priority
-        />
-        <div className="absolute inset-0 bg-white bg-opacity-20" />
-      </div>
+      {/* Slideshow Background with fade */}
+<div className="absolute inset-0 z-0">
+  {images.map((src, index) => (
+    <Image
+      key={index}
+      src={src}
+      alt={`Slide ${index}`}
+      fill
+      style={{
+        objectFit: "cover",
+        opacity: index === currentIndex ? 0.7 : 0,
+        transition: "opacity 1s ease-in-out",
+        position: "absolute",
+      }}
+      priority={index === currentIndex}
+    />
+  ))}
+  <div className="absolute inset-0 bg-white bg-opacity-20" />
+</div>
 
       {/* Navigation */}
       <header className="absolute top-0 right-0 p-6 z-10 text-sm tracking-widest">
