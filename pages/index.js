@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen bg-black text-white font-sans">
+    <div className="relative min-h-screen bg-black text-white font-sans antialiased">
       <Head>
         <title>Halcyon Haus</title>
         <link
@@ -20,15 +20,15 @@ export default function HomePage() {
           alt="Halcyon Haus"
           layout="fill"
           objectFit="cover"
+          quality={100}
           priority
-          className="opacity-50"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50" />
+        <div className="absolute inset-0 bg-black bg-opacity-70" />
       </div>
 
       {/* Navigation */}
-      <header className="absolute top-0 right-0 p-6 z-10 text-sm tracking-widest">
-        <nav className="space-x-6 uppercase font-inter">
+      <header className="absolute top-0 right-0 p-6 z-10 text-sm tracking-widest font-inter">
+        <nav className="space-x-6 uppercase">
           <Link href="#about" className="hover:underline">About Me</Link>
           <Link href="#projects" className="hover:underline">Projects</Link>
           <Link href="#shop" className="hover:underline">Shop My Home</Link>
@@ -36,15 +36,16 @@ export default function HomePage() {
       </header>
 
       {/* Centered Title */}
-      <div className="relative z-10 flex items-center justify-center h-screen text-center">
-        <h1 className="text-white text-6xl md:text-8xl tracking-widest font-playfair">
+      <div className="relative z-10 flex items-center justify-center h-screen text-center px-4">
+        <h1 className="text-white text-5xl md:text-8xl tracking-wider font-playfair">
           Halcyon Haus
         </h1>
       </div>
 
       <style jsx global>{`
-        body {
+        html, body {
           margin: 0;
+          padding: 0;
         }
         .font-playfair {
           font-family: 'Playfair Display', serif;
