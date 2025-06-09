@@ -21,24 +21,28 @@ export default function HomePage() {
   }, []);
 
   return (
- <div className="absolute inset-0 z-10 flex items-center justify-center">
+ {/* Centered Title */}
+<div className="absolute inset-0 z-10 flex items-center justify-center">
   <h1 className="text-white text-[72px] md:text-[120px] tracking-widest font-playfair text-center">
     Halcyon Haus
   </h1>
 </div>
 
-      {/* Slideshow Background */}
-      <div className="absolute inset-0 z-0">
-       <Image
-      src={images[currentIndex]}
-      alt="Slideshow Image"
-      layout="fill"
-      objectFit="cover"
-      unoptimized
-      style={{ opacity: 0.7 }} // adjust this value as needed
-      priority
-        />
-      </div>
+ {/* Slideshow Background */}
+<div className="absolute inset-0 z-0">
+  <Image
+    src={images[currentIndex]}
+    alt="Slideshow Image"
+    layout="fill"
+    objectFit="cover"
+    unoptimized
+    style={{ opacity: 0.7 }} // image is more visible
+    priority
+  />
+  {/* Gentle white wash to fade it out subtly */}
+  <div className="absolute inset-0 bg-white bg-opacity-20" />
+</div>
+
 
       {/* Navigation */}
       <header className="absolute top-0 right-0 p-6 z-10 text-sm tracking-widest">
