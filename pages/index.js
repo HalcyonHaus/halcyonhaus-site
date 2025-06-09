@@ -32,15 +32,15 @@ export default function HomePage() {
 
       {/* Slideshow Background */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src={images[currentIndex]}
-          alt="Slideshow Image"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-50"
-          priority
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-50" />
+       <Image
+      src={images[currentIndex]}
+      alt="Slideshow Image"
+      layout="fill"
+      objectFit="cover"
+      unoptimized
+      style={{ opacity: 0.3 }} // adjust this value as needed
+      priority
+        />
       </div>
 
       {/* Navigation */}
