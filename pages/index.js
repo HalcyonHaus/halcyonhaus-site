@@ -34,9 +34,43 @@ export default function HomePage() {
         <Image
           src={images[currentIndex]}
           alt="Slideshow Image"
-          layout="fill"
-          objectFit="cover"
-          unoptimized
-          style={{ opacity: 0.7 }}
+          fill
+          style={{ objectFit: "cover", opacity: 0.7 }}
           priority
         />
+        <div className="absolute inset-0 bg-white bg-opacity-20" />
+      </div>
+
+      {/* Navigation */}
+      <header className="absolute top-0 right-0 p-6 z-10 text-sm tracking-widest">
+        <nav className="space-x-6 uppercase font-inter">
+          <Link href="#about" className="hover:underline">About Me</Link>
+          <Link href="#projects" className="hover:underline">Projects</Link>
+          <Link href="#shop" className="hover:underline">Shop My Home</Link>
+        </nav>
+      </header>
+
+      {/* Centered Title */}
+      <div className="absolute inset-0 z-10 flex items-center justify-center">
+        <h1
+          className="text-white text-[80px] md:text-[120px] font-bold tracking-wider text-center"
+          style={{ fontFamily: "'Playfair Display', serif" }}
+        >
+          Halcyon Haus
+        </h1>
+      </div>
+
+      <style jsx global>{`
+        body {
+          margin: 0;
+        }
+        .font-playfair {
+          font-family: 'Playfair Display', serif;
+        }
+        .font-inter {
+          font-family: 'Inter', sans-serif;
+        }
+      `}</style>
+    </div>
+  );
+}
