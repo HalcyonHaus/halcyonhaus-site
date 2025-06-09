@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen bg-black text-white font-sans antialiased">
+    <div className="relative min-h-screen text-white font-sans antialiased">
       <Head>
         <title>Halcyon Haus</title>
         <link
@@ -13,22 +13,22 @@ export default function HomePage() {
         />
       </Head>
 
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Image */}
+      <div className="absolute inset-0 -z-10">
         <Image
           src="/images/photo3.png"
-          alt="Halcyon Haus"
+          alt="Halcyon Haus Background"
           layout="fill"
           objectFit="cover"
           quality={100}
           priority
         />
-        <div className="absolute inset-0 bg-black bg-opacity-70" />
+        <div className="absolute inset-0 bg-black bg-opacity-60" />
       </div>
 
-      {/* Navigation */}
-      <header className="absolute top-0 right-0 p-6 z-10 text-sm tracking-widest font-inter">
-        <nav className="space-x-6 uppercase">
+      {/* Top-Right Navigation */}
+      <header className="absolute top-0 right-0 p-6 text-sm tracking-wide uppercase font-inter z-20">
+        <nav className="space-x-6">
           <Link href="#about" className="hover:underline">About Me</Link>
           <Link href="#projects" className="hover:underline">Projects</Link>
           <Link href="#shop" className="hover:underline">Shop My Home</Link>
@@ -36,16 +36,15 @@ export default function HomePage() {
       </header>
 
       {/* Centered Title */}
-      <div className="relative z-10 flex items-center justify-center h-screen text-center px-4">
-        <h1 className="text-white text-5xl md:text-8xl tracking-wider font-playfair">
+      <div className="flex items-center justify-center h-screen">
+        <h1 className="text-5xl md:text-7xl font-playfair tracking-wide text-center">
           Halcyon Haus
         </h1>
       </div>
 
       <style jsx global>{`
-        html, body {
+        body {
           margin: 0;
-          padding: 0;
         }
         .font-playfair {
           font-family: 'Playfair Display', serif;
