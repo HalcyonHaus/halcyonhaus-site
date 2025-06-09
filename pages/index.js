@@ -24,7 +24,7 @@ export default function Home() {
       <section className="relative w-full h-screen flex items-center justify-center text-center px-6 pt-24">
         <div className="absolute inset-0">
           <Image
-            src="/images/photo1.png"
+            src="public/images/photo1.png"
             alt="Halcyon Haus Hero"
             layout="fill"
             objectFit="cover"
