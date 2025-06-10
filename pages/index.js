@@ -23,6 +23,7 @@ export default function HomePage() {
   return (
     <div className="relative min-h-screen bg-black text-white font-sans">
       <Head>
+<link rel="icon" href="/favicon.ico" />
         <title>Halcyon Haus</title>
         <link
   href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap"
