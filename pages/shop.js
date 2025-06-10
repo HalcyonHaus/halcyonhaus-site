@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function ShopPage() {
   return (
-    <div className="min-h-[100vh] bg-white text-black font-sans">
+    <div className="min-h-screen bg-white text-black font-sans">
       <Head><title>Shop My Home – Halcyon Haus</title></Head>
 
       {/* Navigation */}
@@ -16,7 +16,7 @@ export default function ShopPage() {
         </nav>
       </header>
 
-      {/* Content — MATCHED SPACING */}
+      {/* Main Content */}
       <main className="px-6 py-24">
         <h1
           className="text-2xl md:text-4xl font-light tracking-wider text-center mb-8"
@@ -25,6 +25,7 @@ export default function ShopPage() {
           SHOP MY HOME
         </h1>
 
+        {/* LTK Button */}
         <div className="text-center mb-12">
           <a
             href="https://www.shopltk.com/explore/halcyonhaus"
@@ -36,11 +37,12 @@ export default function ShopPage() {
           </a>
         </div>
 
-        {/* Responsive Instagram Embed */}
-        <div className="mx-auto max-w-screen-lg aspect-w-16 aspect-h-9">
+        {/* Instagram Embed – Full Height */}
+        <div className="flex justify-center">
           <iframe
             src="https://snapwidget.com/embed/1099076"
-            className="w-full h-full border-none"
+            className="w-full max-w-screen-lg"
+            style={{ minHeight: "610px", border: "none", overflow: "hidden" }}
             allowTransparency="true"
             frameBorder="0"
             scrolling="no"
