@@ -5,12 +5,12 @@ export default function ShopPage() {
   return (
     <div className="min-h-screen bg-white text-black font-sans">
       <Head>
-  <title>Shop My Home – Halcyon Haus</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
-    rel="stylesheet"
-  />
-</Head>
+        <title>Shop My Home – Halcyon Haus</title>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
 
       {/* Navigation */}
       <header className="flex justify-end p-6 text-sm tracking-widest">
@@ -23,15 +23,15 @@ export default function ShopPage() {
       </header>
 
       {/* Main Section */}
-      <main className="px-6 py-12">
-  <h1
-    className="text-2xl md:text-4xl font-light tracking-wider text-center"
-    style={{ fontFamily: "'Playfair Display', serif" }}
-  >
-    SHOP MY HOME
-  </h1>
-<br><br>
-        <div className="text-center mb-12">
+      <main className="px-6 py-24">
+        <h1
+          className="text-2xl md:text-4xl font-light tracking-wider text-center"
+          style={{ fontFamily: "'Playfair Display', serif" }}
+        >
+          SHOP MY HOME
+        </h1>
+
+        <div className="text-center my-12">
           <a
             href="https://www.shopltk.com/explore/halcyonhaus"
             target="_blank"
@@ -56,7 +56,7 @@ export default function ShopPage() {
         </div>
 
         {/* Bottom Spacer */}
-        <div className="h-24" />  
+        <div className="h-24"></div>
       </main>
     </div>
   );
