@@ -1,16 +1,13 @@
-import Head from "next/head";
 import { useEffect } from "react";
+import Head from "next/head";
 import Link from "next/link";
 
 export default function ShopPage() {
   useEffect(() => {
-    // Only run this in the browser
-    if (typeof window !== "undefined") {
-      const script = document.createElement("script");
-      script.src = "https://widgets-static.rewardstyle.com/widgets2_0/client/pub/ltkwidget/ltkwidget.js";
-      script.async = true;
-      document.body.appendChild(script);
-    }
+    const script = document.createElement("script");
+    script.src = "https://widgets-static.rewardstyle.com/widgets2_0/client/pub/ltkwidget/ltkwidget.js";
+    script.async = true;
+    document.body.appendChild(script);
   }, []);
 
   return (
@@ -30,37 +27,36 @@ export default function ShopPage() {
       </header>
 
       {/* Page Heading */}
-      <h1
-        className="text-center mt-12 mb-8 text-[30px] tracking-wider font-light uppercase"
-        style={{ fontFamily: "'Playfair Display', serif" }}
-      >
-        SHOPY MY HOME
-      </h1>
-
-      {/* LTK Widget Embed */}
-      <div
-        id="ltkwidget-version-two669535761"
-        data-appid="669535761"
-        className="ltkwidget-version-two px-4"
-      >
-        <div
-          widget-dashboard-settings=""
-          data-appid="669535761"
-          data-userid="452262"
-          data-rows="4"
-          data-cols="3"
-          data-showframe="false"
-          data-padding="4"
-          data-profileid="bcf42a60-68cf-11ec-8066-7899888eea18"
+      <main className="px-6 py-12">
+        <h1
+          className="text-[32px] md:text-[30px] font-light tracking-wider text-center uppercase mb-10"
+          style={{ fontFamily: "'Playfair Display', serif" }}
         >
-          <div className="rs-ltkwidget-container">
-            <div ui-view=""></div>
+          SHOP MY HOME
+        </h1>
+
+        {/* LTK Widget Container */}
+        <div
+          id="ltkwidget-version-two669535761"
+          data-appid="669535761"
+          className="ltkwidget-version-two max-w-screen-lg mx-auto"
+        >
+          <div
+            widget-dashboard-settings=""
+            data-appid="669535761"
+            data-userid="452262"
+            data-rows="4"
+            data-cols="3"
+            data-showframe="false"
+            data-padding="4"
+            data-profileid="bcf42a60-68cf-11ec-8066-7899888eea18"
+          >
+            <div className="rs-ltkwidget-container">
+              <div ui-view=""></div>
+            </div>
           </div>
         </div>
-        <noscript>
-          This content requires JavaScript to be enabled. Please enable JavaScript to view.
-        </noscript>
-      </div>
+      </main>
     </div>
   );
 }
