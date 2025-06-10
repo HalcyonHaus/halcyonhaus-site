@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import Script from "next/script";
 
 export default function ShopPage() {
   return (
@@ -27,36 +26,17 @@ export default function ShopPage() {
         SHOP MY HOME
       </h1>
 
-      {/* LTK Widget Embed */}
-      <div className="flex justify-center mt-12 px-4">
-        <div
-          id="ltkwidget-version-two669535761"
-          data-appid="669535761"
-          className="ltkwidget-version-two w-full max-w-screen-lg"
-        >
-          <div
-            widget-dashboard-settings=""
-            data-appid="669535761"
-            data-userid="452262"
-            data-rows="4"
-            data-cols="3"
-            data-showframe="false"
-            data-padding="4"
-            data-profileid="bcf42a60-68cf-11ec-8066-7899888eea18"
-          >
-            <div className="rs-ltkwidget-container">
-              <div ui-view=""></div>
-            </div>
-          </div>
-        </div>
+      {/* Fallback iframe Embed */}
+      <div className="mt-12 px-4">
+        <iframe
+          src="https://widgets-static.rewardstyle.com/widgets2_0/client/pub/ltkwidget.html?appid=669535761&userid=452262&profileid=bcf42a60-68cf-11ec-8066-7899888eea18&rows=4&cols=3&showframe=false&padding=4"
+          width="100%"
+          height="800"
+          style={{ border: "none", maxWidth: "100%", margin: "auto", display: "block" }}
+          loading="lazy"
+          title="Shop My Home"
+        />
       </div>
-
-      {/* LTK Script Load */}
-      <Script
-        id="ltk-widget"
-        src="https://widgets-static.rewardstyle.com/widgets2_0/client/pub/ltkwidget/ltkwidget.js"
-        strategy="afterInteractive"
-      />
     </div>
   );
 }
