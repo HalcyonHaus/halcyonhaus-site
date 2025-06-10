@@ -50,12 +50,12 @@ export default function HomePage() {
   <div className="absolute inset-0 bg-white bg-opacity-20" />
 </div>
 
-      {/* Navigation */}
-      <header className="absolute top-0 right-0 p-6 z-10 text-sm tracking-widest">
+     {/* Navigation */}
+      <header className="flex justify-end p-6 text-sm tracking-widest">
         <nav className="space-x-6 uppercase font-inter">
-  <Link href="#about"><span className="hover:underline">About Me</span></Link>
-  <Link href="/projects"><span className="underline">Projects</span></Link>
-  <Link href="#shop"><span className="hover:underline">Shop My Home</span></Link>
+          <Link href="#about" className="hover:underline">About Me</Link>
+          <Link href="#projects" className="hover:underline">Projects</Link>
+          <Link href="#shop" className="hover:underline">Shop My Home</Link>
         </nav>
       </header>
 
