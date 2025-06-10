@@ -23,7 +23,7 @@ export default function ShopPage() {
       </header>
 
       {/* Main Section */}
-      <main className="px-6 py-10">
+      <main className="px-6 py-8">
         <h1
           className="text-2xl md:text-4xl font-light tracking-wider text-center"
           style={{ fontFamily: "'Playfair Display', serif" }}
