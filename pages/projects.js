@@ -113,6 +113,5 @@ export default function ProjectsPage() {
         </div>
       </footer>
     </div>
-    </div>
   );
 }
