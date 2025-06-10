@@ -17,14 +17,14 @@ export default function ShopPage() {
       </header>
 
       {/* Main Section */}
-      <main className="px-6 py-16">
+      <main className="px-6 py-12">
   <h1
     className="text-2xl md:text-4xl font-light tracking-wider text-center"
     style={{ fontFamily: "'Playfair Display', serif" }}
   >
     SHOP MY HOME
   </h1>
-
+<br><br>
         <div className="text-center mb-12">
           <a
             href="https://www.shopltk.com/explore/halcyonhaus"
