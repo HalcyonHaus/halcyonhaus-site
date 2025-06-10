@@ -18,12 +18,12 @@ export default function ShopPage() {
 
       {/* Main Section */}
       <main className="px-6 py-24">
-        <h1
-          className="text-2xl md:text-4xl font-light tracking-wider text-center mb-8"
-          style={{ fontFamily: "'Playfair Display', serif" }}
-        >
-          SHOP MY HOME
-        </h1>
+  <h1
+    className="text-2xl md:text-4xl font-light tracking-wider text-center"
+    style={{ fontFamily: "'Playfair Display', serif" }}
+  >
+    SHOP MY HOME
+  </h1>
 
         <div className="text-center mb-12">
           <a
