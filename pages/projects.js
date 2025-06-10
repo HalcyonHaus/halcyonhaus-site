@@ -67,7 +67,7 @@ export default function ProjectsPage() {
       {/* Projects Grid */}
       <main className="px-6 py-24">
         <h1
-          className="text-2xl md:text-3xl font-light tracking-wider text-center"
+          className="text-2xl md:text-2.5xl font-light tracking-wider text-center"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           PROJECTS
@@ -75,7 +75,7 @@ export default function ProjectsPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-16">
           {projects.map((project, index) => (
             <div key={index} className="group">
-              <div className="relative w-full aspect-[4/4.8] md:aspect-[4/5.8] overflow-hidden">
+              <div className="relative w-full aspect-[4/4.5] md:aspect-[4/5.8] overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
