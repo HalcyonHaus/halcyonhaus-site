@@ -57,7 +57,7 @@ export default function ShopPage() {
       </main>
 
       {/* Footer */}
-<footer className="border-t border-gray-200 mt-12 py-6 text-center text-sm text-gray-600">
+<footer className="mt-12 py-6 text-center text-sm text-gray-600">
   <p className="mb-2">© {new Date().getFullYear()} Halcyon Haus</p>
   <div className="flex justify-center space-x-6 text-gray-600">
     <a href="https://www.instagram.com/halcyonhaus_" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
