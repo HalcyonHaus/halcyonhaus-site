@@ -4,10 +4,14 @@ import { useEffect } from "react";
 
 export default function ShopPage() {
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://widgets-static.rewardstyle.com/widgets2_0/client/pub/ltkwidget/ltkwidget.js";
-    script.async = true;
-    document.body.appendChild(script);
+    // Only run script if not already loaded
+    if (!document.getElementById("ltk-widget-script")) {
+      const script = document.createElement("script");
+      script.id = "ltk-widget-script";
+      script.src = "https://widgets-static.rewardstyle.com/widgets2_0/client/pub/ltkwidget/ltkwidget.js";
+      script.async = true;
+      document.body.appendChild(script);
+    }
   }, []);
 
   return (
@@ -41,10 +45,10 @@ export default function ShopPage() {
       {/* Main Content */}
       <main className="px-6 py-24 text-center">
         <h1
-          className="text-xl md:text-4xl font-bold tracking-wider mb-12"
+          className="text-xl md:text-4xl font-light tracking-wider mb-12"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
-          Shop My Home
+          SHOP MY HOME
         </h1>
 
         {/* LTK Embed */}
@@ -68,8 +72,7 @@ export default function ShopPage() {
             </div>
           </div>
           <noscript>
-            This content requires JavaScript to be enabled. Please enable it to
-            view this content.
+            This content requires JavaScript to be enabled.
           </noscript>
         </div>
       </main>
