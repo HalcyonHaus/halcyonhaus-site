@@ -47,7 +47,12 @@ export default function ShopPage() {
           <iframe
             src="https://snapwidget.com/embed/1099076"
             className="w-full max-w-screen-lg"
-            style={{ height: "610px", border: "none", overflow: "hidden" }}
+            style={{
+              height: "615px",
+              border: "none",
+              overflow: "hidden",
+              display: "block"
+            }}
             allowTransparency="true"
             frameBorder="0"
             scrolling="no"
