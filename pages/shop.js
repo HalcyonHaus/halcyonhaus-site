@@ -21,17 +21,29 @@ export default function ShopPage() {
       {/* Page Title */}
       <main className="px-6 py-12">
         <h1
-          className="text-[32px] md:text-[36px] font-bold tracking-wider text-center uppercase"
+          className="text-[32px] md:text-[56px] font-bold tracking-wider text-center uppercase mb-4"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           Shop My Home
         </h1>
 
+        {/* LTK Link */}
+        <div className="text-center mb-10">
+          <a
+            href="https://www.shopltk.com/explore/halcyonhaus"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-2 text-sm uppercase tracking-widest border border-black hover:bg-black hover:text-white transition"
+          >
+            Shop my LTK
+          </a>
+        </div>
+
         {/* Instagram Embed */}
-        <div className="flex justify-center mt-12">
+        <div className="flex justify-center">
           <iframe
             src="https://snapwidget.com/embed/1099076"
-            className="w-full max-w-screen-lg h-[915px] border-none"
+            className="w-full max-w-screen-lg h-[610px] border-none"
             allowTransparency="true"
             frameBorder="0"
             scrolling="no"
