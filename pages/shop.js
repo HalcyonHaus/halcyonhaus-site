@@ -42,23 +42,18 @@ export default function ShopPage() {
           </a>
         </div>
 
-        {/* Instagram Embed */}
-        <div className="flex justify-center">
-          <iframe
-            src="https://snapwidget.com/embed/1099076"
-            className="w-full max-w-screen-lg"
-            style={{
-              height: "615px",
-              border: "none",
-              overflow: "hidden",
-              display: "block"
-            }}
-            allowTransparency="true"
-            frameBorder="0"
-            scrolling="no"
-            title="Posts from Instagram"
-          ></iframe>
-        </div>
+    {/* Instagram Embed */}
+<div className="flex justify-center">
+  <iframe
+    src="https://snapwidget.com/embed/1099076"
+    className="w-full max-w-screen-lg min-h-[700px]"
+    style={{ border: "none", overflow: "hidden" }}
+    allowTransparency="true"
+    frameBorder="0"
+    scrolling="no"
+    title="Posts from Instagram"
+  ></iframe>
+</div>
       </main>
 
       {/* Footer */}
