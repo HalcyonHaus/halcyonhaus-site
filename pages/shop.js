@@ -16,7 +16,7 @@ export default function ShopPage() {
         </nav>
       </header>
 
-      {/* Main Content */}
+      {/* Main Section */}
       <main className="px-6 py-24">
         <h1
           className="text-2xl md:text-4xl font-light tracking-wider text-center mb-8"
@@ -25,7 +25,6 @@ export default function ShopPage() {
           SHOP MY HOME
         </h1>
 
-        {/* LTK Button */}
         <div className="text-center mb-12">
           <a
             href="https://www.shopltk.com/explore/halcyonhaus"
@@ -37,18 +36,21 @@ export default function ShopPage() {
           </a>
         </div>
 
-        {/* Instagram Embed – Full Height */}
+        {/* Instagram Embed */}
         <div className="flex justify-center">
           <iframe
             src="https://snapwidget.com/embed/1099076"
             className="w-full max-w-screen-lg"
-            style={{ minHeight: "610px", border: "none", overflow: "hidden" }}
+            style={{ minHeight: "700px", border: "none", overflow: "hidden" }}
             allowTransparency="true"
             frameBorder="0"
             scrolling="no"
             title="Posts from Instagram"
           ></iframe>
         </div>
+
+        {/* Bottom Spacer */}
+        <div className="h-24" />  
       </main>
     </div>
   );
