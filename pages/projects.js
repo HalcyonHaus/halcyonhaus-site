@@ -66,12 +66,12 @@ export default function ProjectsPage() {
 
       {/* Projects Grid */}
       <main className="px-6 py-24">
-        <h1
-        className="text-[14px] md:text-[64px] font-bold tracking-wider text-center"
-        style={{ fontFamily: "'Playfair Display', serif" }}
+       <h1
+  className="text-2xl md:text-5xl font-bold tracking-wider text-center"
+  style={{ fontFamily: "'Playfair Display', serif" }}
         >
-      PROJECTS
-        </h1>
+        PROJECTS
+       </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-16">
           {projects.map((project, index) => (
             <div key={index} className="group">
