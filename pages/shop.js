@@ -4,10 +4,14 @@ import Link from "next/link";
 
 export default function ShopPage() {
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://widgets-static.rewardstyle.com/widgets2_0/client/pub/ltkwidget/ltkwidget.js";
-    script.async = true;
-    document.body.appendChild(script);
+    const timeoutId = setTimeout(() => {
+      const script = document.createElement("script");
+      script.src = "https://widgets-static.rewardstyle.com/widgets2_0/client/pub/ltkwidget/ltkwidget.js";
+      script.async = true;
+      document.body.appendChild(script);
+    }, 500); // Wait 500ms
+
+    return () => clearTimeout(timeoutId);
   }, []);
 
   return (
@@ -16,7 +20,6 @@ export default function ShopPage() {
         <title>Shop My Home – Halcyon Haus</title>
       </Head>
 
-      {/* Navigation */}
       <header className="flex justify-end p-6 text-sm tracking-widest">
         <nav className="space-x-6 uppercase font-inter">
           <Link href="/" className="hover:underline">Home</Link>
@@ -26,16 +29,14 @@ export default function ShopPage() {
         </nav>
       </header>
 
-      {/* Page Heading */}
       <main className="px-6 py-12">
         <h1
-          className="text-[32px] md:text-[30px] font-light tracking-wider text-center uppercase mb-10"
+          className="text-[28px] md:text-[48px] font-bold tracking-wider text-center uppercase mb-10"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
-          SHOP MY HOME
+          Shop My Home
         </h1>
 
-        {/* LTK Widget Container */}
         <div
           id="ltkwidget-version-two669535761"
           data-appid="669535761"
