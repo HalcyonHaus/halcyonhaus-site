@@ -23,13 +23,13 @@ export default function HomePage() {
   return (
     <div className="relative min-h-screen bg-black text-white font-sans">
       <Head>
-<link rel="icon" href="/favicon.png" type="image/png" />
-    <title>Halcyon Haus</title>
-        <link
-  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap"
-  rel="stylesheet"
-        />
-      </Head>
+  <title>Halcyon Haus</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  </Head>
 
       {/* Slideshow Background with fade */}
 <div className="absolute inset-0 z-0">
