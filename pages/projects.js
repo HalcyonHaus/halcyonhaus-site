@@ -37,7 +37,7 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen text-black font-sans" style={{ backgroundColor: "#f9f9f6" }}>
+    <div className="min-h-screen text-black font-sans" style={{ backgroundColor: "#fafafa" }}>
       <Head>
         <title>Projects – Halcyon Haus</title>
         <link
@@ -75,7 +75,7 @@ export default function ProjectsPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-16">
           {projects.map((project, index) => (
             <div key={index} className="group">
-              <div className="relative w-full h-60 md:h-72 overflow-hidden">
+              <div className="relative w-full h-80 md:h-[400px] overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
