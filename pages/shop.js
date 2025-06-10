@@ -57,44 +57,26 @@ export default function ShopPage() {
       </main>
 
       {/* Footer */}
-      <footer className="mt-16 mb-10 text-center text-sm uppercase tracking-widest font-inter text-gray-500">
-        <p className="mb-3">© 2025 Halcyon Haus</p>
-        <div className="flex justify-center space-x-6">
-          <a
-            href="https://www.instagram.com/halcyonhaus_"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-black transition"
-            aria-label="Instagram"
-          >
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10zM12 7a5 5 0 1 0 .001 10.001A5 5 0 0 0 12 7zm0 2a3 3 0 1 1-.001 6.001A3 3 0 0 1 12 9zm4.5-3a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
-            </svg>
-          </a>
-          <a
-            href="https://www.tiktok.com/@halcyonhaus_"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-black transition"
-            aria-label="TikTok"
-          >
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M9.75 3a6.75 6.75 0 1 0 6.75 6.75v-.117a7.5 7.5 0 0 0 3.75 1.017V8.25a4.5 4.5 0 0 1-3.75-2.022v9.522a4.5 4.5 0 1 1-3.75-4.428V3H9.75z" />
-            </svg>
-          </a>
-          <a
-            href="https://www.shopltk.com/explore/halcyonhaus"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-black transition"
-            aria-label="LTK"
-          >
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10a9.98 9.98 0 0 0 6.182-2.11l3.464.49-1.195-3.293A9.961 9.961 0 0 0 22 12c0-5.523-4.477-10-10-10zm1.708 14.5l-.708.708-2.5-2.5 2.5-2.5.708.708L12.207 14H17v1h-4.793l1.501 1.5z" />
-            </svg>
-          </a>
-        </div>
-      </footer>
+<footer className="border-t border-gray-200 mt-12 py-6 text-center text-sm text-gray-600">
+  <p className="mb-2">© {new Date().getFullYear()} Halcyon Haus</p>
+  <div className="flex justify-center space-x-6 text-gray-600">
+    <a href="https://www.instagram.com/halcyonhaus_" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <svg className="h-5 w-5 hover:text-black transition" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"/>
+      </svg>
+    </a>
+    <a href="https://www.tiktok.com/@halcyonhaus" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+      <svg className="h-5 w-5 hover:text-black transition" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M9 3v12a3 3 0 103 3V9c.6.3 1.3.5 2 .5h1V7h-1c-.6 0-1-.4-1-1V3h-4z"/>
+      </svg>
+    </a>
+    <a href="https://www.shopltk.com/explore/halcyonhaus" target="_blank" rel="noopener noreferrer" aria-label="LTK">
+      <svg className="h-5 w-5 hover:text-black transition" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M3 12a9 9 0 1118 0 9 9 0 01-18 0zm9-6a6 6 0 100 12 6 6 0 000-12z"/>
+      </svg>
+    </a>
+  </div>
+</footer>
     </div>
   );
 }
