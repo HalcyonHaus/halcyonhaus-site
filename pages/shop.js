@@ -59,8 +59,8 @@ export default function ShopPage() {
         <div className="h-24"></div>
       </main>
 
-         {/* Footer */}
-<footer className="mt-16 mb-12 text-center text-sm uppercase tracking-widest font-inter text-gray-500">
+      {/* Footer */}
+<footer className="mt-16 mb-10 text-center text-sm uppercase tracking-widest font-inter text-gray-500">
   <p className="mb-3">© 2025 Halcyon Haus</p>
   <div className="flex justify-center space-x-6">
     <a
@@ -68,24 +68,33 @@ export default function ShopPage() {
       target="_blank"
       rel="noopener noreferrer"
       className="hover:text-black transition"
+      aria-label="Instagram"
     >
-      Instagram
+      <svg className="w-4 h-4 inline" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10zM12 7a5 5 0 1 0 .001 10.001A5 5 0 0 0 12 7zm0 2a3 3 0 1 1-.001 6.001A3 3 0 0 1 12 9zm4.5-3a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
+      </svg>
     </a>
     <a
       href="https://www.tiktok.com/@halcyonhaus_"
       target="_blank"
       rel="noopener noreferrer"
       className="hover:text-black transition"
+      aria-label="TikTok"
     >
-      TikTok
+      <svg className="w-4 h-4 inline" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M9.75 3a6.75 6.75 0 1 0 6.75 6.75v-.117a7.5 7.5 0 0 0 3.75 1.017V8.25a4.5 4.5 0 0 1-3.75-2.022v9.522a4.5 4.5 0 1 1-3.75-4.428V3H9.75z" />
+      </svg>
     </a>
     <a
       href="https://www.shopltk.com/explore/halcyonhaus"
       target="_blank"
       rel="noopener noreferrer"
       className="hover:text-black transition"
+      aria-label="LTK"
     >
-      LTK
+      <svg className="w-4 h-4 inline" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10a9.98 9.98 0 0 0 6.182-2.11l3.464.49-1.195-3.293A9.961 9.961 0 0 0 22 12c0-5.523-4.477-10-10-10zm1.708 14.5l-.708.708-2.5-2.5 2.5-2.5.708.708L12.207 14H17v1h-4.793l1.501 1.5z" />
+      </svg>
     </a>
   </div>
 </footer>
