@@ -4,8 +4,11 @@ import Link from "next/link";
 export default function ShopPage() {
   return (
     <div className="min-h-screen bg-white text-black font-sans">
-      <Head><title>Shop My Home – Halcyon Haus</title></Head>
+      <Head>
+        <title>Shop My Home – Halcyon Haus</title>
+      </Head>
 
+      {/* Navigation */}
       <header className="flex justify-end p-6 text-sm tracking-widest">
         <nav className="space-x-6 uppercase font-inter">
           <Link href="/" className="hover:underline">Home</Link>
@@ -15,19 +18,22 @@ export default function ShopPage() {
         </nav>
       </header>
 
-      <h1 className="text-[28px] md:text-[30px] font-light tracking-wider text-center uppercase mt-10">
-        SHOP MY HOME
-      </h1>
-
-      <main className="mt-12 px-4">
-        <iframe
-          src="https://widgets-static.rewardstyle.com/widgets2_0/client/pub/ltkwidget/embed?appid=669535761&userid=452262&profileid=bcf42a60-68cf-11ec-8066-7899888eea18&cols=3&rows=4"
-          width="100%"
-          height="900"
-          style={{ border: "none", maxWidth: "100%" }}
-          loading="lazy"
-          title="Shop My Home - LTK"
-        />
+      {/* Header */}
+      <main className="flex flex-col items-center justify-center py-20 px-6">
+        <h1
+  className="text-[32px] md:text-[48px] font-bold tracking-wider text-center mb-12"
+  style={{ fontFamily: "'Playfair Display', serif" }}
+>
+  SHOP MY HOME
+</h1>
+        <a
+          href="https://www.shopltk.com/explore/halcyonhaus"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-base md:text-lg underline hover:text-gray-600 transition"
+        >
+          View my LTK page
+        </a>
       </main>
     </div>
   );
