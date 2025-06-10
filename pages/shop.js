@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function ShopPage() {
   return (
-    <div className="min-h-screen bg-white text-black font-sans">
+    <div className="min-h-screen text-black font-sans" style={{ backgroundColor: "#fafafa" }}>
       <Head>
         <title>Shop My Home – Halcyon Haus</title>
         <link
@@ -13,7 +13,7 @@ export default function ShopPage() {
       </Head>
 
       {/* Navigation */}
-      <header className="flex justify-end p-6 text-sm tracking-widest">
+      <header className="flex justify-end p-6 text-xs tracking-widest">
         <nav className="space-x-6 uppercase font-inter">
           <Link href="/" className="hover:underline">Home</Link>
           <Link href="/about" className="hover:underline">About Me</Link>
@@ -25,7 +25,7 @@ export default function ShopPage() {
       {/* Main Section */}
       <main className="px-6 py-7">
         <h1
-          className="text-2xl md:text-4xl font-light tracking-wider text-center"
+          className="text-2xl md:text-2xl font-light tracking-wider text-center"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           SHOP MY HOME
