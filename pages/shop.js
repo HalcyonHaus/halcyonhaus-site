@@ -42,22 +42,21 @@ export default function ShopPage() {
           </a>
         </div>
 
-        {/* Instagram Embed */}
-        <div className="flex justify-center">
-          <iframe
-            src="https://snapwidget.com/embed/1099076"
-            className="w-full max-w-screen-lg"
-            style={{ height: "610px", border: "none", overflow: "hidden" }}
-            allowTransparency="true"
-            frameBorder="0"
-            scrolling="no"
-            title="Posts from Instagram"
-          ></iframe>
-        </div>
-      </main>
+       {/* Instagram Embed */}
+<div className="flex justify-center">
+  <iframe
+    src="https://snapwidget.com/embed/1099076"
+    className="w-full max-w-screen-lg"
+    style={{ height: "610px", border: "none", overflow: "hidden" }}
+    allowTransparency="true"
+    frameBorder="0"
+    scrolling="no"
+    title="Posts from Instagram"
+  ></iframe>
+</div>
 
-     {/* Footer */}
-<footer className="mt-12 py-6 text-center text-xs text-gray-500 uppercase tracking-widest font-inter">
+{/* Footer */}
+<footer className="mt-12 pb-10 text-center text-xs text-gray-500 uppercase tracking-widest font-inter">
   <p className="mb-2">© {new Date().getFullYear()} Halcyon Haus</p>
   <div className="flex justify-center space-x-6 text-gray-500">
     <a href="https://www.instagram.com/halcyonhaus_" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
