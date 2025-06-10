@@ -37,7 +37,7 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-white text-black font-sans">
+    <div className="min-h-screen text-black font-sans" style={{ backgroundColor: "#f9f9f6" }}>
       <Head>
         <title>Projects – Halcyon Haus</title>
         <link
@@ -66,16 +66,16 @@ export default function ProjectsPage() {
 
       {/* Projects Grid */}
       <main className="px-6 py-24">
-       <h1
-  className="text-2xl md:text-4xl font-light tracking-wider text-center"
-  style={{ fontFamily: "'Playfair Display', serif" }}
+        <h1
+          className="text-2xl md:text-4xl font-light tracking-wider text-center"
+          style={{ fontFamily: "'Playfair Display', serif" }}
         >
-        PROJECTS
-       </h1>
+          PROJECTS
+        </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-16">
           {projects.map((project, index) => (
             <div key={index} className="group">
-              <div className="relative w-full h-72 md:h-96 overflow-hidden">
+              <div className="relative w-full h-60 md:h-72 overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -91,7 +91,8 @@ export default function ProjectsPage() {
           ))}
         </div>
       </main>
-            {/* Footer */}
+
+      {/* Footer */}
       <footer className="mt-8 pb-6 text-center text-xs text-gray-500 uppercase tracking-widest font-inter">
         <p className="mb-2">© {new Date().getFullYear()} Halcyon Haus</p>
         <div className="flex justify-center space-x-6 text-gray-500">
