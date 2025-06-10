@@ -4,9 +4,7 @@ import Link from "next/link";
 export default function ShopPage() {
   return (
     <div className="min-h-[100vh] bg-white text-black font-sans">
-      <Head>
-        <title>Shop My Home – Halcyon Haus</title>
-      </Head>
+      <Head><title>Shop My Home – Halcyon Haus</title></Head>
 
       {/* Navigation */}
       <header className="flex justify-end p-6 text-sm tracking-widest">
@@ -18,17 +16,16 @@ export default function ShopPage() {
         </nav>
       </header>
 
-      {/* Shop Page Main Content */}
+      {/* Content — MATCHED SPACING */}
       <main className="px-6 py-24">
         <h1
-          className="text-2xl md:text-4xl font-light tracking-wider text-center"
+          className="text-2xl md:text-4xl font-light tracking-wider text-center mb-8"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           SHOP MY HOME
         </h1>
 
-        {/* LTK Link */}
-        <div className="text-center my-12">
+        <div className="text-center mb-12">
           <a
             href="https://www.shopltk.com/explore/halcyonhaus"
             target="_blank"
@@ -39,11 +36,11 @@ export default function ShopPage() {
           </a>
         </div>
 
-        {/* Instagram Embed */}
-        <div className="flex justify-center px-4">
+        {/* Responsive Instagram Embed */}
+        <div className="mx-auto max-w-screen-lg aspect-w-16 aspect-h-9">
           <iframe
             src="https://snapwidget.com/embed/1099076"
-            className="w-full max-w-screen-lg h-[610px] border-none"
+            className="w-full h-full border-none"
             allowTransparency="true"
             frameBorder="0"
             scrolling="no"
