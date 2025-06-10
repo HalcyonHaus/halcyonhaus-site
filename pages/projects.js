@@ -75,7 +75,7 @@ export default function ProjectsPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-16">
           {projects.map((project, index) => (
             <div key={index} className="group">
-              <div className="relative w-full aspect-[4/4.2] md:aspect-[4/4.7] overflow-hidden">
+              <div className="relative w-full aspect-[4/4.3] md:aspect-[4/4.9] overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
