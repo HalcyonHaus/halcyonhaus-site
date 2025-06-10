@@ -60,8 +60,8 @@ export default function ShopPage() {
       </main>
 
          {/* Footer */}
-<footer className="mt-24 text-center text-sm uppercase tracking-widest font-inter text-gray-500">
-  <p className="mb-4">© 2025 Halcyon Haus</p>
+<footer className="mt-16 mb-12 text-center text-sm uppercase tracking-widest font-inter text-gray-500">
+  <p className="mb-3">© 2025 Halcyon Haus</p>
   <div className="flex justify-center space-x-6">
     <a
       href="https://www.instagram.com/halcyonhaus_"
