@@ -19,12 +19,20 @@ export default function ShopPage() {
         </nav>
       </header>
 
+      {/* Page Title */}
+      <h1
+        className="text-[32px] md:text-[56px] font-bold tracking-wider text-center mt-10"
+        style={{ fontFamily: "'Playfair Display', serif" }}
+      >
+        SHOP MY HOME
+      </h1>
+
       {/* LTK Widget Embed */}
-      <main className="p-6">
+      <div className="flex justify-center mt-12 px-4">
         <div
           id="ltkwidget-version-two669535761"
           data-appid="669535761"
-          className="ltkwidget-version-two"
+          className="ltkwidget-version-two w-full max-w-screen-lg"
         >
           <div
             widget-dashboard-settings=""
@@ -41,9 +49,8 @@ export default function ShopPage() {
             </div>
           </div>
         </div>
-      </main>
+      </div>
 
-      {/* Load the LTK widget script the Next.js way */}
       <Script
         src="https://widgets-static.rewardstyle.com/widgets2_0/client/pub/ltkwidget/ltkwidget.js"
         strategy="afterInteractive"
