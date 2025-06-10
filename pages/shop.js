@@ -4,7 +4,13 @@ import Link from "next/link";
 export default function ShopPage() {
   return (
     <div className="min-h-screen bg-white text-black font-sans">
-      <Head><title>Shop My Home – Halcyon Haus</title></Head>
+      <Head>
+  <title>Shop My Home – Halcyon Haus</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
+    rel="stylesheet"
+  />
+</Head>
 
       {/* Navigation */}
       <header className="flex justify-end p-6 text-sm tracking-widest">
