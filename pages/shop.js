@@ -1,19 +1,8 @@
 import Head from "next/head";
-import { useEffect } from "react";
 import Link from "next/link";
+import Script from "next/script";
 
 export default function ShopPage() {
-  useEffect(() => {
-    // Ensure script is added only once
-    if (!document.getElementById("ltk-script")) {
-      const script = document.createElement("script");
-      script.src = "https://widgets-static.rewardstyle.com/widgets2_0/client/pub/ltkwidget/ltkwidget.js";
-      script.async = true;
-      script.id = "ltk-script";
-      document.body.appendChild(script);
-    }
-  }, []);
-
   return (
     <div className="min-h-screen bg-white text-black font-sans">
       <Head>
@@ -30,12 +19,12 @@ export default function ShopPage() {
         </nav>
       </header>
 
-      {/* Embedded LTK Widget */}
       <main className="p-6">
         <h1 className="text-center text-3xl font-light tracking-wider mb-10" style={{ fontFamily: "'Playfair Display', serif" }}>
           SHOP MY HOME
         </h1>
 
+        {/* LTK Widget Container */}
         <div
           id="ltkwidget-version-two669535761"
           data-appid="669535761"
@@ -55,10 +44,14 @@ export default function ShopPage() {
               <div data-ui-view=""></div>
             </div>
           </div>
-          <noscript>
-            This content requires JavaScript to be enabled.
-          </noscript>
         </div>
+
+        {/* Load LTK Widget Script */}
+        <Script
+          id="ltk-widget"
+          src="https://widgets-static.rewardstyle.com/widgets2_0/client/pub/ltkwidget/ltkwidget.js"
+          strategy="afterInteractive"
+        />
       </main>
     </div>
   );
