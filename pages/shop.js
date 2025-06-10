@@ -21,11 +21,11 @@ export default function ShopPage() {
       {/* Header */}
       <main className="flex flex-col items-center justify-center py-20 px-6">
         <h1
-  className="text-[32px] md:text-[48px] font-bold tracking-wider text-center mb-12"
+  className="text-2xl md:text-4xl font-light tracking-wider text-center"
   style={{ fontFamily: "'Playfair Display', serif" }}
->
-  SHOP MY HOME
-</h1>
+        >
+        SHOP MY HOME
+       </h1>
         <a
           href="https://www.shopltk.com/explore/halcyonhaus"
           target="_blank"
