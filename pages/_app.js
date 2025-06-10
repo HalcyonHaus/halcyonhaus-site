@@ -6,7 +6,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <link rel="icon" href="/halcyon_favicon_clean.png" type="image/png" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
       </Head>
       <Component {...pageProps} />
     </>
