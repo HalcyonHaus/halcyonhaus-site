@@ -47,7 +47,7 @@ export default function ProjectsPage() {
       </Head>
 
       {/* Navigation */}
-      <header className="absolute top-0 right-0 z-20 p-6 text-sm tracking-widest">
+      <header className="absolute top-0 right-0 z-20 p-6 text-xs tracking-widest">
         <nav className="space-x-6 uppercase font-inter">
           <Link href="/" passHref legacyBehavior>
             <a className="hover:underline">Home</a>
