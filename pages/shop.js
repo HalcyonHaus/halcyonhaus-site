@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Script from "next/script";
 import Link from "next/link";
+import Script from "next/script";
 
 export default function ShopPage() {
   return (
@@ -15,11 +15,11 @@ export default function ShopPage() {
           <Link href="/" className="hover:underline">Home</Link>
           <Link href="/about" className="hover:underline">About Me</Link>
           <Link href="/projects" className="hover:underline">Projects</Link>
-          <Link href="/shop" className="underline">Shop My Home</Link>
+          <Link href="/shop" className="hover:underline">Shop My Home</Link>
         </nav>
       </header>
 
-      {/* LTK Embed */}
+      {/* LTK Widget Embed */}
       <main className="p-6">
         <div
           id="ltkwidget-version-two669535761"
@@ -41,13 +41,13 @@ export default function ShopPage() {
             </div>
           </div>
         </div>
-
-        {/* Load LTK Script Properly */}
-        <Script
-          src="https://widgets-static.rewardstyle.com/widgets2_0/client/pub/ltkwidget/ltkwidget.js"
-          strategy="afterInteractive"
-        />
       </main>
+
+      {/* Load the LTK widget script the Next.js way */}
+      <Script
+        src="https://widgets-static.rewardstyle.com/widgets2_0/client/pub/ltkwidget/ltkwidget.js"
+        strategy="afterInteractive"
+      />
     </div>
   );
 }
