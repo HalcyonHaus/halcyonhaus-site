@@ -67,7 +67,7 @@ export default function ProjectsPage() {
       {/* Projects Grid */}
       <main className="px-6 py-24">
         <h1
-        className="text-[36px] md:text-[64px] font-bold tracking-wider text-center"
+        className="text-[24px] md:text-[64px] font-bold tracking-wider text-center"
         style={{ fontFamily: "'Playfair Display', serif" }}
         >
       PROJECTS
