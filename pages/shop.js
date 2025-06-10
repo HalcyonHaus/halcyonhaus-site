@@ -21,7 +21,7 @@ export default function ShopPage() {
 
       {/* Page Title */}
       <h1
-        className="text-[32px] md:text-[56px] font-bold tracking-wider text-center mt-10"
+        className="text-[28px] md:text-[48px] font-bold tracking-wider text-center mt-10"
         style={{ fontFamily: "'Playfair Display', serif" }}
       >
         SHOP MY HOME
@@ -51,7 +51,9 @@ export default function ShopPage() {
         </div>
       </div>
 
+      {/* LTK Script Load */}
       <Script
+        id="ltk-widget"
         src="https://widgets-static.rewardstyle.com/widgets2_0/client/pub/ltkwidget/ltkwidget.js"
         strategy="afterInteractive"
       />
