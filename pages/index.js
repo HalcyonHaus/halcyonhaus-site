@@ -57,7 +57,7 @@ export default function HomePage() {
       <a className="hover:underline">About Me</a>
     </Link>
     <Link href="/projects" passHref legacyBehavior>
-      <a className="underline">Projects</a>
+      <a className="hover:underline">Projects</a>
     </Link>
     <Link href="/shop" passHref legacyBehavior>
       <a className="hover:underline">Shop My Home</a>
