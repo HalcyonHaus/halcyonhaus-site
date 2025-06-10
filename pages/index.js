@@ -50,20 +50,20 @@ export default function HomePage() {
   <div className="absolute inset-0 bg-white bg-opacity-20" />
 </div>
 
-     {/* Navigation */}
-      <header className="flex justify-end p-6 text-sm tracking-widest">
-       <nav className="space-x-6 uppercase font-inter">
-  <Link href="/about" passHref legacyBehavior>
-    <a className="hover:underline">About Me</a>
-  </Link>
-  <Link href="/projects" passHref legacyBehavior>
-    <a className="underline">Projects</a>
-  </Link>
-  <Link href="/shop" passHref legacyBehavior>
-    <a className="hover:underline">Shop My Home</a>
-  </Link>
-</nav>
-      </header>
+{/* Navigation */}
+<div className="absolute top-0 right-0 z-20 p-6 text-sm tracking-widest">
+  <nav className="space-x-6 uppercase font-inter">
+    <Link href="/about" passHref legacyBehavior>
+      <a className="hover:underline">About Me</a>
+    </Link>
+    <Link href="/projects" passHref legacyBehavior>
+      <a className="underline">Projects</a>
+    </Link>
+    <Link href="/shop" passHref legacyBehavior>
+      <a className="hover:underline">Shop My Home</a>
+    </Link>
+  </nav>
+</div>
 
       {/* Centered Title */}
       <div className="absolute inset-0 z-10 flex items-center justify-center">
