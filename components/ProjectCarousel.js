@@ -6,15 +6,15 @@ export default function ProjectCarousel({ title, images }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToPrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
   };
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
+    if (currentIndex < images.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
   };
 
   return (
@@ -30,28 +30,32 @@ export default function ProjectCarousel({ title, images }) {
       {/* Arrows */}
       {images.length > 1 && (
         <>
-          <button
-            onClick={goToPrev}
-            className="absolute left-3 top-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            aria-label="Previous"
-          >
-            <ChevronLeft
-              size={22}
-              strokeWidth={1.2}
-              className="text-white hover:text-neutral-300 transition"
-            />
-          </button>
-          <button
-            onClick={goToNext}
-            className="absolute right-3 top-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            aria-label="Next"
-          >
-            <ChevronRight
-              size={22}
-              strokeWidth={1.2}
-              className="text-white hover:text-neutral-300 transition"
-            />
-          </button>
+          {currentIndex > 0 && (
+            <button
+              onClick={goToPrev}
+              className="absolute left-3 top-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              aria-label="Previous"
+            >
+              <ChevronLeft
+                size={22}
+                strokeWidth={1.3}
+                className="text-white/90 hover:text-white"
+              />
+            </button>
+          )}
+          {currentIndex < images.length - 1 && (
+            <button
+              onClick={goToNext}
+              className="absolute right-3 top-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              aria-label="Next"
+            >
+              <ChevronRight
+                size={22}
+                strokeWidth={1.3}
+                className="text-white/90 hover:text-white"
+              />
+            </button>
+          )}
         </>
       )}
 
