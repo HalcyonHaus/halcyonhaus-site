@@ -64,9 +64,7 @@ export default function HomePage() {
 </a>
   </Link>
   <Link href="/shop" passHref legacyBehavior>
-    <a className="transition-colors duration-300 text-white hover:text-neutral-200">
-  Shop My Home
-</a>
+    <a className="transition-colors duration-300 text-black hover:text-neutral-400">Get In Touch</a>
   </Link>
 </nav>
 </div>
