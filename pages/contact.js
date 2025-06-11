@@ -52,7 +52,7 @@ export default function ContactPage() {
       </header>
 
       {/* Main Section */}
-      <main className="px-6 pt-32 pb-24">
+      <main className="px-6 pt-24 pb-24">
         <h1
           className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center mb-8"
           style={{ fontFamily: "'Playfair Display', serif" }}
@@ -65,53 +65,47 @@ export default function ContactPage() {
         </p>
 
         <form
-          onSubmit={handleSubmit}
-          className="max-w-xl mx-auto space-y-6 text-xs tracking-widest uppercase font-inter"
-        >
-          <div>
-            <label htmlFor="name" className="block mb-2">
-              Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              required
-              className="w-full border border-black px-3 py-2 text-black text-xs uppercase tracking-wider focus:outline-none"
-            />
-          </div>
-          <div>
-            <label htmlFor="email" className="block mb-2">
-              Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              required
-              className="w-full border border-black px-3 py-2 text-black text-xs uppercase tracking-wider focus:outline-none"
-            />
-          </div>
-          <div>
-            <label htmlFor="message" className="block mb-2">
-              Message
-            </label>
-            <textarea
-              name="message"
-              rows="5"
-              required
-              className="w-full border border-black px-3 py-2 text-black text-xs uppercase tracking-wider focus:outline-none"
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            className="border border-black px-6 py-2 text-xs uppercase hover:bg-black hover:text-white transition"
-          >
-            Send
-          </button>
+  onSubmit={handleSubmit}
+  className="max-w-xl mx-auto space-y-6 text-xs tracking-widest uppercase font-inter"
+>
+  <div>
+    <label htmlFor="name" className="block mb-2">Name</label>
+    <input
+      type="text"
+      name="name"
+      required
+      className="w-full border border-neutral-300 rounded-md px-4 py-2 text-black text-xs uppercase tracking-wider focus:outline-none focus:border-black transition"
+    />
+  </div>
+  <div>
+    <label htmlFor="email" className="block mb-2">Email</label>
+    <input
+      type="email"
+      name="email"
+      required
+      className="w-full border border-neutral-300 rounded-md px-4 py-2 text-black text-xs uppercase tracking-wider focus:outline-none focus:border-black transition"
+    />
+  </div>
+  <div>
+    <label htmlFor="message" className="block mb-2">Message</label>
+    <textarea
+      name="message"
+      rows="5"
+      required
+      className="w-full border border-neutral-300 rounded-md px-4 py-2 text-black text-xs uppercase tracking-wider focus:outline-none focus:border-black transition"
+    ></textarea>
+  </div>
+  <button
+    type="submit"
+    className="border border-black px-6 py-2 text-xs uppercase hover:bg-black hover:text-white transition"
+  >
+    Send
+  </button>
 
-          {submitted && (
-            <p className="mt-4 text-center text-sm text-black">We'll be in touch!</p>
-          )}
-        </form>
+  {submitted && (
+    <p className="mt-4 text-center text-sm text-black">We'll be in touch!</p>
+  )}
+</form>
       </main>
 
       {/* Footer */}
