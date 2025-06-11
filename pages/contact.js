@@ -50,11 +50,10 @@ export default function ContactPage() {
           GET IN TOUCH
         </h1>
 
-        <p
-  className="text-center text-xs font-light mt-6 px-4 leading-relaxed font-inter tracking-widest"
->
+        <p className="mt-10 text-sm leading-7 tracking-wide font-inter text-gray-700">
+            
   Whether you're starting a new project or just want to say hello, I'd love to hear from you.
-</p>
+        </p>
 
         {/* Contact Form */}
         <form
