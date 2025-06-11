@@ -32,8 +32,8 @@ export default function AboutPage() {
         </h1>
 
         <p className="mt-10 text-sm leading-7 tracking-wide font-inter text-gray-700">
-          Welcome to Halcyon Haus — an interior design studio founded by Nikka Winchell, rooted in thoughtful, transitional design. <br />
-          Timeless designs, warm interiors, and a curated strategy behind every detail. <br />
+          Welcome to Halcyon Haus — an interior design studio founded by Nikka Winchell, rooted in thoughtful, transitional design. <br /> <br />
+          Timeless designs, warm interiors, and a curated strategy behind every detail. <br /><br />
           Featured by Pottery Barn, West Elm, Crate & Barrel, Amber Interiors, Serena & Lily, LTKHome, and more.
 
         </p>
