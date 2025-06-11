@@ -85,7 +85,7 @@ export default function ProjectsPage() {
       <a className="transition-colors duration-300 text-black hover:text-neutral-400">Projects</a>
     </Link>
     <Link href="/shop" passHref legacyBehavior>
-      <a className="transition-colors duration-300 text-black hover:text-neutral-400">Shop My Home</a>
+      <a className="transition-colors duration-300 text-black hover:text-neutral-400">Get In Touch</a>
     </Link>
   </nav>
 </header>
