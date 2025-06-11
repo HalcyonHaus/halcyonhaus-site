@@ -18,7 +18,7 @@ export default function AboutPage() {
           <Link href="/" legacyBehavior><a className="transition-colors duration-300 text-black hover:text-neutral-400">Home</a></Link>
           <Link href="/about" legacyBehavior><a className="transition-colors duration-300 text-black hover:text-neutral-400">About Me</a></Link>
           <Link href="/projects" legacyBehavior><a className="transition-colors duration-300 text-black hover:text-neutral-400">Projects</a></Link>
-          <Link href="/shop" legacyBehavior><a className="transition-colors duration-300 text-black hover:text-neutral-400">Shop My Home</a></Link>
+          <Link href="/contact" legacyBehavior><a className="transition-colors duration-300 text-black hover:text-neutral-400">Get in Touch</a></Link>
         </nav>
       </header>
 
