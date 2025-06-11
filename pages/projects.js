@@ -9,7 +9,7 @@ const projects = [
     title: "Full Circle Bedroom",
     images: [
       "/images/DFF440A7-0193-47CF-9773-5436061404B9.jpeg",
-      "/images/DFF440A7-0193-47CF-9773-5436061404B9.jpeg"
+      "/images/DSC02113.jpeg"
     ]
   },
   {
