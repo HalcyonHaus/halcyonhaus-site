@@ -73,28 +73,22 @@ export default function ProjectsPage() {
       </Head>
 
       {/* Navigation */}
-      <header className="absolute top-0 right-0 z-20 p-6 text-xs tracking-widest">
-          <nav className="space-x-6 uppercase font-inter text-xs">
-  <Link href="/" passHref legacyBehavior>
-  <a className="transition-colors duration-300 text-white hover:text-neutral-300">Home</a>
-</Link>
-        <Link href="/about" passHref legacyBehavior>
-    <a className="transition-colors duration-300 text-white hover:text-neutral-300">
-  About Me
-</a>
-  </Link>
-  <Link href="/projects" passHref legacyBehavior>
-    <a className="transition-colors duration-300 text-white hover:text-neutral-300">
-  Projects
-</a>
-  </Link>
-  <Link href="/shop" passHref legacyBehavior>
-    <a className="transition-colors duration-300 text-white hover:text-neutral-300">
-  Shop My Home
-</a>
-  </Link>
-</nav>
-      </header>
+      <header className="absolute top-0 right-0 z-50 p-6 text-xs tracking-widest">
+  <nav className="space-x-6 uppercase font-inter text-xs">
+    <Link href="/" passHref legacyBehavior>
+      <a className="transition-colors duration-300 text-black hover:text-neutral-500">Home</a>
+    </Link>
+    <Link href="/about" passHref legacyBehavior>
+      <a className="transition-colors duration-300 text-black hover:text-neutral-500">About Me</a>
+    </Link>
+    <Link href="/projects" passHref legacyBehavior>
+      <a className="transition-colors duration-300 text-black hover:text-neutral-500">Projects</a>
+    </Link>
+    <Link href="/shop" passHref legacyBehavior>
+      <a className="transition-colors duration-300 text-black hover:text-neutral-500">Shop My Home</a>
+    </Link>
+  </nav>
+</header>
 
       {/* Projects Grid */}
       <main className="px-6 py-24">
