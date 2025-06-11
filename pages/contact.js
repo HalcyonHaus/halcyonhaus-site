@@ -54,11 +54,15 @@ export default function ContactPage() {
       {/* Main Section */}
       <main className="px-6 pt-32 pb-24">
         <h1
-          className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center mb-12"
+          className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center mb-8"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           GET IN TOUCH
         </h1>
+
+        <p className="max-w-xl mx-auto text-center text-xs uppercase tracking-widest font-inter mb-12 text-neutral-600">
+          Whether you're starting a new project or just want to say hello, I'd love to hear from you.
+        </p>
 
         <form
           onSubmit={handleSubmit}
@@ -120,12 +124,8 @@ export default function ContactPage() {
             rel="noopener noreferrer"
             aria-label="Instagram"
           >
-            <svg
-              className="h-4 w-4 hover:text-black transition"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z" />
+            <svg className="h-4 w-4 hover:text-black transition" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"/>
             </svg>
           </a>
           <a
@@ -134,12 +134,8 @@ export default function ContactPage() {
             rel="noopener noreferrer"
             aria-label="TikTok"
           >
-            <svg
-              className="h-4 w-4 hover:text-black transition"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M9 3v12a3 3 0 103 3V9c.6.3 1.3.5 2 .5h1V7h-1c-.6 0-1-.4-1-1V3h-4z" />
+            <svg className="h-4 w-4 hover:text-black transition" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 3v12a3 3 0 103 3V9c.6.3 1.3.5 2 .5h1V7h-1c-.6 0-1-.4-1-1V3h-4z"/>
             </svg>
           </a>
           <a
@@ -148,12 +144,8 @@ export default function ContactPage() {
             rel="noopener noreferrer"
             aria-label="LTK"
           >
-            <svg
-              className="h-4 w-4 hover:text-black transition"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M3 12a9 9 0 1118 0 9 9 0 01-18 0zm9-6a6 6 0 100 12 6 6 0 000-12z" />
+            <svg className="h-4 w-4 hover:text-black transition" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M3 12a9 9 0 1118 0 9 9 0 01-18 0zm9-6a6 6 0 100 12 6 6 0 000-12z"/>
             </svg>
           </a>
         </div>
