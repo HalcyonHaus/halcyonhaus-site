@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen text-black font-sans bg-[#fafafa]">
+    <div className="min-h-screen text-black font-sans" style={{ backgroundColor: "#fafafa" }}>
       <Head>
-        <title>Get In Touch – Halcyon Haus</title>
+        <title>Contact – Halcyon Haus</title>
         <link
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
           rel="stylesheet"
@@ -39,37 +39,52 @@ export default function ContactPage() {
           GET IN TOUCH
         </h1>
 
-        <div className="max-w-2xl mx-auto text-center mt-12 space-y-6 font-inter text-sm leading-relaxed">
-          <p>
-            For interior design inquiries, creative partnerships, or styling projects,
-            I’d love to hear from you. Please reach out via Instagram or submit
-            a request below — I review every message personally.
-          </p>
+        <p className="max-w-xl mx-auto mt-6 text-center text-sm leading-relaxed font-inter text-neutral-700">
+          Interested in working together? Reach out below for inquiries related to design projects, press, or partnerships. I look forward to hearing from you.
+        </p>
 
-          <div className="pt-4">
-            <a
-              href="https://www.shopltk.com/explore/halcyonhaus"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-6 py-2 text-sm uppercase tracking-widest border border-black hover:bg-black hover:text-white transition"
-            >
-              Shop My Home on LTK
-            </a>
+        <form
+          action="https://formspree.io/f/mkgbrrnw"
+          method="POST"
+          className="max-w-xl mx-auto mt-10 space-y-6 font-inter"
+        >
+          <div>
+            <label className="block text-sm uppercase tracking-widest mb-1">Name</label>
+            <input
+              type="text"
+              name="name"
+              required
+              className="w-full border border-gray-300 px-4 py-2 text-sm focus:outline-none focus:border-black"
+            />
           </div>
-        </div>
 
-        {/* Instagram Embed */}
-        <div className="flex justify-center mt-16">
-          <iframe
-            src="https://snapwidget.com/embed/1099076"
-            className="w-full max-w-screen-lg min-h-[700px]"
-            style={{ border: "none", overflow: "hidden" }}
-            allowTransparency="true"
-            frameBorder="0"
-            scrolling="no"
-            title="Instagram Gallery"
-          ></iframe>
-        </div>
+          <div>
+            <label className="block text-sm uppercase tracking-widest mb-1">Email</label>
+            <input
+              type="email"
+              name="email"
+              required
+              className="w-full border border-gray-300 px-4 py-2 text-sm focus:outline-none focus:border-black"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm uppercase tracking-widest mb-1">Message</label>
+            <textarea
+              name="message"
+              rows="5"
+              required
+              className="w-full border border-gray-300 px-4 py-2 text-sm focus:outline-none focus:border-black"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="mt-4 px-6 py-2 text-sm uppercase tracking-widest border border-black hover:bg-black hover:text-white transition"
+          >
+            Send Message
+          </button>
+        </form>
       </main>
 
       {/* Footer */}
