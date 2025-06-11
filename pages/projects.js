@@ -74,20 +74,17 @@ export default function ProjectsPage() {
 
       {/* Navigation */}
       <header className="absolute top-0 right-0 z-20 p-6 text-xs tracking-widest">
-        <nav className="space-x-6 uppercase font-inter">
-          <Link href="/" passHref legacyBehavior>
-            <a className="hover:underline">Home</a>
-          </Link>
-          <Link href="/about" passHref legacyBehavior>
-            <a className="hover:underline">About Me</a>
-          </Link>
-          <Link href="/projects" passHref legacyBehavior>
-            <a className="hover:underline">Projects</a>
-          </Link>
-          <Link href="/shop" passHref legacyBehavior>
-            <a className="hover:underline">Shop My Home</a>
-          </Link>
-        </nav>
+        <nav className="space-x-6 uppercase font-inter text-sm">
+  <Link href="/about" passHref legacyBehavior>
+    <a className="transition-opacity duration-300 hover:opacity-70">About Me</a>
+  </Link>
+  <Link href="/projects" passHref legacyBehavior>
+    <a className="transition-opacity duration-300 hover:opacity-70">Projects</a>
+  </Link>
+  <Link href="/shop" passHref legacyBehavior>
+    <a className="transition-opacity duration-300 hover:opacity-70">Shop My Home</a>
+  </Link>
+</nav>
       </header>
 
       {/* Projects Grid */}
