@@ -1,38 +1,52 @@
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const ProjectCarousel = dynamic(() => import("../components/ProjectCarousel"), { ssr: false });
 
 const projects = [
   {
     title: "Full Circle Bedroom",
-    image: "/images/DFF440A7-0193-47CF-9773-5436061404B9.jpeg",
-    link: "#",
+    images: [
+      "/images/DFF440A7-0193-47CF-9773-5436061404B9.jpeg",
+      "/images/DFF440A7-0193-47CF-9773-5436061404B9.jpeg"
+    ]
   },
   {
     title: "Halcyon Haus Bedroom",
-    image: "/images/DSC01677.jpeg",
-    link: "#",
+    images: [
+      "/images/DSC01677.jpeg",
+      "/images/DSC01677.jpeg"
+    ]
   },
   {
     title: "Canyon Cottage Kitchen",
-    image: "/images/DSC02043.jpeg",
-    link: "#",
+    images: [
+      "/images/DSC02043.jpeg",
+      "/images/DSC02043.jpeg"
+    ]
   },
   {
     title: "Canyon Cottage Primary Bath",
-    image: "/images/DSC02081.jpeg",
-    link: "#",
+    images: [
+      "/images/DSC02081.jpeg",
+      "/images/DSC02081.jpeg"
+    ]
   },
   {
     title: "Two-Toned Kitchen",
-    image: "/images/DSC02223.jpeg",
-    link: "#",
+    images: [
+      "/images/DSC02223.jpeg",
+      "/images/DSC02223.jpeg"
+    ]
   },
   {
     title: "Styling",
-    image: "/images/DSC02489.jpeg",
-    link: "#",
-  },
+    images: [
+      "/images/DSC02489.jpeg",
+      "/images/DSC02489.jpeg"
+    ]
+  }
 ];
 
 export default function ProjectsPage() {
@@ -74,20 +88,7 @@ export default function ProjectsPage() {
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-16">
           {projects.map((project, index) => (
-            <div key={index} className="group">
-              <div className="relative w-full aspect-[4/4.3] md:aspect-[4/4.9] overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  style={{ objectFit: "cover" }}
-                  className="transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <p className="font-inter uppercase tracking-widest text-sm mt-4 text-center">
-                {project.title}
-              </p>
-            </div>
+            <ProjectCarousel key={index} title={project.title} images={project.images} />
           ))}
         </div>
       </main>
