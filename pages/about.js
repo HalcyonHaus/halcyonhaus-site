@@ -23,9 +23,9 @@ export default function AboutPage() {
       </header>
 
       {/* Main Content */}
-      <main className="px-6 pt-32 pb-24 max-w-2xl mx-auto text-center">
+      <main className="px-6 pt-24 pb-24 max-w-2xl mx-auto text-center">
         <h1
-          className="text-2xl md:text-3xl font-light tracking-wider"
+          className="text-2xl md:text-2xl font-light tracking-wider"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           ABOUT ME
