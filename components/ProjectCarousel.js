@@ -1,11 +1,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useSwipeable } from "react-swipeable";
 
 export default function ProjectCarousel({ title, images }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  let touchStartX = 0;
-  let touchEndX = 0;
 
   const goToPrev = () => {
     setCurrentIndex((prevIndex) =>
@@ -19,22 +18,18 @@ export default function ProjectCarousel({ title, images }) {
     );
   };
 
-  const handleTouchStart = (e) => {
-    touchStartX = e.changedTouches[0].clientX;
-  };
-
-  const handleTouchEnd = (e) => {
-    touchEndX = e.changedTouches[0].clientX;
-    if (touchStartX - touchEndX > 50) goToNext();
-    if (touchEndX - touchStartX > 50) goToPrev();
-  };
+  const handlers = useSwipeable({
+    onSwipedLeft: goToNext,
+    onSwipedRight: goToPrev,
+    trackMouse: true, // ← enables swipe with a mouse on desktop
+    preventScrollOnSwipe: true
+  });
 
   return (
     <div>
       <div
+        {...handlers}
         className="group relative w-full aspect-[4/4.3] md:aspect-[4/4.9] overflow-hidden rounded-md"
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
       >
         <Image
           src={images[currentIndex]}
