@@ -9,7 +9,6 @@ const projects = [
     title: "Canyon Cottage Kitchen",
     images: [
       "/images/DSC02043.jpeg",
-      "/images/DSC02043.jpeg",
       "/images/DSC02031.jpeg",
       "/images/DSC02032.jpeg",
       "/images/DSC02048-2.jpeg"
@@ -40,14 +39,18 @@ const projects = [
     title: "Canyon Cottage Primary Bath",
     images: [
       "/images/DSC02081.jpeg",
-      "/images/DSC02081.jpeg"
+      "/images/DSC02075.jpeg",
+      "/images/DSC02075.jpeg",
+      "/images/DSC02092.jpeg",
+      "/images/DSC02082.jpeg"
     ]
   },
   {
-    title: "Two-Toned Kitchen",
+    title: "Anything But Monotone Kitchen",
     images: [
       "/images/DSC02223.jpeg",
-      "/images/DSC02223.jpeg"
+      "/images/DSC02219.jpeg",
+      "/images/DSC02198.jpeg"
     ]
   },
   {
