@@ -54,17 +54,17 @@ export default function HomePage() {
 <div className="absolute top-0 right-0 z-20 p-6 text-xs tracking-widest">
   <nav className="space-x-6 uppercase font-inter text-xs">
   <Link href="/about" passHref legacyBehavior>
-    <a className="transition-colors duration-300 text-white hover:text-neutral-100">
+    <a className="transition-colors duration-300 text-white hover:text-neutral-400">
   About Me
 </a>
   </Link>
   <Link href="/projects" passHref legacyBehavior>
-    <a className="transition-colors duration-300 text-white hover:text-neutral-100">
+    <a className="transition-colors duration-300 text-white hover:text-neutral-400">
   Projects
 </a>
   </Link>
   <Link href="/contact" passHref legacyBehavior>
-    <a className="transition-colors duration-300 text-white hover:text-neutral-100">Get In Touch</a>
+    <a className="transition-colors duration-300 text-white hover:text-neutral-400">Get In Touch</a>
   </Link>
 </nav>
 </div>
