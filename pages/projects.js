@@ -21,6 +21,15 @@ const projects = [
       "/images/DSC02113.jpeg"
     ]
   },
+    {
+    title: "Canyon Cottage Primary Bath",
+    images: [
+      "/images/DSC02081.jpeg",
+      "/images/DSC02075.jpeg",
+      "/images/DSC02092.jpeg",
+      "/images/DSC02082.jpeg"
+    ]
+  },
   {
     title: "Halcyon Haus",
     images: [
@@ -36,16 +45,6 @@ const projects = [
     ]
   },
   {
-    title: "Canyon Cottage Primary Bath",
-    images: [
-      "/images/DSC02081.jpeg",
-      "/images/DSC02075.jpeg",
-      "/images/DSC02075.jpeg",
-      "/images/DSC02092.jpeg",
-      "/images/DSC02082.jpeg"
-    ]
-  },
-  {
     title: "Anything But Monotone Kitchen",
     images: [
       "/images/DSC02223.jpeg",
@@ -57,7 +56,7 @@ const projects = [
     title: "Styling",
     images: [
       "/images/DSC02489.jpeg",
-      "/images/DSC02489.jpeg"
+      "/images/DSC02496.jpeg"
     ]
   }
 ];
