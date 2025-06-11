@@ -2,59 +2,67 @@ import { useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function ProjectCarousel({ images = [], title }) {
-  const [current, setCurrent] = useState(0);
-  const total = images.length;
+export default function ProjectCarousel({ title, images }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const prevSlide = () => setCurrent(current === 0 ? total - 1 : current - 1);
-  const nextSlide = () => setCurrent(current === total - 1 ? 0 : current + 1);
+  const goToPrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
 
   return (
-    <div className="relative w-full aspect-[4/5] md:aspect-[4/6] overflow-hidden group">
-      {images.map((src, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-500 ${
-            index === current ? "opacity-100 z-10" : "opacity-0 z-0"
-          }`}
-        >
-          <Image
-            src={src}
-            alt={`${title} ${index + 1}`}
-            layout="fill"
-            objectFit="cover"
-            priority={index === 0}
-          />
-        </div>
-      ))}
+    <div className="group relative w-full aspect-[4/4.3] md:aspect-[4/4.9] overflow-hidden">
+      <Image
+        src={images[currentIndex]}
+        alt={title}
+        fill
+        style={{ objectFit: "cover" }}
+        className="transition-transform duration-300"
+      />
 
       {/* Arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white/60 hover:bg-white/90 p-2 rounded-full"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft className="w-5 h-5 text-black" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white/60 hover:bg-white/90 p-2 rounded-full"
-        aria-label="Next slide"
-      >
-        <ChevronRight className="w-5 h-5 text-black" />
-      </button>
+      {images.length > 1 && (
+        <>
+          <button
+            onClick={goToPrev}
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/70 hover:bg-white text-black rounded-full p-1 z-20"
+            aria-label="Previous"
+          >
+            <ChevronLeft size={18} />
+          </button>
+          <button
+            onClick={goToNext}
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/70 hover:bg-white text-black rounded-full p-1 z-20"
+            aria-label="Next"
+          >
+            <ChevronRight size={18} />
+          </button>
+        </>
+      )}
 
       {/* Dots */}
-      <div className="absolute bottom-3 w-full flex justify-center space-x-1">
-        {images.map((_, i) => (
+      <div className="absolute bottom-2 w-full flex justify-center space-x-1 z-20">
+        {images.map((_, idx) => (
           <div
-            key={i}
-            className={`w-2 h-2 rounded-full transition-all ${
-              i === current ? "bg-black" : "bg-gray-300"
+            key={idx}
+            className={`h-1.5 w-1.5 rounded-full ${
+              idx === currentIndex ? "bg-black" : "bg-gray-300"
             }`}
           />
         ))}
       </div>
+
+      {/* Title */}
+      <p className="font-inter uppercase tracking-widest text-sm mt-4 text-center pt-4">
+        {title}
+      </p>
     </div>
   );
 }
