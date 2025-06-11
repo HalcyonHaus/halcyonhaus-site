@@ -51,16 +51,16 @@ export default function HomePage() {
 </div>
 
 {/* Navigation */}
-<div className="absolute top-0 right-0 z-20 p-6 text-sm tracking-widest">
+<div className="absolute top-0 right-0 z-20 p-6 text-xs tracking-widest">
   <nav className="space-x-6 uppercase font-inter">
     <Link href="/about" passHref legacyBehavior>
-      <a className="hover:underline">About Me</a>
+      <a className="transition-opacity duration-300 hover:opacity-70">About Me</a>
     </Link>
     <Link href="/projects" passHref legacyBehavior>
-      <a className="hover:underline">Projects</a>
+      <a className="transition-opacity duration-300 hover:opacity-70">Projects</a>
     </Link>
     <Link href="/shop" passHref legacyBehavior>
-      <a className="hover:underline">Shop My Home</a>
+      <a className="transition-opacity duration-300 hover:opacity-70">Shop My Home</a>
     </Link>
   </nav>
 </div>
