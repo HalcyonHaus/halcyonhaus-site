@@ -33,7 +33,7 @@ export default function ShopPage() {
       {/* Main Section */}
       <main className="px-6 pt-24 pb-24">
         <h1
-          className="text-2xl md:text-2xl font-light tracking-wider text-center"
+          className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           SHOP MY HOME
