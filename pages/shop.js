@@ -14,12 +14,17 @@ export default function ShopPage() {
 
       {/* Navigation */}
       <header className="flex justify-end p-6 text-xs tracking-widest">
-        <nav className="space-x-6 uppercase font-inter">
-          <Link href="/" className="hover:underline">Home</Link>
-          <Link href="/about" className="hover:underline">About Me</Link>
-          <Link href="/projects" className="hover:underline">Projects</Link>
-          <Link href="/shop" className="hover:underline">Shop My Home</Link>
-        </nav>
+        <nav className="space-x-6 uppercase font-inter text-sm">
+  <Link href="/about" passHref legacyBehavior>
+    <a className="transition-opacity duration-300 hover:opacity-70">About Me</a>
+  </Link>
+  <Link href="/projects" passHref legacyBehavior>
+    <a className="transition-opacity duration-300 hover:opacity-70">Projects</a>
+  </Link>
+  <Link href="/shop" passHref legacyBehavior>
+    <a className="transition-opacity duration-300 hover:opacity-70">Shop My Home</a>
+  </Link>
+</nav>
       </header>
 
       {/* Main Section */}
