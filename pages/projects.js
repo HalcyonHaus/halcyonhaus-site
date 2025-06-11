@@ -6,6 +6,16 @@ const ProjectCarousel = dynamic(() => import("../components/ProjectCarousel"), {
 
 const projects = [
   {
+    title: "Canyon Cottage Kitchen",
+    images: [
+      "/images/DSC02043.jpeg",
+      "/images/DSC02043.jpeg",
+      "/images/DSC02031.jpeg",
+      "/images/DSC02032.jpeg",
+      "/images/DSC02048-2.jpeg"
+    ]
+  },
+  {
     title: "Full Circle Bedroom",
     images: [
       "/images/DFF440A7-0193-47CF-9773-5436061404B9.jpeg",
@@ -24,13 +34,6 @@ const projects = [
       "/images/DSC01503.jpeg",
       "/images/7F3F1DD5-20A0-4377-A60E-CB6CBED5947A.jpeg",
       "/images/IMG_0640.jpeg"
-    ]
-  },
-  {
-    title: "Canyon Cottage Kitchen",
-    images: [
-      "/images/DSC02043.jpeg",
-      "/images/DSC02043.jpeg"
     ]
   },
   {
