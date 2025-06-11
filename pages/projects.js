@@ -13,10 +13,17 @@ const projects = [
     ]
   },
   {
-    title: "Halcyon Haus Bedroom",
+    title: "Halcyon Haus",
     images: [
       "/images/DSC01677.jpeg",
-      "/images/DSC01677.jpeg"
+      "/images/IMG_4599.jpeg"
+      "/images/DSC01631.jpeg",
+      "/images/DSC01662.jpeg"
+      "/images/DC7801C0-7521-4A4A-86F3-228C9F155D6E.jpeg",
+      "/images/53757896-768E-436A-A242-E1EB1C839F05.jpeg",
+      "/images/DSC01503.jpeg",
+      "/images/7F3F1DD5-20A0-4377-A60E-CB6CBED5947A.jpeg",
+      "/images/IMG_0640.jpeg"
     ]
   },
   {
