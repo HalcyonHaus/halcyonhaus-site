@@ -19,42 +19,40 @@ export default function ProjectCarousel({ title, images }) {
 
   return (
     <div className="group relative w-full aspect-[4/4.3] md:aspect-[4/4.9] overflow-hidden">
-      <div className="relative w-full h-full z-10">
-        <Image
-          src={images[currentIndex]}
-          alt={title}
-          fill
-          style={{ objectFit: "cover" }}
-          className="transition-transform duration-300"
-        />
-      </div>
+      <Image
+        src={images[currentIndex]}
+        alt={title}
+        fill
+        style={{ objectFit: "cover" }}
+        className="transition-transform duration-300"
+      />
 
       {/* Arrows */}
       {images.length > 1 && (
         <>
           <button
             onClick={goToPrev}
-            className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white shadow-md text-black rounded-full p-1 z-30 transition"
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/60 hover:bg-white/90 text-black rounded-full p-1 transition-all duration-200 shadow-md backdrop-blur-sm"
             aria-label="Previous"
           >
-            <ChevronLeft size={20} />
+            <ChevronLeft size={16} strokeWidth={1.5} />
           </button>
           <button
             onClick={goToNext}
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white shadow-md text-black rounded-full p-1 z-30 transition"
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/60 hover:bg-white/90 text-black rounded-full p-1 transition-all duration-200 shadow-md backdrop-blur-sm"
             aria-label="Next"
           >
-            <ChevronRight size={20} />
+            <ChevronRight size={16} strokeWidth={1.5} />
           </button>
         </>
       )}
 
       {/* Dots */}
-      <div className="absolute bottom-3 w-full flex justify-center space-x-1 z-30">
+      <div className="absolute bottom-2 w-full flex justify-center space-x-1 z-20">
         {images.map((_, idx) => (
           <div
             key={idx}
-            className={`h-1.5 w-1.5 rounded-full ${
+            className={`h-1.5 w-1.5 rounded-full transition-colors duration-200 ${
               idx === currentIndex ? "bg-black" : "bg-gray-300"
             }`}
           />
