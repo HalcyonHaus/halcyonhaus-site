@@ -50,7 +50,7 @@ export default function ContactPage() {
           GET IN TOUCH
         </h1>
 
-        <p className="mt-10 text-sm leading-7 tracking-wide font-inter text-gray-700">
+        <p className="mt-10 text-sm leading-7 text-center tracking-wide font-inter text-gray-700">
             
   Whether you're starting a new project or just want to say hello, I'd love to hear from you.
         </p>
