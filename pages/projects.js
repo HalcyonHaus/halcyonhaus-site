@@ -73,7 +73,7 @@ export default function ProjectsPage() {
       </Head>
 
       {/* Navigation */}
-      <header className="absolute top-0 right-0 z-50 p-6 text-xs tracking-widest">
+   <header className="absolute top-0 right-0 z-20 p-6 text-xs tracking-widest">
   <nav className="space-x-6 uppercase font-inter text-xs">
     <Link href="/" passHref legacyBehavior>
       <a className="transition-colors duration-300 text-black hover:text-neutral-500">Home</a>
