@@ -4,6 +4,8 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function ProjectCarousel({ title, images }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  let touchStartX = 0;
+  let touchEndX = 0;
 
   const goToPrev = () => {
     setCurrentIndex((prevIndex) =>
@@ -17,9 +19,23 @@ export default function ProjectCarousel({ title, images }) {
     );
   };
 
+  const handleTouchStart = (e) => {
+    touchStartX = e.changedTouches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    touchEndX = e.changedTouches[0].clientX;
+    if (touchStartX - touchEndX > 50) goToNext();
+    if (touchEndX - touchStartX > 50) goToPrev();
+  };
+
   return (
     <div>
-      <div className="group relative w-full aspect-[4/4.3] md:aspect-[4/4.9] overflow-hidden rounded-md">
+      <div
+        className="group relative w-full aspect-[4/4.3] md:aspect-[4/4.9] overflow-hidden rounded-md"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         <Image
           src={images[currentIndex]}
           alt={title}
@@ -33,24 +49,24 @@ export default function ProjectCarousel({ title, images }) {
           <>
             <button
               onClick={goToPrev}
-              className="absolute left-3 top-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              className="absolute left-3 top-1/2 -translate-y-1/2 z-20 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300"
               aria-label="Previous"
             >
               <ChevronLeft
-                size={22}
-                strokeWidth={1.3}
-                className="text-white/90 hover:text-white"
+                size={24}
+                strokeWidth={1.5}
+                className="text-white drop-shadow-md hover:text-white"
               />
             </button>
             <button
               onClick={goToNext}
-              className="absolute right-3 top-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              className="absolute right-3 top-1/2 -translate-y-1/2 z-20 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300"
               aria-label="Next"
             >
               <ChevronRight
-                size={22}
-                strokeWidth={1.3}
-                className="text-white/90 hover:text-white"
+                size={24}
+                strokeWidth={1.5}
+                className="text-white drop-shadow-md hover:text-white"
               />
             </button>
           </>
