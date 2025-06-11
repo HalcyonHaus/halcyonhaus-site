@@ -75,11 +75,9 @@ export default function ProjectsPage() {
       {/* Navigation */}
       <header className="absolute top-0 right-0 z-20 p-6 text-xs tracking-widest">
           <nav className="space-x-6 uppercase font-inter text-xs">
-  <Link href="/index" passHref legacyBehavior>
-    <a className="transition-colors duration-300 text-white hover:text-neutral-300">
-  Home
-</a>
-  </Link>
+  <Link href="/" passHref legacyBehavior>
+  <a className="transition-colors duration-300 text-white hover:text-neutral-300">Home</a>
+</Link>
         <Link href="/about" passHref legacyBehavior>
     <a className="transition-colors duration-300 text-white hover:text-neutral-300">
   About Me
