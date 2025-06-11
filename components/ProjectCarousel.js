@@ -61,7 +61,7 @@ export default function ProjectCarousel({ title, images }) {
           ))}
         </div>
       </div>
-      <p className="font-inter uppercase tracking-widest text-sm mt-4 text-center pt-4">{title}</p>
+      <p className="font-inter uppercase tracking-widest text-xs mt-3 text-center pt-3">{title}</p>
     </div>
   );
 }
