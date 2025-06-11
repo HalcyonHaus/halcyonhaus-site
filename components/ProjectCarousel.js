@@ -19,36 +19,38 @@ export default function ProjectCarousel({ title, images }) {
 
   return (
     <div className="group relative w-full aspect-[4/4.3] md:aspect-[4/4.9] overflow-hidden">
-      <Image
-        src={images[currentIndex]}
-        alt={title}
-        fill
-        style={{ objectFit: "cover" }}
-        className="transition-transform duration-300"
-      />
+      <div className="relative w-full h-full z-10">
+        <Image
+          src={images[currentIndex]}
+          alt={title}
+          fill
+          style={{ objectFit: "cover" }}
+          className="transition-transform duration-300"
+        />
+      </div>
 
       {/* Arrows */}
       {images.length > 1 && (
         <>
           <button
             onClick={goToPrev}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/70 hover:bg-white text-black rounded-full p-1 z-20"
+            className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white shadow-md text-black rounded-full p-1 z-30 transition"
             aria-label="Previous"
           >
-            <ChevronLeft size={18} />
+            <ChevronLeft size={20} />
           </button>
           <button
             onClick={goToNext}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/70 hover:bg-white text-black rounded-full p-1 z-20"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white shadow-md text-black rounded-full p-1 z-30 transition"
             aria-label="Next"
           >
-            <ChevronRight size={18} />
+            <ChevronRight size={20} />
           </button>
         </>
       )}
 
       {/* Dots */}
-      <div className="absolute bottom-2 w-full flex justify-center space-x-1 z-20">
+      <div className="absolute bottom-3 w-full flex justify-center space-x-1 z-30">
         {images.map((_, idx) => (
           <div
             key={idx}
