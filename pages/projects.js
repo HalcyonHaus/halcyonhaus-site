@@ -76,16 +76,16 @@ export default function ProjectsPage() {
    <header className="absolute top-0 right-0 z-20 p-6 text-xs tracking-widest">
   <nav className="space-x-6 uppercase font-inter text-xs">
     <Link href="/" passHref legacyBehavior>
-      <a className="transition-colors duration-300 text-black hover:text-neutral-500">Home</a>
+      <a className="transition-colors duration-300 text-black hover:text-neutral-400">Home</a>
     </Link>
     <Link href="/about" passHref legacyBehavior>
-      <a className="transition-colors duration-300 text-black hover:text-neutral-500">About Me</a>
+      <a className="transition-colors duration-300 text-black hover:text-neutral-400">About Me</a>
     </Link>
     <Link href="/projects" passHref legacyBehavior>
-      <a className="transition-colors duration-300 text-black hover:text-neutral-500">Projects</a>
+      <a className="transition-colors duration-300 text-black hover:text-neutral-400">Projects</a>
     </Link>
     <Link href="/shop" passHref legacyBehavior>
-      <a className="transition-colors duration-300 text-black hover:text-neutral-500">Shop My Home</a>
+      <a className="transition-colors duration-300 text-black hover:text-neutral-400">Shop My Home</a>
     </Link>
   </nav>
 </header>
