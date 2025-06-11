@@ -51,12 +51,10 @@ export default function ContactPage() {
         </h1>
 
         <p
-          className="text-center text-base font-light mt-6 px-4 leading-relaxed"
-          style={{ fontFamily: "'Playfair Display', serif" }}
-        >
-          Whether you're starting a new project or just want to say hello, I'd
-          love to hear from you.
-        </p>
+  className="text-center text-xs font-light mt-6 px-4 leading-relaxed font-inter tracking-widest"
+>
+  Whether you're starting a new project or just want to say hello, I'd love to hear from you.
+</p>
 
         {/* Contact Form */}
         <form
