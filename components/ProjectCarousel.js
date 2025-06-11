@@ -23,14 +23,24 @@ export default function ProjectCarousel({ title, images }) {
         {...handlers}
         className="group relative w-full aspect-[4/4.3] md:aspect-[4/4.9] overflow-hidden rounded-md"
       >
-        <Image
-          src={images[currentIndex]}
-          alt={title}
-          fill
-          style={{ objectFit: 'cover' }}
-          className="transition-transform duration-300"
-        />
-
+        <>
+  <Image
+    src={images[currentIndex]}
+    alt={title}
+    fill
+    style={{ objectFit: 'cover' }}
+    className="transition-opacity duration-500 opacity-100 group-hover:opacity-0"
+  />
+  {images.length > 1 && (
+    <Image
+      src={images[(currentIndex + 1) % images.length]}
+      alt={title}
+      fill
+      style={{ objectFit: 'cover' }}
+      className="transition-opacity duration-500 opacity-0 group-hover:opacity-100"
+    />
+  )}
+</>
         {images.length > 1 && (
           <>
             <button
