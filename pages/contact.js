@@ -46,7 +46,7 @@ export default function ContactPage() {
   Thoughtfully curated interiors begin with a conversation. Let’s connect.
 </p>
 
-    <div className="mt-8 flex justify-center space-x-4 text-xs uppercase tracking-widest font-inter text-black">
+    <div className="mt-10 flex justify-center space-x-4 text-xs uppercase tracking-widest font-inter text-black">
   <a
     href="https://www.instagram.com/halcyonhaus_"
     target="_blank"
