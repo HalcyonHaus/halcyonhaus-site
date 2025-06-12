@@ -46,28 +46,30 @@ export default function ContactPage() {
   Thoughtfully curated interiors begin with a conversation. Let’s connect.
 </p>
 
-    <div className="mt-6 flex justify-center space-x-6 text-gray-600 text-sm font-inter">
+    <div className="mt-6 flex justify-center space-x-4 text-xs uppercase tracking-widest font-inter text-black">
   <a
     href="https://www.instagram.com/halcyonhaus_"
     target="_blank"
     rel="noopener noreferrer"
-    className="hover:text-black transition-colors duration-300"
+    className="transition-colors duration-300 hover:text-neutral-400"
   >
     Instagram
   </a>
+  <span>|</span>
   <a
     href="https://www.tiktok.com/@halcyonhaus_"
     target="_blank"
     rel="noopener noreferrer"
-    className="hover:text-black transition-colors duration-300"
+    className="transition-colors duration-300 hover:text-neutral-400"
   >
     TikTok
   </a>
+  <span>|</span>
   <a
     href="https://www.shopltk.com/explore/halcyonhaus"
     target="_blank"
     rel="noopener noreferrer"
-    className="hover:text-black transition-colors duration-300"
+    className="transition-colors duration-300 hover:text-neutral-400"
   >
     LTK
   </a>
