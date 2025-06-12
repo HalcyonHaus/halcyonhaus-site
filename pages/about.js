@@ -48,7 +48,7 @@ export default function AboutPage() {
   </h2>
 
   {/* First Row */}
-  <div className="flex justify-center space-x-10 mb-2 px-4">
+  <div className="flex justify-center space-x-14 mb-1.5 px-4">
     <img src="/logos/potterybarn.png" alt="Pottery Barn" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
     <img src="/logos/westelm.png" alt="West Elm" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
     <img src="/logos/cratebarrel.png" alt="Crate & Barrel" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
