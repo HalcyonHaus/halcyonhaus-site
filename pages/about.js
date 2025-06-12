@@ -39,19 +39,19 @@ export default function AboutPage() {
         </p>
       </main>
 
-<section className="bg-[#fafafa] py-12">
+<section className="bg-[#fafafa] py-14">
   <h2
-    className="text-center text-xs tracking-widest uppercase font-inter text-gray-500 mb-8"
+    className="text-center text-xs tracking-widest uppercase font-inter text-gray-500 mb-10"
     style={{ letterSpacing: '0.2em' }}
   >
     Featured In
   </h2>
-  <div className="flex flex-wrap justify-center items-center gap-10 px-6">
-    <img src="/logos/potterybarn.png" alt="Pottery Barn" className="h-8 object-contain grayscale" />
-    <img src="/logos/westelm.png" alt="West Elm" className="h-8 object-contain grayscale" />
-    <img src="/logos/cratebarrel.png" alt="Crate & Barrel" className="h-8 object-contain grayscale" />
-    <img src="/logos/amberinteriors.png" alt="Amber Interiors" className="h-8 object-contain grayscale" />
-    <img src="/logos/serenaandlily.png" alt="Serena & Lily" className="h-8 object-contain grayscale" />
+  <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 px-6">
+    <img src="/logos/potterybarn.png" alt="Pottery Barn" className="h-12 object-contain grayscale" />
+    <img src="/logos/westelm.png" alt="West Elm" className="h-12 object-contain grayscale" />
+    <img src="/logos/cratebarrel.png" alt="Crate & Barrel" className="h-12 object-contain grayscale" />
+    <img src="/logos/amberinteriors.png" alt="Amber Interiors" className="h-12 object-contain grayscale" />
+    <img src="/logos/serenaandlily.png" alt="Serena & Lily" className="h-12 object-contain grayscale" />
   </div>
 </section>
 
