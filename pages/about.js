@@ -38,7 +38,7 @@ export default function AboutPage() {
         </p>
       </main>
 
-<section className="bg-[#fafafa] py-2">
+<section className="bg-[#fafafa] pt-2 pb-14">
   <h2
     className="text-center text-xs tracking-widest uppercase font-inter text-gray-500 mb-8"
     style={{ letterSpacing: '0.2em' }}
@@ -61,7 +61,7 @@ export default function AboutPage() {
 </section>
 
       {/* Footer */}
-      <footer className="mt-8 pb-6 text-center text-xs text-gray-500 uppercase tracking-widest font-inter">
+      <footer className="mt-6 pb-6 text-center text-xs text-gray-500 uppercase tracking-widest font-inter">
         <p className="mb-2">© {new Date().getFullYear()} Halcyon Haus</p>
         <div className="flex justify-center space-x-6 text-gray-500">
           <a href="https://www.instagram.com/halcyonhaus_" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
