@@ -39,11 +39,12 @@ export default function ContactPage() {
           GET IN TOUCH
         </h1>
 
-        <p className="mt-10 text-sm leading-7 text-center tracking-wide font-inter text-gray-700">
-          style={{ fontFamily: "'Playfair Display', serif" }}
-      
-          WHETHER YOU’RE STARTING A NEW PROJECT OR JUST WANT TO SAY HELLO, I’D LOVE TO HEAR FROM YOU.
-        </p>
+        <p
+  className="mt-10 text-sm leading-7 text-center tracking-wide text-gray-700"
+  style={{ fontFamily: "'Playfair Display', serif" }}
+>
+  WHETHER YOU’RE STARTING A NEW PROJECT OR JUST WANT TO SAY HELLO, I’D LOVE TO HEAR FROM YOU.
+</p>
 
         <form
           action="https://formspree.io/f/mkgbrrnw"
