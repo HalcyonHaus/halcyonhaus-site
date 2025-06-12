@@ -47,15 +47,17 @@ export default function AboutPage() {
     Featured In
   </h2>
 
-  <div className="flex justify-center gap-x-6 mb-4 px-4">
-    <img src="/logos/potterybarn.png" alt="Pottery Barn" className="h-16 object-contain grayscale" />
-    <img src="/logos/westelm.png" alt="West Elm" className="h-16 object-contain grayscale" />
-    <img src="/logos/cratebarrel.png" alt="Crate & Barrel" className="h-16 object-contain grayscale" />
+  {/* First Row */}
+  <div className="flex justify-center space-x-4 mb-6 px-4">
+    <img src="/logos/potterybarn.png" alt="Pottery Barn" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+    <img src="/logos/westelm.png" alt="West Elm" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+    <img src="/logos/cratebarrel.png" alt="Crate & Barrel" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
   </div>
 
-  <div className="flex justify-center gap-x-6 px-4">
-    <img src="/logos/amberinteriors.png" alt="Amber Interiors" className="h-16 object-contain grayscale" />
-    <img src="/logos/serenaandlily.png" alt="Serena & Lily" className="h-16 object-contain grayscale" />
+  {/* Second Row */}
+  <div className="flex justify-center space-x-4 px-4">
+    <img src="/logos/amberinteriors.png" alt="Amber Interiors" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+    <img src="/logos/serenaandlily.png" alt="Serena & Lily" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
   </div>
 </section>
 
