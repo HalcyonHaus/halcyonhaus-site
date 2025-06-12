@@ -51,8 +51,8 @@ export default function HomePage() {
 </div>
 
 {/* Navigation */}
-<div className="absolute top-0 right-0 z-20 p-6 text-xs tracking-widest">
-  <nav className="space-x-6 uppercase font-inter text-xs">
+<header className="absolute top-0 w-full z-20 px-6 pt-6 text-xs tracking-widest">
+  <nav className="flex justify-center sm:justify-end space-x-6 uppercase font-inter text-xs">
   <Link href="/about" passHref legacyBehavior>
     <a className="transition-colors duration-300 text-white hover:text-neutral-400">
   About Me
