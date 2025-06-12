@@ -31,7 +31,7 @@ export default function ContactPage() {
       </header>
 
       {/* Main Section */}
-      <main className="px-6 pt-32 pb-24 max-w-2xl mx-auto">
+      <main className="px-6 pt-24 pb-24 max-w-2xl mx-auto">
         <h1
           className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center uppercase mb-8"
           style={{ fontFamily: "'Playfair Display', serif" }}
@@ -39,8 +39,7 @@ export default function ContactPage() {
           GET IN TOUCH
         </h1>
 
-        <p
-          className="text-center text-sm font-light mb-10 tracking-wide leading-relaxed text-neutral-700"
+        <p className="mt-10 text-sm leading-7 text-center tracking-wide font-inter text-gray-700">
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           WHETHER YOU’RE STARTING A NEW PROJECT OR JUST WANT TO SAY HELLO, I’D LOVE TO HEAR FROM YOU.
@@ -95,7 +94,7 @@ export default function ContactPage() {
               type="submit"
               className="px-6 py-2 text-xs uppercase tracking-widest border border-[#333] rounded-md hover:bg-[#333] hover:text-white transition-colors duration-300 font-inter"
             >
-              Send
+              Submit
             </button>
           </div>
         </form>
