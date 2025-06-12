@@ -40,7 +40,7 @@ export default function ContactPage() {
         </h1>
 
         <p
-  className="mt-10 text-sm leading-7 text-center tracking-wide text-gray-700"
+  className="mt-6 text-sm leading-7 text-center tracking-wide text-gray-700"
   style={{ fontFamily: "'inter', serif" }}
 >
   Thoughtfully curated interiors begin with a conversation. Let’s connect.
