@@ -47,13 +47,13 @@ export default function AboutPage() {
     Featured In
   </h2>
   <div className="flex flex-wrap justify-center items-center gap-x-20 gap-y-8 px-6">
-    <img src="/logos/potterybarn.png" alt="Pottery Barn" className="h-20 object-contain grayscale" />
-    <img src="/logos/westelm.png" alt="West Elm" className="h-20 object-contain grayscale" />
-    <img src="/logos/cratebarrel.png" alt="Crate & Barrel" className="h-20 object-contain grayscale" />
+    <img src="/logos/potterybarn.png" alt="Pottery Barn" className="h-16 object-contain grayscale" />
+    <img src="/logos/westelm.png" alt="West Elm" className="h-16 object-contain grayscale" />
+    <img src="/logos/cratebarrel.png" alt="Crate & Barrel" className="h-16 object-contain grayscale" />
        {/* Spacer between rows */}
-    <div className="w-full w-full h-1"></div>
-    <img src="/logos/amberinteriors.png" alt="Amber Interiors" className="h-20 object-contain grayscale" />
-    <img src="/logos/serenaandlily.png" alt="Serena & Lily" className="h-20 object-contain grayscale" />
+    <div className="w-full h-1"></div>
+    <img src="/logos/amberinteriors.png" alt="Amber Interiors" className="h-16 object-contain grayscale" />
+    <img src="/logos/serenaandlily.png" alt="Serena & Lily" className="h-16 object-contain grayscale" />
   </div>
 </section>
 
