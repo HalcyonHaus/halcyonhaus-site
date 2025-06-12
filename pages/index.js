@@ -67,7 +67,7 @@ export default function HomePage() {
     <a className="transition-colors duration-300 text-white hover:text-neutral-400">Get In Touch</a>
   </Link>
 </nav>
-</div>
+</header>
 
       {/* Centered Title */}
       <div className="absolute inset-0 z-10 flex items-center justify-center">
