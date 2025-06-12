@@ -91,12 +91,12 @@ export default function ContactPage() {
           </div>
 
           <div className="flex justify-center mt-6">
-            <button
-              type="submit"
-              className="px-6 py-2 text-xs uppercase tracking-widest border border-[#333] rounded-md hover:bg-[#333] hover:text-white transition-colors duration-300 font-inter"
-            >
-              Submit
-            </button>
+           <button
+  type="submit"
+  className="px-5 py-1.5 text-xs uppercase tracking-widest border border-gray-400 rounded-md hover:bg-gray-100 hover:text-black transition-colors duration-300 font-inter"
+>
+  Submit
+</button>
           </div>
         </form>
       </main>
