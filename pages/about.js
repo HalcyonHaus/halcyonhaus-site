@@ -39,6 +39,22 @@ export default function AboutPage() {
         </p>
       </main>
 
+<section className="bg-[#fafafa] py-12">
+  <h2
+    className="text-center text-xs tracking-widest uppercase font-inter text-gray-500 mb-8"
+    style={{ letterSpacing: '0.2em' }}
+  >
+    Featured In
+  </h2>
+  <div className="flex flex-wrap justify-center items-center gap-10 px-6">
+    <img src="/logos/potterybarn.png" alt="Pottery Barn" className="h-8 object-contain grayscale" />
+    <img src="/logos/westelm.png" alt="West Elm" className="h-8 object-contain grayscale" />
+    <img src="/logos/cratebarrel.png" alt="Crate & Barrel" className="h-8 object-contain grayscale" />
+    <img src="/logos/amberinteriors.png" alt="Amber Interiors" className="h-8 object-contain grayscale" />
+    <img src="/logos/serenaandlily.png" alt="Serena & Lily" className="h-8 object-contain grayscale" />
+  </div>
+</section>
+
       {/* Footer */}
       <footer className="mt-8 pb-6 text-center text-xs text-gray-500 uppercase tracking-widest font-inter">
         <p className="mb-2">© {new Date().getFullYear()} Halcyon Haus</p>
