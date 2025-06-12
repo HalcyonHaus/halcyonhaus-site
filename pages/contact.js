@@ -47,58 +47,58 @@ export default function ContactPage() {
 </p>
 
         <form
-          action="https://formspree.io/f/mkgbrrnw"
-          method="POST"
-          className="space-y-5 text-sm"
-        >
-          <div>
-            <label htmlFor="name" className="block text-gray-700 mb-1 uppercase tracking-widest text-xs font-inter">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black text-sm bg-white"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="email" className="block text-gray-700 mb-1 uppercase tracking-widest text-xs font-inter">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black text-sm bg-white"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="message" className="block text-gray-700 mb-1 uppercase tracking-widest text-xs font-inter">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              required
-              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-black text-sm bg-white"
-            ></textarea>
-          </div>
-
-          <div className="flex justify-center mt-6">
-           <button
-  type="submit"
-  className="px-5 py-1.5 text-xs uppercase tracking-widest border border-gray-400 rounded-md hover:bg-gray-100 hover:text-black transition-colors duration-300 font-inter"
+  action="https://formspree.io/f/mkgbrrnw"
+  method="POST"
+  className="space-y-5 text-sm max-w-md mx-auto mt-10"
 >
-  Submit
-</button>
-          </div>
-        </form>
+  <div>
+    <label htmlFor="name" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">
+      Name
+    </label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      required
+      className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-gray-500 text-sm bg-white"
+    />
+  </div>
+
+  <div>
+    <label htmlFor="email" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">
+      Email
+    </label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      required
+      className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-gray-500 text-sm bg-white"
+    />
+  </div>
+
+  <div>
+    <label htmlFor="message" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">
+      Message
+    </label>
+    <textarea
+      id="message"
+      name="message"
+      rows="5"
+      required
+      className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-gray-500 text-sm bg-white"
+    ></textarea>
+  </div>
+
+  <div className="flex justify-center mt-6">
+    <button
+      type="submit"
+      className="px-5 py-1.5 text-xs uppercase tracking-widest border border-gray-400 rounded-md hover:bg-gray-100 hover:text-black transition-colors duration-300 font-inter"
+    >
+      Submit
+    </button>
+  </div>
+</form>
       </main>
 
       {/* Footer */}
