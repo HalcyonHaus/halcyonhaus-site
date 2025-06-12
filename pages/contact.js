@@ -43,7 +43,7 @@ export default function ContactPage() {
   className="mt-10 text-sm leading-7 text-center tracking-wide text-gray-700"
   style={{ fontFamily: "'inter', serif" }}
 >
-  WHETHER YOU’RE STARTING A NEW PROJECT OR JUST WANT TO SAY HELLO, I’D LOVE TO HEAR FROM YOU.
+  Thoughtfully crafted interiors begin with a conversation. Let’s connect.
 </p>
 
         <form
