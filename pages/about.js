@@ -38,7 +38,7 @@ export default function AboutPage() {
         </p>
       </main>
 
-<section className="bg-[#fafafa] py-6">
+<section className="bg-[#fafafa] py-2">
   <h2
     className="text-center text-xs tracking-widest uppercase font-inter text-gray-500 mb-8"
     style={{ letterSpacing: '0.2em' }}
@@ -47,14 +47,14 @@ export default function AboutPage() {
   </h2>
 
   {/* First Row */}
-  <div className="flex justify-center space-x-14 mb-1.5 px-4">
+  <div className="flex justify-center space-x-16 mb-1.5 px-4">
     <img src="/logos/potterybarn.png" alt="Pottery Barn" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
     <img src="/logos/westelm.png" alt="West Elm" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
     <img src="/logos/cratebarrel.png" alt="Crate & Barrel" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
   </div>
 
   {/* Second Row */}
-  <div className="flex justify-center space-x-10 px-4">
+  <div className="flex justify-center space-x-16 px-4">
     <img src="/logos/amberinteriors.png" alt="Amber Interiors" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
     <img src="/logos/serenaandlily.png" alt="Serena & Lily" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
   </div>
