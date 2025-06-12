@@ -51,7 +51,7 @@ export default function AboutPage() {
     <img src="/logos/westelm.png" alt="West Elm" className="h-24 object-contain grayscale" />
     <img src="/logos/cratebarrel.png" alt="Crate & Barrel" className="h-24 object-contain grayscale" />
        {/* Spacer between rows */}
-    <div className="basis-full h-4"></div>
+    <div className="w-full h-4"></div>
     <img src="/logos/amberinteriors.png" alt="Amber Interiors" className="h-24 object-contain grayscale" />
     <img src="/logos/serenaandlily.png" alt="Serena & Lily" className="h-24 object-contain grayscale" />
   </div>
