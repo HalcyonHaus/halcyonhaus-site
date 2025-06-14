@@ -4,7 +4,7 @@ export default function DesignBotChat() {
   const [messages, setMessages] = useState([
     {
       role: "system",
-      content: `You are Halcyon Haus’s AI, in Nikka Winchell’s warm, transitional style. Recommend specific paints, textiles, finishes, and layouts. Sign off: “For a custom mood board or 1:1 consult, email hello@halcyonhaus.com.” Redirect any non-design questions.`,
+      content: `You are Halcyon Haus’s AI in a warm, curated tone. Recommend neutral palettes, quality materials, and thoughtful layouts—always highlighting your editorial eye. Sign off with: “For bespoke design, email hello@halcyonhaus.com.”`,
     },
   ]);
   const [input, setInput] = useState("");
@@ -34,8 +34,7 @@ export default function DesignBotChat() {
       });
       const data = await res.json();
       setMessages((prev) => [...prev, data.choices[0].message]);
-    } catch (err) {
-      console.error(err);
+    } catch {
       setMessages((prev) => [
         ...prev,
         { role: "assistant", content: "Sorry, something went wrong." },
@@ -46,24 +45,24 @@ export default function DesignBotChat() {
   };
 
   return (
-    <div className="flex flex-col h-full font-sans text-gray-900">
+    <div className="flex flex-col h-full">
       {/* Messages */}
       <div
         ref={chatRef}
-        className="flex-1 overflow-y-auto space-y-3 mb-4 pr-1"
+        className="flex-1 overflow-y-auto space-y-2 mb-3 text-[0.9rem] text-[var(--neutral-800)]"
       >
         {messages
           .filter((m) => m.role !== "system")
           .map((m, i) => (
             <div
               key={i}
-              className={`max-w-[75%] break-words px-4 py-2 rounded-2xl ${
+              className={`max-w-[80%] break-words px-3 py-2 rounded-lg ${
                 m.role === "user"
-                  ? "ml-auto bg-gray-100 text-gray-900"
-                  : "mr-auto bg-[#FFC857] text-white"
+                  ? "ml-auto bg-[var(--neutral-200)]"
+                  : "mr-auto bg-[var(--neutral-300)] text-[var(--neutral-900)]"
               }`}
             >
-              <span className="font-medium">
+              <span className="font-medium text-[0.85rem]">
                 {m.role === "user" ? "You:" : "Designer:"}
               </span>{" "}
               {m.content}
@@ -72,7 +71,7 @@ export default function DesignBotChat() {
       </div>
 
       {/* Input */}
-      <div className="mt-auto flex items-center space-x-2">
+      <div className="flex items-center space-x-2">
         <input
           type="text"
           value={input}
@@ -82,19 +81,21 @@ export default function DesignBotChat() {
           placeholder="Ask a design question…"
           className="
             flex-1 
-            border border-gray-300 rounded-full 
-            px-4 py-2
-            focus:outline-none focus:ring-2 focus:ring-[#FFC857]
-            text-base
+            border border-[var(--neutral-200)] 
+            rounded-full
+            px-3 py-2 text-[0.9rem]
+            focus:outline-none focus:ring-2 focus:ring-[var(--neutral-300)]
           "
         />
         <button
           onClick={sendMessage}
           disabled={loading}
           className="
-            px-4 py-2 
-            bg-[#FFC857] text-white rounded-full 
-            font-medium text-base
+            px-3 py-2
+            bg-[var(--neutral-300)] 
+            text-[var(--neutral-900)]
+            rounded-full
+            text-[0.9rem] font-medium
             disabled:opacity-50 focus:outline-none
           "
         >
