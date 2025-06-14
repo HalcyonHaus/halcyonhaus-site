@@ -2,7 +2,6 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import ChatBubble from "../components/ChatBubble";
 
 const images = [
   "/images/photo3.png",
@@ -48,7 +47,7 @@ export default function HomePage() {
             priority={index === currentIndex}
           />
         ))}
-        <div className="absolute inset-0 bg-white bg-opacity-20" />
+        <div className="absolute inset-0 bg-white bg-opacity-20 pointer-events-none" />
       </div>
 
       {/* Navigation */}
@@ -93,9 +92,6 @@ export default function HomePage() {
           font-family: 'Inter', sans-serif;
         }
       `}</style>
-
-      {/* Floating chat bubble */}
-      <ChatBubble />
     </div>
   );
 }
