@@ -13,7 +13,7 @@ export default function ChatBubble() {
           onClick={() => setOpen(true)}
           className="
             fixed bottom-6 right-6
-            z-50
+            z-[9999]           /* top of everything */
             w-12 h-12
             bg-[var(--neutral-200)]
             rounded-full
@@ -21,6 +21,7 @@ export default function ChatBubble() {
             flex items-center justify-center
             hover:shadow-md transition-shadow
             focus:outline-none
+            pointer-events-auto /* ensure clicks register */
           "
           aria-label="Open chat"
         >
@@ -46,8 +47,8 @@ export default function ChatBubble() {
         <div
           className="
             fixed bottom-6 right-6
-            z-50
-            w-72 sm:w-80 md:w-96 
+            z-[9999]           /* above all content */
+            w-72 sm:w-80 md:w-96
             max-h-[80vh]
             bg-[var(--neutral-50)]
             rounded-2xl
@@ -72,7 +73,7 @@ export default function ChatBubble() {
           </div>
 
           {/* Chat content */}
-          <div className="flex-1 p-3">
+          <div className="flex-1 p-3 overflow-y-auto">
             <DesignBotChat />
           </div>
         </div>
