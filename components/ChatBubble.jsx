@@ -6,12 +6,14 @@ export default function ChatBubble() {
 
   return (
     <>
-      {/* Floating minimal bubble */}
+      {/* Floating bubble */}
       {!open && (
         <button
+          type="button"
           onClick={() => setOpen(true)}
           className="
             fixed bottom-6 right-6
+            z-50
             w-12 h-12
             bg-[var(--neutral-200)]
             rounded-full
@@ -44,6 +46,7 @@ export default function ChatBubble() {
         <div
           className="
             fixed bottom-6 right-6
+            z-50
             w-72 sm:w-80 md:w-96 
             max-h-[80vh]
             bg-[var(--neutral-50)]
@@ -59,6 +62,7 @@ export default function ChatBubble() {
               Chat with Halcyon Haus
             </h3>
             <button
+              type="button"
               onClick={() => setOpen(false)}
               className="text-[var(--neutral-600)] hover:text-[var(--neutral-800)] focus:outline-none"
               aria-label="Close chat"
