@@ -6,29 +6,36 @@ export default function ChatBubble() {
 
   return (
     <>
-      {/* Floating amber thought-bubble */}
+      {/* Floating minimal bubble */}
       {!open && (
         <button
           onClick={() => setOpen(true)}
           className="
-            fixed bottom-8 right-8
-            w-14 h-14
-            bg-[#FFC857] 
-            rounded-full 
-            shadow-lg 
+            fixed bottom-6 right-6
+            w-12 h-12
+            bg-[var(--neutral-200)]
+            rounded-full
+            shadow-sm
             flex items-center justify-center
-            hover:shadow-2xl transition-shadow
+            hover:shadow-md transition-shadow
             focus:outline-none
           "
           aria-label="Open chat"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-7 h-7 text-white"
+            className="w-6 h-6 text-[var(--neutral-600)]"
+            fill="none"
             viewBox="0 0 24 24"
-            fill="currentColor"
+            stroke="currentColor"
+            strokeWidth={1.5}
           >
-            <path d="M12 2C6.477 2 2 5.58 2 10c0 1.993.932 3.82 2.516 5.172L4 22l6.828-2.343A9.944 9.944 0 0012 20c5.523 0 10-3.58 10-8s-4.477-8-10-8z"/>
+            {/* Simple speech‐bubble outline */}
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M8 10h8m-8 4h6m2 2l4 4V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12l4-4"
+            />
           </svg>
         </button>
       )}
@@ -36,28 +43,30 @@ export default function ChatBubble() {
       {/* Expanded panel */}
       {open && (
         <div className="
-            fixed bottom-8 right-8
-            w-80 md:w-96 lg:w-[24rem] h-[28rem]
-            bg-[#FFFDF8]
-            rounded-3xl
-            shadow-2xl
-            ring-1 ring-gray-200
+            fixed bottom-6 right-6
+            w-72 sm:w-80 md:w-96 h-[28rem]
+            bg-[var(--neutral-50)]
+            rounded-2xl
+            shadow-lg
+            ring-1 ring-[var(--neutral-200)]
             flex flex-col overflow-hidden
-          ">
+            font-sans
+          "
+        >
           {/* Header */}
-          <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
-            <h3 className="text-xl font-semibold">Chat with Halcyon Haus</h3>
+          <div className="flex items-center justify-between px-3 py-2 border-b border-[var(--neutral-200)]">
+            <h3 className="text-lg font-serif">Chat with Halcyon Haus</h3>
             <button
               onClick={() => setOpen(false)}
-              className="text-gray-500 hover:text-gray-800 focus:outline-none"
+              className="text-[var(--neutral-600)] hover:text-[var(--neutral-800)] focus:outline-none"
               aria-label="Close chat"
             >
               ✕
             </button>
           </div>
 
-          {/* Chat body */}
-          <div className="flex-1 p-4">
+          {/* Chat content */}
+          <div className="flex-1 p-3">
             <DesignBotChat />
           </div>
         </div>
