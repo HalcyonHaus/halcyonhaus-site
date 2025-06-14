@@ -4,7 +4,7 @@ export default function DesignBotChat() {
   const [messages, setMessages] = useState([
     {
       role: "system",
-      content: `You are Halcyon Haus’s AI… [your refined prompt here]`,
+      content: `You are Halcyon Haus’s AI, in Nikka Winchell’s warm, transitional style. Recommend specific paints, textiles, finishes, and layouts. Sign off: “For a custom mood board or 1:1 consult, email hello@halcyonhaus.com.” Redirect any non-design questions.`,
     },
   ]);
   const [input, setInput] = useState("");
@@ -38,7 +38,7 @@ export default function DesignBotChat() {
       console.error(err);
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: "Oops—something went wrong." },
+        { role: "assistant", content: "Sorry, something went wrong." },
       ]);
     } finally {
       setLoading(false);
@@ -46,48 +46,55 @@ export default function DesignBotChat() {
   };
 
   return (
-    <div className="flex flex-col h-full font-sans">
+    <div className="flex flex-col h-full font-sans text-gray-900">
+      {/* Messages */}
       <div
         ref={chatRef}
-        className="space-y-3 mb-4 overflow-y-auto text-gray-800"
-        style={{ maxHeight: "calc(100% - 3rem)" }}
+        className="flex-1 overflow-y-auto space-y-3 mb-4 pr-1"
       >
         {messages
           .filter((m) => m.role !== "system")
           .map((m, i) => (
             <div
               key={i}
-              className={`p-3 rounded-lg max-w-[80%] break-words ${
+              className={`max-w-[75%] break-words px-4 py-2 rounded-2xl ${
                 m.role === "user"
-                  ? "ml-auto bg-gray-100"
-                  : "mr-auto bg-[var(--accent)] text-white"
+                  ? "ml-auto bg-gray-100 text-gray-900"
+                  : "mr-auto bg-[#FFC857] text-white"
               }`}
             >
-              <span className="font-semibold">
-                {m.role === "user" ? "You:" : "DesignBot:"}
+              <span className="font-medium">
+                {m.role === "user" ? "You:" : "Designer:"}
               </span>{" "}
               {m.content}
             </div>
           ))}
       </div>
+
+      {/* Input */}
       <div className="mt-auto flex items-center space-x-2">
         <input
+          type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
           disabled={loading}
           placeholder="Ask a design question…"
           className="
-            flex-1 border border-gray-300 rounded-full 
-            px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--accent)] 
-            text-gray-700
+            flex-1 
+            border border-gray-300 rounded-full 
+            px-4 py-2
+            focus:outline-none focus:ring-2 focus:ring-[#FFC857]
+            text-base
           "
         />
         <button
           onClick={sendMessage}
           disabled={loading}
           className="
-            px-4 py-2 bg-[var(--accent)] text-white rounded-full 
+            px-4 py-2 
+            bg-[#FFC857] text-white rounded-full 
+            font-medium text-base
             disabled:opacity-50 focus:outline-none
           "
         >
