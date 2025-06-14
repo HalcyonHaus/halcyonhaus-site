@@ -4,11 +4,7 @@ export default function DesignBotChat() {
   const [messages, setMessages] = useState([
     {
       role: "system",
-      content: `You are Halcyon Haus’s AI, speaking in Nikka Winchell’s warm, transitional style. Always:
- • Recommend specific paints (e.g. Benjamin Moore “Chantilly Lace”), textiles (e.g. Serena & Lily Oslo Linen), finishes, and layouts  
- • Tailor suggestions to the user’s room, budget, and lifestyle  
- • Sign off each reply: “For a custom mood board or 1:1 consult, email hello@halcyonhaus.com”  
-If asked about anything non-design, politely redirect back to interiors.`,
+      content: `You are Halcyon Haus’s AI… [your refined prompt here]`,
     },
   ]);
   const [input, setInput] = useState("");
@@ -24,7 +20,8 @@ If asked about anything non-design, politely redirect back to interiors.`,
   const sendMessage = async () => {
     const trimmed = input.trim();
     if (!trimmed) return;
-    setMessages(prev => [...prev, { role: "user", content: trimmed }]);
+    setMessages((prev) => [...prev, { role: "user", content: trimmed }]);
+    setInput("");
     setLoading(true);
 
     try {
@@ -36,60 +33,67 @@ If asked about anything non-design, politely redirect back to interiors.`,
         }),
       });
       const data = await res.json();
-      setMessages(prev => [...prev, data.choices[0].message]);
+      setMessages((prev) => [...prev, data.choices[0].message]);
     } catch (err) {
       console.error(err);
-      setMessages(prev => [
+      setMessages((prev) => [
         ...prev,
         { role: "assistant", content: "Oops—something went wrong." },
       ]);
     } finally {
-      setInput("");
       setLoading(false);
     }
   };
 
   return (
-    <div className="max-w-lg w-full mx-auto p-8 bg-[var(--bg)] shadow-xl rounded-2xl border border-[var(--accent)] flex flex-col">
+    <div className="flex flex-col h-full font-sans">
       <div
         ref={chatRef}
-        className="flex-1 overflow-y-auto space-y-3 mb-4"
+        className="space-y-3 mb-4 overflow-y-auto text-gray-800"
+        style={{ maxHeight: "calc(100% - 3rem)" }}
       >
         {messages
-          .filter(m => m.role !== "system")
+          .filter((m) => m.role !== "system")
           .map((m, i) => (
             <div
               key={i}
-              className={`p-4 rounded-2xl max-w-[80%] ${
+              className={`p-3 rounded-lg max-w-[80%] break-words ${
                 m.role === "user"
-                  ? "bg-[var(--sender)] self-end text-[var(--text)]"
-                  : "bg-[var(--bot)] self-start text-[var(--text-contrast)]"
+                  ? "ml-auto bg-gray-100"
+                  : "mr-auto bg-[var(--accent)] text-white"
               }`}
             >
-              <strong>
+              <span className="font-semibold">
                 {m.role === "user" ? "You:" : "DesignBot:"}
-              </strong>{" "}
+              </span>{" "}
               {m.content}
             </div>
           ))}
       </div>
-      <div className="flex space-x-2">
+      <div className="mt-auto flex items-center space-x-2">
         <input
           value={input}
-          onChange={e => setInput(e.target.value)}
-          onKeyDown={e => e.key === "Enter" && sendMessage()}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && sendMessage()}
           disabled={loading}
-          placeholder="Ask a design question..."
-          className="flex-1 border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300"
+          placeholder="Ask a design question…"
+          className="
+            flex-1 border border-gray-300 rounded-full 
+            px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--accent)] 
+            text-gray-700
+          "
         />
         <button
           onClick={sendMessage}
           disabled={loading}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg disabled:opacity-50"
+          className="
+            px-4 py-2 bg-[var(--accent)] text-white rounded-full 
+            disabled:opacity-50 focus:outline-none
+          "
         >
-          {loading ? "Sending…" : "Send"}
+          {loading ? "…" : "Send"}
         </button>
       </div>
     </div>
-);
+  );
 }
