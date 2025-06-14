@@ -4,7 +4,7 @@ export default function DesignBotChat() {
   const [messages, setMessages] = useState([
     {
       role: "system",
-      content: `You are Halcyon Haus’s AI in a warm, curated tone. Recommend neutral palettes, quality materials, and thoughtful layouts—always highlighting your editorial eye. Sign off with: “For bespoke design, email hello@halcyonhaus.com.”`,
+      content: `You are Halcyon Haus’s AI in a warm, curated tone. Recommend neutral palettes, quality materials, and thoughtful layouts. Sign off: “For bespoke design, email hello@halcyonhaus.com.” Redirect any non-design questions.`,
     },
   ]);
   const [input, setInput] = useState("");
@@ -49,7 +49,8 @@ export default function DesignBotChat() {
       {/* Messages */}
       <div
         ref={chatRef}
-        className="flex-1 overflow-y-auto space-y-2 mb-3 text-[0.9rem] text-[var(--neutral-800)]"
+        className="flex-1 overflow-y-auto space-y-2 mb-3 text-[0.9rem] text-[var(--neutral-800)] pr-1"
+        style={{ maxHeight: "calc(100% - 3.5rem)" }}
       >
         {messages
           .filter((m) => m.role !== "system")
@@ -58,7 +59,7 @@ export default function DesignBotChat() {
               key={i}
               className={`max-w-[80%] break-words px-3 py-2 rounded-lg ${
                 m.role === "user"
-                  ? "ml-auto bg-[var(--neutral-200)]"
+                  ? "ml-auto bg-[var(--neutral-100)] text-[var(--neutral-800)]"
                   : "mr-auto bg-[var(--neutral-300)] text-[var(--neutral-900)]"
               }`}
             >
@@ -80,11 +81,11 @@ export default function DesignBotChat() {
           disabled={loading}
           placeholder="Ask a design question…"
           className="
-            flex-1 
-            border border-[var(--neutral-200)] 
+            flex-1
+            border border-[var(--neutral-200)]
             rounded-full
-            px-3 py-2 text-[0.9rem]
-            focus:outline-none focus:ring-2 focus:ring-[var(--neutral-300)]
+            px-3 py-2 text-[0.9rem] text-[var(--neutral-800)]
+            focus:outline-none focus:ring-2 focus:ring-[var(--neutral-200)]
           "
         />
         <button
@@ -92,10 +93,8 @@ export default function DesignBotChat() {
           disabled={loading}
           className="
             px-3 py-2
-            bg-[var(--neutral-300)] 
-            text-[var(--neutral-900)]
-            rounded-full
-            text-[0.9rem] font-medium
+            bg-[var(--neutral-400)] text-[var(--neutral-900)]
+            rounded-full text-[0.9rem] font-medium
             disabled:opacity-50 focus:outline-none
           "
         >
