@@ -30,7 +30,6 @@ export default function ChatBubble() {
             stroke="currentColor"
             strokeWidth={1.5}
           >
-            {/* Simple speech‐bubble outline */}
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -42,20 +41,23 @@ export default function ChatBubble() {
 
       {/* Expanded panel */}
       {open && (
-        <div className="
+        <div
+          className="
             fixed bottom-6 right-6
-            w-72 sm:w-80 md:w-96 h-[28rem]
+            w-72 sm:w-80 md:w-96 
+            max-h-[80vh]
             bg-[var(--neutral-50)]
             rounded-2xl
             shadow-lg
             ring-1 ring-[var(--neutral-200)]
-            flex flex-col overflow-hidden
-            font-sans
+            flex flex-col overflow-hidden font-sans
           "
         >
           {/* Header */}
           <div className="flex items-center justify-between px-3 py-2 border-b border-[var(--neutral-200)]">
-            <h3 className="text-lg font-serif">Chat with Halcyon Haus</h3>
+            <h3 className="text-lg font-serif text-[var(--neutral-800)]">
+              Chat with Halcyon Haus
+            </h3>
             <button
               onClick={() => setOpen(false)}
               className="text-[var(--neutral-600)] hover:text-[var(--neutral-800)] focus:outline-none"
