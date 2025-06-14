@@ -7,10 +7,11 @@
 
 /* 2. Your custom CSS variables for the chat widget */
 :root {
-  --bg: #faf8f5;
-  --accent: #d9cbb7;
-  --sender: #ffffff;
-  --bot: #2c3a47;
-  --text: #333333;
-  --text-contrast: #f5f5f5;
+  /* neutral editorial palette */
+  --neutral-50:  #FBF9F7;
+  --neutral-200: #E7E2DC;
+  --neutral-300: #D1C7BF;
+  --neutral-600: #817775;
+  --neutral-800: #4B4440;
+  --neutral-900: #33302B;
 }
