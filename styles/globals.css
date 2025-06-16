@@ -1,3 +1,18 @@
+/* styles/globals.css */
+
+/* 1. Tailwind base and utilities */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Halcyon Haus monochrome neutrals */
+:root {
+  --neutral-50:  #FAFAF9;   /* almost white */
+  --neutral-100: #F1F1EF;   /* very light gray */
+  --neutral-200: #E4E3E1;   /* light warm gray */
+  --neutral-300: #CBC9C6;   /* medium warm gray */
+  --neutral-400: #A8A5A1;   /* warm stone gray */
+  --neutral-600: #6F6C68;   /* darker gray */
+  --neutral-800: #3E3C39;   /* charcoal */
+  --neutral-900: #33302B;   /* deep charcoal */
+}
