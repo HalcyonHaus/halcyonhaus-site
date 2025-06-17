@@ -1,34 +1,60 @@
-// components/ProjectCarousel.js
 import { useState } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { useSwipeable } from 'react-swipeable';
 
 export default function ProjectCarousel({ title, images }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [modalIndex, setModalIndex] = useState(0);
 
-  const goToPrev = () => {
+  const goToPrev = () =>
     setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
-  const goToNext = () => {
+  const goToNext = () =>
     setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  };
+
+  const handlers = useSwipeable({
+    onSwipedLeft: goToNext,
+    onSwipedRight: goToPrev,
+    trackMouse: true,
+  });
+
+  const modalHandlers = useSwipeable({
+    onSwipedLeft: () =>
+      setModalIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1)),
+    onSwipedRight: () =>
+      setModalIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1)),
+    trackMouse: true,
+  });
 
   return (
     <div>
-      {/* Image + Arrows */}
       <div
+        {...handlers}
+        onClick={() => {
+          setIsOpen(true);
+          setModalIndex(currentIndex);
+        }}
         className="group relative w-full aspect-[4/4.3] md:aspect-[4/4.9] overflow-hidden rounded-md cursor-pointer"
-        onClick={() => setIsModalOpen(true)}
       >
-        <Image
-          src={images[currentIndex]}
-          alt={title}
-          fill
-          style={{ objectFit: 'cover' }}
-          className="transition-transform duration-300"
-        />
-
+        <>
+          <Image
+            src={images[currentIndex]}
+            alt={title}
+            fill
+            style={{ objectFit: 'cover' }}
+            className="transition-opacity duration-500 opacity-100 group-hover:opacity-0"
+          />
+          {images.length > 1 && (
+            <Image
+              src={images[(currentIndex + 1) % images.length]}
+              alt={title}
+              fill
+              style={{ objectFit: 'cover' }}
+              className="transition-opacity duration-500 opacity-0 group-hover:opacity-100"
+            />
+          )}
+        </>
         {images.length > 1 && (
           <>
             <button
@@ -53,8 +79,6 @@ export default function ProjectCarousel({ title, images }) {
             </button>
           </>
         )}
-
-        {/* Dots */}
         <div className="absolute bottom-2 w-full flex justify-center space-x-1 z-20">
           {images.map((_, idx) => (
             <div
@@ -67,48 +91,49 @@ export default function ProjectCarousel({ title, images }) {
         </div>
       </div>
 
-      {/* Title */}
       <p className="font-inter uppercase tracking-widest text-xs mt-3 text-center pt-3">{title}</p>
 
-      {/* Modal Lightbox */}
-      {isModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center">
+      {isOpen && (
+        <div
+          {...modalHandlers}
+          className="fixed inset-0 z-50 bg-[#fafafa]/95 flex items-center justify-center p-4"
+        >
           <button
-            onClick={() => setIsModalOpen(false)}
-            className="absolute top-4 right-4 text-white hover:text-neutral-300 z-50"
+            onClick={() => setIsOpen(false)}
+            className="absolute top-4 right-4 text-black hover:text-neutral-600"
             aria-label="Close"
           >
-            <X size={28} strokeWidth={1.2} />
+            <X size={24} />
           </button>
 
-          <div className="relative w-[90vw] h-[80vh] max-w-5xl">
+          <button
+            onClick={() =>
+              setModalIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))
+            }
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-black hover:text-neutral-600"
+            aria-label="Previous"
+          >
+            <ChevronLeft size={32} />
+          </button>
+
+          <div className="relative w-full max-w-4xl aspect-[4/4.3] md:aspect-[4/4.9]">
             <Image
-              src={images[currentIndex]}
-              alt={`Large view - ${title}`}
+              src={images[modalIndex]}
+              alt={`Modal ${title}`}
               fill
               style={{ objectFit: 'contain' }}
-              className="rounded"
             />
-
-            {images.length > 1 && (
-              <>
-                <button
-                  onClick={goToPrev}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 text-white"
-                  aria-label="Previous"
-                >
-                  <ChevronLeft size={32} strokeWidth={1.2} />
-                </button>
-                <button
-                  onClick={goToNext}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white"
-                  aria-label="Next"
-                >
-                  <ChevronRight size={32} strokeWidth={1.2} />
-                </button>
-              </>
-            )}
           </div>
+
+          <button
+            onClick={() =>
+              setModalIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
+            }
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-black hover:text-neutral-600"
+            aria-label="Next"
+          >
+            <ChevronRight size={32} />
+          </button>
         </div>
       )}
     </div>
