@@ -116,12 +116,14 @@ export default function ProjectCarousel({ title, images }) {
             <ChevronLeft size={32} />
           </button>
 
-          <div className="relative w-full max-w-4xl aspect-[4/4.3] md:aspect-[4/4.9]">
+          <div className="relative w-full h-full max-w-6xl max-h-[90vh] flex items-center justify-center">
             <Image
               src={images[modalIndex]}
               alt={`Modal ${title}`}
               fill
               style={{ objectFit: 'contain' }}
+              className="rounded-md"
+              sizes="(max-width: 768px) 90vw, 80vw"
             />
           </div>
 
