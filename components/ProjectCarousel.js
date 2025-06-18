@@ -8,6 +8,23 @@ export default function ProjectCarousel({ title, images }) {
   const [isOpen, setIsOpen] = useState(false);
   const [modalIndex, setModalIndex] = useState(0);
 
+  useEffect(() => {
+  if (!isOpen) return;
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'ArrowRight') {
+      setModalIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    } else if (e.key === 'ArrowLeft') {
+      setModalIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    } else if (e.key === 'Escape') {
+      setIsOpen(false);
+    }
+  };
+
+  document.addEventListener('keydown', handleKeyDown);
+  return () => document.removeEventListener('keydown', handleKeyDown);
+}, [isOpen, images.length]);
+  
   const goToPrev = () =>
     setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   const goToNext = () =>
