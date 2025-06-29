@@ -23,33 +23,35 @@ export default function AboutPage() {
       </header>
 
       {/* Main Content */}
-      <main className="px-6 pt-24 pb-24 max-w-5xl mx-auto">
-        <h1
-          className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center"
-          style={{ fontFamily: "'Playfair Display', serif" }}
-        >
-          ABOUT ME
-        </h1>
+     <main className="px-6 pt-24 pb-24 max-w-5xl mx-auto">
+  <h1
+    className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center"
+    style={{ fontFamily: "'Playfair Display', serif" }}
+  >
+    ABOUT ME
+  </h1>
 
-        <div className="mt-16 flex flex-col md:flex-row items-center md:items-center md:space-x-12 max-w-6xl mx-auto px-6">
-  <img
-    src="/images/DSC02864.JPG"
-    alt="Nikka Winchell"
-    className="w-[22rem] md:w-[26rem] h-auto rounded-md object-cover mb-8 md:mb-0"
-  />
-  <div className="flex-1 max-w-xl text-sm leading-7 tracking-wide font-inter text-gray-700 text-left">
-    <p className="mb-6">
-      Welcome to Halcyon Haus — an interior design studio founded by Nikka Winchell, rooted in thoughtful, transitional design.
-    </p>
-    <p>
-      Timeless design, warm interiors, and a curated strategy behind every detail.
-    </p>
+  <div className="mt-16 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+    <div className="md:col-span-5 flex justify-center">
+      <img
+        src="/images/DSC02864.JPG"
+        alt="Nikka Winchell"
+        className="w-[20rem] md:w-[24rem] h-auto rounded-md object-cover"
+      />
+    </div>
+    <div className="md:col-span-7 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6">
       <p>
-      Located in Denver, CO - servicing design projects coast to coast.
+        Welcome to Halcyon Haus — an interior design studio founded by Nikka Winchell, rooted in thoughtful, transitional design.
       </p>
+      <p>
+        Timeless design, warm interiors, and a curated strategy behind every detail.
+      </p>
+      <p>
+        Located in Denver, CO — servicing design projects coast to coast.
+      </p>
+    </div>
   </div>
-</div>
-      </main>
+</main>
 
       <section className="bg-[#fafafa] pt-2 pb-14">
         <h2
