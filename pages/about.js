@@ -44,6 +44,9 @@ export default function AboutPage() {
     <p>
       Timeless design, warm interiors, and a curated strategy behind every detail.
     </p>
+      <p>
+      Located in Denver, CO - servicing design projects coast to coast.
+      </p>
   </div>
 </div>
       </main>
