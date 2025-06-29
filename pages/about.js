@@ -31,18 +31,23 @@ export default function AboutPage() {
           ABOUT ME
         </h1>
 
-        <div className="mt-12 flex flex-col md:flex-row items-center md:items-start gap-10">
-          <img
-            src="/images/DSC02864.JPG"
-            alt="Nikka Winchell"
-            className="w-64 h-auto rounded-md object-cover"
-          />
-          <p className="text-sm leading-7 tracking-wide font-inter text-gray-700 text-left">
-            Welcome to Halcyon Haus — an interior design studio founded by Nikka Winchell, rooted in thoughtful, transitional design.
-            <br /><br />
-            Timeless design, warm interiors, and a curated strategy behind every detail.
-          </p>
-        </div>
+        <div className="mt-12 flex flex-col md:flex-row items-center md:items-start md:space-x-12">
+  <img
+    src="/images/DSC02864.JPG"
+    alt="Nikka Winchell"
+    className="w-80 h-auto rounded-md object-cover mb-8 md:mb-0"
+  />
+  <div className="max-w-xl text-sm leading-7 tracking-wide font-inter text-gray-700 text-left md:self-center">
+    <p>
+      Welcome to Halcyon Haus — an interior design studio founded by Nikka Winchell,
+      rooted in thoughtful, transitional design.
+    </p>
+    <br />
+    <p>
+      Timeless design, warm interiors, and a curated strategy behind every detail.
+    </p>
+  </div>
+</div>
       </main>
 
       <section className="bg-[#fafafa] pt-2 pb-14">
