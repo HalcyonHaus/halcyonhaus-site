@@ -23,7 +23,7 @@ export default function AboutPage() {
       </header>
 
       {/* Main Content */}
-     <main className="px-6 pt-24 pb-24 max-w-5xl mx-auto">
+     <main className="px-6 pt-24 pb-24 max-w-6xl mx-auto">
   <h1
     className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center"
     style={{ fontFamily: "'Playfair Display', serif" }}
@@ -31,24 +31,36 @@ export default function AboutPage() {
     ABOUT ME
   </h1>
 
-  <div className="mt-16 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-    <div className="md:col-span-5 flex justify-center">
-      <img
-        src="/images/DSC02864.JPG"
-        alt="Nikka Winchell"
-        className="w-[20rem] md:w-[24rem] h-auto rounded-md object-cover"
-      />
-    </div>
-    <div className="md:col-span-7 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6">
-      <p>
+  <div className="mt-16 flex flex-col md:flex-row md:items-start gap-12">
+    <img
+      src="/images/DSC02864.JPG"
+      alt="Nikka Winchell"
+      className="w-[22rem] md:w-[26rem] h-auto rounded-md object-cover"
+    />
+
+    <div className="flex-1 text-sm leading-7 tracking-wide font-inter text-gray-700 text-left">
+      <p className="mb-6">
         Welcome to Halcyon Haus — an interior design studio founded by Nikka Winchell, rooted in thoughtful, transitional design.
       </p>
-      <p>
-        At Halcyon Haus, I guide you through a warm, hands-on design journey rooted in transitional style—where tradition meets modern simplicity. With an eye for curated strategy and balanced composition, every project is tailored to your lifestyle and vision.
+      <p className="mb-6">
+        Timeless design, warm interiors, and a curated strategy behind every detail.
       </p>
-      <p>
-        Located in Denver, CO — servicing design projects coast to coast.
+      <p className="mb-10">
+        Located in Denver, CO – servicing design projects coast to coast.
       </p>
+
+      <div>
+        <h2 className="text-xs tracking-widest uppercase font-inter text-gray-500 mb-6" style={{ letterSpacing: '0.2em' }}>
+          Featured In
+        </h2>
+        <div className="flex flex-wrap gap-x-10 gap-y-6">
+          <img src="/logos/potterybarn.png" alt="Pottery Barn" className="h-10 grayscale object-contain max-w-[100px]" />
+          <img src="/logos/westelm.png" alt="West Elm" className="h-10 grayscale object-contain max-w-[100px]" />
+          <img src="/logos/cratebarrel.png" alt="Crate & Barrel" className="h-10 grayscale object-contain max-w-[100px]" />
+          <img src="/logos/amberinteriors.png" alt="Amber Interiors" className="h-10 grayscale object-contain max-w-[100px]" />
+          <img src="/logos/serenaandlily.png" alt="Serena & Lily" className="h-10 grayscale object-contain max-w-[100px]" />
+        </div>
+      </div>
     </div>
   </div>
 </main>
