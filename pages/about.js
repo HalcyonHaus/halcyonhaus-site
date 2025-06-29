@@ -44,7 +44,7 @@ export default function AboutPage() {
         Welcome to Halcyon Haus — an interior design studio founded by Nikka Winchell, rooted in thoughtful, transitional design.
       </p>
       <p>
-        Timeless design, warm interiors, and a curated strategy behind every detail.
+        At Halcyon Haus, I guide you through a warm, hands-on design journey rooted in transitional style—where tradition meets modern simplicity. With an eye for curated strategy and balanced composition, every project is tailored to your lifestyle and vision.
       </p>
       <p>
         Located in Denver, CO — servicing design projects coast to coast.
