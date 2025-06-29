@@ -23,7 +23,7 @@ export default function AboutPage() {
       </header>
 
       {/* Main Content */}
-      <main className="px-6 pt-24 pb-24 max-w-5xl mx-auto">
+      <main className="px-6 pt-24 pb-24 max-w-6xl mx-auto">
         <h1
           className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center"
           style={{ fontFamily: "'Playfair Display', serif" }}
@@ -36,40 +36,42 @@ export default function AboutPage() {
             <img
               src="/images/DSC02864.JPG"
               alt="Nikka Winchell"
-              className="w-[20rem] md:w-[24rem] h-auto rounded-md object-cover"
+              className="w-[22rem] md:w-[28rem] h-auto rounded-md object-cover"
             />
           </div>
-          <div className="md:col-span-7 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6">
-            <p>
-              Welcome to Halcyon Haus — an interior design studio founded by Nikka Winchell, rooted in thoughtful, transitional design.
-            </p>
-            <p>
-              At Halcyon Haus, I guide you through a warm, hands-on design journey rooted in transitional style—where tradition meets modern simplicity. With an eye for curated strategy and balanced composition, every project is tailored to your lifestyle and vision.
-            </p>
-            <p>
-              Located in Denver, CO — servicing design projects coast to coast.
-            </p>
+          <div className="md:col-span-7 flex flex-col items-center text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6">
+            <div className="max-w-lg text-center">
+              <p>
+                Welcome to Halcyon Haus — an interior design studio founded by Nikka Winchell, rooted in thoughtful, transitional design.
+              </p>
+              <p>
+                Timeless design, warm interiors, and a curated strategy behind every detail.
+              </p>
+              <p>
+                Located in Denver, CO — servicing design projects coast to coast.
+              </p>
+            </div>
 
             {/* Featured In */}
-            <div className="pt-6">
+            <div className="pt-6 w-full">
               <h2
-                className="text-xs tracking-widest uppercase font-inter text-gray-500 mb-8"
+                className="text-center text-xs tracking-widest uppercase font-inter text-gray-500 mb-8"
                 style={{ letterSpacing: '0.2em' }}
               >
                 Featured In
               </h2>
 
               {/* First Row */}
-              <div className="flex justify-start space-x-10 mb-4 px-1">
-                <img src="/logos/potterybarn.png" alt="Pottery Barn" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
-                <img src="/logos/westelm.png" alt="West Elm" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
-                <img src="/logos/cratebarrel.png" alt="Crate & Barrel" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+              <div className="flex justify-center space-x-16 mb-1.5 px-4">
+                <img src="/logos/potterybarn.png" alt="Pottery Barn" className="h-16 w-auto max-w-[120px] object-contain grayscale" />
+                <img src="/logos/westelm.png" alt="West Elm" className="h-16 w-auto max-w-[120px] object-contain grayscale" />
+                <img src="/logos/cratebarrel.png" alt="Crate & Barrel" className="h-16 w-auto max-w-[120px] object-contain grayscale" />
               </div>
 
               {/* Second Row */}
-              <div className="flex justify-start space-x-10 px-1">
-                <img src="/logos/amberinteriors.png" alt="Amber Interiors" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
-                <img src="/logos/serenaandlily.png" alt="Serena & Lily" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+              <div className="flex justify-center space-x-16 px-4">
+                <img src="/logos/amberinteriors.png" alt="Amber Interiors" className="h-16 w-auto max-w-[120px] object-contain grayscale" />
+                <img src="/logos/serenaandlily.png" alt="Serena & Lily" className="h-16 w-auto max-w-[120px] object-contain grayscale" />
               </div>
             </div>
           </div>
