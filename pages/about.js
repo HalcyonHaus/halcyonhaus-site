@@ -14,7 +14,7 @@ export default function AboutPage() {
 
       {/* Navigation */}
       <header className="absolute top-0 w-full z-20 px-6 pt-6 text-xs tracking-widest">
-  <nav className="flex justify-center sm:justify-end space-x-6 uppercase font-inter text-xs">
+        <nav className="flex justify-center sm:justify-end space-x-6 uppercase font-inter text-xs">
           <Link href="/" legacyBehavior><a className="transition-colors duration-300 text-black hover:text-neutral-400">Home</a></Link>
           <Link href="/about" legacyBehavior><a className="transition-colors duration-300 text-black hover:text-neutral-400">About Me</a></Link>
           <Link href="/projects" legacyBehavior><a className="transition-colors duration-300 text-black hover:text-neutral-400">Projects</a></Link>
@@ -23,42 +23,49 @@ export default function AboutPage() {
       </header>
 
       {/* Main Content */}
-      <main className="px-6 pt-24 pb-24 max-w-2xl mx-auto text-center">
+      <main className="px-6 pt-24 pb-24 max-w-5xl mx-auto">
         <h1
-          className="text-2xl md:text-2xl font-light tracking-[0.1em]"
+          className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           ABOUT ME
         </h1>
 
-        <p className="mt-10 text-sm leading-7 tracking-wide font-inter text-gray-700">
-          Welcome to Halcyon Haus - an interior design studio founded by Nikka Winchell, rooted in thoughtful, transitional design. <br /> <br />
-          Timeless designs, warm interiors, and a curated strategy behind every detail. <br /><br />
-
-        </p>
+        <div className="mt-12 flex flex-col md:flex-row items-center md:items-start gap-10">
+          <img
+            src="/images/DSC02864.JPG"
+            alt="Nikka Winchell"
+            className="w-64 h-auto rounded-md object-cover"
+          />
+          <p className="text-sm leading-7 tracking-wide font-inter text-gray-700 text-left">
+            Welcome to Halcyon Haus — an interior design studio founded by Nikka Winchell, rooted in thoughtful, transitional design.
+            <br /><br />
+            Timeless design, warm interiors, and a curated strategy behind every detail.
+          </p>
+        </div>
       </main>
 
-<section className="bg-[#fafafa] pt-2 pb-14">
-  <h2
-    className="text-center text-xs tracking-widest uppercase font-inter text-gray-500 mb-8"
-    style={{ letterSpacing: '0.2em' }}
-  >
-    Featured In
-  </h2>
+      <section className="bg-[#fafafa] pt-2 pb-14">
+        <h2
+          className="text-center text-xs tracking-widest uppercase font-inter text-gray-500 mb-8"
+          style={{ letterSpacing: '0.2em' }}
+        >
+          Featured In
+        </h2>
 
-  {/* First Row */}
-  <div className="flex justify-center space-x-16 mb-1.5 px-4">
-    <img src="/logos/potterybarn.png" alt="Pottery Barn" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
-    <img src="/logos/westelm.png" alt="West Elm" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
-    <img src="/logos/cratebarrel.png" alt="Crate & Barrel" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
-  </div>
+        {/* First Row */}
+        <div className="flex justify-center space-x-16 mb-1.5 px-4">
+          <img src="/logos/potterybarn.png" alt="Pottery Barn" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+          <img src="/logos/westelm.png" alt="West Elm" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+          <img src="/logos/cratebarrel.png" alt="Crate & Barrel" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+        </div>
 
-  {/* Second Row */}
-  <div className="flex justify-center space-x-16 px-4">
-    <img src="/logos/amberinteriors.png" alt="Amber Interiors" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
-    <img src="/logos/serenaandlily.png" alt="Serena & Lily" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
-  </div>
-</section>
+        {/* Second Row */}
+        <div className="flex justify-center space-x-16 px-4">
+          <img src="/logos/amberinteriors.png" alt="Amber Interiors" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+          <img src="/logos/serenaandlily.png" alt="Serena & Lily" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="mt-10 pb-10 text-center text-xs text-gray-500 uppercase tracking-widest font-inter">
