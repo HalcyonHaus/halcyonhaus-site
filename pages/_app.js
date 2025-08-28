@@ -17,7 +17,11 @@ export default function App({ Component, pageProps }) {
           rel="stylesheet"
         />
         {/* Add any other global meta or link tags here */}
-      </Head>
+       {/* Favicon */}
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="mask-icon" href="/favicon.svg" color="#000000" />
+  <meta name="theme-color" content="#ffffff" />
+            </Head>
 
       {/* Render the current page component */}
       <Component {...pageProps} />
