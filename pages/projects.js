@@ -8,8 +8,8 @@ const projects = [
   {
     title: "Canyon Cottage Kitchen",
     images: [
-      "/images/CCKITCHEN1.JPG",
       "/images/CCKITCHEN2.JPG",
+      "/images/CCKITCHEN1.JPG",
       "/images/DSC02043.jpeg",
       "/images/DSC02031.jpeg",
       "/images/DSC02032.jpeg",
