@@ -20,7 +20,8 @@ const projects = [
     title: "Canyon Cottage Primary Bath",
     images: [
       "/images/PRIMARYBATH2.JPG",
-      "/images/PRIMARYBATH1.JPG",
+      "/images/PRIMARYBATH0.JPG",
+      "/images/PRIMARYBATH00.JPG",
       "/images/DSC02081.jpeg",
       "/images/DSC02075.jpeg",
       "/images/DSC02092.jpeg",
