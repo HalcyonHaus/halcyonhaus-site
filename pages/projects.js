@@ -11,7 +11,9 @@ const projects = [
       "/images/DSC02043.jpeg",
       "/images/DSC02031.jpeg",
       "/images/DSC02032.jpeg",
-      "/images/DSC02048-2.jpeg"
+      "/images/DSC02048-2.jpeg",
+      "/images/CCKITCHEN1.jpg",
+      "/images/CCKITCHEN2.jpg"
     ]
   },
   {
