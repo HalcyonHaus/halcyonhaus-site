@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }) {
         {/* Add any other global meta or link tags here */}
        {/* Favicon */}
    {/* Favicon */}
-  <link rel="icon" type="image/svg+xml" href="/flavicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="apple-touch-icon" href="/favicon-180x180.png" />
             </Head>
 
