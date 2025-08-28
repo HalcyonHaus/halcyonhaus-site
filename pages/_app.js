@@ -20,6 +20,7 @@ export default function App({ Component, pageProps }) {
        {/* Favicon */}
    {/* Favicon */}
   <link rel="icon" type="image/svg+xml" href="/flavicon.svg" />
+  <link rel="apple-touch-icon" href="/favicon-180x180.png" />
             </Head>
 
       {/* Render the current page component */}
