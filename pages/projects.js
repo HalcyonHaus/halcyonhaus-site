@@ -51,7 +51,7 @@ const projects = [
   {
     title: "Anything But Monotone Kitchen",
     images: [
-      "/images/DSC02223.jpeg",
+      "/images/TWOTONEDKITCHEN1.JPG",
       "/images/DSC02219.jpeg",
       "/images/DSC02198.jpeg"
     ]
