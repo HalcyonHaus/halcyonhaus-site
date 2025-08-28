@@ -20,9 +20,6 @@ export default function App({ Component, pageProps }) {
        {/* Favicon */}
    {/* Favicon */}
   <link rel="icon" type="image/svg+xml" href="/flavicon.svg" />
-  <link rel="alternate icon" type="image/png" href="/favicon-32x32.png" />
-  <link rel="mask-icon" href="/favicon.svg" color="#000000" />
-  <meta name="theme-color" content="#ffffff" />
             </Head>
 
       {/* Render the current page component */}
