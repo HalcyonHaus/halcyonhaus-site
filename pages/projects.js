@@ -69,7 +69,6 @@ const projects = [
     images: [
       "/images/NURSERY0.JPG",
       "/images/NURSERY1.JPG",
-      "/images/NURSERY2.JPG",
       "/images/NURSERY3.JPG",
       "/images/NURSERY4.JPG",
       "/images/NURSERY5.JPG",
