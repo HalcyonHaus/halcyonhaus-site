@@ -2,7 +2,7 @@
 import Head from "next/head";
 import "../styles/globals.css";
 import ChatBubble from "../components/ChatBubble";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App({ Component, pageProps }) {
   return (
