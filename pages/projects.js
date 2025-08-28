@@ -68,12 +68,12 @@ const projects = [
     title: "Mountain Escape Neutral Nursery",
     images: [
       "/images/NURSERY0.JPG",
-      "/images/PRIMARY1.JPG",
-      "/images/PRIMARY2.JPG",
-      "/images/PRIMARY3.JPG",
-      "/images/PRIMARY4.JPG",
-      "/images/PRIMARY5.JPG",
-      "/images/PRIMARY6.JPG"
+      "/images/NURSERY1.JPG",
+      "/images/NURSERY2.JPG",
+      "/images/NURSERY3.JPG",
+      "/images/NURSERY4.JPG",
+      "/images/NURSERY5.JPG",
+      "/images/NURSERY6.JPG"
     ]
   },
   {
