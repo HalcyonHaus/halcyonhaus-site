@@ -2,6 +2,7 @@
 import Head from "next/head";
 import "../styles/globals.css";
 import ChatBubble from "../components/ChatBubble";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App({ Component, pageProps }) {
   return (
@@ -23,6 +24,9 @@ export default function App({ Component, pageProps }) {
 
       {/* Chat bubble always floats on every page */}
       <ChatBubble />
+
+      {/* Vercel Analytics */}
+      <Analytics />
     </>
   );
 }
