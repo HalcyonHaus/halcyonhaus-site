@@ -16,13 +16,6 @@ const projects = [
       "/images/DSC02048-2.jpeg"
     ]
   },
-  {
-    title: "Full Circle Bedroom",
-    images: [
-      "/images/DFF440A7-0193-47CF-9773-5436061404B9.jpeg",
-      "/images/DSC02113.jpeg"
-    ]
-  },
     {
     title: "Canyon Cottage Primary Bath",
     images: [
@@ -32,6 +25,13 @@ const projects = [
       "/images/DSC02075.jpeg",
       "/images/DSC02092.jpeg",
       "/images/DSC02082.jpeg"
+    ]
+  },
+   {
+    title: "Country Escape Dining",
+    images: [
+      "/images/DINING1.JPG",
+      "/images/DINING2.JPG"
     ]
   },
   {
@@ -49,17 +49,18 @@ const projects = [
     ]
   },
   {
+    title: "Anything But Monotone Kitchen",
+    images: [
+      "/images/DSC02223.jpeg",
+      "/images/DSC02219.jpeg",
+      "/images/DSC02198.jpeg"
+    ]
+  },
+  {
     title: "French Modern Primary",
     images: [
       "/images/PRIMARY1.JPG",
       "/images/PRIMARY2.JPG"
-    ]
-  },
-    {
-    title: "Country Escape Dining",
-    images: [
-      "/images/DINING1.JPG",
-      "/images/DINING2.JPG"
     ]
   },
     {
@@ -75,11 +76,10 @@ const projects = [
     ]
   },
   {
-    title: "Anything But Monotone Kitchen",
+    title: "Full Circle Bedroom",
     images: [
-      "/images/DSC02223.jpeg",
-      "/images/DSC02219.jpeg",
-      "/images/DSC02198.jpeg"
+      "/images/DFF440A7-0193-47CF-9773-5436061404B9.jpeg",
+      "/images/DSC02113.jpeg"
     ]
   },
   {
