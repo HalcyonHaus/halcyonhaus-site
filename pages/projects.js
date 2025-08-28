@@ -8,12 +8,12 @@ const projects = [
   {
     title: "Canyon Cottage Kitchen",
     images: [
+      "/images/CCKITCHEN1.JPG",
+      "/images/CCKITCHEN2.JPG",
       "/images/DSC02043.jpeg",
       "/images/DSC02031.jpeg",
       "/images/DSC02032.jpeg",
-      "/images/DSC02048-2.jpeg",
-      "/images/CCKITCHEN1.JPG",
-      "/images/CCKITCHEN2.JPG"
+      "/images/DSC02048-2.jpeg"
     ]
   },
   {
@@ -26,6 +26,8 @@ const projects = [
     {
     title: "Canyon Cottage Primary Bath",
     images: [
+      "/images/PRIMARYBATH2.JPG",
+      "/images/PRIMARYBATH1.JPG",
       "/images/DSC02081.jpeg",
       "/images/DSC02075.jpeg",
       "/images/DSC02092.jpeg",
@@ -44,6 +46,32 @@ const projects = [
       "/images/DSC01503.jpeg",
       "/images/7F3F1DD5-20A0-4377-A60E-CB6CBED5947A.jpeg",
       "/images/IMG_0640.jpeg"
+    ]
+  },
+  {
+    title: "French Modern Primary",
+    images: [
+      "/images/PRIMARY1.JPG",
+      "/images/PRIMARY2.JPG"
+    ]
+  },
+    {
+    title: "Country Escape Dining",
+    images: [
+      "/images/DINING1.JPG",
+      "/images/DINING2.JPG"
+    ]
+  },
+    {
+    title: "Mountain Escape Neutral Nursery",
+    images: [
+      "/images/NURSERY0.JPG",
+      "/images/PRIMARY1.JPG",
+      "/images/PRIMARY2.JPG",
+      "/images/PRIMARY3.JPG",
+      "/images/PRIMARY4.JPG",
+      "/images/PRIMARY5.JPG",
+      "/images/PRIMARY6.JPG"
     ]
   },
   {
