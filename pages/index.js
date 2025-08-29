@@ -4,8 +4,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const images = [
-  "/images/CCKITCHEN1.JPG",
-  "/images/DINING1.JPG",
+  "/images/HERO1.JPG",
+  "/images/HERO2.JPG",
   "/images/photo4.png",
   "/images/photo1.png",
 ];
