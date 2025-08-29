@@ -4,11 +4,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const images = [
-  "/images/HERO1.JPG",
-  "/images/HERO2.JPG",
+  "/images/NEWHERO1.JPG",
+  "/images/NEWHERO2.JPG",
   "/images/DINING2.JPG",
-  "/images/PRIMARYBATH00.JPG",
-  "/images/TWOTONEDKITCHEN1.JPG",
+  "/images/NEWHERO3.JPG",
+  "/images/NEWHERO4.JPG",
 ];
 
 export default function HomePage() {
