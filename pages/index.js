@@ -7,7 +7,7 @@ const images = [
   "/images/HERO1.JPG",
   "/images/HERO2.JPG",
   "/images/photo4.png",
-  "/images/photo1.png",
+  "/images/HERO3.png",
 ];
 
 export default function HomePage() {
