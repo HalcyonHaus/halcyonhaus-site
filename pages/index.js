@@ -1,142 +1,3 @@
-Homepage With Sidebar
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -162,7 +23,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-black text-white font-sans">
+    <div className="relative min-h-screen bg-black text-white font-sans overflow-hidden">
       <Head>
         <title>Halcyon Haus</title>
         <link
@@ -171,7 +32,7 @@ export default function HomePage() {
         />
       </Head>
 
-      {/* Slideshow */}
+      {/* Slideshow Background */}
       <div className="absolute inset-0 z-0">
         {images.map((src, index) => (
           <Image
@@ -191,17 +52,67 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-white bg-opacity-20 pointer-events-none" />
       </div>
 
-      {/* +MENU BUTTON */}
-      <header className="absolute top-0 right-0 z-30 p-6">
-        <button
-          onClick={() => setIsMenuOpen(true)}
-          className="uppercase text-xs tracking-widest font-inter text-white hover:text-neutral-400"
-        >
-          + Menu
-        </button>
-      </header>
+      {/* +MENU Button */}
+      <button
+        className="absolute top-6 right-6 z-30 text-white text-sm tracking-widest uppercase font-inter hover:text-neutral-300"
+        onClick={() => setIsMenuOpen(true)}
+      >
+        + Menu
+      </button>
 
-      {/* CENTERED TITLE */}
+      {/* Sidebar Menu */}
+      <div
+        className={`fixed top-0 right-0 h-full w-[25%] bg-[#f9f9f6] z-40 transform transition-all duration-1000 ease-in-out
+          ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+      >
+        <div className="p-6 text-black flex flex-col h-full font-inter text-xs tracking-widest">
+          <div className="flex justify-between items-start mb-6">
+            <div className="w-full flex justify-center">
+              <Image
+                src="/logos/HHLOGO.JPG"
+                alt="Halcyon Haus Logo"
+                width={80}
+                height={80}
+              />
+            </div>
+            <button
+              className="text-[10px] uppercase tracking-widest hover:text-neutral-500"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Close ×
+            </button>
+          </div>
+
+          {/* Bio */}
+          <p className="text-[10px] mb-8 leading-5 text-left">
+            I’m Nikka, a Colorado-based interior designer crafting warm, curated spaces rooted in California ease and elevated function.
+          </p>
+
+          {/* Links */}
+          <nav className="flex flex-col space-y-4 text-left">
+            <Link href="/projects" className="hover:text-neutral-500">PROJECTS</Link>
+            <Link href="/about" className="hover:text-neutral-500">ABOUT</Link>
+            <Link href="/contact" className="hover:text-neutral-500">GET IN TOUCH</Link>
+            <a href="https://www.shopltk.com/explore/halcyonhaus" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-500">
+              SHOP MY HOME
+            </a>
+          </nav>
+
+          {/* Instagram */}
+          <div className="mt-auto pt-10 text-left">
+            <a
+              href="https://www.instagram.com/halcyonhaus_"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[10px] uppercase tracking-widest hover:text-neutral-500"
+            >
+              @HALCYONHAUS_
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Centered Title */}
       <div className="absolute inset-0 z-10 flex items-center justify-center">
         <h1
           className="text-white text-[48px] md:text-[72px] font-bold tracking-widest text-center uppercase"
@@ -209,56 +120,6 @@ export default function HomePage() {
         >
           HALCYON HAUS
         </h1>
-      </div>
-
-      {/* SLIDE-OUT MENU */}
-      <div
-        className={`fixed top-0 right-0 h-full w-1/4 min-w-[280px] bg-[#f9f9f6] text-black z-50 px-6 py-6 transform transition-transform duration-500 ease-in-out ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="flex justify-end text-xs uppercase tracking-wide">
-          <button onClick={() => setIsMenuOpen(false)}>Close ×</button>
-        </div>
-
-        <div className="mt-6 flex flex-col items-center">
-          <img
-            src="/logos/HHLOGO.JPG"
-            alt="Halcyon Haus Logo"
-            width={80}
-            height={80}
-            className="object-contain"
-          />
-        </div>
-
-        <p className="mt-6 text-sm text-left font-inter leading-snug max-w-[220px]">
-          I’m Nikka, a Colorado-based interior designer crafting warm, curated spaces rooted in California ease and elevated function.
-        </p>
-
-        <nav className="mt-6 space-y-4 text-sm tracking-widest font-inter uppercase text-left">
-          <Link href="/projects" className="block hover:text-neutral-500">Projects</Link>
-          <Link href="/about" className="block hover:text-neutral-500">About</Link>
-          <Link href="/contact" className="block hover:text-neutral-500">Get In Touch</Link>
-          <a
-            href="https://www.shopltk.com/explore/halcyonhaus"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block hover:text-neutral-500"
-          >
-            Shop My Home
-          </a>
-        </nav>
-
-        <div className="absolute bottom-6 left-6 text-xs tracking-wider font-inter uppercase">
-          <a
-            href="https://www.instagram.com/halcyonhaus_"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-neutral-500"
-          >
-            @HALCYONHAUS_
-          </a>
-        </div>
       </div>
 
       <style jsx global>{`
