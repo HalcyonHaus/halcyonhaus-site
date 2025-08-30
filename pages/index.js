@@ -58,40 +58,54 @@ export default function HomePage() {
       </div>
 
       {/* Side Menu */}
-      <div
-        className={`fixed top-0 right-0 h-full bg-[#f9f9f6] text-black z-40 shadow-lg transition-transform duration-500 ease-in-out overflow-y-auto flex flex-col justify-between ${menuOpen ? 'translate-x-0' : 'translate-x-full'} w-1/4 min-w-[300px]`}
-      >
-        <div className="p-6">
-          <div className="flex justify-between items-start mb-8">
-            <Image src="/logos/HHLOGO.JPG" alt="Halcyon Haus Logo" width={40} height={40} />
-            <div className="text-xs uppercase tracking-widest cursor-pointer hover:text-neutral-400" onClick={() => setMenuOpen(false)}>
-              Close ×
-            </div>
-          </div>
-          <p className="mb-10 text-sm font-inter leading-relaxed">
-            I’m Nikka, a Colorado-based interior designer crafting warm, curated spaces rooted in California ease and elevated function.
-          </p>
-          <nav className="flex flex-col space-y-4 text-sm font-inter tracking-widest">
-            <Link href="/projects" passHref legacyBehavior>
-              <a className="hover:text-neutral-500">PROJECTS</a>
-            </Link>
-            <Link href="/about" passHref legacyBehavior>
-              <a className="hover:text-neutral-500">ABOUT</a>
-            </Link>
-            <Link href="/contact" passHref legacyBehavior>
-              <a className="hover:text-neutral-500">GET IN TOUCH</a>
-            </Link>
-            <a href="https://www.shopltk.com/explore/halcyonhaus" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-500">
-              SHOP MY HOME
-            </a>
-          </nav>
-        </div>
-        <div className="p-6 text-xs tracking-widest uppercase">
-          <a href="https://www.instagram.com/halcyonhaus_" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-500">
-            @HALCYONHAUS_
-          </a>
-        </div>
-      </div>
+  <div
+  className={`fixed top-0 right-0 h-full w-1/4 min-w-[280px] bg-[#f9f9f6] text-black z-50 px-6 py-6 transform transition-transform duration-500 ease-in-out ${
+    isMenuOpen ? "translate-x-0" : "translate-x-full"
+  }`}
+>
+  <div className="flex justify-end text-xs uppercase tracking-wide">
+    <button onClick={() => setIsMenuOpen(false)}>Close ×</button>
+  </div>
+
+  <div className="flex flex-col items-center mt-6">
+    <img
+      src="/logos/HHLOGO.JPG"
+      alt="Halcyon Haus Logo"
+      width={80}
+      height={80}
+      className="object-contain"
+    />
+
+    <p className="text-sm text-center mt-4 font-inter max-w-[220px] leading-snug">
+      I’m Nikka, a Colorado-based interior designer crafting warm, curated spaces rooted in California ease and elevated function.
+    </p>
+  </div>
+
+  <nav className="mt-6 space-y-4 text-sm tracking-widest font-inter uppercase">
+    <Link href="/projects" className="block hover:text-neutral-500">Projects</Link>
+    <Link href="/about" className="block hover:text-neutral-500">About</Link>
+    <Link href="/contact" className="block hover:text-neutral-500">Get In Touch</Link>
+    <a
+      href="https://www.shopltk.com/explore/halcyonhaus"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block hover:text-neutral-500"
+    >
+      Shop My Home
+    </a>
+  </nav>
+
+  <div className="absolute bottom-6 left-6 text-xs tracking-wider font-inter uppercase">
+    <a
+      href="https://www.instagram.com/halcyonhaus_"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-neutral-500"
+    >
+      @HALCYONHAUS_
+    </a>
+  </div>
+</div>
 
       {/* Centered Title */}
       <div className="absolute inset-0 z-10 flex items-center justify-center">
