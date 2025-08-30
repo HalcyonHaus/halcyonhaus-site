@@ -13,6 +13,7 @@ const images = [
 
 export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -31,7 +32,7 @@ export default function HomePage() {
         />
       </Head>
 
-      {/* Slideshow Background with fade */}
+      {/* Slideshow Background */}
       <div className="absolute inset-0 z-0">
         {images.map((src, index) => (
           <Image
@@ -51,26 +52,45 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-white bg-opacity-20 pointer-events-none" />
       </div>
 
-      {/* Navigation */}
-      <header className="absolute top-0 w-full z-20 px-6 pt-6 text-xs tracking-widest">
-        <nav className="flex justify-center sm:justify-end space-x-6 uppercase font-inter text-xs">
-          <Link href="/about" passHref legacyBehavior>
-            <a className="transition-colors duration-300 text-white hover:text-neutral-400">
-              About Me
-            </a>
-          </Link>
-          <Link href="/projects" passHref legacyBehavior>
-            <a className="transition-colors duration-300 text-white hover:text-neutral-400">
-              Projects
-            </a>
-          </Link>
-          <Link href="/contact" passHref legacyBehavior>
-            <a className="transition-colors duration-300 text-white hover:text-neutral-400">
-              Get In Touch
-            </a>
-          </Link>
-        </nav>
+      {/* +Menu Button */}
+      <header className="absolute top-0 right-0 z-20 px-6 pt-6 text-xs tracking-widest font-inter">
+        <button
+          onClick={() => setMenuOpen(true)}
+          className="uppercase text-white hover:text-neutral-400 transition-colors duration-300"
+        >
+          + Menu
+        </button>
       </header>
+
+      {/* Slide-out Menu */}
+      {menuOpen && (
+        <div className="fixed inset-0 z-30 bg-[#f9f9f6] text-black p-8 flex flex-col justify-between animate-slideInRight">
+          <div className="flex justify-end">
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="text-xs tracking-widest uppercase hover:text-neutral-500"
+            >
+              Close ×
+            </button>
+          </div>
+          <div className="flex flex-col space-y-6 text-sm uppercase tracking-widest font-inter">
+            <Link href="/projects">Projects</Link>
+            <Link href="/about">About</Link>
+            <Link href="/contact">Get In Touch</Link>
+            <Link href="/shop">Shop My Home</Link>
+          </div>
+          <div className="text-xs font-inter mt-8">
+            <a
+              href="https://instagram.com/halcyonhaus_"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              @halcyonhaus_
+            </a>
+          </div>
+        </div>
+      )}
 
       {/* Centered Title */}
       <div className="absolute inset-0 z-10 flex items-center justify-center">
@@ -91,6 +111,17 @@ export default function HomePage() {
         }
         .font-inter {
           font-family: 'Inter', sans-serif;
+        }
+        @keyframes slideInRight {
+          from {
+            transform: translateX(100%);
+          }
+          to {
+            transform: translateX(0);
+          }
+        }
+        .animate-slideInRight {
+          animation: slideInRight 0.3s ease-out;
         }
       `}</style>
     </div>
