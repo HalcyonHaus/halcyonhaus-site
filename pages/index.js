@@ -1,4 +1,3 @@
-// pages/index.js
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,7 +13,7 @@ const images = [
 
 export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -53,77 +52,82 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-white bg-opacity-20 pointer-events-none" />
       </div>
 
-      {/* +Menu button */}
-      <header className="absolute top-0 w-full z-30 px-5 pt-6 text-xs tracking-widest">
-        <nav className="flex justify-end font-inter text-xs">
-          <button
-            onClick={() => setSidebarOpen(true)}
-            className="transition-colors duration-300 text-white hover:text-neutral-400"
-          >
-            +MENU
-          </button>
-        </nav>
+      {/* +Menu Trigger */}
+      <header className="absolute top-6 right-7 z-30 text-xs tracking-widest">
+        <button
+          onClick={() => setSidebarOpen(true)}
+          className="font-inter text-white text-sm hover:text-neutral-300 transition"
+        >
+          + MENU
+        </button>
       </header>
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 right-0 h-full bg-[#f9f9f6] text-black z-50 transform transition-transform duration-500 ease-in-out ${
-          sidebarOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed top-0 right-0 h-full w-[25vw] min-w-[240px] bg-[#f9f9f6] text-black z-50 transform transition-transform duration-500 ${
+          isSidebarOpen ? "translate-x-0" : "translate-x-full"
         }`}
-        style={{ width: "25vw", minWidth: "280px", maxWidth: "360px" }}
       >
-        <div className="flex flex-col h-full px-6 pt-8 pb-4 font-inter text-xs uppercase tracking-wider">
-          <div className="flex justify-between items-start mb-6">
-            <div></div>
-            <button
-              className="text-[11px] tracking-widest"
-              onClick={() => setSidebarOpen(false)}
-            >
-              CLOSE ×
-            </button>
+        <div className="p-6 flex flex-col h-full justify-between">
+          <div>
+            <div className="flex justify-end">
+              <button
+                onClick={() => setSidebarOpen(false)}
+                className="text-xs tracking-widest font-inter"
+              >
+                CLOSE &times;
+              </button>
+            </div>
+            <div className="flex justify-center mt-2">
+              <Image
+                src="/logos/HHLOGO.JPG"
+                alt="HH Logo"
+                width={80}
+                height={80}
+              />
+            </div>
+            <p className="mt-8 px-1 text-sm text-left leading-snug font-inter">
+              I’m Nikka, a Colorado-based interior designer crafting warm,
+              curated spaces rooted in California ease and elevated function.
+            </p>
+            <nav className="mt-10 space-y-5 text-left text-sm font-inter uppercase tracking-widest">
+              <Link href="/projects">
+                <a className="hover:text-neutral-500 transition-colors duration-200">
+                  Projects
+                </a>
+              </Link>
+              <Link href="/about">
+                <a className="hover:text-neutral-500 transition-colors duration-200">
+                  About
+                </a>
+              </Link>
+              <Link href="/contact">
+                <a className="hover:text-neutral-500 transition-colors duration-200">
+                  Get In Touch
+                </a>
+              </Link>
+              <Link
+                href="https://www.shopltk.com/explore/halcyonhaus"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <a className="hover:text-neutral-500 transition-colors duration-200">
+                  Shop My Home
+                </a>
+              </Link>
+            </nav>
           </div>
-
-          <div className="mb-4 flex justify-center">
-            <Image
-              src="/logos/HHLOGO.JPG"
-              alt="Halcyon Haus Logo"
-              width={80}
-              height={80}
-            />
-          </div>
-
-          <div className="text-[11px] tracking-wide leading-relaxed text-left mb-8">
-            I’m Nikka, a Colorado-based interior designer crafting warm, curated spaces rooted in California ease and elevated function.
-          </div>
-
-          <nav className="flex flex-col space-y-4 text-left mb-auto">
-            <Link href="/projects" legacyBehavior>
-              <a className="hover:text-neutral-400 transition-colors duration-200">PROJECTS</a>
-            </Link>
-            <Link href="/about" legacyBehavior>
-              <a className="hover:text-neutral-400 transition-colors duration-200">ABOUT</a>
-            </Link>
-            <Link href="/contact" legacyBehavior>
-              <a className="hover:text-neutral-400 transition-colors duration-200">GET IN TOUCH</a>
-            </Link>
-            <a
-              href="https://www.shopltk.com/explore/halcyonhaus"
+          <div className="pl-1 mb-2">
+            <Link
+              href="https://www.instagram.com/halcyonhaus_"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-neutral-400 transition-colors duration-200"
             >
-              SHOP MY HOME
-            </a>
-          </nav>
-
-          <a
-            href="https://www.instagram.com/halcyonhaus_"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-12 text-[11px] tracking-widest hover:text-neutral-400"
-          >
-            @HALCYONHAUS_
-          </a>
+              <a className="uppercase text-sm tracking-widest font-inter hover:text-neutral-500">
+                @HALCYONHAUS_
+              </a>
+            </Link>
+          </div>
         </div>
       </div>
 
