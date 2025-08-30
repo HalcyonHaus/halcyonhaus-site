@@ -13,7 +13,7 @@ const images = [
 
 export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -52,45 +52,17 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-white bg-opacity-20 pointer-events-none" />
       </div>
 
-      {/* +Menu Button */}
-      <header className="absolute top-0 right-0 z-20 px-6 pt-6 text-xs tracking-widest font-inter">
-        <button
-          onClick={() => setMenuOpen(true)}
-          className="uppercase text-white hover:text-neutral-400 transition-colors duration-300"
-        >
-          + Menu
-        </button>
-      </header>
-
-      {/* Slide-out Menu */}
-      {menuOpen && (
-        <div className="fixed inset-0 z-30 bg-[#f9f9f6] text-black p-8 flex flex-col justify-between animate-slideInRight">
-          <div className="flex justify-end">
-            <button
-              onClick={() => setMenuOpen(false)}
-              className="text-xs tracking-widest uppercase hover:text-neutral-500"
-            >
-              Close ×
-            </button>
-          </div>
-          <div className="flex flex-col space-y-6 text-sm uppercase tracking-widest font-inter">
-            <Link href="/projects">Projects</Link>
-            <Link href="/about">About</Link>
-            <Link href="/contact">Get In Touch</Link>
-            <Link href="/shop">Shop My Home</Link>
-          </div>
-          <div className="text-xs font-inter mt-8">
-            <a
-              href="https://instagram.com/halcyonhaus_"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              @halcyonhaus_
-            </a>
-          </div>
+      {/* +Menu */}
+      <header className="absolute top-0 w-full z-20 px-6 pt-6 text-xs tracking-widest">
+        <div className="flex justify-end">
+          <button
+            onClick={() => setIsMenuOpen(true)}
+            className="uppercase font-inter text-sm hover:text-neutral-400 transition"
+          >
+            + Menu
+          </button>
         </div>
-      )}
+      </header>
 
       {/* Centered Title */}
       <div className="absolute inset-0 z-10 flex items-center justify-center">
@@ -102,6 +74,57 @@ export default function HomePage() {
         </h1>
       </div>
 
+      {/* Slide-Out Drawer */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 bg-[#f9f9f6] text-black z-30 transition-transform duration-300 ease-in-out">
+          <div className="flex justify-end p-6">
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              className="uppercase text-xs tracking-widest hover:text-gray-500"
+            >
+              Close ×
+            </button>
+          </div>
+
+          <div className="flex flex-col items-center px-8">
+            {/* Logo */}
+            <Image
+              src="/logos/HHLOGO.JPG"
+              alt="HH Logo"
+              width={80}
+              height={80}
+              className="mb-4"
+            />
+
+            {/* Short Bio */}
+            <p className="text-center text-sm text-neutral-700 max-w-sm mb-6 font-inter leading-relaxed">
+              I'm Nikka, a Colorado-based interior designer crafting warm, curated spaces rooted in California ease and elevated function.
+            </p>
+
+            {/* Nav Links */}
+            <nav className="flex flex-col items-center space-y-4 uppercase text-sm font-inter tracking-wide">
+              <Link href="/projects">
+                <a className="hover:text-neutral-500 transition-colors">Projects</a>
+              </Link>
+              <Link href="/about">
+                <a className="hover:text-neutral-500 transition-colors">About</a>
+              </Link>
+              <Link href="/contact">
+                <a className="hover:text-neutral-500 transition-colors">Get In Touch</a>
+              </Link>
+              <Link href="https://www.shopltk.com/explore/halcyonhaus_" target="_blank" rel="noopener noreferrer">
+                <a className="hover:text-neutral-500 transition-colors">Shop My Home</a>
+              </Link>
+            </nav>
+
+            {/* Footer */}
+            <div className="mt-12 text-xs tracking-widest text-neutral-600 font-inter">
+              @HALCYONHAUS_
+            </div>
+          </div>
+        </div>
+      )}
+
       <style jsx global>{`
         body {
           margin: 0;
@@ -111,17 +134,6 @@ export default function HomePage() {
         }
         .font-inter {
           font-family: 'Inter', sans-serif;
-        }
-        @keyframes slideInRight {
-          from {
-            transform: translateX(100%);
-          }
-          to {
-            transform: translateX(0);
-          }
-        }
-        .animate-slideInRight {
-          animation: slideInRight 0.3s ease-out;
         }
       `}</style>
     </div>
