@@ -1,3 +1,5 @@
+// pages/index.js
+
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,7 +15,7 @@ const images = [
 
 export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -32,7 +34,7 @@ export default function HomePage() {
         />
       </Head>
 
-      {/* Slideshow Background */}
+      {/* Background slideshow */}
       <div className="absolute inset-0 z-0">
         {images.map((src, index) => (
           <Image
@@ -52,93 +54,57 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-white bg-opacity-20 pointer-events-none" />
       </div>
 
-      {/* +Menu Trigger */}
-      <header className="absolute top-6 right-7 z-30 text-xs tracking-widest">
-        <button
-          onClick={() => setSidebarOpen(true)}
-          className="font-inter text-white text-sm hover:text-neutral-300 transition"
-        >
-          + MENU
-        </button>
-      </header>
-
-      {/* Sidebar */}
-      <div
-        className={`fixed top-0 right-0 h-full w-[25vw] min-w-[240px] bg-[#f9f9f6] text-black z-50 transform transition-transform duration-700 ease-in-out
-          ${isSidebarOpen ? "translate-x-0" : "translate-x-full"}`}
+      {/* +Menu Button */}
+      <button
+        className="absolute top-6 right-6 z-30 text-white text-sm tracking-widest uppercase font-inter hover:text-neutral-300"
+        onClick={() => setSidebarOpen(true)}
       >
-        <div className="p-6 flex flex-col h-full justify-between font-inter">
-          <div>
-            <div className="flex justify-end">
-              <button
-                onClick={() => setSidebarOpen(false)}
-                className="text-xs tracking-widest font-inter"
-              >
-                CLOSE ×
-              </button>
-            </div>
-            <div className="flex justify-center mt-4 mb-4">
-              <Image
-                src="/logos/HHLOGO.JPG"
-                alt="HH Logo"
-                width={80}
-                height={80}
-              />
-            </div>
-            <p className="text-left text-sm text-neutral-800 leading-relaxed">
-              I’m Nikka, a Colorado-based interior designer crafting warm,
-              curated spaces rooted in California ease and elevated function.
-            </p>
-            <nav className="mt-10 space-y-4 text-left text-sm">
-              <div>
-                <Link href="/projects">
-                  <a className="hover:text-neutral-500 transition-colors duration-200">
-                    Projects
-                  </a>
-                </Link>
-              </div>
-              <div>
-                <Link href="/about">
-                  <a className="hover:text-neutral-500 transition-colors duration-200">
-                    About
-                  </a>
-                </Link>
-              </div>
-              <div>
-                <Link href="/contact">
-                  <a className="hover:text-neutral-500 transition-colors duration-200">
-                    Get In Touch
-                  </a>
-                </Link>
-              </div>
-              <div>
-                <Link
-                  href="https://www.shopltk.com/explore/halcyonhaus"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <a className="hover:text-neutral-500 transition-colors duration-200">
-                    Shop My Home
-                  </a>
-                </Link>
-              </div>
-            </nav>
+        + Menu
+      </button>
+
+      {/* Sidebar Menu */}
+      <div
+        className={`fixed top-0 right-0 h-full bg-[#f9f9f6] z-40 transform transition-transform duration-600 ease-in-out ${
+          sidebarOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+        style={{ width: "25vw", maxWidth: "400px", transitionDuration: "900ms" }}
+      >
+        <div className="h-full px-8 py-8 flex flex-col justify-start items-start space-y-6 font-inter text-black">
+          {/* Close button */}
+          <div className="self-end text-xs uppercase cursor-pointer" onClick={() => setSidebarOpen(false)}>
+            Close ×
           </div>
-          <div className="pl-1 mb-2">
-            <Link
-              href="https://www.instagram.com/halcyonhaus_"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <a className="uppercase text-sm tracking-widest hover:text-neutral-500">
-                @halcyonhaus_
-              </a>
+
+          {/* Logo */}
+          <div className="w-[90px] h-[90px] relative mb-4 mt-2">
+            <Image src="/logos/HHLOGO.JPG" alt="HH Logo" layout="fill" objectFit="contain" />
+          </div>
+
+          {/* Bio */}
+          <p className="text-sm text-left text-black font-inter leading-relaxed mb-4" style={{ maxWidth: "90%" }}>
+            I’m Nikka, a Colorado-based interior designer crafting warm, curated spaces rooted in California ease and elevated function.
+          </p>
+
+          {/* Navigation links */}
+          <nav className="flex flex-col space-y-5 text-xs uppercase tracking-widest font-medium text-black w-full pl-1">
+            <Link href="/projects" className="hover:text-neutral-500">PROJECTS</Link>
+            <Link href="/about" className="hover:text-neutral-500">ABOUT</Link>
+            <Link href="/contact" className="hover:text-neutral-500">GET IN TOUCH</Link>
+            <Link href="https://www.shopltk.com/explore/halcyonhaus" target="_blank" className="hover:text-neutral-500">
+              SHOP MY HOME
             </Link>
+          </nav>
+
+          {/* Social Link */}
+          <div className="mt-auto text-[11px] tracking-widest font-inter uppercase">
+            <a href="https://www.instagram.com/halcyonhaus_" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-500">
+              @halcyonhaus_
+            </a>
           </div>
         </div>
       </div>
 
-      {/* Centered Title */}
+      {/* Centered title */}
       <div className="absolute inset-0 z-10 flex items-center justify-center">
         <h1
           className="text-white text-[48px] md:text-[72px] font-bold tracking-widest text-center uppercase"
@@ -148,6 +114,7 @@ export default function HomePage() {
         </h1>
       </div>
 
+      {/* Global styles */}
       <style jsx global>{`
         body {
           margin: 0;
