@@ -66,10 +66,10 @@ export default function HomePage() {
           ${sidebarOpen ? "translate-x-0" : "translate-x-full"}
           w-full sm:w-[25vw] sm:max-w-[400px]`}
       >
-        <div className="h-full px-8 pt-4 pb-8 flex flex-col justify-start items-start font-Playfair Display text-black">
+        <div className="h-full px-8 pt-3 pb-8 flex flex-col justify-start items-start font-Playfair Display text-black">
           {/* Close button */}
           <div
-  className="self-end text-[36px] font-extralight tracking-wide cursor-pointer hover:opacity-60 transition-opacity duration-300"
+  className="self-end text-[38px] font-extralight tracking-wide cursor-pointer hover:opacity-70 transition-opacity duration-300"
   onClick={() => setSidebarOpen(false)}
 >
  ×
