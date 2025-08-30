@@ -54,7 +54,7 @@ export default function HomePage() {
 
       {/* +Menu Button */}
       <button
-        className="absolute top-6 right-8 z-30 text-white text-sm tracking-widest uppercase font-inter hover:text-neutral-300"
+        className="absolute top-6 right-9 z-30 text-white text-sm tracking-widest uppercase font-inter hover:text-neutral-300"
         onClick={() => setSidebarOpen(true)}
       >
         + Menu
