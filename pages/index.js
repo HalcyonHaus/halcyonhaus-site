@@ -112,7 +112,7 @@ export default function HomePage() {
       {/* Centered title */}
       <div className="absolute inset-0 z-10 flex items-center justify-center">
         <h1
-          className="text-white text-[48px] md:text-[72px] font-bold tracking-widest text-center uppercase"
+          className="text-white text-[54px] md:text-[72px] font-normal tracking-[0.25em] text-center uppercase"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           HALCYON HAUS
