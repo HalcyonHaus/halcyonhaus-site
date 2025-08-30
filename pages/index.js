@@ -76,7 +76,7 @@ export default function HomePage() {
 </div>
 
           {/* Logo */}
-          <div className="w-[130px] h-[130px] relative mt-4 mx-auto">
+          <div className="w-[130px] h-[130px] relative mt-2 mx-auto">
             <Image src="/logos/HHLOGO2.png" alt="HH Logo" layout="fill" objectFit="contain" />
           </div>
 
