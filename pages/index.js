@@ -54,7 +54,7 @@ export default function HomePage() {
 
       {/* +Menu Button */}
       <button
-        className="absolute top-6 right-7 z-30 text-white text-sm tracking-widest uppercase font-inter hover:text-neutral-300"
+        className="absolute top-6 right-8 z-30 text-white text-sm tracking-widest uppercase font-inter hover:text-neutral-300"
         onClick={() => setSidebarOpen(true)}
       >
         + Menu
@@ -83,12 +83,12 @@ export default function HomePage() {
               Welcome to Halcyon Haus — an interior design studio founded by Nikka Winchell, rooted in thoughtful, transitional design.
             </p>
             <p>
-              At Halcyon Haus, I guide you through a warm, hands-on design journey rooted in transitional style—where tradition meets modern simplicity. With an eye for curated strategy and balanced composition, every project is tailored to your lifestyle and vision.
+              At Halcyon Haus, I guide you through a warm, hands-on design journey rooted in transitional style, where tradition meets modern simplicity. With an eye for curated strategy and balanced composition, every project is tailored to your lifestyle and vision.
             </p>
           </div>
 
           {/* Navigation links */}
-          <nav className="flex flex-col space-y-5 text-xs uppercase tracking-widest font-medium text-black w-full pl-1 mt-12">
+          <nav className="flex flex-col space-y-5 text-sm uppercase tracking-widest font-medium text-black w-full pl-1 mt-12">
             <Link href="/projects" className="hover:text-neutral-500">PROJECTS</Link>
             <Link href="/about" className="hover:text-neutral-500">ABOUT</Link>
             <Link href="/contact" className="hover:text-neutral-500">GET IN TOUCH</Link>
