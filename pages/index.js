@@ -23,7 +23,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-black tracking-[0.3em] text-white font-sans">
+    <div className="relative min-h-screen bg-black tracking-wide text-white font-sans">
       <Head>
         <title>Halcyon Haus</title>
         <link
