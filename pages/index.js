@@ -62,40 +62,35 @@ export default function HomePage() {
 
       {/* Sidebar Menu */}
       <div
-        className={`fixed top-0 right-0 h-full bg-[#f9f9f6] z-40 transform transition-transform ease-in-out ${
-          sidebarOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-        style={{ width: "25vw", maxWidth: "400px", transitionDuration: "1100ms" }}
+        className={`fixed top-0 right-0 h-full bg-[#f9f9f6] z-40 transform transition-transform duration-700 ease-in-out 
+          ${sidebarOpen ? "translate-x-0" : "translate-x-full"}
+        `}
+        style={{ width: "100vw", maxWidth: "400px" }}
       >
-        <div className="h-full px-8 py-8 flex flex-col justify-start items-start font-inter text-black">
+        <div className="h-full px-8 py-8 flex flex-col justify-start items-start font-inter text-black 
+          md:w-[25vw] md:max-w-[400px] md:px-8 md:py-8">
           {/* Close button */}
-          <div
-            className="self-end text-xs uppercase cursor-pointer"
-            onClick={() => setSidebarOpen(false)}
-          >
+          <div className="self-end text-xs uppercase cursor-pointer" onClick={() => setSidebarOpen(false)}>
             Close ×
           </div>
 
           {/* Logo */}
-          <div className="w-full flex justify-center mt-6 mb-6">
-            <div className="relative w-[90px] h-[90px]">
-              <Image
-                src="/logos/HHLOGO.JPG"
-                alt="HH Logo"
-                layout="fill"
-                objectFit="contain"
-                priority
-              />
-            </div>
+          <div className="w-[90px] h-[90px] relative mt-10 mb-6 self-center">
+            <Image src="/logos/HHLOGO.JPG" alt="HH Logo" layout="fill" objectFit="contain" />
           </div>
 
           {/* Bio */}
-          <p className="text-sm text-left text-black font-inter leading-relaxed mb-10" style={{ maxWidth: "90%" }}>
-            I’m Nikka, a Colorado-based interior designer crafting warm, curated spaces rooted in California ease and elevated function.
-          </p>
+          <div className="text-sm text-left text-black font-inter leading-relaxed mb-18 space-y-4" style={{ maxWidth: "90%" }}>
+            <p>
+              I’m Nikka, a Colorado-based interior designer crafting warm, curated spaces rooted in California ease and elevated function.
+            </p>
+            <p>
+              With a focus on timeless materials and personalized design, I guide clients through thoughtful renovations that feel both elevated and approachable.
+            </p>
+          </div>
 
           {/* Navigation links */}
-          <nav className="flex flex-col space-y-6 text-sm uppercase tracking-widest font-medium text-black w-full pl-2">
+          <nav className="flex flex-col space-y-5 text-sm uppercase tracking-widest font-medium text-black w-full pl-1">
             <Link href="/projects" className="hover:text-neutral-500">PROJECTS</Link>
             <Link href="/about" className="hover:text-neutral-500">ABOUT</Link>
             <Link href="/contact" className="hover:text-neutral-500">GET IN TOUCH</Link>
@@ -105,13 +100,8 @@ export default function HomePage() {
           </nav>
 
           {/* Social Link */}
-          <div className="mt-auto pt-12 pl-2 text-[11px] tracking-widest font-inter uppercase">
-            <a
-              href="https://www.instagram.com/halcyonhaus_"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-neutral-500"
-            >
+          <div className="mt-auto text-[11px] tracking-widest font-inter uppercase">
+            <a href="https://www.instagram.com/halcyonhaus_" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-500">
               @halcyonhaus_
             </a>
           </div>
@@ -138,6 +128,12 @@ export default function HomePage() {
         }
         .font-inter {
           font-family: 'Inter', sans-serif;
+        }
+        @media (min-width: 768px) {
+          .sidebar-open {
+            width: 25vw;
+            max-width: 400px;
+          }
         }
       `}</style>
     </div>
