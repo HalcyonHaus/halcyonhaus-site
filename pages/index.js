@@ -1,3 +1,4 @@
+// pages/index.js
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,7 +14,7 @@ const images = [
 
 export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -23,7 +24,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-black text-white font-sans overflow-hidden">
+    <div className="relative min-h-screen bg-black text-white font-sans">
       <Head>
         <title>Halcyon Haus</title>
         <link
@@ -52,63 +53,77 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-white bg-opacity-20 pointer-events-none" />
       </div>
 
-      {/* +MENU Button */}
-      <button
-        className="absolute top-6 right-6 z-30 text-white text-sm tracking-widest uppercase font-inter hover:text-neutral-300"
-        onClick={() => setIsMenuOpen(true)}
-      >
-        + Menu
-      </button>
+      {/* +Menu button */}
+      <header className="absolute top-0 w-full z-30 px-5 pt-6 text-xs tracking-widest">
+        <nav className="flex justify-end font-inter text-xs">
+          <button
+            onClick={() => setSidebarOpen(true)}
+            className="transition-colors duration-300 text-white hover:text-neutral-400"
+          >
+            +MENU
+          </button>
+        </nav>
+      </header>
 
-      {/* Sidebar Menu */}
+      {/* Sidebar */}
       <div
-        className={`fixed top-0 right-0 h-full w-[25%] bg-[#f9f9f6] z-40 transform transition-all duration-1000 ease-in-out
-          ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 h-full bg-[#f9f9f6] text-black z-50 transform transition-transform duration-500 ease-in-out ${
+          sidebarOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+        style={{ width: "25vw", minWidth: "280px", maxWidth: "360px" }}
       >
-        <div className="p-6 text-black flex flex-col h-full font-inter text-xs tracking-widest">
+        <div className="flex flex-col h-full px-6 pt-8 pb-4 font-inter text-xs uppercase tracking-wider">
           <div className="flex justify-between items-start mb-6">
-            <div className="w-full flex justify-center">
-              <Image
-                src="/logos/HHLOGO.JPG"
-                alt="Halcyon Haus Logo"
-                width={80}
-                height={80}
-              />
-            </div>
+            <div></div>
             <button
-              className="text-[10px] uppercase tracking-widest hover:text-neutral-500"
-              onClick={() => setIsMenuOpen(false)}
+              className="text-[11px] tracking-widest"
+              onClick={() => setSidebarOpen(false)}
             >
-              Close ×
+              CLOSE ×
             </button>
           </div>
 
-          {/* Bio */}
-          <p className="text-[10px] mb-8 leading-5 text-left">
-            I’m Nikka, a Colorado-based interior designer crafting warm, curated spaces rooted in California ease and elevated function.
-          </p>
+          <div className="mb-4 flex justify-center">
+            <Image
+              src="/logos/HHLOGO.JPG"
+              alt="Halcyon Haus Logo"
+              width={80}
+              height={80}
+            />
+          </div>
 
-          {/* Links */}
-          <nav className="flex flex-col space-y-4 text-left">
-            <Link href="/projects" className="hover:text-neutral-500">PROJECTS</Link>
-            <Link href="/about" className="hover:text-neutral-500">ABOUT</Link>
-            <Link href="/contact" className="hover:text-neutral-500">GET IN TOUCH</Link>
-            <a href="https://www.shopltk.com/explore/halcyonhaus" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-500">
+          <div className="text-[11px] tracking-wide leading-relaxed text-left mb-8">
+            I’m Nikka, a Colorado-based interior designer crafting warm, curated spaces rooted in California ease and elevated function.
+          </div>
+
+          <nav className="flex flex-col space-y-4 text-left mb-auto">
+            <Link href="/projects" legacyBehavior>
+              <a className="hover:text-neutral-400 transition-colors duration-200">PROJECTS</a>
+            </Link>
+            <Link href="/about" legacyBehavior>
+              <a className="hover:text-neutral-400 transition-colors duration-200">ABOUT</a>
+            </Link>
+            <Link href="/contact" legacyBehavior>
+              <a className="hover:text-neutral-400 transition-colors duration-200">GET IN TOUCH</a>
+            </Link>
+            <a
+              href="https://www.shopltk.com/explore/halcyonhaus"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-neutral-400 transition-colors duration-200"
+            >
               SHOP MY HOME
             </a>
           </nav>
 
-          {/* Instagram */}
-          <div className="mt-auto pt-10 text-left">
-            <a
-              href="https://www.instagram.com/halcyonhaus_"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[10px] uppercase tracking-widest hover:text-neutral-500"
-            >
-              @HALCYONHAUS_
-            </a>
-          </div>
+          <a
+            href="https://www.instagram.com/halcyonhaus_"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-12 text-[11px] tracking-widest hover:text-neutral-400"
+          >
+            @HALCYONHAUS_
+          </a>
         </div>
       </div>
 
