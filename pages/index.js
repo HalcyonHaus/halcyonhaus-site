@@ -69,7 +69,7 @@ export default function HomePage() {
         <div className="h-full px-8 py-8 flex flex-col justify-start items-start font-inter text-black">
           {/* Close button */}
           <div
-  className="self-end text-2xl cursor-pointer"
+  className="self-end text-[32px] font-light tracking-wide cursor-pointer hover:opacity-60 transition-opacity duration-300"
   onClick={() => setSidebarOpen(false)}
 >
   ×
