@@ -101,7 +101,7 @@ export default function HomePage() {
           </nav>
 
           {/* Social Link */}
-          <div className="mt-auto text-[13px] tracking-widest font-inter uppercase pt-12">
+          <div className="mt-auto text-[12px] tracking-widest font-inter uppercase pt-12">
             <a href="https://www.instagram.com/halcyonhaus_" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-500">
               @HALCYONHAUS_
             </a>
