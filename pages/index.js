@@ -68,9 +68,12 @@ export default function HomePage() {
       >
         <div className="h-full px-8 py-8 flex flex-col justify-start items-start font-inter text-black">
           {/* Close button */}
-          <div className="self-end text-xs uppercase cursor-pointer" onClick={() => setSidebarOpen(false)}>
-            Close ×
-          </div>
+          <div
+  className="self-end text-2xl cursor-pointer"
+  onClick={() => setSidebarOpen(false)}
+>
+  ×
+</div>
 
           {/* Logo */}
           <div className="w-[90px] h-[90px] relative mt-10 mx-auto">
