@@ -23,7 +23,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-black text-white font-sans">
+    <div className="relative min-h-screen bg-black text-white font-sans overflow-hidden">
       <Head>
         <title>Halcyon Haus</title>
         <link
@@ -52,48 +52,46 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-white bg-opacity-20 pointer-events-none" />
       </div>
 
-      {/* +Menu button */}
-      <div className="absolute top-5 right-5 z-30 text-xs tracking-widest font-inter uppercase cursor-pointer text-white hover:text-neutral-300 text-[11px]" onClick={() => setMenuOpen(true)}>
+      {/* Menu Button */}
+      <div className="absolute top-6 right-6 z-30 text-xs tracking-widest uppercase font-inter cursor-pointer text-white hover:text-neutral-400" onClick={() => setMenuOpen(true)}>
         + Menu
       </div>
 
-      {/* Slide-out Menu */}
-      {menuOpen && (
-        <div className="fixed top-0 right-0 h-full w-[20%] max-w-[280px] bg-[#f9f9f6] text-black z-40 px-6 pt-6 pb-8 overflow-y-auto shadow-lg">
-          <div className="flex justify-end text-xs uppercase tracking-widest cursor-pointer hover:text-neutral-500" onClick={() => setMenuOpen(false)}>
-            Close ×
-          </div>
-
-          <div className="mt-6">
-            <div className="text-center">
-              <img src="/logos/HHLOGO.JPG" alt="Halcyon Haus Logo" className="mx-auto w-8 h-8 object-contain mb-4" />
-            </div>
-            <p className="text-[12px] leading-snug tracking-wide font-inter text-left mb-6">
-              I’m Nikka, a Colorado-based interior designer crafting warm, curated spaces rooted in California ease and elevated function.
-            </p>
-            <div className="flex flex-col items-start gap-4 text-sm uppercase font-inter tracking-widest">
-              <Link href="/projects" passHref legacyBehavior>
-                <a className="hover:text-neutral-500">Projects</a>
-              </Link>
-              <Link href="/about" passHref legacyBehavior>
-                <a className="hover:text-neutral-500">About</a>
-              </Link>
-              <Link href="/contact" passHref legacyBehavior>
-                <a className="hover:text-neutral-500">Get In Touch</a>
-              </Link>
-              <Link href="https://www.shopltk.com/explore/halcyonhaus" target="_blank" rel="noopener noreferrer" passHref legacyBehavior>
-                <a className="hover:text-neutral-500">Shop My Home</a>
-              </Link>
-            </div>
-
-            <div className="mt-8">
-              <Link href="https://www.instagram.com/halcyonhaus_" target="_blank" rel="noopener noreferrer" passHref legacyBehavior>
-                <a className="text-xs uppercase tracking-widest font-inter hover:text-neutral-500">@HALCYONHAUS_</a>
-              </Link>
+      {/* Side Menu */}
+      <div
+        className={`fixed top-0 right-0 h-full bg-[#f9f9f6] text-black z-40 shadow-lg transition-transform duration-500 ease-in-out overflow-y-auto flex flex-col justify-between ${menuOpen ? 'translate-x-0' : 'translate-x-full'} w-1/4 min-w-[300px]`}
+      >
+        <div className="p-6">
+          <div className="flex justify-between items-start mb-8">
+            <Image src="/logos/HHLOGO.JPG" alt="Halcyon Haus Logo" width={40} height={40} />
+            <div className="text-xs uppercase tracking-widest cursor-pointer hover:text-neutral-400" onClick={() => setMenuOpen(false)}>
+              Close ×
             </div>
           </div>
+          <p className="mb-10 text-sm font-inter leading-relaxed">
+            I’m Nikka, a Colorado-based interior designer crafting warm, curated spaces rooted in California ease and elevated function.
+          </p>
+          <nav className="flex flex-col space-y-4 text-sm font-inter tracking-widest">
+            <Link href="/projects" passHref legacyBehavior>
+              <a className="hover:text-neutral-500">PROJECTS</a>
+            </Link>
+            <Link href="/about" passHref legacyBehavior>
+              <a className="hover:text-neutral-500">ABOUT</a>
+            </Link>
+            <Link href="/contact" passHref legacyBehavior>
+              <a className="hover:text-neutral-500">GET IN TOUCH</a>
+            </Link>
+            <a href="https://www.shopltk.com/explore/halcyonhaus" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-500">
+              SHOP MY HOME
+            </a>
+          </nav>
         </div>
-      )}
+        <div className="p-6 text-xs tracking-widest uppercase">
+          <a href="https://www.instagram.com/halcyonhaus_" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-500">
+            @HALCYONHAUS_
+          </a>
+        </div>
+      </div>
 
       {/* Centered Title */}
       <div className="absolute inset-0 z-10 flex items-center justify-center">
