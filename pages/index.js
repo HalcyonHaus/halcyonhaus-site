@@ -86,7 +86,7 @@ export default function HomePage() {
               Welcome to Halcyon Haus — an interior design studio founded by Nikka Winchell, rooted in thoughtful, transitional design.
             </p>
             <p>
-              At Halcyon Haus, I guide you through a hands-on design journey rooted in transitional style, where tradition meets modern simplicity. Designing spaces coast to coast, from decor selection to full-service design.
+              Designing spaces coast to coast, from decor selection to full-service design.
             </p>
           </div>
 
@@ -94,6 +94,7 @@ export default function HomePage() {
           <nav className="flex flex-col space-y-5 text-sm uppercase tracking-widest font-normal text-black w-full pl-1 mt-12">
             <Link href="/projects" className="hover:text-neutral-500">PROJECTS</Link>
             <Link href="/about" className="hover:text-neutral-500">ABOUT</Link>
+            <Link href="/services" className=hover:text-neutral-500">SERVICES</Link>
             <Link href="/contact" className="hover:text-neutral-500">WORK TOGETHER</Link>
             <Link href="https://www.shopltk.com/explore/halcyonhaus" target="_blank" className="hover:text-neutral-500">
               SHOP MY HOME
