@@ -76,7 +76,7 @@ export default function HomePage() {
 
       {/* Slide-Out Drawer */}
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-[#f9f9f6] text-black z-30 transition-transform duration-300 ease-in-out">
+        <div className="fixed top-0 right-0 h-full w-full md:w-[30%] bg-[#f9f9f6] text-black z-30 transition-transform duration-300 ease-in-out">
           <div className="flex justify-end p-6">
             <button
               onClick={() => setIsMenuOpen(false)}
@@ -118,7 +118,7 @@ export default function HomePage() {
             </nav>
 
             {/* Footer */}
-            <div className="mt-12 text-xs tracking-widest text-neutral-600 font-inter">
+            <div className="mt-12 text-xs tracking-widest text-neutral-600 font-inter uppercase">
               @HALCYONHAUS_
             </div>
           </div>
