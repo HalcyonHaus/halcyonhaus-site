@@ -77,7 +77,7 @@ export default function HomePage() {
 
           {/* Logo */}
           <div className="w-[90px] h-[90px] relative mt-10 mx-auto">
-            <Image src="/logos/HHLOGO2.JPG" alt="HH Logo" layout="fill" objectFit="contain" />
+            <Image src="/logos/HHLOGO2.png" alt="HH Logo" layout="fill" objectFit="contain" />
           </div>
 
           {/* Bio */}
