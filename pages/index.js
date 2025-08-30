@@ -113,7 +113,7 @@ export default function HomePage() {
       <div className="absolute inset-0 z-10 flex items-center justify-center">
         <h1
           className="text-white text-[48px] md:text-[72px] font-bold tracking-widest text-center uppercase"
-          style={{ fontFamily: "'Cormorant Garamond', serif" }}
+          style={{ fontFamily: "'Playfair Display', serif" }}
         >
           HALCYON HAUS
         </h1>
