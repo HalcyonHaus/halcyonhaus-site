@@ -94,7 +94,7 @@ export default function HomePage() {
           <nav className="flex flex-col space-y-5 text-sm uppercase tracking-widest font-normal text-black w-full pl-1 mt-12">
             <Link href="/projects" className="hover:text-neutral-500">PROJECTS</Link>
             <Link href="/about" className="hover:text-neutral-500">ABOUT</Link>
-            <Link href="/services" className=hover:text-neutral-500">SERVICES</Link>
+            <Link href="/services" className="hover:text-neutral-500">SERVICES</Link>
             <Link href="/contact" className="hover:text-neutral-500">WORK TOGETHER</Link>
             <Link href="https://www.shopltk.com/explore/halcyonhaus" target="_blank" className="hover:text-neutral-500">
               SHOP MY HOME
