@@ -76,7 +76,7 @@ export default function HomePage() {
 </div>
 
           {/* Logo */}
-          <div className="w-[130px] h-[130px] relative mt-6 mx-auto">
+          <div className="w-[130px] h-[130px] relative mt-4 mx-auto">
             <Image src="/logos/HHLOGO2.png" alt="HH Logo" layout="fill" objectFit="contain" />
           </div>
 
@@ -91,7 +91,7 @@ export default function HomePage() {
           </div>
 
           {/* Navigation links */}
-          <nav className="flex flex-col space-y-5 text-sm uppercase tracking-widest font-medium text-black w-full pl-1 mt-12">
+          <nav className="flex flex-col space-y-5 text-sm uppercase tracking-widest font-normal text-black w-full pl-1 mt-12">
             <Link href="/projects" className="hover:text-neutral-500">PROJECTS</Link>
             <Link href="/about" className="hover:text-neutral-500">ABOUT</Link>
             <Link href="/contact" className="hover:text-neutral-500">GET IN TOUCH</Link>
