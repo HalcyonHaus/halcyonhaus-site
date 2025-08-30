@@ -13,7 +13,7 @@ const images = [
 
 export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -32,7 +32,7 @@ export default function HomePage() {
         />
       </Head>
 
-      {/* Slideshow Background */}
+      {/* Slideshow Background with fade */}
       <div className="absolute inset-0 z-0">
         {images.map((src, index) => (
           <Image
@@ -52,17 +52,48 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-white bg-opacity-20 pointer-events-none" />
       </div>
 
-      {/* +Menu */}
-      <header className="absolute top-0 w-full z-20 px-6 pt-6 text-xs tracking-widest">
-        <div className="flex justify-end">
-          <button
-            onClick={() => setIsMenuOpen(true)}
-            className="uppercase font-inter text-sm hover:text-neutral-400 transition"
-          >
-            + Menu
-          </button>
+      {/* +Menu button */}
+      <div className="absolute top-5 right-5 z-30 text-xs tracking-widest font-inter uppercase cursor-pointer text-white hover:text-neutral-300 text-[11px]" onClick={() => setMenuOpen(true)}>
+        + Menu
+      </div>
+
+      {/* Slide-out Menu */}
+      {menuOpen && (
+        <div className="fixed top-0 right-0 h-full w-[20%] max-w-[280px] bg-[#f9f9f6] text-black z-40 px-6 pt-6 pb-8 overflow-y-auto shadow-lg">
+          <div className="flex justify-end text-xs uppercase tracking-widest cursor-pointer hover:text-neutral-500" onClick={() => setMenuOpen(false)}>
+            Close ×
+          </div>
+
+          <div className="mt-6">
+            <div className="text-center">
+              <img src="/logos/HHLOGO.JPG" alt="Halcyon Haus Logo" className="mx-auto w-8 h-8 object-contain mb-4" />
+            </div>
+            <p className="text-[12px] leading-snug tracking-wide font-inter text-left mb-6">
+              I’m Nikka, a Colorado-based interior designer crafting warm, curated spaces rooted in California ease and elevated function.
+            </p>
+            <div className="flex flex-col items-start gap-4 text-sm uppercase font-inter tracking-widest">
+              <Link href="/projects" passHref legacyBehavior>
+                <a className="hover:text-neutral-500">Projects</a>
+              </Link>
+              <Link href="/about" passHref legacyBehavior>
+                <a className="hover:text-neutral-500">About</a>
+              </Link>
+              <Link href="/contact" passHref legacyBehavior>
+                <a className="hover:text-neutral-500">Get In Touch</a>
+              </Link>
+              <Link href="https://www.shopltk.com/explore/halcyonhaus" target="_blank" rel="noopener noreferrer" passHref legacyBehavior>
+                <a className="hover:text-neutral-500">Shop My Home</a>
+              </Link>
+            </div>
+
+            <div className="mt-8">
+              <Link href="https://www.instagram.com/halcyonhaus_" target="_blank" rel="noopener noreferrer" passHref legacyBehavior>
+                <a className="text-xs uppercase tracking-widest font-inter hover:text-neutral-500">@HALCYONHAUS_</a>
+              </Link>
+            </div>
+          </div>
         </div>
-      </header>
+      )}
 
       {/* Centered Title */}
       <div className="absolute inset-0 z-10 flex items-center justify-center">
@@ -73,57 +104,6 @@ export default function HomePage() {
           HALCYON HAUS
         </h1>
       </div>
-
-      {/* Slide-Out Drawer */}
-      {isMenuOpen && (
-        <div className="fixed top-0 right-0 h-full w-full md:w-[30%] bg-[#f9f9f6] text-black z-30 transition-transform duration-300 ease-in-out">
-          <div className="flex justify-end p-6">
-            <button
-              onClick={() => setIsMenuOpen(false)}
-              className="uppercase text-xs tracking-widest hover:text-gray-500"
-            >
-              Close ×
-            </button>
-          </div>
-
-          <div className="flex flex-col items-center px-8">
-            {/* Logo */}
-            <Image
-              src="/logos/HHLOGO.JPG"
-              alt="HH Logo"
-              width={80}
-              height={80}
-              className="mb-4"
-            />
-
-            {/* Short Bio */}
-            <p className="text-center text-sm text-neutral-700 max-w-sm mb-6 font-inter leading-relaxed">
-              I'm Nikka, a Colorado-based interior designer crafting warm, curated spaces rooted in California ease and elevated function.
-            </p>
-
-            {/* Nav Links */}
-            <nav className="flex flex-col items-center space-y-4 uppercase text-sm font-inter tracking-wide">
-              <Link href="/projects">
-                <a className="hover:text-neutral-500 transition-colors">Projects</a>
-              </Link>
-              <Link href="/about">
-                <a className="hover:text-neutral-500 transition-colors">About</a>
-              </Link>
-              <Link href="/contact">
-                <a className="hover:text-neutral-500 transition-colors">Get In Touch</a>
-              </Link>
-              <Link href="https://www.shopltk.com/explore/halcyonhaus_" target="_blank" rel="noopener noreferrer">
-                <a className="hover:text-neutral-500 transition-colors">Shop My Home</a>
-              </Link>
-            </nav>
-
-            {/* Footer */}
-            <div className="mt-12 text-xs tracking-widest text-neutral-600 font-inter uppercase">
-              @HALCYONHAUS_
-            </div>
-          </div>
-        </div>
-      )}
 
       <style jsx global>{`
         body {
