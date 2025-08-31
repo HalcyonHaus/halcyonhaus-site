@@ -30,6 +30,17 @@ export default function HomePage() {
     name="description"
     content="Halcyon Haus is a Colorado-based interior design studio crafting warm, curated interiors rooted in California ease and elevated function. Featured by Pottery Barn, Amber Interiors, and more."
   />
+      <meta property="og:title" content="Halcyon Haus" />
+  <meta property="og:description" content="Warm, curated interiors by Halcyon Haus — rooted in California ease and Colorado cool." />
+  <meta property="og:image" content="/logos/og-thumbnail.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://halcyonhaus.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Halcyon Haus" />
+  <meta name="twitter:description" content="Interior design rooted in warmth, balance, and California ease." />
+  <meta name="twitter:image" content="/logos/og-thumbnail.jpg" />
         <link
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
           rel="stylesheet"
