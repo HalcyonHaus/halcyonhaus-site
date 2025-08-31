@@ -4,11 +4,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const images = [
-  "/images/HEROKITCHEN1.JPG",
-  "/images/NEWHERO2.JPG",
-  "/images/DINING2.JPG",
-  "/images/NEWHERO3.JPG",
-  "/images/NEWHERO4.JPG",
+  { src: "/images/HEROKITCHEN1.JPG", alt: "Halcyon Haus kitchen with brass fixtures and stone backsplash" },
+  { src: "/images/NEWHERO2.JPG", alt: "Warm neutral primary room designed by Halcyon Haus" },
+  { src: "/images/DINING2.JPG", alt: "Modern cottage, French country dining designed by Halcyon Haus" },
+  { src: "/images/NEWHERO3.JPG", alt: "Two-toned kitchen designed by Halcyon Haus" },
+  { src: "/images/NEWHERO4.JPG", alt: "Modern cottage neutral primary bath designed by Halcyon Haus" }
 ];
 
 export default function HomePage() {
@@ -26,6 +26,10 @@ export default function HomePage() {
     <div className="relative min-h-screen bg-black text-white font-sans">
       <Head>
         <title>Halcyon Haus</title>
+    <meta
+    name="description"
+    content="Halcyon Haus is a Colorado-based interior design studio crafting warm, curated interiors rooted in California ease and elevated function. Featured by Pottery Barn, Amber Interiors, and more."
+  />
         <link
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
           rel="stylesheet"
@@ -34,21 +38,21 @@ export default function HomePage() {
 
       {/* Background slideshow */}
       <div className="absolute inset-0 z-0">
-        {images.map((src, index) => (
-          <Image
-            key={index}
-            src={src}
-            alt={`Slide ${index}`}
-            fill
-            style={{
-              objectFit: "cover",
-              opacity: index === currentIndex ? 0.7 : 0,
-              transition: "opacity 1s ease-in-out",
-              position: "absolute",
-            }}
-            priority={index === currentIndex}
-          />
-        ))}
+        {images.map(({ src, alt }, index) => (
+  <Image
+    key={index}
+    src={src}
+    alt={alt}
+    fill
+    style={{
+      objectFit: "cover",
+      opacity: index === currentIndex ? 0.7 : 0,
+      transition: "opacity 1s ease-in-out",
+      position: "absolute",
+    }}
+    priority={index === currentIndex}
+  />
+))}
         <div className="absolute inset-0 bg-white bg-opacity-20 pointer-events-none" />
       </div>
 
