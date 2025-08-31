@@ -109,7 +109,7 @@ export default function ProjectsPage() {
       <a className="transition-colors duration-300 text-black hover:text-neutral-400">Home</a>
     </Link>
     <Link href="/about" passHref legacyBehavior>
-      <a className="transition-colors duration-300 text-black hover:text-neutral-400">About Me</a>
+      <a className="transition-colors duration-300 text-black hover:text-neutral-400">About</a>
     </Link>
      <Link href="/services" passHref legacyBehavior>
       <a className="transition-colors duration-300 text-black hover:text-neutral-400">Services</a>
