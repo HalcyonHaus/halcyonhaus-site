@@ -111,6 +111,9 @@ export default function ProjectsPage() {
     <Link href="/about" passHref legacyBehavior>
       <a className="transition-colors duration-300 text-black hover:text-neutral-400">About Me</a>
     </Link>
+     <Link href="/services" passHref legacyBehavior>
+      <a className="transition-colors duration-300 text-black hover:text-neutral-400">Services</a>
+    </Link>
     <Link href="/projects" passHref legacyBehavior>
       <a className="transition-colors duration-300 text-black hover:text-neutral-400">Projects</a>
     </Link>
