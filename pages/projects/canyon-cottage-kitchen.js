@@ -71,7 +71,7 @@ export default function CanyonCottageKitchen() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16">
           <div className="md:col-span-6">
             <img
-              src="/images/KITCHENBLOG2.JPG"
+              src="/images/KITCHENBLOG4.JPG"
               alt="Process or Detail Shot"
               className="w-full rounded-md object-cover"
             />
@@ -86,7 +86,7 @@ export default function CanyonCottageKitchen() {
         {/* Final two-up layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           <img src="/images/KITCHENBLOG3.JPG" alt="Detail 3" className="w-full rounded-md object-cover" />
-          <img src="/images/KITCHENBLOG4.JPG" alt="Detail 4" className="w-full rounded-md object-cover" />
+          <img src="/images/KITCHENBLOG2.JPG" alt="Detail 4" className="w-full rounded-md object-cover" />
         </div>
 
         {/* Closing Text */}
