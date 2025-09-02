@@ -53,10 +53,10 @@ export default function CanyonCottageKitchen() {
         {/* Intro Text */}
         <motion.section {...fadeUp} className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 mb-16 px-4 md:px-0 max-w-5xl mx-auto">
           <p>
-            A grounded, quietly luxurious kitchen rooted in simplicity and warmth. We layered this space with soft textures, handmade tiles, and matte surfaces to bring calm to everyday function.
+            A grounded, quietly luxurious kitchen rooted in simplicity and warmth. We layered this space with soft textures, running the natural stone countertop as the backsplash, bringing calm & cohesiveness to everyday function.
           </p>
           <p>
-            Cabinetry was custom-built in a warm taupe tone — paired with honed natural stone, unlacquered brass, and a handmade fireclay backsplash. A large window frames the canyon beyond while filtering warm, Colorado light into the space.
+            Cabinetry was custom-built in a warm taupe tone — Benjamin Moore Pashmina, paired with unlacquered brass hardware. A large window frames the canyon beyond while filtering warm, Colorado light into the space.
           </p>
         </motion.section>
 
@@ -82,7 +82,7 @@ export default function CanyonCottageKitchen() {
           </div>
           <div className="md:col-span-6 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-4">
             <p>
-              This moment captures the heart of the kitchen — soft, moody light pouring across a palette of warm neutrals and natural materials. Nothing loud. Just intention.
+              This moment captures the heart of the kitchen — soft taupe with a perfectly matching veining from the counter to the splash. Nothing loud. Just intention.
             </p>
           </div>
         </motion.div>
