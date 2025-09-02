@@ -20,38 +20,46 @@ const staggerGroup = {
 export default function CanyonCottageKitchen() {
   return (
     <div className="min-h-screen text-black font-sans bg-[#fafafa]">
-      <Head>
-<title>Canyon Cottage Kitchen – Halcyon Haus</title>
-<meta name="description" content="Explore the Canyon Cottage Kitchen by Halcyon Haus — featuring Benjamin Moore Pashmina cabinets, Venetian plaster range hood, reeded glass doors, mixed metal hardware, and vein-matched countertops in Castle Pines, Colorado." />
-<meta name="keywords" content="Benjamin Moore Pashmina kitchen, Venetian plaster hood, reeded glass cabinets, mixed metals kitchen, Castle Pines interior design, Halcyon Haus, Colorado kitchen remodel" />
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Canyon Cottage Kitchen – Halcyon Haus",
-  "author": {
-    "@type": "Person",
-    "name": "Nikka Winchell"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Halcyon Haus",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://halcyonhaus.com/logos/HHLOGO.JPG"
-    }
-  },
-  "datePublished": "2025-09-01",
-  "description": "Explore the Canyon Cottage Kitchen by Halcyon Haus — featuring Benjamin Moore Pashmina cabinets, Venetian plaster range hood, reeded glass doors, mixed metal hardware, and vein-matched countertops in Castle Pines, Colorado."
-}
-</script>
-<meta name="description" content="Explore the Canyon Cottage Kitchen by Halcyon Haus — featuring Benjamin Moore Pashmina cabinets, Venetian plaster range hood, reeded glass doors, mixed metal hardware, and vein-matched natural stone countertops. A grounded, transitional kitchen design in Castle Pines Village." />
-<meta name="keywords" content="Benjamin Moore Pashmina kitchen, Venetian plaster hood, reeded glass cabinets, mixed metals kitchen, Castle Pines kitchen design, transitional kitchen, Halcyon Haus, luxury kitchen renovation" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
+     <Head>
+  <title>Canyon Cottage Kitchen – Halcyon Haus</title>
+  <meta
+    name="description"
+    content="Explore the Canyon Cottage Kitchen by Halcyon Haus — featuring Benjamin Moore Pashmina cabinets, Venetian plaster range hood, reeded glass doors, mixed metal hardware, and vein-matched countertops in Castle Pines, Colorado."
+  />
+  <meta
+    name="keywords"
+    content="Benjamin Moore Pashmina kitchen, Venetian plaster hood, reeded glass cabinets, mixed metals kitchen, Castle Pines interior design, Halcyon Haus, Colorado kitchen remodel"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
+    rel="stylesheet"
+  />
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Canyon Cottage Kitchen – Halcyon Haus",
+        "author": {
+          "@type": "Person",
+          "name": "Nikka Winchell",
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Halcyon Haus",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://halcyonhaus.com/logos/HHLOGO.JPG",
+          },
+        },
+        "datePublished": "2025-09-01",
+        "description":
+          "Explore the Canyon Cottage Kitchen by Halcyon Haus — featuring Benjamin Moore Pashmina cabinets, Venetian plaster range hood, reeded glass doors, mixed metal hardware, and vein-matched countertops in Castle Pines, Colorado.",
+      }),
+    }}
+  />
+</Head>
 
       {/* Navigation */}
       <header className="absolute top-0 w-full z-20 px-6 pt-6 text-xs tracking-widest">
