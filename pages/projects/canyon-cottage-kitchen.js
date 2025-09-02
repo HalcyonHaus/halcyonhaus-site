@@ -82,7 +82,7 @@ export default function CanyonCottageKitchen() {
           </div>
           <div className="md:col-span-6 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-4">
             <p>
-              This moment captures the heart of the kitchen — soft taupe with a perfectly matching veining from the counter to the splash. Nothing loud. Just intention.
+              This moment captures the heart of the kitchen — soft taupe with perfectly matching veining from the counter to the splash. Nothing loud. Just intention.
             </p>
           </div>
         </motion.div>
