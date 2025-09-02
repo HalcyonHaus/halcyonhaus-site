@@ -3,6 +3,20 @@ import Head from "next/head";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+const fadeUp = {
+  initial: { opacity: 0, y: 40 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 1.2, ease: "easeOut" },
+  viewport: { once: true }
+};
+
+const staggerGroup = {
+  initial: { opacity: 0, y: 40 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 1.2, ease: "easeOut", staggerChildren: 0.3 },
+  viewport: { once: true }
+};
+
 export default function CanyonCottageKitchen() {
   return (
     <div className="min-h-screen text-black font-sans" style={{ backgroundColor: "#fafafa" }}>
@@ -27,40 +41,17 @@ export default function CanyonCottageKitchen() {
 
       {/* Main Content */}
       <main className="pt-24 pb-24 max-w-5xl mx-auto px-6">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center mb-16"
-          style={{ fontFamily: "'Playfair Display', serif" }}
-        >
+        <motion.h1 {...fadeUp} className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center mb-16" style={{ fontFamily: "'Playfair Display', serif" }}>
           CANYON COTTAGE KITCHEN
         </motion.h1>
 
         {/* Hero Image */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="mb-16 -ml-5 md:-ml-10 w-[95%] md:w-[110%]"
-        >
-          <img
-            src="/images/KITCHENBLOG1.JPG"
-            alt="Kitchen Hero Image"
-            className="w-full rounded-md object-cover"
-          />
+        <motion.div {...fadeUp} className="mb-16 -ml-5 md:-ml-10 w-[95%] md:w-[110%]">
+          <img src="/images/KITCHENBLOG1.JPG" alt="Kitchen Hero Image" className="w-full rounded-md object-cover" />
         </motion.div>
 
         {/* Intro Text */}
-        <motion.section
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 mb-16 px-2 md:px-0"
-        >
+        <motion.section {...fadeUp} className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 mb-16 px-2 md:px-0">
           <p>
             A grounded, quietly luxurious kitchen rooted in simplicity and warmth. We layered this space with soft textures, handmade tiles, and matte surfaces to bring calm to everyday function.
           </p>
@@ -69,47 +60,25 @@ export default function CanyonCottageKitchen() {
           </p>
         </motion.section>
 
-        {/* Side-by-side images */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 -ml-5 md:-ml-10 w-[95%] md:w-[110%]"
-        >
-          <img src="/images/CCKITCHEN1.JPG" alt="Kitchen Detail 1" className="w-full rounded-md object-cover" />
-          <img src="/images/CCKITCHEN2.JPG" alt="Kitchen Detail 2" className="w-full rounded-md object-cover" />
+        {/* Side-by-side images with fixed height */}
+        <motion.div {...staggerGroup} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 -ml-5 md:-ml-10 w-[95%] md:w-[110%] items-stretch">
+          <motion.div className="h-[32rem] overflow-hidden rounded-md">
+            <img src="/images/CCKITCHEN1.JPG" alt="Kitchen Detail 1" className="w-full h-full object-cover" />
+          </motion.div>
+          <motion.div className="h-[32rem] overflow-hidden rounded-md">
+            <img src="/images/CCKITCHEN2.JPG" alt="Kitchen Detail 2" className="w-full h-full object-cover" />
+          </motion.div>
         </motion.div>
 
         {/* Second full-width image */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="mb-16 -ml-5 md:-ml-10 w-[95%] md:w-[110%]"
-        >
-          <img
-            src="/images/HERO1.JPG"
-            alt="Full Width Editorial Shot"
-            className="w-full rounded-md object-cover"
-          />
+        <motion.div {...fadeUp} className="mb-16 -ml-5 md:-ml-10 w-[95%] md:w-[110%]">
+          <img src="/images/HERO1.JPG" alt="Full Width Editorial Shot" className="w-full rounded-md object-cover" />
         </motion.div>
 
         {/* Image with text beside */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16 -ml-5 md:-ml-10 w-[95%] md:w-[110%]"
-        >
+        <motion.div {...fadeUp} className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16 -ml-5 md:-ml-10 w-[95%] md:w-[110%]">
           <div className="md:col-span-6">
-            <img
-              src="/images/KITCHENBLOG2.JPG"
-              alt="Process or Detail Shot"
-              className="w-full rounded-md object-cover"
-            />
+            <img src="/images/KITCHENBLOG3.JPG" alt="Process or Detail Shot" className="w-full rounded-md object-cover" />
           </div>
           <div className="md:col-span-6 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-4">
             <p>
@@ -119,25 +88,17 @@ export default function CanyonCottageKitchen() {
         </motion.div>
 
         {/* Final two-up layout */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 -ml-5 md:-ml-10 w-[95%] md:w-[110%]"
-        >
-          <img src="/images/KITCHENBLOG3.JPG" alt="Detail 3" className="w-full rounded-md object-cover" />
-          <img src="/images/KITCHENBLOG4.JPG" alt="Detail 4" className="w-full rounded-md object-cover" />
+        <motion.div {...staggerGroup} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 -ml-5 md:-ml-10 w-[95%] md:w-[110%] items-stretch">
+          <motion.div className="h-[32rem] overflow-hidden rounded-md">
+            <img src="/images/KITCHENBLOG2.JPG" alt="Detail 3" className="w-full h-full object-cover" />
+          </motion.div>
+          <motion.div className="h-[32rem] overflow-hidden rounded-md">
+            <img src="/images/KITCHENBLOG4.JPG" alt="Detail 4" className="w-full h-full object-cover" />
+          </motion.div>
         </motion.div>
 
         {/* Closing Text */}
-        <motion.section
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 px-2 md:px-0"
-        >
+        <motion.section {...fadeUp} className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 px-2 md:px-0">
           <p>
             Designed for a family who values both beauty and everyday ease, this kitchen is part of our larger Canyon Cottage renovation in Castle Pines Village — an ode to timeless interiors with a quietly modern soul.
           </p>
