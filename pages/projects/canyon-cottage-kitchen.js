@@ -21,7 +21,9 @@ export default function CanyonCottageKitchen() {
   return (
     <div className="min-h-screen text-black font-sans bg-[#fafafa]">
       <Head>
-        <title>Canyon Cottage Kitchen – Halcyon Haus</title>
+<title>Canyon Cottage Kitchen – Halcyon Haus</title>
+<meta name="description" content="Explore the Canyon Cottage Kitchen by Halcyon Haus — featuring Benjamin Moore Pashmina cabinets, Venetian plaster range hood, reeded glass doors, mixed metal hardware, and vein-matched natural stone countertops. A grounded, transitional kitchen design in Castle Pines Village." />
+<meta name="keywords" content="Benjamin Moore Pashmina kitchen, Venetian plaster hood, reeded glass cabinets, mixed metals kitchen, Castle Pines kitchen design, transitional kitchen, Halcyon Haus, luxury kitchen renovation" />
         <link
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
           rel="stylesheet"
@@ -53,10 +55,13 @@ export default function CanyonCottageKitchen() {
         {/* Intro Text */}
         <motion.section {...fadeUp} className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 mb-16 px-4 md:px-0 max-w-5xl mx-auto">
           <p>
-            A grounded, quietly luxurious kitchen rooted in simplicity and warmth. We layered this space with soft textures, running the natural stone countertop as the backsplash, bringing calm & cohesiveness to everyday function.
+            A grounded, quietly luxurious kitchen rooted in warmth, function, and intention. Every detail was designed to feel both handcrafted and elevated — from the custom Venetian plaster range hood with integrated cubbies for spices, to the reeded glass cabinetry that draws in light while softening visual weight.
           </p>
           <p>
-            Cabinetry was custom-built in a warm taupe tone — Benjamin Moore Pashmina, paired with unlacquered brass hardware. A large window frames the canyon beyond while filtering warm, Colorado light into the space.
+            The cabinets are painted Benjamin Moore Pashmina — a warm taupe that shifts beautifully throughout the day — paired with a mix of unlacquered brass knobs, latches, and pulls to bring tonal variation and patina over time. To balance the warmth, we layered in polished nickel plumbing fixtures, proving that mixed metals can add depth and texture without distraction.
+          </p>
+          <p>
+            The natural stone countertop was carried up as backsplash to enhance cohesion and highlight the stunning veining, which becomes a focal point throughout the space. This is a kitchen meant to evolve with time — quietly timeless, and made to be lived in.
           </p>
         </motion.section>
 
@@ -78,11 +83,11 @@ export default function CanyonCottageKitchen() {
         {/* Image with text beside */}
         <motion.div {...fadeUp} className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16 px-4 md:px-0 max-w-6xl mx-auto">
           <div className="md:col-span-6">
-            <img src="/images/KITCHENBLOG3.JPG" alt="Process or Detail Shot" className="w-full rounded-md object-cover" />
+            <img src="/images/KITCHENBLOG3.JPG" alt="Close-up Vein Match" className="w-full rounded-md object-cover" />
           </div>
           <div className="md:col-span-6 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-4">
             <p>
-              This moment captures the heart of the kitchen — soft taupe with perfectly matching veining from the counter to the splash. Nothing loud. Just intention.
+              A close-up of the veining, perfectly aligned from counter to splash. Subtle, but deliberate — a soft, tonal moment. 
             </p>
           </div>
         </motion.div>
@@ -100,7 +105,7 @@ export default function CanyonCottageKitchen() {
         {/* Closing Text */}
         <motion.section {...fadeUp} className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 px-4 md:px-0 max-w-5xl mx-auto">
           <p>
-            Designed for a family who values both beauty and everyday ease, this kitchen is part of our larger Canyon Cottage renovation in Castle Pines Village — an ode to timeless interiors with a quietly modern soul.
+            Designed for a family who values both beauty and everyday ease, this kitchen is part of our larger Canyon Cottage renovation in Castle Pines Village — a softly modern, transitional home where materials are layered, not loud.
           </p>
         </motion.section>
       </main>
