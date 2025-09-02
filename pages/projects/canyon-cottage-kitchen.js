@@ -1,19 +1,12 @@
-// /pages/projects/canyon-cottage-kitchen.js
 import Head from "next/head";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const fadeUp = {
-  initial: { opacity: 0, y: 40 },
-  whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 1.2, ease: "easeOut" },
-  viewport: { once: true }
-};
-
-const staggerGroup = {
-  initial: { opacity: 0, y: 40 },
-  whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 1.2, ease: "easeOut", staggerChildren: 0.3 },
+// Subtle fade (opacity only)
+const subtleFade = {
+  initial: { opacity: 0 },
+  whileInView: { opacity: 1 },
+  transition: { duration: 0.5, ease: "easeOut" },
   viewport: { once: true }
 };
 
@@ -74,15 +67,15 @@ export default function CanyonCottageKitchen() {
 
       {/* Main Content */}
       <main className="pt-24 pb-24 max-w-[90rem] mx-auto px-4 md:px-10">
-        <motion.h1 {...fadeUp} className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
+        <h1 className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
           CANYON COTTAGE KITCHEN
-        </motion.h1>
-        <motion.h2 {...fadeUp} className="text-center text-sm uppercase tracking-widest text-gray-500 mt-2 mb-16">
+        </h1>
+        <h2 className="text-center text-sm uppercase tracking-widest text-gray-500 mt-2 mb-16">
           Castle Pines, Colorado
-        </motion.h2>
+        </h2>
 
         {/* Hero Image */}
-        <motion.div {...fadeUp} className="mb-16">
+        <motion.div {...subtleFade} className="mb-16">
           <img src="/images/KITCHENBLOG1.JPG" alt="Castle Pines kitchen with Benjamin Moore Pashmina cabinets and Venetian plaster range hood by Halcyon Haus" className="w-full rounded-md object-cover" />
         </motion.div>
 
@@ -99,23 +92,23 @@ export default function CanyonCottageKitchen() {
           </p>
         </section>
 
-        {/* Side-by-side images */}
-        <motion.div {...staggerGroup} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          <motion.div className="md:h-[58rem] overflow-hidden rounded-md">
+        {/* Two-up images */}
+        <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          <div className="md:h-[58rem] overflow-hidden rounded-md">
             <img src="/images/CCKITCHEN1.JPG" alt="Custom cabinet detail with unlacquered brass knobs and pulls in warm taupe kitchen" className="w-full h-full object-cover" />
-          </motion.div>
-          <motion.div className="md:h-[58rem] overflow-hidden rounded-md">
+          </div>
+          <div className="md:h-[58rem] overflow-hidden rounded-md">
             <img src="/images/CCKITCHEN2.JPG" alt="Kitchen angle featuring reeded glass uppers and polished nickel faucet in Colorado interior" className="w-full h-full object-cover" />
-          </motion.div>
+          </div>
         </motion.div>
 
-        {/* Second full-width image */}
-        <motion.div {...fadeUp} className="mb-16">
+        {/* Full Width Image */}
+        <motion.div {...subtleFade} className="mb-16">
           <img src="/images/HERO1.JPG" alt="Full kitchen view showing layered metal finishes and natural stone backsplash" className="w-full rounded-md object-cover" />
         </motion.div>
 
-        {/* Image with text beside */}
-        <motion.div {...fadeUp} className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16 px-4 md:px-0 max-w-6xl mx-auto">
+        {/* Side image + text */}
+        <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16 px-4 md:px-0 max-w-6xl mx-auto">
           <div className="md:col-span-6">
             <img src="/images/KITCHENBLOG3.JPG" alt="Close-up of matched veining from counter to backsplash in Colorado kitchen remodel" className="w-full rounded-md object-cover" />
           </div>
@@ -126,14 +119,14 @@ export default function CanyonCottageKitchen() {
           </div>
         </motion.div>
 
-        {/* Final two-up layout */}
-        <motion.div {...staggerGroup} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          <motion.div className="md:h-[58rem] overflow-hidden rounded-md">
+        {/* Final two-up images */}
+        <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          <div className="md:h-[58rem] overflow-hidden rounded-md">
             <img src="/images/KITCHENBLOG2.JPG" alt="Side detail of Venetian plaster hood and spice cubbies in Canyon Cottage Kitchen" className="w-full h-full object-cover" />
-          </motion.div>
-          <motion.div className="md:h-[58rem] overflow-hidden rounded-md">
+          </div>
+          <div className="md:h-[58rem] overflow-hidden rounded-md">
             <img src="/images/KITCHENBLOG4.JPG" alt="Mixed metal hardware with latches and pulls in warm taupe cabinetry by Halcyon Haus" className="w-full h-full object-cover" />
-          </motion.div>
+          </div>
         </motion.div>
 
         {/* Closing Text */}
