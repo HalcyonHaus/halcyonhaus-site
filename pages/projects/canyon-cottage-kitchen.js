@@ -19,7 +19,7 @@ const staggerGroup = {
 
 export default function CanyonCottageKitchen() {
   return (
-    <div className="min-h-screen text-black font-sans" style={{ backgroundColor: "#fafafa" }}>
+    <div className="min-h-screen text-black font-sans bg-[#fafafa]">
       <Head>
         <title>Canyon Cottage Kitchen – Halcyon Haus</title>
         <link
@@ -40,13 +40,13 @@ export default function CanyonCottageKitchen() {
       </header>
 
       {/* Main Content */}
-      <main className="pt-24 pb-24 max-w-6xl mx-auto px-4 md:px-10 overflow-x-hidden">
+      <main className="pt-24 pb-24 max-w-6xl mx-auto px-4 md:px-10">
         <motion.h1 {...fadeUp} className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center mb-16" style={{ fontFamily: "'Playfair Display', serif" }}>
           CANYON COTTAGE KITCHEN
         </motion.h1>
 
         {/* Hero Image */}
-        <motion.div {...fadeUp} className="mb-16 w-[100vw] relative left-1/2 right-1/2 -translate-x-1/2">
+        <motion.div {...fadeUp} className="mb-16">
           <img src="/images/KITCHENBLOG1.JPG" alt="Kitchen Hero Image" className="w-full rounded-md object-cover" />
         </motion.div>
 
@@ -61,7 +61,7 @@ export default function CanyonCottageKitchen() {
         </motion.section>
 
         {/* Side-by-side images with fixed height */}
-        <motion.div {...staggerGroup} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 w-full">
+        <motion.div {...staggerGroup} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           <motion.div className="h-[64rem] overflow-hidden rounded-md">
             <img src="/images/CCKITCHEN1.JPG" alt="Kitchen Detail 1" className="w-full h-full object-cover" />
           </motion.div>
@@ -71,7 +71,7 @@ export default function CanyonCottageKitchen() {
         </motion.div>
 
         {/* Second full-width image */}
-        <motion.div {...fadeUp} className="mb-16 w-[100vw] relative left-1/2 right-1/2 -translate-x-1/2">
+        <motion.div {...fadeUp} className="mb-16">
           <img src="/images/HERO1.JPG" alt="Full Width Editorial Shot" className="w-full rounded-md object-cover" />
         </motion.div>
 
@@ -88,7 +88,7 @@ export default function CanyonCottageKitchen() {
         </motion.div>
 
         {/* Final two-up layout */}
-        <motion.div {...staggerGroup} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 w-full">
+        <motion.div {...staggerGroup} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           <motion.div className="h-[64rem] overflow-hidden rounded-md">
             <img src="/images/KITCHENBLOG2.JPG" alt="Detail 3" className="w-full h-full object-cover" />
           </motion.div>
