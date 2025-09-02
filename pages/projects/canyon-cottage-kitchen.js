@@ -43,7 +43,7 @@ export default function CanyonCottageKitchen() {
         "headline": "Canyon Cottage Kitchen – Halcyon Haus",
         "author": {
           "@type": "Person",
-          "name": "Nikka Winchell",
+          "name": "Nikka Winchell"
         },
         "publisher": {
           "@type": "Organization",
