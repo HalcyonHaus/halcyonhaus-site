@@ -132,9 +132,20 @@ export default function ProjectsPage() {
           PROJECTS
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-16">
-          {projects.map((project, index) => (
-            <ProjectCarousel key={index} title={project.title} images={project.images} />
-          ))}
+          {projects.map((project, index) => {
+  const isCanyonCottageKitchen = project.title === "Canyon Cottage Kitchen";
+  const content = (
+    <ProjectCarousel key={index} title={project.title} images={project.images} />
+  );
+
+  return isCanyonCottageKitchen ? (
+    <Link href="/projects/canyon-cottage-kitchen" key={index}>
+      <a>{content}</a>
+    </Link>
+  ) : (
+    content
+  );
+})}
         </div>
       </main>
 
