@@ -25,7 +25,7 @@ export default function CanyonCottageKitchen() {
       </header>
 
       {/* Main Content */}
-      <main className="pt-24 pb-24 max-w-7xl mx-auto px-6">
+      <main className="pt-24 pb-24 max-w-5xl mx-auto px-6">
         <h1
           className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center mb-16"
           style={{ fontFamily: "'Playfair Display', serif" }}
@@ -34,7 +34,7 @@ export default function CanyonCottageKitchen() {
         </h1>
 
         {/* Hero Image */}
-        <div className="mb-16">
+        <div className="mb-16 -ml-5 md:-ml-10 w-[95%] md:w-[110%]">
           <img
             src="/images/KITCHENBLOG1.JPG"
             alt="Kitchen Hero Image"
@@ -53,13 +53,13 @@ export default function CanyonCottageKitchen() {
         </section>
 
         {/* Side-by-side images */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 -ml-5 md:-ml-10 w-[95%] md:w-[110%]">
           <img src="/images/CCKITCHEN1.JPG" alt="Kitchen Detail 1" className="w-full rounded-md object-cover" />
           <img src="/images/CCKITCHEN2.JPG" alt="Kitchen Detail 2" className="w-full rounded-md object-cover" />
         </div>
 
         {/* Second full-width image */}
-        <div className="mb-16">
+        <div className="mb-16 -ml-5 md:-ml-10 w-[95%] md:w-[110%]">
           <img
             src="/images/HERO1.JPG"
             alt="Full Width Editorial Shot"
@@ -68,10 +68,10 @@ export default function CanyonCottageKitchen() {
         </div>
 
         {/* Image with text beside */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16 -ml-5 md:-ml-10 w-[95%] md:w-[110%]">
           <div className="md:col-span-6">
             <img
-              src="/images/KITCHENBLOG3.JPG"
+              src="/images/KITCHENBLOG2.JPG"
               alt="Process or Detail Shot"
               className="w-full rounded-md object-cover"
             />
@@ -84,9 +84,9 @@ export default function CanyonCottageKitchen() {
         </div>
 
         {/* Final two-up layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          <img src="/images/KITCHENBLOG4.JPG" alt="Detail 3" className="w-full rounded-md object-cover" />
-          <img src="/images/KITCHENBLOG2.JPG" alt="Detail 4" className="w-full rounded-md object-cover" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 -ml-5 md:-ml-10 w-[95%] md:w-[110%]">
+          <img src="/images/KITCHENBLOG3.JPG" alt="Detail 3" className="w-full rounded-md object-cover" />
+          <img src="/images/KITCHENBLOG4.JPG" alt="Detail 4" className="w-full rounded-md object-cover" />
         </div>
 
         {/* Closing Text */}
