@@ -20,46 +20,46 @@ const staggerGroup = {
 export default function CanyonCottageKitchen() {
   return (
     <div className="min-h-screen text-black font-sans bg-[#fafafa]">
-     <Head>
-  <title>Canyon Cottage Kitchen – Halcyon Haus</title>
-  <meta
-    name="description"
-    content="Explore the Canyon Cottage Kitchen by Halcyon Haus — featuring Benjamin Moore Pashmina cabinets, Venetian plaster range hood, reeded glass doors, mixed metal hardware, and vein-matched countertops in Castle Pines, Colorado."
-  />
-  <meta
-    name="keywords"
-    content="Benjamin Moore Pashmina kitchen, Venetian plaster hood, reeded glass cabinets, mixed metals kitchen, Castle Pines interior design, Halcyon Haus, Colorado kitchen remodel"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
-    rel="stylesheet"
-  />
-  <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Canyon Cottage Kitchen – Halcyon Haus",
-        "author": {
-          "@type": "Person",
-          "name": "Nikka Winchell"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Halcyon Haus",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://halcyonhaus.com/logos/HHLOGO.JPG",
-          },
-        },
-        "datePublished": "2025-09-01",
-        "description":
-          "Explore the Canyon Cottage Kitchen by Halcyon Haus — featuring Benjamin Moore Pashmina cabinets, Venetian plaster range hood, reeded glass doors, mixed metal hardware, and vein-matched countertops in Castle Pines, Colorado.",
-      }),
-    }}
-  />
-</Head>
+      <Head>
+        <title>Canyon Cottage Kitchen – Halcyon Haus</title>
+        <meta
+          name="description"
+          content="Explore the Canyon Cottage Kitchen by Halcyon Haus — featuring Benjamin Moore Pashmina cabinets, Venetian plaster range hood, reeded glass doors, mixed metal hardware, and vein-matched countertops in Castle Pines, Colorado."
+        />
+        <meta
+          name="keywords"
+          content="Benjamin Moore Pashmina kitchen, Venetian plaster hood, reeded glass cabinets, mixed metals kitchen, Castle Pines interior design, Halcyon Haus, Colorado kitchen remodel"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
+          rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "Canyon Cottage Kitchen – Halcyon Haus",
+              "author": {
+                "@type": "Person",
+                "name": "Nikka Winchell"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Halcyon Haus",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://halcyonhaus.com/logos/HHLOGO.JPG"
+                }
+              },
+              "datePublished": "2025-09-01",
+              "description":
+                "Explore the Canyon Cottage Kitchen by Halcyon Haus — featuring Benjamin Moore Pashmina cabinets, Venetian plaster range hood, reeded glass doors, mixed metal hardware, and vein-matched countertops in Castle Pines, Colorado."
+            })
+          }}
+        />
+      </Head>
 
       {/* Navigation */}
       <header className="absolute top-0 w-full z-20 px-6 pt-6 text-xs tracking-widest">
@@ -75,11 +75,11 @@ export default function CanyonCottageKitchen() {
       {/* Main Content */}
       <main className="pt-24 pb-24 max-w-[90rem] mx-auto px-4 md:px-10">
         <motion.h1 {...fadeUp} className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
-  CANYON COTTAGE KITCHEN
-</motion.h1>
-<motion.h2 {...fadeUp} className="text-center text-sm uppercase tracking-widest text-gray-500 mt-2 mb-16">
-  Castle Pines, Colorado
-</motion.h2>
+          CANYON COTTAGE KITCHEN
+        </motion.h1>
+        <motion.h2 {...fadeUp} className="text-center text-sm uppercase tracking-widest text-gray-500 mt-2 mb-16">
+          Castle Pines, Colorado
+        </motion.h2>
 
         {/* Hero Image */}
         <motion.div {...fadeUp} className="mb-16">
@@ -99,7 +99,7 @@ export default function CanyonCottageKitchen() {
           </p>
         </section>
 
-        {/* Side-by-side images with adjusted height */}
+        {/* Side-by-side images */}
         <motion.div {...staggerGroup} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           <motion.div className="md:h-[58rem] overflow-hidden rounded-md">
             <img src="/images/CCKITCHEN1.JPG" alt="Custom cabinet detail with unlacquered brass knobs and pulls in warm taupe kitchen" className="w-full h-full object-cover" />
@@ -115,7 +115,7 @@ export default function CanyonCottageKitchen() {
         </motion.div>
 
         {/* Image with text beside */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16 px-4 md:px-0 max-w-6xl mx-auto">
+        <motion.div {...fadeUp} className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16 px-4 md:px-0 max-w-6xl mx-auto">
           <div className="md:col-span-6">
             <img src="/images/KITCHENBLOG3.JPG" alt="Close-up of matched veining from counter to backsplash in Colorado kitchen remodel" className="w-full rounded-md object-cover" />
           </div>
