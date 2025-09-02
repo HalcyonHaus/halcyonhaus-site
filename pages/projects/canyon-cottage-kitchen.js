@@ -34,7 +34,7 @@ export default function CanyonCottageKitchen() {
         </h1>
 
         {/* Hero Image */}
-        <div className="mb-16">
+        <div className="mb-18">
           <img
             src="/images/KITCHENBLOG1.JPG"
             alt="Kitchen Hero Image"
