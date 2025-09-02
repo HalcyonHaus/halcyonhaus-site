@@ -62,10 +62,10 @@ export default function CanyonCottageKitchen() {
 
         {/* Side-by-side images with adjusted height */}
         <motion.div {...staggerGroup} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          <motion.div className="h-[56rem] overflow-hidden rounded-md">
+          <motion.div className="md:h-[58rem] overflow-hidden rounded-md">
             <img src="/images/CCKITCHEN1.JPG" alt="Kitchen Detail 1" className="w-full h-full object-cover" />
           </motion.div>
-          <motion.div className="h-[56rem] overflow-hidden rounded-md">
+          <motion.div className="md:h-[58rem] overflow-hidden rounded-md">
             <img src="/images/CCKITCHEN2.JPG" alt="Kitchen Detail 2" className="w-full h-full object-cover" />
           </motion.div>
         </motion.div>
@@ -89,10 +89,10 @@ export default function CanyonCottageKitchen() {
 
         {/* Final two-up layout */}
         <motion.div {...staggerGroup} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          <motion.div className="h-[56rem] overflow-hidden rounded-md">
+          <motion.div className="md:h-[58rem] overflow-hidden rounded-md">
             <img src="/images/KITCHENBLOG2.JPG" alt="Detail 3" className="w-full h-full object-cover" />
           </motion.div>
-          <motion.div className="h-[56rem] overflow-hidden rounded-md">
+          <motion.div className="md:h-[58rem] overflow-hidden rounded-md">
             <img src="/images/KITCHENBLOG4.JPG" alt="Detail 4" className="w-full h-full object-cover" />
           </motion.div>
         </motion.div>
