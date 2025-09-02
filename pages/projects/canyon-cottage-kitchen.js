@@ -40,7 +40,7 @@ export default function CanyonCottageKitchen() {
       </header>
 
       {/* Main Content */}
-      <main className="pt-24 pb-24 max-w-6xl mx-auto px-4 md:px-10">
+      <main className="pt-24 pb-24 max-w-[90rem] mx-auto px-4 md:px-10">
         <motion.h1 {...fadeUp} className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center mb-16" style={{ fontFamily: "'Playfair Display', serif" }}>
           CANYON COTTAGE KITCHEN
         </motion.h1>
@@ -51,7 +51,7 @@ export default function CanyonCottageKitchen() {
         </motion.div>
 
         {/* Intro Text */}
-        <motion.section {...fadeUp} className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 mb-16 px-4 md:px-0">
+        <motion.section {...fadeUp} className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 mb-16 px-4 md:px-0 max-w-5xl mx-auto">
           <p>
             A grounded, quietly luxurious kitchen rooted in simplicity and warmth. We layered this space with soft textures, handmade tiles, and matte surfaces to bring calm to everyday function.
           </p>
@@ -60,12 +60,12 @@ export default function CanyonCottageKitchen() {
           </p>
         </motion.section>
 
-        {/* Side-by-side images with fixed height */}
+        {/* Side-by-side images with adjusted height */}
         <motion.div {...staggerGroup} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          <motion.div className="h-[64rem] overflow-hidden rounded-md">
+          <motion.div className="h-[48rem] overflow-hidden rounded-md">
             <img src="/images/CCKITCHEN1.JPG" alt="Kitchen Detail 1" className="w-full h-full object-cover" />
           </motion.div>
-          <motion.div className="h-[64rem] overflow-hidden rounded-md">
+          <motion.div className="h-[48rem] overflow-hidden rounded-md">
             <img src="/images/CCKITCHEN2.JPG" alt="Kitchen Detail 2" className="w-full h-full object-cover" />
           </motion.div>
         </motion.div>
@@ -76,7 +76,7 @@ export default function CanyonCottageKitchen() {
         </motion.div>
 
         {/* Image with text beside */}
-        <motion.div {...fadeUp} className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16 px-4 md:px-0">
+        <motion.div {...fadeUp} className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16 px-4 md:px-0 max-w-6xl mx-auto">
           <div className="md:col-span-6">
             <img src="/images/KITCHENBLOG3.JPG" alt="Process or Detail Shot" className="w-full rounded-md object-cover" />
           </div>
@@ -89,16 +89,16 @@ export default function CanyonCottageKitchen() {
 
         {/* Final two-up layout */}
         <motion.div {...staggerGroup} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          <motion.div className="h-[64rem] overflow-hidden rounded-md">
+          <motion.div className="h-[48rem] overflow-hidden rounded-md">
             <img src="/images/KITCHENBLOG2.JPG" alt="Detail 3" className="w-full h-full object-cover" />
           </motion.div>
-          <motion.div className="h-[64rem] overflow-hidden rounded-md">
+          <motion.div className="h-[48rem] overflow-hidden rounded-md">
             <img src="/images/KITCHENBLOG4.JPG" alt="Detail 4" className="w-full h-full object-cover" />
           </motion.div>
         </motion.div>
 
         {/* Closing Text */}
-        <motion.section {...fadeUp} className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 px-4 md:px-0">
+        <motion.section {...fadeUp} className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 px-4 md:px-0 max-w-5xl mx-auto">
           <p>
             Designed for a family who values both beauty and everyday ease, this kitchen is part of our larger Canyon Cottage renovation in Castle Pines Village — an ode to timeless interiors with a quietly modern soul.
           </p>
