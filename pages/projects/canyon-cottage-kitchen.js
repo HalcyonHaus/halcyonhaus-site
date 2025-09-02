@@ -25,7 +25,7 @@ export default function CanyonCottageKitchen() {
       </header>
 
       {/* Main Content */}
-      <main className="pt-24 pb-24 max-w-5xl mx-auto px-6">
+      <main className="pt-24 pb-24 max-w-7xl mx-auto px-6">
         <h1
           className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center mb-16"
           style={{ fontFamily: "'Playfair Display', serif" }}
