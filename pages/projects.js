@@ -90,6 +90,32 @@ const projects = [
   }
 ];
 
+const portfolioSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Interior Design Projects — Halcyon Haus",
+  "description": "Portfolio of residential interior design projects by Nikka Winchell of Halcyon Haus, including kitchens, bathrooms, bedrooms, nurseries, and dining spaces.",
+  "url": "https://www.halcyonhaus.com/projects",
+  "author": {
+    "@type": "Person",
+    "name": "Nikka Winchell",
+    "jobTitle": "Interior Designer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Halcyon Haus"
+    }
+  },
+  "hasPart": projects.map((p) => ({
+    "@type": "CreativeWork",
+    "name": p.title,
+    "creator": {
+      "@type": "Person",
+      "name": "Nikka Winchell"
+    },
+    "image": "https://www.halcyonhaus.com" + p.images[0]
+  }))
+};
+
 export default function ProjectsPage() {
   return (
     <div className="min-h-screen text-black font-sans" style={{ backgroundColor: "#fafafa" }}>
@@ -107,37 +133,9 @@ export default function ProjectsPage() {
         <meta name="twitter:title" content="Interior Design Projects | Halcyon Haus" />
         <meta name="twitter:description" content="Kitchens, bathrooms, bedrooms, and more — transitional interior design by Nikka Winchell." />
         <meta name="twitter:image" content="https://www.halcyonhaus.com/images/CCKITCHEN2.JPG" />
-
-        {/* Portfolio structured data — helps Google understand this is a design portfolio */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "CollectionPage",
-              "name": "Interior Design Projects — Halcyon Haus",
-              "description": "Portfolio of residential interior design projects by Nikka Winchell of Halcyon Haus, including kitchens, bathrooms, bedrooms, nurseries, and dining spaces.",
-              "url": "https://www.halcyonhaus.com/projects",
-              "author": {
-                "@type": "Person",
-                "name": "Nikka Winchell",
-                "jobTitle": "Interior Designer",
-                "worksFor": {
-                  "@type": "Organization",
-                  "name": "Halcyon Haus"
-                }
-              },
-              "hasPart": projects.map((p) => ({
-                "@type": "CreativeWork",
-                "name": p.title,
-                "creator": {
-                  "@type": "Person",
-                  "name": "Nikka Winchell"
-                },
-                "image": `https://www.halcyonhaus.com${p.images[0]}`
-              }))
-            })
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(portfolioSchema) }}
         />
       </Head>
 
@@ -173,144 +171,6 @@ export default function ProjectsPage() {
               <div key={index}>{carousel}</div>
             );
           })}
-        </div>
-      </main>
-
-      {/* Footer */}
-      <footer className="mt-8 pb-6 text-center text-xs text-gray-500 uppercase tracking-widest font-inter">
-        <p className="mb-2">© {new Date().getFullYear()} Halcyon Haus</p>
-        <div className="flex justify-center space-x-6 text-gray-500">
-          <a href="https://www.instagram.com/halcyonhaus_" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <svg className="h-4 w-4 hover:text-black transition" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"/>
-            </svg>
-          </a>
-          <a href="https://www.tiktok.com/@halcyonhaus_" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-            <svg className="h-4 w-4 hover:text-black transition" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M9 3v12a3 3 0 103 3V9c.6.3 1.3.5 2 .5h1V7h-1c-.6 0-1-.4-1-1V3h-4z"/>
-            </svg>
-          </a>
-          <a href="https://www.shopltk.com/explore/halcyonhaus" target="_blank" rel="noopener noreferrer" aria-label="LTK">
-            <svg className="h-4 w-4 hover:text-black transition" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M3 12a9 9 0 1118 0 9 9 0 01-18 0zm9-6a6 6 0 100 12 6 6 0 000-12z"/>
-            </svg>
-          </a>
-        </div>
-      </footer>
-    </div>
-  );
-}  },
-  {
-    title: "Halcyon Haus",
-    images: [
-      "/images/DSC01677.jpeg",
-      "/images/IMG_4599.jpeg",
-      "/images/DSC01631.jpeg",
-      "/images/DSC01662.jpeg",
-      "/images/DC7801C0-7521-4A4A-86F3-228C9F155D6E.jpeg",
-      "/images/53757896-768E-436A-A242-E1EB1C839F05.jpeg",
-      "/images/DSC01503.jpeg",
-      "/images/7F3F1DD5-20A0-4377-A60E-CB6CBED5947A.jpeg",
-      "/images/IMG_0640.jpeg"
-    ]
-  },
-  {
-    title: "Anything But Monotone Kitchen",
-    images: [
-      "/images/TWOTONEDKITCHEN1.JPG",
-      "/images/DSC02219.jpeg",
-      "/images/DSC02198.jpeg"
-    ]
-  },
-  {
-    title: "French Modern Primary",
-    images: [
-      "/images/PRIMARY1.JPG",
-      "/images/PRIMARY2.JPG"
-    ]
-  },
-    {
-    title: "Mountain Escape Neutral Nursery",
-    images: [
-      "/images/NURSERY0.JPG",
-      "/images/NURSERY1.JPG",
-      "/images/NURSERY3.JPG",
-      "/images/NURSERY4.JPG",
-      "/images/NURSERY5.JPG",
-      "/images/NURSERY6.JPG"
-    ]
-  },
-  {
-    title: "Full Circle Bedroom",
-    images: [
-      "/images/DFF440A7-0193-47CF-9773-5436061404B9.jpeg",
-      "/images/DSC02113.jpeg"
-    ]
-  },
-  {
-    title: "Styling",
-    images: [
-      "/images/DSC02489.jpeg",
-      "/images/DSC02496.jpeg"
-    ]
-  }
-];
-
-export default function ProjectsPage() {
-  return (
-    <div className="min-h-screen text-black font-sans" style={{ backgroundColor: "#fafafa" }}>
-      <Head>
-        <title>Projects – Halcyon Haus</title>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-
-      {/* Navigation */}
-   <header className="absolute top-0 w-full z-20 px-6 pt-6 text-xs tracking-widest">
-  <nav className="flex justify-center sm:justify-end space-x-6 uppercase font-inter text-xs">
-    <Link href="/" passHref legacyBehavior>
-      <a className="transition-colors duration-300 text-black hover:text-neutral-400">Home</a>
-    </Link>
-    <Link href="/about" passHref legacyBehavior>
-      <a className="transition-colors duration-300 text-black hover:text-neutral-400">About</a>
-    </Link>
-     <Link href="/services" passHref legacyBehavior>
-      <a className="transition-colors duration-300 text-black hover:text-neutral-400">Services</a>
-    </Link>
-    <Link href="/projects" passHref legacyBehavior>
-      <a className="transition-colors duration-300 text-black hover:text-neutral-400">Projects</a>
-    </Link>
-    <Link href="/contact" passHref legacyBehavior>
-      <a className="transition-colors duration-300 text-black hover:text-neutral-400">Contact</a>
-    </Link>
-  </nav>
-</header>
-
-      {/* Projects Grid */}
-      <main className="px-6 py-24">
-        <h1
-          className="text-2xl md:text-2.5xl font-light tracking-[0.1em] text-center"
-          style={{ fontFamily: "'Playfair Display', serif" }}
-        >
-          PROJECTS
-        </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-16">
-          {projects.map((project, index) => {
-  const isCanyonCottageKitchen = project.title === "Canyon Cottage Kitchen";
-  const content = (
-    <ProjectCarousel key={index} title={project.title} images={project.images} />
-  );
-
-  return isCanyonCottageKitchen ? (
-    <Link href="/projects/canyon-cottage-kitchen" key={index}>
-      <a>{content}</a>
-    </Link>
-  ) : (
-    content
-  );
-})}
         </div>
       </main>
 
