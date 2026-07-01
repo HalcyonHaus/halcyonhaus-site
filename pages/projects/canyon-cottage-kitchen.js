@@ -179,18 +179,18 @@ Once that decision was made, every other material followed.          </p>
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-12 text-sm">
       <div><strong>Location:</strong> Castle Pines Village, Colorado</div>
-      <div><strong>Project Type:</strong> Canyon Cottage Kitchen Renovation</div>
+      <div><strong>Project Type:</strong> Kitchen Renovation</div>
 
       <div><strong>Cabinet Paint:</strong> Benjamin Moore Pashmina</div>
-      <div><strong>Range Hood:</strong> Custom Venetian plaster color matched to Benjamin Moore Simply White</div>
+      <div><strong>Range Hood:</strong> Venetian plaster color matched to Benjamin Moore Simply White</div>
 
       <div><strong>Countertops:</strong> Mont Blanc Quartzite</div>
-      <div><strong>Hardware:</strong> Unlacquered brass by Rejuvenation</div>
+      <div><strong>Hardware:</strong> Unlacquered brass </div>
 
       <div><strong>Plumbing Fixtures:</strong> Polished nickel</div>
       <div><strong>Design & Styling:</strong> Nikka Winchell, Halcyon Haus</div>
 
-      <div><strong>Photography:</strong> Nikka Winchell</div>
+      <div><strong>Photography:</strong> Nikka Winchell, Halcyon Haus</div>
     </div>
   </div>
 
