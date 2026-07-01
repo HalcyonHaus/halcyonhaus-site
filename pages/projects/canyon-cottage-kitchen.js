@@ -131,21 +131,34 @@ Once that decision was made, every other material followed.          </p>
         </motion.div>
 
         {/* Final two-up images */}
-        <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          <div className="md:h-[58rem] overflow-hidden rounded-md">
-            <img src="/images/KITCHENBLOG2.JPG" alt="Side detail of Venetian plaster hood and spice cubbies in Canyon Cottage Kitchen" className="w-full h-full object-cover" />
-          </div>
-          <div className="md:h-[58rem] overflow-hidden rounded-md">
-            <img src="/images/KITCHENBLOG4.JPG" alt="Mixed metal hardware with latches and pulls in warm taupe cabinetry by Halcyon Haus" className="w-full h-full object-cover" />
-          </div>
-        </motion.div>
+<motion.div {...subtleFade} className="mb-16">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="md:h-[58rem] overflow-hidden rounded-md">
+      <img
+        src="/images/KITCHENBLOG2.JPG"
+        alt="Side detail of Venetian plaster hood and spice cubbies in Canyon Cottage Kitchen"
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+    <div className="md:h-[58rem] overflow-hidden rounded-md">
+      <img
+        src="/images/KITCHENBLOG4.JPG"
+        alt="Mixed metal hardware with latches and pulls in warm taupe cabinetry by Halcyon Haus"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+
+  <section className="mt-16 max-w-5xl mx-auto px-4 md:px-0">
+    <p className="font-inter text-sm leading-7 tracking-wide text-gray-700">
+      The hardware is a mix of unlacquered brass knobs, latches, and pulls paired with polished nickel plumbing fixtures. I almost always prefer unlacquered brass because it develops a natural patina over time. It doesn't stay perfect, and that's exactly what I like about it. Mixing it with polished nickel keeps the palette balanced and gives the kitchen a little more depth without feeling overly designed.
+    </p>
+  </section>
+</motion.div>
 
         {/* Closing Text */}
         <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 px-4 md:px-0 max-w-5xl mx-auto">
-        
-          <p>
-          The hardware is a mix of unlacquered brass knobs, latches, and pulls paired with polished nickel plumbing fixtures. I almost always prefer unlacquered brass because it develops a natural patina over time. It doesn’t stay perfect, and that’s exactly what I like about it. Mixing it with polished nickel keeps the palette balanced and gives the kitchen a little more dimension without feeling overly designed.
-          </p>
           <p>
           This kitchen is part of our larger Canyon Cottage renovation in Castle Pines Village. Throughout the home, we focused on natural materials, thoughtful details, and a palette that feels warm without relying on trends. My hope is that years from now, the kitchen will feel just as appropriate as it does today—not because it followed a particular style, but because every decision was made with longevity in mind.
           </p>
