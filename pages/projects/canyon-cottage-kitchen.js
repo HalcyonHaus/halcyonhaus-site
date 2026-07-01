@@ -119,44 +119,48 @@ Once that decision was made, every other material followed.          </p>
   </section>
 </motion.div>
 
-        {/* Side image + text */}
-        <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16 px-4 md:px-0 max-w-6xl mx-auto">
-          <div className="md:col-span-6">
-            <img src="/images/KITCHENBLOG3.JPG" alt="Close-up of matched veining from counter to backsplash in Colorado kitchen remodel" className="w-full rounded-md object-cover" />
-          </div>
-          <div className="md:col-span-6 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-4">
-                      <p>
-          Along one wall, reeded glass cabinets break up the run of solid doors and allow light to move through the space. They add texture without making the kitchen feel busy, which was especially important in a room where the cabinetry was intended to be the focal point.          </p>
-          </div>
-        </motion.div>
-
-        {/* Final two-up images */}
-<motion.div {...subtleFade} className="mb-16">
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div className="md:h-[58rem] overflow-hidden rounded-md">
-      <img
-        src="/images/KITCHENBLOG2.JPG"
-        alt="Side detail of Venetian plaster hood and spice cubbies in Canyon Cottage Kitchen"
-        className="w-full h-full object-cover"
-      />
-    </div>
-
-    <div className="md:h-[58rem] overflow-hidden rounded-md">
-      <img
-        src="/images/KITCHENBLOG4.JPG"
-        alt="Mixed metal hardware with latches and pulls in warm taupe cabinetry by Halcyon Haus"
-        className="w-full h-full object-cover"
-      />
-    </div>
+       {/* Side image + text */}
+<motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16 px-4 md:px-0 max-w-6xl mx-auto">
+  <div className="md:col-span-6">
+    <img
+      src="/images/KITCHENBLOG3.JPG"
+      alt="Close-up of matched veining from counter to backsplash in Colorado kitchen remodel"
+      className="w-full rounded-md object-cover"
+    />
   </div>
 
-  <section className="mt-16 max-w-5xl mx-auto px-4 md:px-0">
-    <p className="font-inter text-sm leading-7 tracking-wide text-gray-700">
-      The hardware is a mix of unlacquered brass knobs, latches, and pulls paired with polished nickel plumbing fixtures. I almost always prefer unlacquered brass because it develops a natural patina over time. It doesn't stay perfect, and that's exactly what I like about it. Mixing it with polished nickel keeps the palette balanced and gives the kitchen a little more depth without feeling overly designed.
+  <div className="md:col-span-6 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-4">
+    <p>
+      Along one wall, reeded glass cabinets break up the run of solid doors and allow light to move through the space. They add texture without making the kitchen feel busy, which was especially important in a room where the cabinetry was intended to be the focal point.
     </p>
-  </section>
+  </div>
 </motion.div>
 
+{/* Hardware text */}
+<section className="mt-16 mb-16 max-w-5xl mx-auto px-4 md:px-0">
+  <p className="font-inter text-sm leading-7 tracking-wide text-gray-700">
+    The hardware is a mix of unlacquered brass knobs, latches, and pulls paired with polished nickel plumbing fixtures. I almost always gravitate toward unlacquered brass because it develops a natural patina over time. It doesn't stay perfectly polished, and that's exactly the point. The polished nickel keeps the overall palette feeling balanced, while the combination gives the kitchen more character than using a single finish throughout.
+  </p>
+</section>
+
+{/* Final two-up images */}
+<motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+  <div className="md:h-[58rem] overflow-hidden rounded-md">
+    <img
+      src="/images/KITCHENBLOG2.JPG"
+      alt="Side detail of Venetian plaster hood and spice cubbies in Canyon Cottage Kitchen"
+      className="w-full h-full object-cover"
+    />
+  </div>
+
+  <div className="md:h-[58rem] overflow-hidden rounded-md">
+    <img
+      src="/images/KITCHENBLOG4.JPG"
+      alt="Mixed metal hardware with latches and pulls in warm taupe cabinetry by Halcyon Haus"
+      className="w-full h-full object-cover"
+    />
+  </div>
+</motion.div>
         {/* Closing Text */}
         <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 px-4 md:px-0 max-w-5xl mx-auto">
           <p>
