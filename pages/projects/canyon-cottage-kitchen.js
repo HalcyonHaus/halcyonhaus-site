@@ -107,7 +107,12 @@ Once that decision was made, every other material followed.          </p>
         {/* Full Width Image */}
         <motion.div {...subtleFade} className="mb-16">
           <img src="/images/HERO1.JPG" alt="Full kitchen view showing layered metal finishes and natural stone backsplash" className="w-full rounded-md object-cover" />
-        </motion.div>
+        <div className="md:col-span-6 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-4">
+            <p>
+The custom Venetian plaster range hood became another defining feature of the kitchen. We designed integrated spice cubbies into the hood surround so that something practical could also feel considered. Small details like that are often the ones that make a space feel custom because they’re designed around how people actually cook and live.    </p> 
+                    </div>
+          
+          </motion.div>
 
         {/* Side image + text */}
         <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16 px-4 md:px-0 max-w-6xl mx-auto">
@@ -116,7 +121,10 @@ Once that decision was made, every other material followed.          </p>
           </div>
           <div className="md:col-span-6 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-4">
             <p>
-The custom Venetian plaster range hood became another defining feature of the kitchen. We designed integrated spice cubbies into the hood surround so that something practical could also feel considered. Small details like that are often the ones that make a space feel custom because they’re designed around how people actually cook and live.    </p>      </div>
+The custom Venetian plaster range hood became another defining feature of the kitchen. We designed integrated spice cubbies into the hood surround so that something practical could also feel considered. Small details like that are often the ones that make a space feel custom because they’re designed around how people actually cook and live.    </p> 
+          <p>
+          Along one wall, reeded glass cabinets break up the run of solid doors and allow light to move through the space. They add texture without making the kitchen feel busy, which was especially important in a room where the cabinetry was intended to be the focal point.          </p>
+          </div>
         </motion.div>
 
         {/* Final two-up images */}
@@ -131,8 +139,7 @@ The custom Venetian plaster range hood became another defining feature of the ki
 
         {/* Closing Text */}
         <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 px-4 md:px-0 max-w-5xl mx-auto">
-          <p>
-Along one wall, reeded glass cabinets break up the run of solid doors and allow light to move through the space. They add texture without making the kitchen feel busy, which was especially important in a room where the cabinetry was intended to be the focal point.          </p>
+        
           <p>
           The hardware is a mix of unlacquered brass knobs, latches, and pulls paired with polished nickel plumbing fixtures. I almost always prefer unlacquered brass because it develops a natural patina over time. It doesn’t stay perfect, and that’s exactly what I like about it. Mixing it with polished nickel keeps the palette balanced and gives the kitchen a little more dimension without feeling overly designed.
           </p>
