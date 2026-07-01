@@ -90,7 +90,7 @@ I knew from the beginning that the cabinetry was going to carry the room, so fin
 Once that decision was made, every other material followed.          </p>
           <p>
           The goal wasn’t to fill the room with statement pieces. It was to create a kitchen where everything worked together and nothing felt like it was competing for attention. The Mont Blanc quartzite has soft movement that complements the cabinetry rather than distracting from it, so we continued the stone up the backsplash instead of introducing another material. It creates a quieter backdrop while letting the natural veining become part of the architecture of the space.            </p>
-          </p>
+          
           
         </section>
 
