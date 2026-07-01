@@ -120,9 +120,7 @@ The custom Venetian plaster range hood became another defining feature of the ki
             <img src="/images/KITCHENBLOG3.JPG" alt="Close-up of matched veining from counter to backsplash in Colorado kitchen remodel" className="w-full rounded-md object-cover" />
           </div>
           <div className="md:col-span-6 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-4">
-            <p>
-The custom Venetian plaster range hood became another defining feature of the kitchen. We designed integrated spice cubbies into the hood surround so that something practical could also feel considered. Small details like that are often the ones that make a space feel custom because they’re designed around how people actually cook and live.    </p> 
-          <p>
+                      <p>
           Along one wall, reeded glass cabinets break up the run of solid doors and allow light to move through the space. They add texture without making the kitchen feel busy, which was especially important in a room where the cabinetry was intended to be the focal point.          </p>
           </div>
         </motion.div>
