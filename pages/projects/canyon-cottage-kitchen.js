@@ -128,7 +128,6 @@ Once that decision was made, every other material followed.          </p>
                       <p>
           Along one wall, reeded glass cabinets break up the run of solid doors and allow light to move through the space. They add texture without making the kitchen feel busy, which was especially important in a room where the cabinetry was intended to be the focal point.          </p>
           </div>
-          </section>
         </motion.div>
 
         {/* Final two-up images */}
