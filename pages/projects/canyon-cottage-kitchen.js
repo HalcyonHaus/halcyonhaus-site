@@ -161,6 +161,7 @@ Once that decision was made, every other material followed.          </p>
     />
   </div>
 </motion.div>
+
  {/* Closing Text */}
 <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-10 px-4 md:px-0 max-w-5xl mx-auto">
 
@@ -194,3 +195,10 @@ Once that decision was made, every other material followed.          </p>
   </div>
 
 </section>
+   </main>
+
+    </div>
+
+  );
+
+}
