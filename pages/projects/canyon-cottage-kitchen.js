@@ -14,7 +14,7 @@ export default function CanyonCottageKitchen() {
   return (
     <div className="min-h-screen text-black font-sans bg-[#fafafa]">
       <Head>
-        <title>Canyon Cottage Kitchen – Halcyon Haus</title>
+        <title>Canyon Cottage Kitchen Renovation | Castle Pines Village | Halcyon Haus Design Studio</title>
         <meta
           name="description"
           content="Explore the Canyon Cottage Kitchen by Halcyon Haus — featuring Benjamin Moore Pashmina cabinets, Venetian plaster range hood, reeded glass doors, mixed metal hardware, and vein-matched countertops in Castle Pines, Colorado."
@@ -161,13 +161,36 @@ Once that decision was made, every other material followed.          </p>
     />
   </div>
 </motion.div>
-        {/* Closing Text */}
-        <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 px-4 md:px-0 max-w-5xl mx-auto">
-          <p>
-          This kitchen is part of our larger Canyon Cottage renovation in Castle Pines Village. Throughout the home, we focused on natural materials, thoughtful details, and a restrained palette that lets the materials do most of the talking. I wanted the kitchen to feel settled, comfortable, and easy to live in from the very beginning.
-          </p>
-        </section>
-      </main>
+ {/* Closing Text */}
+<section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-10 px-4 md:px-0 max-w-5xl mx-auto">
+
+  <p>
+    This kitchen is part of our larger Canyon Cottage renovation in Castle Pines Village. Throughout the home, we focused on natural materials, thoughtful details, and a restrained palette that lets the materials do most of the talking. I wanted the kitchen to feel settled, comfortable, and easy to live in from the very beginning.
+  </p>
+
+  <div className="border-t border-neutral-200 pt-10">
+    <h3
+      className="uppercase tracking-[0.2em] text-xs mb-6 text-neutral-500"
+      style={{ fontFamily: "'Inter', sans-serif" }}
+    >
+      Project Details
+    </h3>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-12 text-sm">
+      <div><strong>Location:</strong> Castle Pines Village, Colorado</div>
+      <div><strong>Project Type:</strong> Canyon Cottage Kitchen Renovation</div>
+
+      <div><strong>Cabinet Paint:</strong> Benjamin Moore Pashmina</div>
+      <div><strong>Range Hood:</strong> Custom Venetian plaster color matched to Benjamin Moore Simply White</div>
+
+      <div><strong>Countertops:</strong> Mont Blanc Quartzite</div>
+      <div><strong>Hardware:</strong> Unlacquered brass by Rejuvenation</div>
+
+      <div><strong>Plumbing Fixtures:</strong> Polished nickel</div>
+      <div><strong>Design & Styling:</strong> Nikka Winchell, Halcyon Haus</div>
+
+      <div><strong>Photography:</strong> Nikka Winchell</div>
     </div>
-  );
-}
+  </div>
+
+</section>
