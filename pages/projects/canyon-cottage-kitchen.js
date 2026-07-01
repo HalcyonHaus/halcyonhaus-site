@@ -116,7 +116,7 @@ Once that decision was made, every other material followed.          </p>
           </div>
           <div className="md:col-span-6 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-4">
             <p>
-The custom Venetian plaster range hood became another defining feature of the kitchen. We designed integrated spice cubbies into the hood surround so that something practical could also feel considered. Small details like that are often the ones that make a space feel custom because they’re designed around how people actually cook and live.          </div>
+The custom Venetian plaster range hood became another defining feature of the kitchen. We designed integrated spice cubbies into the hood surround so that something practical could also feel considered. Small details like that are often the ones that make a space feel custom because they’re designed around how people actually cook and live.    </p>      </div>
         </motion.div>
 
         {/* Final two-up images */}
