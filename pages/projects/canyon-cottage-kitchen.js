@@ -164,7 +164,7 @@ Once that decision was made, every other material followed.          </p>
         {/* Closing Text */}
         <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 px-4 md:px-0 max-w-5xl mx-auto">
           <p>
-          This kitchen is part of our larger Canyon Cottage renovation in Castle Pines Village. Throughout the home, we focused on natural materials, thoughtful details, and a palette that feels warm without relying on trends. My hope is that years from now, the kitchen will feel just as appropriate as it does today—not because it followed a particular style, but because every decision was made with longevity in mind.
+          This kitchen is part of our larger Canyon Cottage renovation in Castle Pines Village. Throughout the home, we focused on natural materials, thoughtful details, and a restrained palette that lets the materials do most of the talking. I wanted the kitchen to feel settled, comfortable, and easy to live in from the very beginning.
           </p>
         </section>
       </main>
