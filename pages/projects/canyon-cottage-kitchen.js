@@ -82,14 +82,16 @@ export default function CanyonCottageKitchen() {
         {/* Intro Text */}
         <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 mb-16 px-4 md:px-0 max-w-5xl mx-auto">
           <p>
-            A grounded, quietly luxurious kitchen rooted in warmth, function, and intention. Every detail was designed to feel both handcrafted and elevated — from the custom Venetian plaster range hood with integrated cubbies for spices, to the reeded glass cabinetry that draws in light while softening visual weight.
+            I probably spent more time choosing the cabinet color than anything else in this kitchen.
           </p>
           <p>
-            The cabinets are painted Benjamin Moore Pashmina — a warm taupe that shifts beautifully throughout the day — paired with a mix of unlacquered brass knobs, latches, and pulls to bring tonal variation and patina over time. To balance the warmth, we layered in polished nickel plumbing fixtures, proving that mixed metals can add depth and texture without distraction.
-          </p>
+I knew from the beginning that the cabinetry was going to carry the room, so finding the right color mattered. I wanted something with depth, but I didn’t want it drifting too far into gray or beige or feeling too dark. Benjamin Moore Pashmina ended up being exactly what I was looking for. The kitchen gets beautiful western light, which brings out the warmer side of the color and gives the cabinetry a completely different feel throughout the day.          </p>
           <p>
-            The natural stone countertop was carried up as backsplash to enhance cohesion and highlight the stunning veining, which becomes a focal point throughout the space. This is a kitchen meant to evolve with time — quietly timeless, and made to be lived in.
+Once that decision was made, every other material followed.          </p>
+          <p>
+          The goal wasn’t to fill the room with statement pieces. It was to create a kitchen where everything worked together and nothing felt like it was competing for attention. The Mont Blanc quartzite has soft movement that complements the cabinetry rather than distracting from it, so we continued the stone up the backsplash instead of introducing another material. It creates a quieter backdrop while letting the natural veining become part of the architecture of the space.            </p>
           </p>
+          
         </section>
 
         {/* Two-up images */}
@@ -114,9 +116,7 @@ export default function CanyonCottageKitchen() {
           </div>
           <div className="md:col-span-6 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-4">
             <p>
-              A close-up of the veining, perfectly aligned from counter to splash. Subtle, but deliberate — a soft, tonal moment.
-            </p>
-          </div>
+The custom Venetian plaster range hood became another defining feature of the kitchen. We designed integrated spice cubbies into the hood surround so that something practical could also feel considered. Small details like that are often the ones that make a space feel custom because they’re designed around how people actually cook and live.          </div>
         </motion.div>
 
         {/* Final two-up images */}
@@ -132,7 +132,12 @@ export default function CanyonCottageKitchen() {
         {/* Closing Text */}
         <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 px-4 md:px-0 max-w-5xl mx-auto">
           <p>
-            Designed for a family who values both beauty and everyday ease, this kitchen is part of our larger Canyon Cottage renovation in Castle Pines Village — a softly modern, transitional home where materials are layered, not loud.
+Along one wall, reeded glass cabinets break up the run of solid doors and allow light to move through the space. They add texture without making the kitchen feel busy, which was especially important in a room where the cabinetry was intended to be the focal point.          </p>
+          <p>
+          The hardware is a mix of unlacquered brass knobs, latches, and pulls paired with polished nickel plumbing fixtures. I almost always prefer unlacquered brass because it develops a natural patina over time. It doesn’t stay perfect, and that’s exactly what I like about it. Mixing it with polished nickel keeps the palette balanced and gives the kitchen a little more dimension without feeling overly designed.
+          </p>
+          <p>
+          This kitchen is part of our larger Canyon Cottage renovation in Castle Pines Village. Throughout the home, we focused on natural materials, thoughtful details, and a palette that feels warm without relying on trends. My hope is that years from now, the kitchen will feel just as appropriate as it does today—not because it followed a particular style, but because every decision was made with longevity in mind.
           </p>
         </section>
       </main>
