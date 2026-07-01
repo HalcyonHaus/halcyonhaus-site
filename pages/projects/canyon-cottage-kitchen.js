@@ -107,7 +107,7 @@ Once that decision was made, every other material followed.          </p>
         {/* Full Width Image */}
         <motion.div {...subtleFade} className="mb-16">
           <img src="/images/HERO1.JPG" alt="Full kitchen view showing layered metal finishes and natural stone backsplash" className="w-full rounded-md object-cover" />
-        <div className="md:col-span-6 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-4">
+       <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 mb-16 px-4 md:px-0 max-w-5xl mx-auto">
             <p>
 The custom Venetian plaster range hood became another defining feature of the kitchen. We designed integrated spice cubbies into the hood surround so that something practical could also feel considered. Small details like that are often the ones that make a space feel custom because they’re designed around how people actually cook and live.    </p> 
                     </div>
