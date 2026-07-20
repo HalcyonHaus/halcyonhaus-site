@@ -5,7 +5,21 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen text-black font-sans" style={{ backgroundColor: "#fafafa" }}>
       <Head>
-        <title>About – Halcyon Haus</title>
+        <title>About Nikka Winchell | Denver Interior Designer, Halcyon Haus</title>
+        <meta
+          name="description"
+          content="Meet Nikka Winchell, founder of Halcyon Haus, a Denver interior design studio rooted in thoughtful, transitional design. Featured in Homes and Gardens, Pottery Barn, and Amber Interiors."
+        />
+        <link rel="canonical" href="https://www.halcyonhaus.com/about" />
+        <meta property="og:title" content="About Nikka Winchell | Halcyon Haus Interior Design" />
+        <meta property="og:description" content="Meet Nikka Winchell, founder of Halcyon Haus, a Denver interior design studio rooted in thoughtful, transitional design." />
+        <meta property="og:image" content="https://www.halcyonhaus.com/images/HEROKITCHEN1.JPG" />
+        <meta property="og:url" content="https://www.halcyonhaus.com/about" />
+        <meta property="og:type" content="profile" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Nikka Winchell | Halcyon Haus" />
+        <meta name="twitter:description" content="Meet the designer behind Halcyon Haus, thoughtful, transitional interiors in Denver, CO." />
+        <meta name="twitter:image" content="https://www.halcyonhaus.com/images/HEROKITCHEN1.JPG" />
         <link
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
           rel="stylesheet"
@@ -42,13 +56,35 @@ export default function AboutPage() {
           </div>
           <div className="md:col-span-7 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6">
             <p>
-              Welcome to Halcyon Haus — an interior design studio founded by Nikka Winchell, rooted in thoughtful, transitional design.
+              Welcome to Halcyon Haus, an interior design studio founded by Nikka Winchell. My work is rooted in transitional design: warm, considered, and built around how you actually live in a space, not just how it photographs.
             </p>
             <p>
-              At Halcyon Haus, I guide you through a warm, hands-on design journey rooted in transitional style—where tradition meets modern simplicity. With an eye for curated strategy and balanced composition, every project is tailored to your lifestyle and vision.
+              I like to get to know a room before I touch it. Every project starts with your lifestyle. From there, I layer in the materials and finishes that make a home feel settled and a little personal: natural stone, mixed metals, texture you can feel, pieces that can hold up to real life.
             </p>
             <p>
-              Located in Denver, CO — servicing design projects coast to coast.
+              I'm based in Denver, Colorado, and I take on projects across the country, in person and virtually.
+            </p>
+
+            <div className="pt-4 text-center md:text-left">
+              <Link href="/contact" legacyBehavior>
+                <a className="inline-block px-6 py-3 border border-black text-black text-xs tracking-widest uppercase font-inter hover:bg-black hover:text-white transition">
+                  Work With Me
+                </a>
+              </Link>
+            </div>
+
+            {/* Press mention */}
+            <p className="text-xs text-gray-500 font-inter">
+              As featured in{" "}
+              
+                href="https://www.homesandgardens.com/decor/paint/benjamin-moore-pashmina"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-black"
+              >
+                Homes &amp; Gardens
+              </a>
+              , July 2026.
             </p>
 
             {/* Inline Featured In Section */}
