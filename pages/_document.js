@@ -46,7 +46,7 @@ export default function Document() {
                   "@type": "InteriorDesigner",
                   "@id": "https://www.halcyonhaus.com/#business",
                   "name": "Halcyon Haus",
-                  "alternateName": "Halcyon Haus Interior Design",
+                  "alternateName": ["Halcyon Haus Interior Design", "Halcyon Haus Design Studio"],
                   "description": "Halcyon Haus is a Denver-based interior design studio founded by Nikka Winchell. Specializing in thoughtful, transitional design for residential projects — from full-service renovations and new builds to virtual design and room refreshes. Serving clients in Denver, Colorado and across the United States.",
                   "url": "https://www.halcyonhaus.com",
                   "logo": {
@@ -157,6 +157,12 @@ export default function Document() {
                         }
                       }
                     ]
+                  },
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "5.0",
+                    "reviewCount": "3",
+                    "bestRating": "5"
                   }
                 },
                 {
