@@ -59,7 +59,7 @@ export default function AboutPage() {
               Welcome to Halcyon Haus, an interior design studio founded by Nikka Winchell. My work is rooted in transitional design: warm, considered, and built around how you actually live in a space, not just how it photographs.
             </p>
             <p>
-              I started Halcyon Haus in 2020, right after renovating my own home. Somewhere in that process I realized how much having a calm, considered space to come back to actually matters. I want every home I design to feel the same.
+              I started Halcyon Haus in 2020, right after renovating my own home. Somewhere in that process I realized how much having a calm, considered space to come back to actually matters. That's where the name comes from too. Halcyon means calm and serene, and that's the feeling I want every client to have in their own home.
             </p>
             <p>
               I like to get to know a room before I touch it. Every project starts with your lifestyle, not a template. From there, I layer in the materials and finishes that make a home feel settled and a little personal: natural stone, mixed metals, texture you can feel, pieces that can hold up to real life.
@@ -70,16 +70,11 @@ export default function AboutPage() {
 
             <div className="pt-4 text-center md:text-left">
               <Link href="/contact" legacyBehavior>
-                <a className="inline-block px-6 py-3 border border-black text-black text-xs tracking-widest uppercase font-inter hover:bg-black hover:text-white transition">
-                  Work With Me
+                <a className="inline-block px-5 py-2 rounded-full border border-black text-black text-[11px] tracking-widest uppercase font-inter hover:bg-black hover:text-white transition">
+                  Let's Work Together
                 </a>
               </Link>
             </div>
-
-            {/* Press mention */}
-            <p className="text-xs text-gray-500 font-inter">
-              As featured in <a href="https://www.homesandgardens.com/decor/paint/benjamin-moore-pashmina" target="_blank" rel="noopener noreferrer" className="underline hover:text-black">Homes &amp; Gardens</a>, July 2026.
-            </p>
 
             {/* Inline Featured In Section */}
             <div className="pt-6">
@@ -89,6 +84,11 @@ export default function AboutPage() {
               >
                 Featured In
               </h2>
+
+              {/* Press mention */}
+              <p className="text-center text-xs text-gray-500 font-inter mb-8">
+                <a href="https://www.homesandgardens.com/decor/paint/benjamin-moore-pashmina" target="_blank" rel="noopener noreferrer" className="underline hover:text-black">Homes &amp; Gardens</a>, July 2026
+              </p>
 
               {/* First Row */}
               <div className="flex justify-center space-x-16 mb-1.5 px-4">
