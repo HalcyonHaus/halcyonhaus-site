@@ -8,7 +8,7 @@ export default function AboutPage() {
         <title>About Nikka Winchell | Denver Interior Designer, Halcyon Haus</title>
         <meta
           name="description"
-          content="Meet Nikka Winchell, founder of Halcyon Haus, a Denver interior design studio rooted in thoughtful, transitional design. Featured in Homes and Gardens, Pottery Barn, and Amber Interiors."
+          content="Meet Nikka Winchell, founder of Halcyon Haus, a Denver interior design studio specializing in warm, transitional design for homes across Colorado and beyond."
         />
         <link rel="canonical" href="https://www.halcyonhaus.com/about" />
         <meta property="og:title" content="About Nikka Winchell | Halcyon Haus Interior Design" />
@@ -50,22 +50,22 @@ export default function AboutPage() {
           <div className="md:col-span-5 flex justify-center md:sticky md:top-24">
             <img
               src="/images/DSC02864.JPG"
-              alt="Nikka Winchell"
+              alt="Nikka Winchell, founder of Halcyon Haus interior design studio in Denver, Colorado"
               className="w-[20rem] md:w-[24rem] h-[26rem] md:h-[30rem] rounded-md object-cover"
             />
           </div>
           <div className="md:col-span-7 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6">
             <p>
-              Welcome to Halcyon Haus, an interior design studio founded by Nikka Winchell. My work is rooted in transitional design: warm, considered, and built around how you actually live in a space, not just how it photographs.
+              Welcome to Halcyon Haus, an interior design studio founded by Nikka Winchell. Our work is rooted in transitional design: warm, considered, and built around how you actually live in a space.
             </p>
             <p>
-              I started Halcyon Haus in 2020, right after renovating my own home. Somewhere in that process I realized how much having a calm, considered space to come back to actually matters. I want every home I design to feel the same.
+              I started Halcyon Haus in 2020, right after renovating my own home. Somewhere in that process I realized how much having a calm space to come back to actually matters. Growing up in California and eventually landing in Colorado gave me an appreciation for both easy, relaxed spaces and calm, grounded ones, and that mix shows up in every project I design.
             </p>
             <p>
-              I like to get to know a room before I touch it. Every project starts with your lifestyle, not a template. From there, I layer in the materials and finishes that make a home feel settled and a little personal: natural stone, mixed metals, texture you can feel, pieces that can hold up to real life.
+              I like to get to know a room before I touch it. Every project starts with your lifestyle. From there, I layer in the materials and finishes that make a home feel settled and a little personal: natural stone, mixed metals, texture you can feel, pieces that can hold up to real life.
             </p>
             <p>
-              I'm based in Denver, Colorado, and I take on projects across the country, in person and virtually.
+              Based in Denver, Colorado, taking on projects across the country, in person and virtually.
             </p>
 
             <div className="pt-4 text-center">
