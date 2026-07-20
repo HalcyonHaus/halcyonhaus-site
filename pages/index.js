@@ -99,7 +99,7 @@ export default function HomePage() {
           {/* Bio */}
           <div className="text-[14px] tracking-wide leading-7 text-left text-gray-700 font-inter space-y-6 max-w-[90%] mt-8">
             <p>
-              Welcome to Halcyon Haus — an interior design studio founded by Nikka Winchell, rooted in thoughtful, transitional design.
+              Welcome to Halcyon Haus, an interior design studio founded by Nikka Winchell, rooted in thoughtful, transitional design.
             </p>
             <p>
               Designing spaces coast to coast, from decor selection to full-service design.
