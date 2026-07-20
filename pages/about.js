@@ -68,41 +68,41 @@ export default function AboutPage() {
               I'm based in Denver, Colorado, and I take on projects across the country, in person and virtually.
             </p>
 
-            <div className="pt-4 text-center md:text-left">
+            <div className="pt-4 text-center">
               <Link href="/contact" legacyBehavior>
-                <a className="inline-block px-5 py-2 rounded-full border border-black text-black text-[11px] tracking-widest uppercase font-inter hover:bg-black hover:text-white transition">
-                  Let's Work Together
+                <a className="inline-block px-6 py-3 border border-black text-black text-xs tracking-widest uppercase font-inter hover:bg-black hover:text-white transition">
+                  Work With Me
                 </a>
               </Link>
             </div>
+          </div>
+        </div>
 
-            {/* Inline Featured In Section */}
-            <div className="pt-6">
-              <h2
-                className="text-center text-xs tracking-widest uppercase font-inter text-gray-500 mb-8"
-                style={{ letterSpacing: '0.2em' }}
-              >
-                Featured In
-              </h2>
+        {/* Featured In Section, full width, centered below the image/bio grid */}
+        <div className="mt-20 text-center">
+          <h2
+            className="text-center text-xs tracking-widest uppercase font-inter text-gray-500 mb-8"
+            style={{ letterSpacing: '0.2em' }}
+          >
+            Featured In
+          </h2>
 
-              {/* Press mention */}
-              <p className="text-center text-xs text-gray-500 font-inter mb-8">
-                <a href="https://www.homesandgardens.com/decor/paint/benjamin-moore-pashmina" target="_blank" rel="noopener noreferrer" className="underline hover:text-black">Homes &amp; Gardens</a>, July 2026
-              </p>
+          {/* Press mention */}
+          <p className="text-center text-xs text-gray-500 font-inter mb-8">
+            <a href="https://www.homesandgardens.com/decor/paint/benjamin-moore-pashmina" target="_blank" rel="noopener noreferrer" className="underline hover:text-black">Homes &amp; Gardens</a>, July 2026
+          </p>
 
-              {/* First Row */}
-              <div className="flex justify-center space-x-16 mb-1.5 px-4">
-                <img src="/logos/potterybarn.png" alt="Pottery Barn" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
-                <img src="/logos/westelm.png" alt="West Elm" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
-                <img src="/logos/cratebarrel.png" alt="Crate & Barrel" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
-              </div>
+          {/* First Row */}
+          <div className="flex justify-center space-x-16 mb-1.5 px-4">
+            <img src="/logos/potterybarn.png" alt="Pottery Barn" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+            <img src="/logos/westelm.png" alt="West Elm" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+            <img src="/logos/cratebarrel.png" alt="Crate & Barrel" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+          </div>
 
-              {/* Second Row */}
-              <div className="flex justify-center space-x-16 px-4">
-                <img src="/logos/amberinteriors.png" alt="Amber Interiors" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
-                <img src="/logos/serenaandlily.png" alt="Serena & Lily" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
-              </div>
-            </div>
+          {/* Second Row */}
+          <div className="flex justify-center space-x-16 px-4">
+            <img src="/logos/amberinteriors.png" alt="Amber Interiors" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+            <img src="/logos/serenaandlily.png" alt="Serena & Lily" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
           </div>
         </div>
       </main>
