@@ -98,7 +98,7 @@ export default function HomePage() {
           </div>
 
           {/* Bio */}
-          <div className="text-[12px] italic tracking-wide leading-6 text-left text-gray-700 font-inter space-y-8 max-w-[90%] mt-8">
+          <div className="text-[12px] tracking-wide leading-6 text-left text-gray-700 font-inter space-y-8 max-w-[90%] mt-8">
             <p>
               Welcome to Halcyon Haus, an interior design studio founded by Nikka Winchell, rooted in thoughtful, transitional design.
             </p>
@@ -108,12 +108,12 @@ export default function HomePage() {
           </div>
 
           {/* Navigation links */}
-          <nav className="flex flex-col space-y-5 text-[10px] uppercase tracking-widest font-normal text-black w-full pl-1 mt-12">
-            <Link href="/projects" className="hover:text-neutral-500">PROJECTS</Link>
-            <Link href="/about" className="hover:text-neutral-500">ABOUT</Link>
-            <Link href="/services" className="hover:text-neutral-500">SERVICES</Link>
-            <Link href="/contact" className="hover:text-neutral-500">WORK TOGETHER</Link>
-            <Link href="https://www.shopltk.com/explore/halcyonhaus" target="_blank" className="hover:text-neutral-500">
+          <nav className="flex flex-col space-y-5 text-[10px] uppercase tracking-widest font-normal text-black w-full pl-1 mt-16">
+            <Link href="/projects" className="hover:text-neutral-500 hover:italic">PROJECTS</Link>
+            <Link href="/about" className="hover:text-neutral-500 hover:italic">ABOUT</Link>
+            <Link href="/services" className="hover:text-neutral-500 hover:italic">SERVICES</Link>
+            <Link href="/contact" className="hover:text-neutral-500 hover:italic">WORK TOGETHER</Link>
+            <Link href="https://www.shopltk.com/explore/halcyonhaus" target="_blank" className="hover:text-neutral-500 hover:italic">
               SHOP MY HOME
             </Link>
           </nav>
