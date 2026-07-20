@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const images = [
-  { src: "/images/HERO00.jpg", alt: "Halcyon Haus kitchen with brass fixtures and stone backsplash" },
+  { src: "/images/HEROKITCHEN00.jpg", alt: "Halcyon Haus kitchen with brass fixtures and stone backsplash" },
   { src: "/images/HERObedroom2.jpg", alt: "Modern cottage neutral primary bath designed by Halcyon Haus" },
   { src: "/images/NEWHERO2.JPG", alt: "Warm neutral primary room designed by Halcyon Haus" },
   { src: "/images/DINING2.JPG", alt: "Modern cottage, French country dining designed by Halcyon Haus" },
