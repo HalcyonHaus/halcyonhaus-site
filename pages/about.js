@@ -59,7 +59,10 @@ export default function AboutPage() {
               Welcome to Halcyon Haus, an interior design studio founded by Nikka Winchell. My work is rooted in transitional design: warm, considered, and built around how you actually live in a space, not just how it photographs.
             </p>
             <p>
-              I like to get to know a room before I touch it. Every project starts with your lifestyle. From there, I layer in the materials and finishes that make a home feel settled and a little personal: natural stone, mixed metals, texture you can feel, pieces that can hold up to real life.
+              I started Halcyon Haus in 2020, right after renovating my own home. Somewhere in that process I realized how much having a calm, considered space to come back to actually matters. That's where the name comes from too. Halcyon means calm and serene, and that's the feeling I want every client to have in their own home.
+            </p>
+            <p>
+              I like to get to know a room before I touch it. Every project starts with your lifestyle, not a template. From there, I layer in the materials and finishes that make a home feel settled and a little personal: natural stone, mixed metals, texture you can feel, pieces that can hold up to real life.
             </p>
             <p>
               I'm based in Denver, Colorado, and I take on projects across the country, in person and virtually.
@@ -75,16 +78,7 @@ export default function AboutPage() {
 
             {/* Press mention */}
             <p className="text-xs text-gray-500 font-inter">
-              As featured in{" "}
-              
-                href="https://www.homesandgardens.com/decor/paint/benjamin-moore-pashmina"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-black"
-              >
-                Homes &amp; Gardens
-              </a>
-              , July 2026.
+              As featured in <a href="https://www.homesandgardens.com/decor/paint/benjamin-moore-pashmina" target="_blank" rel="noopener noreferrer" className="underline hover:text-black">Homes &amp; Gardens</a>, July 2026.
             </p>
 
             {/* Inline Featured In Section */}
