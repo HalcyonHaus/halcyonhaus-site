@@ -121,7 +121,7 @@ export default function ProjectsPage() {
     <div className="min-h-screen text-black font-sans" style={{ backgroundColor: "#fafafa" }}>
       <Head>
         <title>Interior Design Projects | Halcyon Haus — Denver, CO</title>
-        <meta name="description" content="Browse interior design projects by Halcyon Haus — kitchens, bathrooms, bedrooms, nurseries, and more. Thoughtful transitional design by Nikka Winchell, serving Denver, CO and coast to coast." />
+        <meta name="description" content="Interior design projects by Halcyon Haus: kitchens, bathrooms, bedrooms, and nurseries. Transitional design by Nikka Winchell in Denver, CO." />
         <meta name="keywords" content="interior design portfolio Denver, kitchen design Colorado, bathroom design Denver, transitional interior design projects, residential interior design portfolio, Halcyon Haus projects, Nikka Winchell design" />
         <link rel="canonical" href="https://www.halcyonhaus.com/projects" />
         <meta property="og:title" content="Interior Design Projects | Halcyon Haus — Denver, CO" />
