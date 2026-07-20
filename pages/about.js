@@ -59,7 +59,7 @@ export default function AboutPage() {
               Welcome to Halcyon Haus, an interior design studio founded by Nikka Winchell. My work is rooted in transitional design: warm, considered, and built around how you actually live in a space, not just how it photographs.
             </p>
             <p>
-              I started Halcyon Haus in 2020, right after renovating my own home. Somewhere in that process I realized how much having a calm, considered space to come back to actually matters. That's where the name comes from too. Halcyon means calm and serene, and that's the feeling I want every client to have in their own home.
+              I started Halcyon Haus in 2020, right after renovating my own home. Somewhere in that process I realized how much having a calm, considered space to come back to actually matters. I want every home I design to feel the same.
             </p>
             <p>
               I like to get to know a room before I touch it. Every project starts with your lifestyle, not a template. From there, I layer in the materials and finishes that make a home feel settled and a little personal: natural stone, mixed metals, texture you can feel, pieces that can hold up to real life.
