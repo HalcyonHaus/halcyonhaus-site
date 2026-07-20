@@ -46,12 +46,12 @@ export default function AboutPage() {
           ABOUT ME
         </h1>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-          <div className="md:col-span-5 flex justify-center">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+          <div className="md:col-span-5 flex justify-center md:sticky md:top-24">
             <img
               src="/images/DSC02864.JPG"
               alt="Nikka Winchell"
-              className="w-[20rem] md:w-[24rem] h-auto rounded-md object-cover"
+              className="w-[20rem] md:w-[24rem] h-[26rem] md:h-[30rem] rounded-md object-cover"
             />
           </div>
           <div className="md:col-span-7 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6">
@@ -59,7 +59,7 @@ export default function AboutPage() {
               Welcome to Halcyon Haus, an interior design studio founded by Nikka Winchell. My work is rooted in transitional design: warm, considered, and built around how you actually live in a space, not just how it photographs.
             </p>
             <p>
-              I started Halcyon Haus in 2020, right after renovating my own home. Somewhere in that process I realized how much having a calm, considered space to come back to actually matters. That's where the name comes from too. Halcyon means calm and serene, and that's the feeling I want every client to have in their own home.
+              I started Halcyon Haus in 2020, right after renovating my own home. Somewhere in that process I realized how much having a calm, considered space to come back to actually matters. I want every home I design to feel the same.
             </p>
             <p>
               I like to get to know a room before I touch it. Every project starts with your lifestyle, not a template. From there, I layer in the materials and finishes that make a home feel settled and a little personal: natural stone, mixed metals, texture you can feel, pieces that can hold up to real life.
