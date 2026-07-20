@@ -13,36 +13,16 @@ export default function Document() {
         {/* ── Pinterest domain verification ── */}
         <meta name="p:domain_verify" content="f3bf8da1795ee6a629438c9135fe7845" />
 
-        {/* ── Core SEO ── */}
-        <meta name="description" content="Halcyon Haus is a Denver interior design studio founded by Nikka Winchell. Specializing in transitional interior design — full-service design, room refresh, virtual design, and consultations. Serving Denver, Colorado and coast to coast." />
-        <meta name="keywords" content="interior designer Denver, Denver interior design studio, transitional interior design, full service interior design Colorado, virtual interior design, room refresh Denver, interior decorator Denver CO, luxury interior design Denver, home design Colorado, Halcyon Haus, Nikka Winchell interior designer" />
+        {/* ── Site-wide (non-page-specific) SEO ──
+            IMPORTANT: title, description, canonical, and og / twitter tags
+            are intentionally NOT set here. Each page sets its own via next/head
+            (see pages/about.js, pages/services.js, etc.) so every route gets a
+            unique, correct canonical URL and social preview instead of every
+            page on the site inheriting the homepage's tags. ── */}
         <meta name="author" content="Nikka Winchell, Halcyon Haus" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="googlebot" content="index, follow" />
         <meta name="theme-color" content="#fafafa" />
-        <link rel="canonical" href="https://www.halcyonhaus.com" />
-
-        {/* ── Open Graph ── */}
-        <meta property="og:site_name" content="Halcyon Haus" />
-        <meta property="og:type" content="website" />
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:url" content="https://www.halcyonhaus.com" />
-        <meta property="og:title" content="Halcyon Haus — Interior Design Studio | Denver, CO" />
-        <meta property="og:description" content="Thoughtful, transitional interior design by Nikka Winchell. Full-service design, virtual design, and room refresh. Based in Denver, CO — designing coast to coast." />
-        <meta property="og:image" content="https://www.halcyonhaus.com/images/HEROKITCHEN1.JPG" />
-        <meta property="og:image:secure_url" content="https://www.halcyonhaus.com/images/HEROKITCHEN1.JPG" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Halcyon Haus interior design — kitchen with brass fixtures and stone backsplash, designed by Nikka Winchell" />
-
-        {/* ── Twitter / X ── */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@halcyonhaus_" />
-        <meta name="twitter:creator" content="@halcyonhaus_" />
-        <meta name="twitter:title" content="Halcyon Haus — Interior Design Studio | Denver, CO" />
-        <meta name="twitter:description" content="Thoughtful, transitional interior design by Nikka Winchell. Full-service, virtual, and room refresh packages. Denver, CO — designing coast to coast." />
-        <meta name="twitter:image" content="https://www.halcyonhaus.com/images/HEROKITCHEN1.JPG" />
-        <meta name="twitter:image:alt" content="Halcyon Haus interior design by Nikka Winchell" />
 
         {/* ── Google Fonts (loaded once globally) ── */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -54,7 +34,8 @@ export default function Document() {
 
         {/* ── Local Business + Person + Website Schema (JSON-LD) ──
             Google uses this for Maps, local search, knowledge panels,
-            and "interior designer near me" queries.                    ── */}
+            and "interior designer near me" queries. This is sitewide
+            business data (not page content), so it's fine to keep here. ── */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
