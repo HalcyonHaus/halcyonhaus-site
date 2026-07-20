@@ -68,12 +68,12 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-white bg-opacity-20 pointer-events-none" />
       </div>
 
-      {/* +Menu Button */}
+      {/* Menu Button */}
       <button
-        className="absolute top-6 right-9 z-30 text-white text-sm tracking-widest uppercase font-inter hover:text-neutral-300"
+        className="absolute top-6 right-9 z-30 text-white text-[11px] tracking-widest uppercase font-inter hover:text-neutral-300"
         onClick={() => setSidebarOpen(true)}
       >
-        + Menu
+        Menu
       </button>
 
       {/* Sidebar Menu */}
@@ -85,7 +85,7 @@ export default function HomePage() {
         <div className="h-full px-8 pt-3 pb-8 flex flex-col justify-start items-start text-black">
           {/* Close button */}
           <div
-  className="self-end text-[38px] font-extralight tracking-wide cursor-pointer hover:opacity-70 transition-opacity duration-300"
+  className="self-end text-[22px] font-extralight tracking-wide cursor-pointer hover:opacity-70 transition-opacity duration-300"
   onClick={() => setSidebarOpen(false)}
 >
  ×
@@ -107,7 +107,7 @@ export default function HomePage() {
           </div>
 
           {/* Navigation links */}
-          <nav className="flex flex-col space-y-5 text-xs uppercase tracking-widest font-normal text-black w-full pl-1 mt-12">
+          <nav className="flex flex-col space-y-5 text-[10px] uppercase tracking-widest font-normal text-black w-full pl-1 mt-12">
             <Link href="/projects" className="hover:text-neutral-500">PROJECTS</Link>
             <Link href="/about" className="hover:text-neutral-500">ABOUT</Link>
             <Link href="/services" className="hover:text-neutral-500">SERVICES</Link>
@@ -118,7 +118,7 @@ export default function HomePage() {
           </nav>
 
           {/* Social Link */}
-          <div className="mt-auto text-[12px] tracking-widest font-inter uppercase pt-12">
+          <div className="mt-auto text-[11px] tracking-widest font-inter uppercase pt-12">
             <a href="https://www.instagram.com/halcyonhaus_" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-500">
               @HALCYONHAUS_
             </a>
