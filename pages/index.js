@@ -25,22 +25,23 @@ export default function HomePage() {
   return (
     <div className="relative min-h-screen bg-black text-white font-sans">
       <Head>
-        <title>Halcyon Haus</title>
-    <meta
-    name="description"
-    content="Halcyon Haus is a Colorado-based interior design studio crafting warm, curated interiors rooted in California ease and elevated function. Featured by Pottery Barn, Amber Interiors, and more."
-  />
-      <meta property="og:title" content="Halcyon Haus" />
-  <meta property="og:description" content="Warm, curated interiors by Halcyon Haus — rooted in California ease and Colorado cool." />
-  <meta property="og:image" content="/logos/og-thumbnail.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://halcyonhaus.com" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Halcyon Haus" />
-  <meta name="twitter:description" content="Interior design rooted in warmth, balance, and California ease." />
-  <meta name="twitter:image" content="/logos/og-thumbnail.jpg" />
+        <title>Halcyon Haus | Interior Designer in Denver, CO</title>
+        <meta
+          name="description"
+          content="Halcyon Haus is a Colorado-based interior design studio crafting warm, curated interiors rooted in California ease and elevated function. Featured by Pottery Barn, Amber Interiors, and more."
+        />
+        <link rel="canonical" href="https://www.halcyonhaus.com" />
+        <meta property="og:title" content="Halcyon Haus | Interior Designer in Denver, CO" />
+        <meta property="og:description" content="Warm, curated interiors by Halcyon Haus, rooted in California ease and Colorado cool." />
+        <meta property="og:image" content="https://www.halcyonhaus.com/logos/og-thumbnail.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.halcyonhaus.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Halcyon Haus | Interior Designer in Denver, CO" />
+        <meta name="twitter:description" content="Interior design rooted in warmth, balance, and California ease." />
+        <meta name="twitter:image" content="https://www.halcyonhaus.com/logos/og-thumbnail.jpg" />
         <link
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
           rel="stylesheet"
@@ -81,7 +82,7 @@ export default function HomePage() {
           ${sidebarOpen ? "translate-x-0" : "translate-x-full"}
           w-full sm:w-[25vw] sm:max-w-[400px]`}
       >
-        <div className="h-full px-8 pt-3 pb-8 flex flex-col justify-start items-start font-Playfair Display text-black">
+        <div className="h-full px-8 pt-3 pb-8 flex flex-col justify-start items-start text-black">
           {/* Close button */}
           <div
   className="self-end text-[38px] font-extralight tracking-wide cursor-pointer hover:opacity-70 transition-opacity duration-300"
@@ -106,7 +107,7 @@ export default function HomePage() {
           </div>
 
           {/* Navigation links */}
-          <nav className="flex flex-col space-y-5 text-sm uppercase tracking-widest font-normal text-black w-full pl-1 mt-12">
+          <nav className="flex flex-col space-y-5 text-xs uppercase tracking-widest font-normal text-black w-full pl-1 mt-12">
             <Link href="/projects" className="hover:text-neutral-500">PROJECTS</Link>
             <Link href="/about" className="hover:text-neutral-500">ABOUT</Link>
             <Link href="/services" className="hover:text-neutral-500">SERVICES</Link>
