@@ -151,16 +151,15 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="projectType" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">
-                  Project Type
+                  Project Type <span className="normal-case tracking-normal text-gray-400">(optional)</span>
                 </label>
                 <select
                   id="projectType"
                   name="projectType"
-                  required
                   defaultValue=""
                   className="w-full border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white"
                 >
-                  <option value="" disabled>Select one</option>
+                  <option value="">Select one</option>
                   <option value="Full-Service Design">Full-Service Design</option>
                   <option value="Room Refresh">Room Refresh</option>
                   <option value="Virtual Design">Virtual Design</option>
@@ -171,16 +170,15 @@ export default function ContactPage() {
 
               <div>
                 <label htmlFor="timeline" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">
-                  Timeline
+                  Timeline <span className="normal-case tracking-normal text-gray-400">(optional)</span>
                 </label>
                 <select
                   id="timeline"
                   name="timeline"
-                  required
                   defaultValue=""
                   className="w-full border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white"
                 >
-                  <option value="" disabled>Select one</option>
+                  <option value="">Select one</option>
                   <option value="ASAP">ASAP</option>
                   <option value="1-3 months">1-3 months</option>
                   <option value="3-6 months">3-6 months</option>
@@ -191,16 +189,15 @@ export default function ContactPage() {
 
             <div>
               <label htmlFor="budget" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">
-                Estimated Budget
+                Estimated Budget <span className="normal-case tracking-normal text-gray-400">(optional)</span>
               </label>
               <select
                 id="budget"
                 name="budget"
-                required
                 defaultValue=""
                 className="w-full border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white"
               >
-                <option value="" disabled>Select one</option>
+                <option value="">Select one</option>
                 <option value="Under $10k">Under $10k</option>
                 <option value="$10k-$25k">$10k-$25k</option>
                 <option value="$25k-$75k">$25k-$75k</option>
