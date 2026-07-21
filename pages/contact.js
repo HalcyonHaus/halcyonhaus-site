@@ -124,7 +124,7 @@ export default function ContactPage() {
           <form onSubmit={handleSubmit} className="space-y-6 text-sm max-w-2xl mx-auto mt-10">
             <div>
               <label htmlFor="name" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">
-                Name
+                Name <span className="text-gray-400">*</span>
               </label>
               <input
                 type="text"
@@ -137,7 +137,7 @@ export default function ContactPage() {
 
             <div>
               <label htmlFor="email" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">
-                Email
+                Email <span className="text-gray-400">*</span>
               </label>
               <input
                 type="email"
@@ -151,64 +151,91 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="projectType" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">
-                  Project Type <span className="normal-case tracking-normal text-gray-400">(optional)</span>
+                  Project Type
                 </label>
-                <select
-                  id="projectType"
-                  name="projectType"
-                  defaultValue=""
-                  className="w-full border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white"
-                >
-                  <option value="">Select one</option>
-                  <option value="Full-Service Design">Full-Service Design</option>
-                  <option value="Room Refresh">Room Refresh</option>
-                  <option value="Virtual Design">Virtual Design</option>
-                  <option value="Consultation Only">Consultation Only</option>
-                  <option value="Not sure yet">Not sure yet</option>
-                </select>
+                <div className="relative">
+                  <select
+                    id="projectType"
+                    name="projectType"
+                    defaultValue=""
+                    className="w-full appearance-none border border-gray-300 rounded-md px-3 py-1.5 pr-8 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white text-gray-700"
+                  >
+                    <option value="">Select one</option>
+                    <option value="Full-Service Design">Full-Service Design</option>
+                    <option value="Room Refresh">Room Refresh</option>
+                    <option value="Virtual Design">Virtual Design</option>
+                    <option value="Consultation Only">Consultation Only</option>
+                    <option value="Not sure yet">Not sure yet</option>
+                  </select>
+                  <svg
+                    className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-3 h-3 text-gray-400"
+                    fill="none"
+                    viewBox="0 0 12 8"
+                  >
+                    <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
               </div>
 
               <div>
                 <label htmlFor="timeline" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">
-                  Timeline <span className="normal-case tracking-normal text-gray-400">(optional)</span>
+                  Timeline
                 </label>
-                <select
-                  id="timeline"
-                  name="timeline"
-                  defaultValue=""
-                  className="w-full border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white"
-                >
-                  <option value="">Select one</option>
-                  <option value="ASAP">ASAP</option>
-                  <option value="1-3 months">1-3 months</option>
-                  <option value="3-6 months">3-6 months</option>
-                  <option value="Just exploring">Just exploring</option>
-                </select>
+                <div className="relative">
+                  <select
+                    id="timeline"
+                    name="timeline"
+                    defaultValue=""
+                    className="w-full appearance-none border border-gray-300 rounded-md px-3 py-1.5 pr-8 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white text-gray-700"
+                  >
+                    <option value="">Select one</option>
+                    <option value="ASAP">ASAP</option>
+                    <option value="1-3 months">1-3 months</option>
+                    <option value="3-6 months">3-6 months</option>
+                    <option value="Just exploring">Just exploring</option>
+                  </select>
+                  <svg
+                    className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-3 h-3 text-gray-400"
+                    fill="none"
+                    viewBox="0 0 12 8"
+                  >
+                    <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
               </div>
             </div>
 
             <div>
               <label htmlFor="budget" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">
-                Estimated Budget <span className="normal-case tracking-normal text-gray-400">(optional)</span>
+                Estimated Budget
               </label>
-              <select
-                id="budget"
-                name="budget"
-                defaultValue=""
-                className="w-full border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white"
-              >
-                <option value="">Select one</option>
-                <option value="Under $10k">Under $10k</option>
-                <option value="$10k-$50k">$10k-$50k</option>
-                <option value="$50k-$150k">$50k-$150k</option>
-                <option value="$150k+">$150k+</option>
-                <option value="Not sure yet">Not sure yet</option>
-              </select>
+              <div className="relative">
+                <select
+                  id="budget"
+                  name="budget"
+                  defaultValue=""
+                  className="w-full appearance-none border border-gray-300 rounded-md px-3 py-1.5 pr-8 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white text-gray-700"
+                >
+                  <option value="">Select one</option>
+                  <option value="Under $10k">Under $10k</option>
+                  <option value="$10k-$50k">$10k-$50k</option>
+                  <option value="$50k-$150k">$50k-$150k</option>
+                  <option value="$150k+">$150k+</option>
+                  <option value="Not sure yet">Not sure yet</option>
+                </select>
+                <svg
+                  className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-3 h-3 text-gray-400"
+                  fill="none"
+                  viewBox="0 0 12 8"
+                >
+                  <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
             </div>
 
             <div>
               <label htmlFor="message" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">
-                Tell me about your space
+                Tell me about your space <span className="text-gray-400">*</span>
               </label>
               <textarea
                 id="message"
