@@ -92,7 +92,7 @@ export default function ContactPage() {
         </p>
 
         <div className="mt-10 flex justify-center space-x-4 text-xs uppercase tracking-widest font-inter text-black">
-          
+          <a
             href="https://www.instagram.com/halcyonhaus_"
             target="_blank"
             rel="noopener noreferrer"
@@ -101,7 +101,7 @@ export default function ContactPage() {
             Instagram
           </a>
           <span>|</span>
-          
+          <a
             href="https://www.tiktok.com/@halcyonhaus_"
             target="_blank"
             rel="noopener noreferrer"
@@ -110,7 +110,7 @@ export default function ContactPage() {
             TikTok
           </a>
           <span>|</span>
-          
+          <a
             href="https://www.shopltk.com/explore/halcyonhaus"
             target="_blank"
             rel="noopener noreferrer"
