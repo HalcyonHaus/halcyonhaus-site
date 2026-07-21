@@ -76,7 +76,7 @@ export default function CanyonCottageKitchen() {
 
         {/* Hero Image */}
         <motion.div {...subtleFade} className="mb-16">
-          <img src="/images/KITCHENBLOG1.JPG" alt="Castle Pines kitchen with Benjamin Moore Pashmina cabinets and Venetian plaster range hood by Halcyon Haus" className="w-full rounded-md object-cover" />
+          <img src="/images/HEROKITCHEN00.jpg" alt="Castle Pines kitchen with Benjamin Moore Pashmina cabinets and Venetian plaster range hood by Halcyon Haus" className="w-full rounded-md object-cover" />
         </motion.div>
 
         {/* Intro Text */}
