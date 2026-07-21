@@ -5,7 +5,21 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen text-black font-sans" style={{ backgroundColor: "#fafafa" }}>
       <Head>
-        <title>Services – Halcyon Haus</title>
+        <title>Interior Design Services | Halcyon Haus — Denver, CO</title>
+        <meta
+          name="description"
+          content="Full-service design, room refresh, virtual design, and consultations by Halcyon Haus, a Denver interior design studio serving Colorado and beyond."
+        />
+        <link rel="canonical" href="https://www.halcyonhaus.com/services" />
+        <meta property="og:title" content="Interior Design Services | Halcyon Haus" />
+        <meta property="og:description" content="Full-service design, room refresh, virtual design, and consultations, flexible interior design services tailored to your lifestyle." />
+        <meta property="og:image" content="https://www.halcyonhaus.com/images/HEROKITCHEN1.JPG" />
+        <meta property="og:url" content="https://www.halcyonhaus.com/services" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Interior Design Services | Halcyon Haus" />
+        <meta name="twitter:description" content="Full-service design, room refresh, virtual design, and consultations by Nikka Winchell." />
+        <meta name="twitter:image" content="https://www.halcyonhaus.com/images/HEROKITCHEN1.JPG" />
         <link
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
           rel="stylesheet"
@@ -42,19 +56,19 @@ export default function ServicesPage() {
               <div>
                 <h2 className="uppercase text-xs tracking-widest text-gray-500 mb-2">FULL-SERVICE DESIGN</h2>
                 <p>
-                  A comprehensive approach — from layout, materials, and custom millwork to sourcing, styling, and install. Ideal for remodels, new builds, or full home transformations.
+                  A comprehensive approach - from layout, materials, and custom millwork to sourcing, styling, and install. Ideal for remodels, new builds, or full home transformations.
                 </p>
               </div>
               <div>
                 <h2 className="uppercase text-xs tracking-widest text-gray-500 mb-2">ROOM REFRESH</h2>
                 <p>
-                  For lived-in spaces needing a thoughtful update — furnishings, layout, styling, and accessories using the existing architecture.
+                  For lived-in spaces needing a thoughtful update - furnishings, layout, styling, and accessories using the existing architecture.
                 </p>
               </div>
               <div>
                 <h2 className="uppercase text-xs tracking-widest text-gray-500 mb-2">VIRTUAL DESIGN</h2>
                 <p>
-                  A remote experience tailored to your space. Includes custom mood boards, layout guides, shoppable links, and styling instructions — all delivered online.
+                  A remote experience tailored to your space. Includes custom mood boards, layout guides, shoppable links, and styling instructions - all delivered online.
                 </p>
               </div>
               <div>
