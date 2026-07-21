@@ -91,16 +91,15 @@ Once that decision was made, every other material followed.          </p>
           <p>
           The goal wasn’t to fill the room with statement pieces. It was to create a kitchen where everything worked together and nothing felt like it was competing for attention. The Mont Blanc quartzite has soft movement that complements the cabinetry rather than distracting from it, so we continued the stone up the backsplash instead of introducing another material. It creates a quieter backdrop while letting the natural veining become part of the architecture of the space.            </p>
           
-          
         </section>
 
         {/* Two-up images */}
         <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           <div className="md:h-[58rem] overflow-hidden rounded-md">
-            <img src="/images/CCKITCHEN1.JPG" alt="Custom cabinet detail with unlacquered brass knobs and pulls in warm taupe kitchen" className="w-full h-full object-cover" />
+            <img src="/images/DSC03252.jpg" alt="Custom cabinet detail with unlacquered brass knobs and pulls in warm taupe kitchen" className="w-full h-full object-cover" />
           </div>
           <div className="md:h-[58rem] overflow-hidden rounded-md">
-            <img src="/images/CCKITCHEN2.JPG" alt="Kitchen angle featuring reeded glass uppers and polished nickel faucet in Colorado interior" className="w-full h-full object-cover" />
+            <img src="/images/PashminaKitchen1.jpg" alt="Kitchen angle featuring reeded glass uppers and polished nickel faucet in Colorado interior" className="w-full h-full object-cover" />
           </div>
         </motion.div>
 
