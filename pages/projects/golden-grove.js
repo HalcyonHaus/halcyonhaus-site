@@ -98,7 +98,7 @@ export default function GoldenGrove() {
             I kept the original cabinetry in this kitchen and had it painted rather than replaced. There was nothing wrong with the layout, so it made more sense to work with what was already there.
           </p>
           <p>
-            To bring in some texture, we added fluted walnut wood paneling, which plays off the marble and the warmer metals throughout the space.
+            To bring in some texture, we added fluted walnut wood paneling, which plays off the quartz and the warmer metals throughout the space. The heritage brass hardware really tied in perfectly with the burgundy cabinetry, providing warmth without too much shine.
           </p>
         </section>
 
@@ -144,7 +144,6 @@ export default function GoldenGrove() {
         {/* Closing Text */}
         <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-10 px-4 md:px-0 max-w-5xl mx-auto">
           <p>
-            This became a sanctuary, and we're so happy with the end result. 
           </p>
 
           <div className="border-t border-neutral-200 pt-10">
