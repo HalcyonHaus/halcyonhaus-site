@@ -103,14 +103,14 @@ export default function ProjectCarousel({ title, images }) {
         {images.length > 1 && (
           <>
             <button
-              onClick={(e) => { e.stopPropagation(); goToPrev(); }}
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); goToPrev(); }}
               className="absolute left-3 top-1/2 -translate-y-1/2 z-20 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300"
               aria-label={`Previous image of ${title}`}
             >
               <ChevronLeft size={24} strokeWidth={1.2} className="text-white drop-shadow" />
             </button>
             <button
-              onClick={(e) => { e.stopPropagation(); goToNext(); }}
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); goToNext(); }}
               className="absolute right-3 top-1/2 -translate-y-1/2 z-20 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300"
               aria-label={`Next image of ${title}`}
             >
@@ -139,7 +139,7 @@ export default function ProjectCarousel({ title, images }) {
           aria-modal="true"
         >
           <button
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); setIsOpen(false); }}
             className="absolute top-4 right-4 text-black hover:text-neutral-600"
             aria-label="Close gallery"
           >
@@ -147,7 +147,7 @@ export default function ProjectCarousel({ title, images }) {
           </button>
 
           <button
-            onClick={() => setModalIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))}
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); setModalIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1)); }}
             className="absolute left-4 top-1/2 -translate-y-1/2 text-black hover:text-neutral-600"
             aria-label="Previous image"
           >
@@ -166,7 +166,7 @@ export default function ProjectCarousel({ title, images }) {
           </div>
 
           <button
-            onClick={() => setModalIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))}
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); setModalIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1)); }}
             className="absolute right-4 top-1/2 -translate-y-1/2 text-black hover:text-neutral-600"
             aria-label="Next image"
           >
