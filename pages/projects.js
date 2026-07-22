@@ -23,9 +23,7 @@ const projects = [
       "/images/KITCHENBLOG2.JPG",
       "/images/DSC03252.jpg",
       "/images/PashminaKitchen1.jpg",
-      "/images/KITCHENBLOG3.JPG",
-      "/images/DSC02032.jpeg",
-      "/images/DSC02048-2.jpeg"
+      "/images/KITCHENBLOG3.JPG"
     ]
   },
   {
