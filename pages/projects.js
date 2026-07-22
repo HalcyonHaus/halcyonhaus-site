@@ -32,8 +32,6 @@ const projects = [
       "/images/PRIMARYBATH00.JPG",
       "/images/PRIMARYBATH2.JPG",
       "/images/PRIMARYBATH0.JPG",
-      "/images/DSC02081.jpeg",
-      "/images/DSC02075.jpeg",
       "/images/DSC02092.jpeg",
       "/images/DSC02082.jpeg"
     ]
