@@ -1,173 +1,207 @@
 import Head from "next/head";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import ProjectCarousel from "../components/ProjectCarousel";
 
-// Subtle fade (opacity only)
-const subtleFade = {
-  initial: { opacity: 0 },
-  whileInView: { opacity: 1 },
-  transition: { duration: 0.5, ease: "easeOut" },
-  viewport: { once: true }
+const projects = [
+  {
+    title: "Golden Grove",
+    slug: "golden-grove",
+    images: [
+      "/images/GOLDENGROVEKITCHEN2.jpg",
+      "/images/GOLDENGROVE-BATH.jpg",
+      "/images/GOLDENGROVE-KITCHEN.jpg",
+      "/images/GOLDENGROVE-POWDER.jpg",
+      "/images/GOLDENGROVE-BEDROOM.jpg",
+      "/images/GOLDENGROVE-DOOR.jpg",
+      "/images/GOLDENGROVE-POOL.jpg"
+    ]
+  },
+  {
+    title: "Canyon Cottage Kitchen",
+    slug: "canyon-cottage-kitchen",
+    images: [
+      "/images/KITCHENBLOG2.JPG",
+      "/images/DSC03252.jpg",
+      "/images/PashminaKitchen1.jpg",
+      "/images/KITCHENBLOG3.JPG",
+      "/images/DSC02032.jpeg",
+      "/images/DSC02048-2.jpeg"
+    ]
+  },
+  {
+    title: "Canyon Cottage Primary Bath",
+    images: [
+      "/images/PRIMARYBATH00.JPG",
+      "/images/PRIMARYBATH2.JPG",
+      "/images/PRIMARYBATH0.JPG",
+      "/images/DSC02081.jpeg",
+      "/images/DSC02075.jpeg",
+      "/images/DSC02092.jpeg",
+      "/images/DSC02082.jpeg"
+    ]
+  },
+  {
+    title: "Country Escape Dining",
+    images: [
+      "/images/DINING1.JPG",
+      "/images/DINING2.JPG"
+    ]
+  },
+  {
+    title: "Halcyon Haus",
+    images: [
+      "/images/DSC01677.jpeg",
+      "/images/IMG_4599.jpeg",
+      "/images/DSC01631.jpeg",
+      "/images/DSC01662.jpeg",
+      "/images/DC7801C0-7521-4A4A-86F3-228C9F155D6E.jpeg",
+      "/images/53757896-768E-436A-A242-E1EB1C839F05.jpeg",
+      "/images/DSC01503.jpeg",
+      "/images/7F3F1DD5-20A0-4377-A60E-CB6CBED5947A.jpeg",
+      "/images/IMG_0640.jpeg"
+    ]
+  },
+  {
+    title: "Anything But Monotone Kitchen",
+    images: [
+      "/images/TWOTONEDKITCHEN1.JPG",
+      "/images/DSC02219.jpeg",
+      "/images/DSC02198.jpeg"
+    ]
+  },
+  {
+    title: "French Modern Primary",
+    images: [
+      "/images/PRIMARY1.JPG",
+      "/images/PRIMARY2.JPG"
+    ]
+  },
+  {
+    title: "Mountain Escape Neutral Nursery",
+    images: [
+      "/images/NURSERY0.JPG",
+      "/images/NURSERY1.JPG",
+      "/images/NURSERY3.JPG",
+      "/images/NURSERY4.JPG",
+      "/images/NURSERY5.JPG",
+      "/images/NURSERY6.JPG"
+    ]
+  },
+  {
+    title: "Full Circle Bedroom",
+    images: [
+      "/images/DFF440A7-0193-47CF-9773-5436061404B9.jpeg",
+      "/images/DSC02113.jpeg"
+    ]
+  }
+];
+
+const portfolioSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Interior Design Projects | Halcyon Haus",
+  "description": "Portfolio of residential interior design projects by Nikka Winchell of Halcyon Haus, including kitchens, bathrooms, bedrooms, nurseries, and dining spaces.",
+  "url": "https://www.halcyonhaus.com/projects",
+  "author": {
+    "@type": "Person",
+    "name": "Nikka Winchell",
+    "jobTitle": "Interior Designer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Halcyon Haus"
+    }
+  },
+  "hasPart": projects.map((p) => ({
+    "@type": "CreativeWork",
+    "name": p.title,
+    "creator": {
+      "@type": "Person",
+      "name": "Nikka Winchell"
+    },
+    "image": "https://www.halcyonhaus.com" + p.images[0]
+  }))
 };
 
-export default function GoldenGrove() {
+export default function ProjectsPage() {
   return (
-    <div className="min-h-screen text-black font-sans bg-[#fafafa]">
+    <div className="min-h-screen text-black font-sans" style={{ backgroundColor: "#fafafa" }}>
       <Head>
-        <title>Golden Grove | Palm Springs | Halcyon Haus Design Studio</title>
-        <meta
-          name="description"
-          content="Golden Grove: a Palm Springs interior design project by Halcyon Haus, featuring bold zellige tile, aged brass and copper hardware, and warm natural textures."
-        />
-        <meta
-          name="keywords"
-          content="Palm Springs interior design, zellige tile kitchen, brass hardware interior design, Halcyon Haus, desert home design"
-        />
-        <link rel="canonical" href="https://www.halcyonhaus.com/projects/golden-grove" />
-        <meta property="og:title" content="Golden Grove | Halcyon Haus" />
-        <meta property="og:description" content="A Palm Springs project by Halcyon Haus featuring bold zellige tile, aged brass and copper hardware, and warm natural textures." />
-        <meta property="og:image" content="https://www.halcyonhaus.com/images/GOLDENGROVE-MAINKITCHEN.jpg" />
-        <meta property="og:url" content="https://www.halcyonhaus.com/projects/golden-grove" />
+        <title>Interior Design Projects | Halcyon Haus, Denver, CO</title>
+        <meta name="description" content="Interior design projects by Halcyon Haus: kitchens, bathrooms, bedrooms, and nurseries. Transitional design by Nikka Winchell in Denver, CO." />
+        <meta name="keywords" content="interior design portfolio Denver, kitchen design Colorado, bathroom design Denver, transitional interior design projects, residential interior design portfolio, Halcyon Haus projects, Nikka Winchell design" />
+        <link rel="canonical" href="https://www.halcyonhaus.com/projects" />
+        <meta property="og:title" content="Interior Design Projects | Halcyon Haus, Denver, CO" />
+        <meta property="og:description" content="Browse interior design projects by Halcyon Haus: kitchens, bathrooms, bedrooms, nurseries, and more. Transitional design by Nikka Winchell." />
+        <meta property="og:image" content="https://www.halcyonhaus.com/images/CCKITCHEN2.JPG" />
+        <meta property="og:url" content="https://www.halcyonhaus.com/projects" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Golden Grove | Halcyon Haus" />
-        <meta name="twitter:description" content="A Palm Springs project by Halcyon Haus featuring bold zellige tile and warm natural textures." />
-        <meta name="twitter:image" content="https://www.halcyonhaus.com/images/GOLDENGROVE-MAINKITCHEN.jpg" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
-          rel="stylesheet"
-        />
+        <meta name="twitter:title" content="Interior Design Projects | Halcyon Haus" />
+        <meta name="twitter:description" content="Kitchens, bathrooms, bedrooms, and more, transitional interior design by Nikka Winchell." />
+        <meta name="twitter:image" content="https://www.halcyonhaus.com/images/CCKITCHEN2.JPG" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Article",
-              "headline": "Golden Grove – Halcyon Haus",
-              "author": {
-                "@type": "Person",
-                "name": "Nikka Winchell"
-              },
-              "publisher": {
-                "@type": "Organization",
-                "name": "Halcyon Haus",
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": "https://halcyonhaus.com/logos/HHLOGO.JPG"
-                }
-              },
-              "datePublished": "2026-07-22",
-              "description":
-                "Golden Grove: a Palm Springs interior design project by Halcyon Haus, featuring bold zellige tile, aged brass and copper hardware, and warm natural textures."
-            })
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(portfolioSchema) }}
         />
       </Head>
 
       {/* Navigation */}
       <header className="absolute top-0 w-full z-20 px-6 pt-6 text-xs tracking-widest">
         <nav className="flex justify-center sm:justify-end space-x-6 uppercase font-inter text-xs">
-          <Link href="/" legacyBehavior><a className="transition-colors duration-300 text-black hover:text-neutral-400">Home</a></Link>
-          <Link href="/about" legacyBehavior><a className="transition-colors duration-300 text-black hover:text-neutral-400">About</a></Link>
-          <Link href="/services" legacyBehavior><a className="transition-colors duration-300 text-black hover:text-neutral-400">Services</a></Link>
-          <Link href="/projects" legacyBehavior><a className="transition-colors duration-300 text-black hover:text-neutral-400">Projects</a></Link>
-          <Link href="/contact" legacyBehavior><a className="transition-colors duration-300 text-black hover:text-neutral-400">Contact</a></Link>
+          <Link href="/" className="transition-colors duration-300 text-black hover:text-neutral-400">Home</Link>
+          <Link href="/about" className="transition-colors duration-300 text-black hover:text-neutral-400">About</Link>
+          <Link href="/services" className="transition-colors duration-300 text-black hover:text-neutral-400">Services</Link>
+          <Link href="/projects" className="transition-colors duration-300 text-black hover:text-neutral-400">Projects</Link>
+          <Link href="/contact" className="transition-colors duration-300 text-black hover:text-neutral-400">Contact</Link>
         </nav>
       </header>
 
-      {/* Main Content */}
-      <main className="pt-24 pb-24 max-w-[76rem] mx-auto px-4 md:px-10">
-        <h1 className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
-          GOLDEN GROVE
+      {/* Projects Grid */}
+      <main className="px-6 py-24 max-w-[85rem] mx-auto">
+        <h1
+          className="text-2xl md:text-2.5xl font-light tracking-[0.1em] text-center"
+          style={{ fontFamily: "'Playfair Display', serif" }}
+        >
+          PROJECTS
         </h1>
-        <h2 className="text-center text-sm uppercase tracking-widest text-gray-500 mt-2 mb-16">
-          Palm Springs, California
-        </h2>
-
-        {/* Hero Image - main kitchen */}
-        <motion.div {...subtleFade} className="mb-16">
-          <img src="/images/GOLDENGROVE-MAINKITCHEN.jpg" alt="Palm Springs kitchen with burgundy cabinetry, copper hood, and fluted wood island, designed by Halcyon Haus" className="w-full rounded-md object-cover" />
-        </motion.div>
-
-        {/* Intro Text */}
-        <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 mb-16 px-4 md:px-0 max-w-5xl mx-auto">
-          <p>
-            Golden Grove is a whole-home project in Palm Springs built around bold color, natural texture, and finishes that feel collected rather than curated.
-          </p>
-          <p>
-            I kept the original cabinetry in this kitchen and had it painted rather than replaced. There was nothing wrong with the layout, so it made more sense to work with what was already there.
-          </p>
-          <p>
-            To bring in some texture, we added fluted walnut wood paneling, which plays off the marble and the warmer metals throughout the space.
-          </p>
-        </section>
-
-        {/* Two-up images: bedroom + door detail */}
-        <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          <div className="md:h-[58rem] overflow-hidden rounded-md">
-            <img src="/images/GOLDENGROVE-BEDROOM.jpg" alt="Primary bedroom with plaster walls, woven pendant light, and burgundy velvet bolster pillows in Palm Springs home" className="w-full h-full object-cover" />
-          </div>
-          <div className="md:h-[58rem] overflow-hidden rounded-md">
-            <img src="/images/GOLDENGROVE-DOOR.jpg" alt="Detail of a tasseled door pull against painted wood paneling in Palm Springs interior" className="w-full h-full object-cover" />
-          </div>
-        </motion.div>
-
-        {/* Two-up images: casita kitchenette + primary bath shower */}
-        <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          <div className="md:h-[58rem] overflow-hidden rounded-md">
-            <img src="/images/GOLDENGROVE-KITCHEN.jpg" alt="Casita kitchenette with bold red zellige tile backsplash, oak shelving, and veined marble counters in Palm Springs home" className="w-full h-full object-cover" />
-          </div>
-          <div className="md:h-[58rem] overflow-hidden rounded-md">
-            <img src="/images/GOLDENGROVE-BATH.jpg" alt="Arched walk-in shower with mixed floral zellige tile and travertine floors in Palm Springs primary bathroom" className="w-full h-full object-cover" />
-          </div>
-        </motion.div>
-
-        <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 mb-16 px-4 md:px-0 max-w-5xl mx-auto">
-          <p>
-            The red backsplash was a fun addition to the kitchenette in the casita, a little pop of color that felt right for Palm Springs.
-          </p>
-          <p>
-            In the primary bath, I mixed two different tile types for a more random, collected look with the floral pattern, rather than laying everything out in a strict grid. Travertine floors ground the space and keep it from feeling too busy.
-          </p>
-        </section>
-
-        {/* Two-up images: powder room + pool */}
-        <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          <div className="md:h-[58rem] overflow-hidden rounded-md">
-            <img src="/images/GOLDENGROVE-POWDER.jpg" alt="Powder room with blush zellige tile, woven pendant lights, and ribbed wood vanity in Palm Springs home" className="w-full h-full object-cover" />
-          </div>
-          <div className="md:h-[58rem] overflow-hidden rounded-md">
-            <img src="/images/GOLDENGROVE-POOL.jpg" alt="Palm Springs backyard lap pool and spa with palm trees and desert landscaping, designed by Halcyon Haus" className="w-full h-full object-cover" />
-          </div>
-        </motion.div>
-
-        {/* Closing Text */}
-        <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-10 px-4 md:px-0 max-w-5xl mx-auto">
-          <p>
-            [Add a closing paragraph here about the overall feel you were going for and anything that ties the home together.]
-          </p>
-
-          <div className="border-t border-neutral-200 pt-10">
-            <h3
-              className="uppercase tracking-[0.2em] text-xs mb-6 text-neutral-500"
-              style={{ fontFamily: "'Inter', sans-serif" }}
-            >
-              Project Details
-            </h3>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-12 text-sm">
-              <div><strong>Location:</strong> Palm Springs, California</div>
-              <div><strong>Project Type:</strong> Whole-Home Design</div>
-
-              <div><strong>Hardware:</strong> Mixed aged brass and copper</div>
-              <div><strong>Tile:</strong> Hand-glazed zellige</div>
-
-              <div><strong>Design &amp; Styling:</strong> Nikka Winchell, Halcyon Haus</div>
-              <div><strong>Photography:</strong> Nikka Winchell, Halcyon Haus</div>
-            </div>
-          </div>
-        </section>
+        <div className="flex flex-wrap justify-center gap-10 mt-16">
+          {projects.map((project, index) => {
+            const carousel = (
+              <ProjectCarousel key={index} title={project.title} images={project.images} />
+            );
+            const cardWidth = "w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.6667rem)]";
+            return project.slug ? (
+              <Link key={index} href={`/projects/${project.slug}`} className={cardWidth}>
+                {carousel}
+              </Link>
+            ) : (
+              <div key={index} className={cardWidth}>{carousel}</div>
+            );
+          })}
+        </div>
       </main>
+
+      {/* Footer */}
+      <footer className="mt-8 pb-6 text-center text-xs text-gray-500 uppercase tracking-widest font-inter">
+        <p className="mb-2">© {new Date().getFullYear()} Halcyon Haus</p>
+        <div className="flex justify-center space-x-6 text-gray-500">
+          <a href="https://www.instagram.com/halcyonhaus_" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg className="h-4 w-4 hover:text-black transition" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"/>
+            </svg>
+          </a>
+          <a href="https://www.tiktok.com/@halcyonhaus_" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <svg className="h-4 w-4 hover:text-black transition" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 3v12a3 3 0 103 3V9c.6.3 1.3.5 2 .5h1V7h-1c-.6 0-1-.4-1-1V3h-4z"/>
+            </svg>
+          </a>
+          <a href="https://www.shopltk.com/explore/halcyonhaus" target="_blank" rel="noopener noreferrer" aria-label="LTK">
+            <svg className="h-4 w-4 hover:text-black transition" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M3 12a9 9 0 1118 0 9 9 0 01-18 0zm9-6a6 6 0 100 12 6 6 0 000-12z"/>
+            </svg>
+          </a>
+        </div>
+      </footer>
     </div>
   );
 }
