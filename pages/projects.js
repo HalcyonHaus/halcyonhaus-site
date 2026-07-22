@@ -4,11 +4,24 @@ import ProjectCarousel from "../components/ProjectCarousel";
 
 const projects = [
   {
+    title: "Golden Grove",
+    slug: "golden-grove",
+    images: [
+      "/images/GOLDENGROVEKITCHEN2.jpg",
+      "/images/GOLDENGROVE-BATH.jpg",
+      "/images/GOLDENGROVE-KITCHEN.jpg",
+      "/images/GOLDENGROVE-POWDER.jpg",
+      "/images/GOLDENGROVE-BEDROOM.jpg",
+      "/images/GOLDENGROVE-DOOR.jpg",
+      "/images/GOLDENGROVE-POOL.jpg"
+    ]
+  },
+  {
     title: "Canyon Cottage Kitchen",
     slug: "canyon-cottage-kitchen",
     images: [
-      "/images/CCKITCHEN2.JPG",
-      "/images/CCKITCHEN1.JPG",
+      "/images/KITCHENBLOG2.JPG",
+      "/images/DSC03252.jpg",
       "/images/DSC02043.jpeg",
       "/images/DSC02031.jpeg",
       "/images/DSC02032.jpeg",
@@ -80,20 +93,13 @@ const projects = [
       "/images/DFF440A7-0193-47CF-9773-5436061404B9.jpeg",
       "/images/DSC02113.jpeg"
     ]
-  },
-  {
-    title: "Styling",
-    images: [
-      "/images/DSC02489.jpeg",
-      "/images/DSC02496.jpeg"
-    ]
   }
 ];
 
 const portfolioSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Interior Design Projects — Halcyon Haus",
+  "name": "Interior Design Projects | Halcyon Haus",
   "description": "Portfolio of residential interior design projects by Nikka Winchell of Halcyon Haus, including kitchens, bathrooms, bedrooms, nurseries, and dining spaces.",
   "url": "https://www.halcyonhaus.com/projects",
   "author": {
@@ -120,18 +126,18 @@ export default function ProjectsPage() {
   return (
     <div className="min-h-screen text-black font-sans" style={{ backgroundColor: "#fafafa" }}>
       <Head>
-        <title>Interior Design Projects | Halcyon Haus — Denver, CO</title>
+        <title>Interior Design Projects | Halcyon Haus, Denver, CO</title>
         <meta name="description" content="Interior design projects by Halcyon Haus: kitchens, bathrooms, bedrooms, and nurseries. Transitional design by Nikka Winchell in Denver, CO." />
         <meta name="keywords" content="interior design portfolio Denver, kitchen design Colorado, bathroom design Denver, transitional interior design projects, residential interior design portfolio, Halcyon Haus projects, Nikka Winchell design" />
         <link rel="canonical" href="https://www.halcyonhaus.com/projects" />
-        <meta property="og:title" content="Interior Design Projects | Halcyon Haus — Denver, CO" />
-        <meta property="og:description" content="Browse interior design projects by Halcyon Haus — kitchens, bathrooms, bedrooms, nurseries, and more. Transitional design by Nikka Winchell." />
+        <meta property="og:title" content="Interior Design Projects | Halcyon Haus, Denver, CO" />
+        <meta property="og:description" content="Browse interior design projects by Halcyon Haus: kitchens, bathrooms, bedrooms, nurseries, and more. Transitional design by Nikka Winchell." />
         <meta property="og:image" content="https://www.halcyonhaus.com/images/CCKITCHEN2.JPG" />
         <meta property="og:url" content="https://www.halcyonhaus.com/projects" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Interior Design Projects | Halcyon Haus" />
-        <meta name="twitter:description" content="Kitchens, bathrooms, bedrooms, and more — transitional interior design by Nikka Winchell." />
+        <meta name="twitter:description" content="Kitchens, bathrooms, bedrooms, and more, transitional interior design by Nikka Winchell." />
         <meta name="twitter:image" content="https://www.halcyonhaus.com/images/CCKITCHEN2.JPG" />
         <script
           type="application/ld+json"
@@ -158,17 +164,18 @@ export default function ProjectsPage() {
         >
           PROJECTS
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-16">
+        <div className="flex flex-wrap justify-center gap-10 mt-16">
           {projects.map((project, index) => {
             const carousel = (
               <ProjectCarousel key={index} title={project.title} images={project.images} />
             );
+            const cardWidth = "w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.6667rem)]";
             return project.slug ? (
-              <Link key={index} href={`/projects/${project.slug}`}>
+              <Link key={index} href={`/projects/${project.slug}`} className={cardWidth}>
                 {carousel}
               </Link>
             ) : (
-              <div key={index}>{carousel}</div>
+              <div key={index} className={cardWidth}>{carousel}</div>
             );
           })}
         </div>
