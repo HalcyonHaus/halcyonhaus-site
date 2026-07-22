@@ -26,13 +26,13 @@ export default function GoldenGrove() {
         <link rel="canonical" href="https://www.halcyonhaus.com/projects/golden-grove" />
         <meta property="og:title" content="Golden Grove | Halcyon Haus" />
         <meta property="og:description" content="A Palm Springs project by Halcyon Haus featuring bold zellige tile, aged brass and copper hardware, and warm natural textures." />
-        <meta property="og:image" content="https://www.halcyonhaus.com/images/GOLDENGROVE-POOL.jpg" />
+        <meta property="og:image" content="https://www.halcyonhaus.com/images/GOLDENGROVE-MAINKITCHEN.jpg" />
         <meta property="og:url" content="https://www.halcyonhaus.com/projects/golden-grove" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Golden Grove | Halcyon Haus" />
         <meta name="twitter:description" content="A Palm Springs project by Halcyon Haus featuring bold zellige tile and warm natural textures." />
-        <meta name="twitter:image" content="https://www.halcyonhaus.com/images/GOLDENGROVE-POOL.jpg" />
+        <meta name="twitter:image" content="https://www.halcyonhaus.com/images/GOLDENGROVE-MAINKITCHEN.jpg" />
         <link
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
           rel="stylesheet"
@@ -84,9 +84,9 @@ export default function GoldenGrove() {
           Palm Springs, California
         </h2>
 
-        {/* Hero Image - pool/spa */}
+        {/* Hero Image - main kitchen */}
         <motion.div {...subtleFade} className="mb-16">
-          <img src="/images/GOLDENGROVE-POOL.jpg" alt="Palm Springs backyard lap pool and spa with palm trees and desert landscaping, designed by Halcyon Haus" className="w-full rounded-md object-cover" />
+          <img src="/images/GOLDENGROVE-MAINKITCHEN.jpg" alt="Palm Springs kitchen with burgundy cabinetry, copper hood, and fluted wood island, designed by Halcyon Haus" className="w-full rounded-md object-cover" />
         </motion.div>
 
         {/* Intro Text */}
@@ -149,6 +149,15 @@ export default function GoldenGrove() {
           <img
             src="/images/GOLDENGROVE-POWDER.jpg"
             alt="Powder room with blush zellige tile, woven pendant lights, and ribbed wood vanity in Palm Springs home"
+            className="w-full rounded-md object-cover"
+          />
+        </motion.div>
+
+        {/* Pool + spa */}
+        <motion.div {...subtleFade} className="mb-16">
+          <img
+            src="/images/GOLDENGROVE-POOL.jpg"
+            alt="Palm Springs backyard lap pool and spa with palm trees and desert landscaping, designed by Halcyon Haus"
             className="w-full rounded-md object-cover"
           />
         </motion.div>
