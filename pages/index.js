@@ -34,7 +34,7 @@ export default function HomePage() {
         <link rel="canonical" href="https://www.halcyonhaus.com" />
         <meta property="og:title" content="Halcyon Haus | Interior Designer in Denver, CO" />
         <meta property="og:description" content="Warm, curated interiors by Halcyon Haus, rooted in California ease and Colorado cool." />
-        <meta property="og:image" content="https://www.halcyonhaus.com/logos/og-thumbnail.jpg" />
+        <meta property="og:image" content="https://www.halcyonhaus.com/logos/og-thumbnail-v2.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
