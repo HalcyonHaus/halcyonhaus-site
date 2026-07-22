@@ -95,10 +95,10 @@ export default function GoldenGrove() {
             Golden Grove is a whole-home project in Palm Springs built around bold color, natural texture, and finishes that feel collected rather than curated.
           </p>
           <p>
-            Warm wood tones, aged brass and copper hardware, and hand-glazed zellige tile carry through the home, set against quieter plaster walls and neutral textiles so the more saturated moments have room to breathe.
+            I kept the original cabinetry in this kitchen and had it painted rather than replaced. There was nothing wrong with the layout, so it made more sense to work with what was already there.
           </p>
           <p>
-            [Add a paragraph here about the scope of this project, the clients, and what drove the design direction.]
+            To bring in some texture, we added fluted walnut wood paneling, which plays off the marble and the warmer metals throughout the space.
           </p>
         </section>
 
@@ -112,60 +112,39 @@ export default function GoldenGrove() {
           </div>
         </motion.div>
 
-        {/* Full Width Image - kitchen/bar */}
-        <motion.div {...subtleFade} className="mb-16">
-          <img
-            src="/images/GOLDENGROVE-KITCHEN.jpg"
-            alt="Kitchen bar nook with bold red zellige tile backsplash, oak shelving, and veined marble counters in Palm Springs home"
-            className="w-full rounded-md object-cover"
-          />
-
-          <section className="mt-16 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 px-4 md:px-0 max-w-5xl mx-auto">
-            <p>
-              [Add a paragraph here about the kitchen/bar space: the tile choice, the countertop material, and the hardware finishes.]
-            </p>
-          </section>
-        </motion.div>
-
-        {/* Side image + text - primary bath */}
-        <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16 px-4 md:px-0 max-w-6xl mx-auto">
-          <div className="md:col-span-6">
-            <img
-              src="/images/GOLDENGROVE-BATH.jpg"
-              alt="Arched walk-in shower with blue floral zellige tile and brass rain shower head in Palm Springs primary bathroom"
-              className="w-full rounded-md object-cover"
-            />
+        {/* Two-up images: casita kitchenette + primary bath shower */}
+        <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          <div className="md:h-[58rem] overflow-hidden rounded-md">
+            <img src="/images/GOLDENGROVE-KITCHEN.jpg" alt="Casita kitchenette with bold red zellige tile backsplash, oak shelving, and veined marble counters in Palm Springs home" className="w-full h-full object-cover" />
           </div>
-
-          <div className="md:col-span-6 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-4">
-            <p>
-              [Add a paragraph here about the primary bathroom: the tile pattern, the fixture finish, and any details worth calling out.]
-            </p>
+          <div className="md:h-[58rem] overflow-hidden rounded-md">
+            <img src="/images/GOLDENGROVE-BATH.jpg" alt="Arched walk-in shower with mixed floral zellige tile and travertine floors in Palm Springs primary bathroom" className="w-full h-full object-cover" />
           </div>
         </motion.div>
 
-        {/* Powder room */}
-        <motion.div {...subtleFade} className="mb-16">
-          <img
-            src="/images/GOLDENGROVE-POWDER.jpg"
-            alt="Powder room with blush zellige tile, woven pendant lights, and ribbed wood vanity in Palm Springs home"
-            className="w-full rounded-md object-cover"
-          />
-        </motion.div>
+        <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 mb-16 px-4 md:px-0 max-w-5xl mx-auto">
+          <p>
+            The red backsplash was a fun addition to the kitchenette in the casita, a little pop of color that felt right for Palm Springs.
+          </p>
+          <p>
+            In the primary bath, I mixed two different tile types for a more random, collected look with the floral pattern, rather than laying everything out in a strict grid. Travertine floors ground the space and keep it from feeling too busy.
+          </p>
+        </section>
 
-        {/* Pool + spa */}
-        <motion.div {...subtleFade} className="mb-16">
-          <img
-            src="/images/GOLDENGROVE-POOL.jpg"
-            alt="Palm Springs backyard lap pool and spa with palm trees and desert landscaping, designed by Halcyon Haus"
-            className="w-full rounded-md object-cover"
-          />
+        {/* Two-up images: powder room + pool */}
+        <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          <div className="md:h-[58rem] overflow-hidden rounded-md">
+            <img src="/images/GOLDENGROVE-POWDER.jpg" alt="Powder room with blush zellige tile, woven pendant lights, and ribbed wood vanity in Palm Springs home" className="w-full h-full object-cover" />
+          </div>
+          <div className="md:h-[58rem] overflow-hidden rounded-md">
+            <img src="/images/GOLDENGROVE-POOL.jpg" alt="Palm Springs backyard lap pool and spa with palm trees and desert landscaping, designed by Halcyon Haus" className="w-full h-full object-cover" />
+          </div>
         </motion.div>
 
         {/* Closing Text */}
         <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-10 px-4 md:px-0 max-w-5xl mx-auto">
           <p>
-            [Add a closing paragraph here about the overall feel you were going for and anything that ties the home together.]
+            This became a sanctuary, and we're so happy with the end result. 
           </p>
 
           <div className="border-t border-neutral-200 pt-10">
