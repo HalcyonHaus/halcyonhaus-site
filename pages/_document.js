@@ -157,12 +157,6 @@ export default function Document() {
                         }
                       }
                     ]
-                  },
-                  "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "5.0",
-                    "reviewCount": "3",
-                    "bestRating": "5"
                   }
                 },
                 {
