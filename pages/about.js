@@ -62,7 +62,7 @@ export default function AboutPage() {
               I started Halcyon Haus in 2020, right after renovating my own home. Somewhere in that process I realized how much having a calm space to come back to actually matters. Growing up in California and eventually landing in Colorado gave me an appreciation for both easy, relaxed spaces and calm, grounded ones, and that mix shows up in every project I design.
             </p>
             <p>
-              I like to get to know a room before I touch it. Every project starts with your lifestyle. From there, I layer in the materials and finishes that make a home feel settled and a little personal: natural stone, mixed metals, texture you can feel, pieces that can hold up to real life.
+              I like to get to know a room before I touch it. Every project starts with your lifestyle. From there, I layer in the materials and finishes that make a home feel settled and curated.
             </p>
             <p>
               Based in Denver, Colorado, taking on projects across the country, in person and virtually.
