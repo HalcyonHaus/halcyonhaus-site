@@ -14,7 +14,7 @@ export default function CanyonCottagePrimaryBath() {
   return (
     <div className="min-h-screen text-black font-sans bg-[#fafafa]">
       <Head>
-        <title>Canyon Cottage Primary Bath | Castle Pines Village | Halcyon Haus Design Studio</title>
+        <title>Canyon Cottage Primary Bath | Halcyon Haus, Castle Pines, CO</title>
         <meta
           name="description"
           content="Canyon Cottage Primary Bath by Halcyon Haus: stone tile, fluted vanities, a his-and-hers steam shower, and shiplap detailing in Castle Pines Village, Colorado."
@@ -87,10 +87,13 @@ export default function CanyonCottagePrimaryBath() {
         {/* Intro Text */}
         <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 mb-16 px-4 md:px-0 max-w-5xl mx-auto">
           <p>
-            This bathroom is narrow, and that shaped almost every decision in it.
+            This bathroom renovation really gave me a run for my money. The space was narrow and long, and the original shower placement was doing the room no favors.
           </p>
           <p>
-            I carried the same stone tile from the floor straight into the shower instead of switching materials at the threshold. It's a small thing, but it's the reason the room reads as one continuous space instead of two smaller ones stacked together.
+            A single long vanity was the wrong choice for this space, so I decided on splitting it into two smaller pieces instead. The fluted design created texture and warmth, and it solved more than just a space problem. It gave the room somewhere to breathe instead of one wall of cabinetry doing all the work.
+          </p>
+          <p>
+            Once that was settled, everything else followed the same logic: keep the room feeling continuous rather than chopped up, and let small details carry the character instead of one big statement piece.
           </p>
         </section>
 
@@ -106,10 +109,10 @@ export default function CanyonCottagePrimaryBath() {
 
           <div className="md:col-span-5 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-4">
             <p>
-              A single long vanity would have swallowed this room, so I split it into two smaller pieces instead. Fluting them gave the wood a little texture and warmth against all the stone, rather than just another flat surface.
+              I carried the same stone tile from the floor straight into the shower instead of switching materials at the threshold, so the whole room reads as one continuous space rather than pieced together.
             </p>
             <p>
-              Even the lampshades got a second look. Swapping in these pleated shades was a small move, but it's the kind of detail that pulls the whole room toward that cottage warmth instead of feeling like a straightforward remodel.
+              Even the lampshades got a second look. Swapping in these pleated shades over the sconces was a small move, but it's exactly the kind of detail that pulls the room toward that cottage charm.
             </p>
           </div>
         </motion.div>
@@ -136,7 +139,7 @@ export default function CanyonCottagePrimaryBath() {
 
           <div className="md:col-span-7 md:order-1 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-4">
             <p>
-              A few smaller details do a lot of quiet work in a room like this: the dried florals, the stone dish, the way the marble's veining catches the light at the counter's edge. None of it shouts, which is exactly the point.
+              A few smaller details do a lot of quiet work in a room like this: the brushed brass, the way the marble catches the light at the counter's edge, and the subtle warmth of the paneling brings it all together. None of it competes, which was exactly the goal.
             </p>
           </div>
         </motion.div>
@@ -153,13 +156,13 @@ export default function CanyonCottagePrimaryBath() {
 
         <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 mb-16 px-4 md:px-0 max-w-5xl mx-auto">
           <p>
-            The shower ended up being the anchor of this room. Since it doubles as a steam shower, I took the off-white zellige tile all the way to the ceiling instead of stopping partway, and set it up his-and-hers with two Kohler waterfall heads. The glass itself was custom built by a shop here in Colorado, nothing off the shelf.
+            The shower ended up being the anchor of this room. Since it doubles as a steam shower, I took the off-white zellige tile all the way to the ceiling instead of stopping partway, and set it up his-and-hers with two Kohler waterfall heads. The glass itself was custom built by a shop here in Colorado.
           </p>
           <p>
-            Replacing the windows in here made a bigger difference than I expected going in. The shower looks straight out at the trees now, and that view ended up becoming one of my favorite parts of the whole room.
+            Replacing the windows in here made a bigger difference than I ever expected. The originals were glass blocks, and so much of the natural light was muted because of it. The shower looks straight out at the trees now, and that view ended up becoming one of my favorite parts of the whole room.
           </p>
           <p>
-            Behind the tub, I brought in shiplap for a bit of that same cottage warmth, painted in Benjamin Moore Dove Wing and Dove White so the contrast stayed subtle rather than stark.
+            Throughout the space, I brought in shiplap for a bit of that same cottage look, painted in Benjamin Moore Dove Wing and Dove White, so the contrast stayed subtle rather than stark.
           </p>
         </section>
 
