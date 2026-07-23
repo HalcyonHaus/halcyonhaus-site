@@ -28,6 +28,7 @@ const projects = [
   },
   {
     title: "Canyon Cottage Primary Bath",
+        slug: "cottage-canyon-primary-bath",
     images: [
       "/images/PRIMARYBATH00.JPG",
       "/images/PRIMARYBATH2.JPG",
