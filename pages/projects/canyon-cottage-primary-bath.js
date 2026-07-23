@@ -87,7 +87,10 @@ export default function CanyonCottagePrimaryBath() {
         {/* Intro Text */}
         <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 mb-16 px-4 md:px-0 max-w-5xl mx-auto">
           <p>
-            I used stone tile throughout this bathroom and carried it straight into the shower, so the whole space reads as one continuous room rather than separate zones.
+            This bathroom is narrow, and that shaped almost every decision in it.
+          </p>
+          <p>
+            I carried the same stone tile from the floor straight into the shower instead of switching materials at the threshold. It's a small thing, but it's the reason the room reads as one continuous space instead of two smaller ones stacked together.
           </p>
         </section>
 
@@ -103,10 +106,10 @@ export default function CanyonCottagePrimaryBath() {
 
           <div className="md:col-span-5 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-4">
             <p>
-              The vanities are fluted for a bit of warmth against all the stone, and I split them into two smaller pieces instead of one long custom vanity. It helped break up what's actually a fairly narrow space.
+              A single long vanity would have swallowed this room, so I split it into two smaller pieces instead. Fluting them gave the wood a little texture and warmth against all the stone, rather than just another flat surface.
             </p>
             <p>
-              I also swapped in these pleated lampshades, which added to the cottage warmth I was going for throughout the room.
+              Even the lampshades got a second look. Swapping in these pleated shades was a small move, but it's the kind of detail that pulls the whole room toward that cottage warmth instead of feeling like a straightforward remodel.
             </p>
           </div>
         </motion.div>
@@ -133,7 +136,7 @@ export default function CanyonCottagePrimaryBath() {
 
           <div className="md:col-span-7 md:order-1 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-4">
             <p>
-              [Add a bit more here if there's anything specific about this detail worth calling out.]
+              A few smaller details do a lot of quiet work in a room like this: the dried florals, the stone dish, the way the marble's veining catches the light at the counter's edge. None of it shouts, which is exactly the point.
             </p>
           </div>
         </motion.div>
@@ -150,10 +153,13 @@ export default function CanyonCottagePrimaryBath() {
 
         <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 mb-16 px-4 md:px-0 max-w-5xl mx-auto">
           <p>
-            Since this is a steam shower, I ran the off-white zellige tile all the way to the ceiling. It's a his-and-hers layout with two Kohler waterfall heads, and the glass enclosure was custom built by a local Colorado shop.
+            The shower ended up being the anchor of this room. Since it doubles as a steam shower, I took the off-white zellige tile all the way to the ceiling instead of stopping partway, and set it up his-and-hers with two Kohler waterfall heads. The glass itself was custom built by a shop here in Colorado, nothing off the shelf.
           </p>
           <p>
-            The shiplap behind the tub was another way to bring in some cottage warmth, painted in Benjamin Moore Dove Wing and Dove White for a little subtle contrast. Replacing the windows in here made a bigger difference than I expected, especially with the shower looking right out at the trees.
+            Replacing the windows in here made a bigger difference than I expected going in. The shower looks straight out at the trees now, and that view ended up becoming one of my favorite parts of the whole room.
+          </p>
+          <p>
+            Behind the tub, I brought in shiplap for a bit of that same cottage warmth, painted in Benjamin Moore Dove Wing and Dove White so the contrast stayed subtle rather than stark.
           </p>
         </section>
 
