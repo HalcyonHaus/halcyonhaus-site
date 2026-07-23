@@ -30,11 +30,11 @@ const projects = [
     title: "Canyon Cottage Primary Bath",
         slug: "canyon-cottage-primary-bath",
     images: [
+      "/images/PRIMARYVANITY2.jpg",
       "/images/PRIMARYBATH00.JPG",
-      "/images/PRIMARYBATH2.JPG",
-      "/images/PRIMARYBATH0.JPG",
+      "/images/PRIMARYBATH1.jpg",
       "/images/DSC02092.jpeg",
-      "/images/DSC02082.jpeg"
+      "/images/PRIMARYVANITY3.jpg"
     ]
   },
   {
