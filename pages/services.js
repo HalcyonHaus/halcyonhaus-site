@@ -46,16 +46,6 @@ const processSteps = [
   },
 ];
 
- <div className="pt-16 text-center">
-            <Link href="/contact" legacyBehavior>
-              <a className="inline-flex items-center gap-2 text-xs tracking-widest uppercase font-inter text-black border-b border-black pb-1 transition-all duration-300 hover:gap-3 hover:text-neutral-500 hover:border-neutral-500">
-                Work With Me
-                <span aria-hidden="true">&#8594;</span>
-              </a>
-            </Link>
-          </div>
-        </div>
-
 const faqs = [
   {
     question: "What's your process like?",
@@ -176,6 +166,15 @@ export default function ServicesPage() {
                 </p>
               </div>
             </div>
+
+            <div className="pt-4 text-center">
+              <Link href="/contact" legacyBehavior>
+                <a className="inline-flex items-center gap-2 text-xs tracking-widest uppercase font-inter text-black border-b border-black pb-1 transition-all duration-300 hover:gap-3 hover:text-neutral-500 hover:border-neutral-500">
+                  Work With Me
+                  <span aria-hidden="true">&#8594;</span>
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -234,14 +233,6 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <div className="pt-16 text-center">
-            <Link href="/contact" legacyBehavior>
-              <a className="inline-flex items-center gap-2 text-xs tracking-widest uppercase font-inter text-black border-b border-black pb-1 transition-all duration-300 hover:gap-3 hover:text-neutral-500 hover:border-neutral-500">
-                Work With Me
-                <span aria-hidden="true">&#8594;</span>
-              </a>
-            </Link>
-          </div>
         </div>
 
         {/* Good to Know FAQ */}
