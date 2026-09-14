@@ -47,8 +47,14 @@ export default function Document() {
                   "@id": "https://www.halcyonhaus.com/#business",
                   "name": "Halcyon Haus",
                   "alternateName": ["Halcyon Haus Interior Design", "Halcyon Haus Design Studio"],
-                  "description": "Halcyon Haus is a Denver-based interior design studio founded by Nikka Winchell. Specializing in thoughtful, transitional design for residential projects — from full-service renovations and new builds to virtual design and room refreshes. Serving clients in Denver, Colorado and across the United States.",
+                  "description": "Halcyon Haus is a Colorado-based interior design studio founded by Nikka Winchell, based in Castle Rock. Specializing in thoughtful, transitional design for residential projects, from full-service renovations and new builds to virtual design and room refreshes. Serving Denver, Castle Rock, Castle Pines, Greenwood Village, and Colorado's mountain communities, as well as Palm Springs, California and clients nationwide.",
                   "url": "https://www.halcyonhaus.com",
+                  "priceRange": "$$$$",
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "5.0",
+                    "reviewCount": "6"
+                  },
                   "logo": {
                     "@type": "ImageObject",
                     "url": "https://www.halcyonhaus.com/logos/HHLOGO2.png"
@@ -73,20 +79,64 @@ export default function Document() {
                   },
                   "address": {
                     "@type": "PostalAddress",
-                    "addressLocality": "Denver",
+                    "addressLocality": "Castle Rock",
                     "addressRegion": "CO",
                     "addressCountry": "US"
                   },
                   "geo": {
                     "@type": "GeoCoordinates",
-                    "latitude": "39.7392",
-                    "longitude": "-104.9903"
+                    "latitude": "39.3722",
+                    "longitude": "-104.8561"
                   },
                   "areaServed": [
                     {
                       "@type": "City",
                       "name": "Denver",
                       "sameAs": "https://en.wikipedia.org/wiki/Denver"
+                    },
+                    {
+                      "@type": "City",
+                      "name": "Castle Rock"
+                    },
+                    {
+                      "@type": "City",
+                      "name": "Castle Pines"
+                    },
+                    {
+                      "@type": "City",
+                      "name": "Greenwood Village"
+                    },
+                    {
+                      "@type": "City",
+                      "name": "Cherry Hills Village"
+                    },
+                    {
+                      "@type": "City",
+                      "name": "Littleton"
+                    },
+                    {
+                      "@type": "City",
+                      "name": "Palm Springs"
+                    },
+                    {
+                      "@type": "City",
+                      "name": "Los Angeles"
+                    },
+                    {
+                      "@type": "City",
+                      "name": "Aspen"
+                    },
+                    {
+                      "@type": "City",
+                      "name": "Telluride"
+                    },
+                    {
+                      "@type": "City",
+                      "name": "Breckenridge"
+                    },
+                    {
+                      "@type": "City",
+                      "name": "Vail"
                     },
                     {
                       "@type": "State",
@@ -129,7 +179,7 @@ export default function Document() {
                         "itemOffered": {
                           "@type": "Service",
                           "name": "Full-Service Interior Design",
-                          "description": "A comprehensive design approach covering layout, materials, custom millwork, furniture sourcing, styling, and install. Ideal for remodels, new builds, and full home transformations. Available in Denver, CO and nationwide."
+                          "description": "A comprehensive design approach covering layout, materials, custom millwork, furniture sourcing, styling, and install. Ideal for remodels, new builds, and full home transformations. Available in Castle Rock, Denver, and nationwide."
                         }
                       },
                       {
@@ -137,7 +187,7 @@ export default function Document() {
                         "itemOffered": {
                           "@type": "Service",
                           "name": "Room Refresh",
-                          "description": "Thoughtful design updates for lived-in spaces — new furnishings, layout optimization, styling, and accessories using existing architecture."
+                          "description": "Thoughtful design updates for lived-in spaces: new furnishings, layout optimization, styling, and accessories using existing architecture."
                         }
                       },
                       {
@@ -145,15 +195,15 @@ export default function Document() {
                         "itemOffered": {
                           "@type": "Service",
                           "name": "Virtual Interior Design",
-                          "description": "Remote interior design experience including custom mood boards, layout guides, shoppable product links, and styling instructions — delivered online for clients anywhere in the US."
+                          "description": "Remote interior design experience including custom mood boards, layout guides, shoppable product links, and styling instructions, delivered online for clients anywhere in the US."
                         }
                       },
                       {
                         "@type": "Offer",
                         "itemOffered": {
                           "@type": "Service",
-                          "name": "Interior Design Consultation",
-                          "description": "Hourly design support for layout advice, sourcing guidance, or overall design direction. Perfect for DIY clients who want professional input."
+                          "name": "Hourly Design Support",
+                          "description": "Hourly design support for layout advice, sourcing direction, or a focused design question, booked directly by the hour."
                         }
                       }
                     ]
@@ -164,7 +214,7 @@ export default function Document() {
                   "@id": "https://www.halcyonhaus.com/#website",
                   "url": "https://www.halcyonhaus.com",
                   "name": "Halcyon Haus",
-                  "description": "Denver interior design studio by Nikka Winchell",
+                  "description": "Colorado interior design studio by Nikka Winchell, based in Castle Rock and serving Denver and beyond",
                   "publisher": {
                     "@id": "https://www.halcyonhaus.com/#business"
                   }
