@@ -1,9 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
- 
+
 const processSteps = [
   {
     title: "Discovery Call",
@@ -46,7 +45,7 @@ const processSteps = [
       "From contractor coordination to final styling, we bring the design to life and manage the details along the way.",
   },
 ];
- 
+
 const faqs = [
   {
     question: "What's your process like?",
@@ -60,7 +59,7 @@ const faqs = [
   {
     question: "Do you work virtually, or only in the Denver area?",
     answer:
-      "Both. We work on site with clients in the Denver and Southern California areas, and virtually with clients nationwide.",
+      "Both. We're based in Castle Rock & Palm Springs, and have most recently worked with clients throughout Castle Rock, Castle Pines, Greenwood Village, Cherry Hills, and the greater Denver metro, as well as in Palm Springs and greater Los Angeles, California. We also welcome projects throughout Colorado's mountain communities, including Aspen, Telluride, Breckenridge, and Vail, and continue to work virtually with clients nationwide.",
   },
   {
     question: "I don't know my style yet, is that a problem?",
@@ -70,7 +69,7 @@ const faqs = [
   {
     question: "What if I already know my style, or have a clear vision?",
     answer:
-      "Even better. We're just as happy stepping into a supporting role, executing your vision with our knowledge of the process, from curating and sourcing to purchasing and installation.",
+      "We're just as happy stepping into a supporting role, executing your vision with our knowledge of the process, from curating and sourcing to purchasing and installation.",
   },
   {
     question: "Do you work with my contractor, or bring your own team?",
@@ -83,11 +82,11 @@ const faqs = [
       "Full-service projects are priced as a percentage of your construction budget. Room refreshes are priced as a flat project fee. We'll walk through what that looks like for your specific project during your consultation.",
   },
 ];
- 
+
 export default function ServicesPage() {
   const [activeStep, setActiveStep] = useState(0);
   const [openFaq, setOpenFaq] = useState(null);
- 
+
   return (
     <div className="min-h-screen text-black font-sans" style={{ backgroundColor: "#fafafa" }}>
       <Head>
@@ -111,7 +110,7 @@ export default function ServicesPage() {
           rel="stylesheet"
         />
       </Head>
- 
+
       {/* Navigation */}
       <header className="absolute top-0 w-full z-20 px-6 pt-6 text-xs tracking-widest">
         <nav className="flex justify-center sm:justify-end space-x-6 uppercase font-inter text-xs">
@@ -122,7 +121,7 @@ export default function ServicesPage() {
           <Link href="/contact" legacyBehavior><a className="transition-colors duration-300 text-black hover:text-neutral-400">Contact</a></Link>
         </nav>
       </header>
- 
+
       {/* Main Content */}
       <main className="px-6 pt-24 pb-24 max-w-5xl mx-auto">
         <h1
@@ -134,13 +133,13 @@ export default function ServicesPage() {
         <p className="mt-3 text-[11px] tracking-[0.25em] text-center uppercase text-gray-500 font-inter">
           Denver Interior Design Services
         </p>
- 
+
         <div className="mt-16 grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
           <div className="md:col-span-12 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-10">
             <p className="text-center max-w-2xl mx-auto">
               Whether you're renovating a full home or just refreshing a single space, Halcyon Haus offers flexible interior design services in Denver, Colorado and nationwide, tailored to your lifestyle and vision.
             </p>
- 
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div>
                 <h2 className="uppercase text-xs tracking-widest text-gray-500 mb-2">FULL-SERVICE DESIGN</h2>
@@ -167,17 +166,9 @@ export default function ServicesPage() {
                 </p>
               </div>
             </div>
- 
-            <div className="pt-4 text-center">
-              <Link href="/contact" legacyBehavior>
-                <a className="inline-block px-6 py-3 border border-black text-black text-xs tracking-widest uppercase font-inter hover:bg-black hover:text-white transition">
-                  Work With Me
-                </a>
-              </Link>
-            </div>
           </div>
         </div>
- 
+
         {/* Our Process */}
         <div className="mt-24 pt-16 border-t border-gray-200">
           <h2
@@ -189,7 +180,7 @@ export default function ServicesPage() {
           <p className="mt-3 text-[11px] tracking-[0.25em] text-center uppercase text-gray-500 font-inter">
             From First Call To Final Styling
           </p>
- 
+
           <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
             <div className="flex flex-col">
               {processSteps.map((step, index) => (
@@ -205,42 +196,44 @@ export default function ServicesPage() {
                 </button>
               ))}
             </div>
- 
-            <div className="min-h-[160px]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeStep}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.35, ease: "easeInOut" }}
+
+            <div className="min-h-[160px] relative">
+              {processSteps.map((step, index) => (
+                <div
+                  key={step.title}
+                  className={
+                    activeStep === index
+                      ? "block transition-opacity duration-300 opacity-100"
+                      : "hidden"
+                  }
                 >
                   <p className="text-[10px] tracking-widest uppercase text-gray-400 font-inter mb-3">
-                    Step {String(activeStep + 1).padStart(2, "0")}
+                    Step {String(index + 1).padStart(2, "0")}
                   </p>
                   <h3
                     className="text-lg mb-4"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    {processSteps[activeStep].title}
+                    {step.title}
                   </h3>
                   <p className="text-sm leading-7 tracking-wide font-inter text-gray-700">
-                    {processSteps[activeStep].description}
+                    {step.description}
                   </p>
-                </motion.div>
-              </AnimatePresence>
+                </div>
+              ))}
             </div>
           </div>
- 
+
           <div className="pt-16 text-center">
             <Link href="/contact" legacyBehavior>
-              <a className="inline-block px-6 py-3 border border-black text-black text-xs tracking-widest uppercase font-inter hover:bg-black hover:text-white transition">
+              <a className="inline-flex items-center gap-2 text-xs tracking-widest uppercase font-inter text-black border-b border-black pb-1 transition-all duration-300 hover:gap-3 hover:text-neutral-500 hover:border-neutral-500">
                 Work With Me
+                <span aria-hidden="true">&#8594;</span>
               </a>
             </Link>
           </div>
         </div>
- 
+
         {/* Good to Know FAQ */}
         <div className="mt-24 pt-16 border-t border-gray-200 max-w-2xl mx-auto">
           <h2
@@ -249,7 +242,7 @@ export default function ServicesPage() {
           >
             GOOD TO KNOW
           </h2>
- 
+
           <div className="mt-12">
             {faqs.map((faq, index) => {
               const isOpen = openFaq === index;
@@ -267,41 +260,37 @@ export default function ServicesPage() {
                       className={`flex-shrink-0 ml-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
                     />
                   </button>
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="overflow-hidden"
-                      >
-                        <p className="pb-5 text-sm leading-7 font-inter italic text-gray-600">
-                          {faq.answer}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  <div
+                    style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
+                    className="grid transition-[grid-template-rows] duration-300 ease-in-out"
+                  >
+                    <div className="overflow-hidden">
+                      <p className="pb-5 text-sm leading-7 font-inter italic text-gray-600">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               );
             })}
           </div>
- 
+
           <div className="pt-14 text-center">
             <p className="text-sm text-gray-700 font-inter">
               Based in Denver, Colorado. Designing from coast to coast.
             </p>
             <p className="mt-6">
               <Link href="/contact" legacyBehavior>
-                <a className="inline-block px-6 py-3 border border-black text-black text-xs tracking-widest uppercase font-inter hover:bg-black hover:text-white transition">
+                <a className="inline-flex items-center gap-2 text-xs tracking-widest uppercase font-inter text-black border-b border-black pb-1 transition-all duration-300 hover:gap-3 hover:text-neutral-500 hover:border-neutral-500">
                   Work With Me
+                  <span aria-hidden="true">&#8594;</span>
                 </a>
               </Link>
             </p>
           </div>
         </div>
       </main>
- 
+
       {/* Footer */}
       <footer className="mt-10 pb-10 text-center text-xs text-gray-500 uppercase tracking-widest font-inter">
         <p className="mb-2">© {new Date().getFullYear()} Halcyon Haus</p>
