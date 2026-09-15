@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import ShareButton from "../../components/ShareButton";
+import PinButton from "../../components/PinButton";
 
 // Subtle fade (opacity only)
 const subtleFade = {
@@ -10,28 +12,30 @@ const subtleFade = {
   viewport: { once: true }
 };
 
+const PAGE_URL = "https://www.halcyonhaus.com/projects/canyon-cottage-primary-bath";
+const PAGE_TITLE = "Canyon Cottage Primary Bath | Halcyon Haus, Castle Pines, CO";
+const PAGE_DESCRIPTION =
+  "Canyon Cottage Primary Bath by Halcyon Haus: stone tile, fluted vanities, a his-and-hers steam shower, and shiplap detailing in Castle Pines Village, Colorado.";
+
 export default function CanyonCottagePrimaryBath() {
   return (
     <div className="min-h-screen text-black font-sans bg-[#fafafa]">
       <Head>
-        <title>Canyon Cottage Primary Bath | Halcyon Haus, Castle Pines, CO</title>
-        <meta
-          name="description"
-          content="Canyon Cottage Primary Bath by Halcyon Haus: stone tile, fluted vanities, a his-and-hers steam shower, and shiplap detailing in Castle Pines Village, Colorado."
-        />
+        <title>{PAGE_TITLE}</title>
+        <meta name="description" content={PAGE_DESCRIPTION} />
         <meta
           name="keywords"
           content="primary bathroom design, fluted vanity, steam shower design, shiplap bathroom, Castle Pines interior design, Halcyon Haus, Colorado bathroom remodel"
         />
-        <link rel="canonical" href="https://www.halcyonhaus.com/projects/canyon-cottage-primary-bath" />
-        <meta property="og:title" content="Canyon Cottage Primary Bath | Halcyon Haus" />
-        <meta property="og:description" content="Stone tile, fluted vanities, and a his-and-hers steam shower in this Castle Pines Village primary bath by Halcyon Haus." />
+        <link rel="canonical" href={PAGE_URL} />
+        <meta property="og:title" content={PAGE_TITLE} />
+        <meta property="og:description" content={PAGE_DESCRIPTION} />
         <meta property="og:image" content="https://www.halcyonhaus.com/images/PRIMARYVANITY2.jpg" />
-        <meta property="og:url" content="https://www.halcyonhaus.com/projects/canyon-cottage-primary-bath" />
-        <meta property="og:type" content="website" />
+        <meta property="og:url" content={PAGE_URL} />
+        <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Canyon Cottage Primary Bath | Halcyon Haus" />
-        <meta name="twitter:description" content="Stone tile, fluted vanities, and a his-and-hers steam shower by Halcyon Haus." />
+        <meta name="twitter:title" content={PAGE_TITLE} />
+        <meta name="twitter:description" content={PAGE_DESCRIPTION} />
         <meta name="twitter:image" content="https://www.halcyonhaus.com/images/PRIMARYVANITY2.jpg" />
         <link
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
@@ -43,7 +47,12 @@ export default function CanyonCottagePrimaryBath() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Article",
-              "headline": "Canyon Cottage Primary Bath – Halcyon Haus",
+              "headline": "Canyon Cottage Primary Bath: Halcyon Haus",
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": PAGE_URL
+              },
+              "image": ["https://www.halcyonhaus.com/images/PRIMARYVANITY2.jpg"],
               "author": {
                 "@type": "Person",
                 "name": "Nikka Winchell"
@@ -53,12 +62,11 @@ export default function CanyonCottagePrimaryBath() {
                 "name": "Halcyon Haus",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://halcyonhaus.com/logos/HHLOGO.JPG"
+                  "url": "https://www.halcyonhaus.com/logos/HHLOGO2.png"
                 }
               },
               "datePublished": "2026-07-22",
-              "description":
-                "Canyon Cottage Primary Bath by Halcyon Haus: stone tile, fluted vanities, a his-and-hers steam shower, and shiplap detailing in Castle Pines Village, Colorado."
+              "description": PAGE_DESCRIPTION
             })
           }}
         />
@@ -80,9 +88,13 @@ export default function CanyonCottagePrimaryBath() {
         <h1 className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
           CANYON COTTAGE PRIMARY BATH
         </h1>
-        <h2 className="text-center text-sm uppercase tracking-widest text-gray-500 mt-2 mb-16">
+        <h2 className="text-center text-sm uppercase tracking-widest text-gray-500 mt-2 mb-6">
           Castle Pines Village, Colorado
         </h2>
+
+        <div className="mb-16">
+          <ShareButton title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
+        </div>
 
         {/* Intro Text */}
         <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 mb-16 px-4 md:px-0 max-w-5xl mx-auto">
@@ -100,11 +112,18 @@ export default function CanyonCottagePrimaryBath() {
         {/* Side image + text - vanity, wide shot */}
         <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16 px-4 md:px-0 max-w-6xl mx-auto">
           <div className="md:col-span-7">
-            <img
-              src="/images/PRIMARYVANITY2.jpg"
-              alt="Double fluted wood vanities with marble counters and brass fixtures in Castle Pines primary bathroom"
-              className="w-full rounded-md object-cover"
-            />
+            <div className="group relative">
+              <img
+                src="/images/PRIMARYVANITY2.jpg"
+                alt="Double fluted wood vanities with marble counters and brass fixtures in Castle Pines primary bathroom"
+                className="w-full rounded-md object-cover"
+              />
+              <PinButton
+                imageUrl="https://www.halcyonhaus.com/images/PRIMARYVANITY2.jpg"
+                pageUrl={PAGE_URL}
+                description="Double fluted wood vanities with marble counters and brass fixtures in Castle Pines primary bathroom"
+              />
+            </div>
           </div>
 
           <div className="md:col-span-5 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-4">
@@ -119,38 +138,65 @@ export default function CanyonCottagePrimaryBath() {
 
         {/* Two-up images: single vanity + portrait corner */}
         <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          <div className="md:h-[58rem] overflow-hidden rounded-md">
+          <div className="group relative md:h-[58rem] overflow-hidden rounded-md">
             <img src="/images/PRIMARYVANITY1.jpg" alt="Single vanity detail with brass mirror, pleated sconces, and marble counter in Castle Pines primary bathroom" className="w-full h-full object-cover" />
+            <PinButton
+              imageUrl="https://www.halcyonhaus.com/images/PRIMARYVANITY1.jpg"
+              pageUrl={PAGE_URL}
+              description="Single vanity detail with brass mirror, pleated sconces, and marble counter in Castle Pines primary bathroom"
+            />
           </div>
-          <div className="md:h-[58rem] overflow-hidden rounded-md">
+          <div className="group relative md:h-[58rem] overflow-hidden rounded-md">
             <img src="/images/PRIMARYVANITY4.jpg" alt="Vanity corner with silhouette portrait art and pleated sconce in Castle Pines primary bathroom" className="w-full h-full object-cover" />
+            <PinButton
+              imageUrl="https://www.halcyonhaus.com/images/PRIMARYVANITY4.jpg"
+              pageUrl={PAGE_URL}
+              description="Vanity corner with silhouette portrait art and pleated sconce in Castle Pines primary bathroom"
+            />
           </div>
         </motion.div>
 
         {/* Side image + text - vanity detail (reversed) */}
         <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16 px-4 md:px-0 max-w-6xl mx-auto">
           <div className="md:col-span-5 md:order-2">
-            <img
-              src="/images/PRIMARYVANITY3.jpg"
-              alt="Close-up detail of marble counter, brass fixtures, and dried florals in Castle Pines primary bathroom"
-              className="w-full rounded-md object-cover"
-            />
+            <div className="group relative">
+              <img
+                src="/images/PRIMARYVANITY3.jpg"
+                alt="Close-up detail of marble counter, brass fixtures, and dried florals in Castle Pines primary bathroom"
+                className="w-full rounded-md object-cover"
+              />
+              <PinButton
+                imageUrl="https://www.halcyonhaus.com/images/PRIMARYVANITY3.jpg"
+                pageUrl={PAGE_URL}
+                description="Close-up detail of marble counter, brass fixtures, and dried florals in Castle Pines primary bathroom"
+              />
+            </div>
           </div>
 
           <div className="md:col-span-7 md:order-1 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-4">
             <p>
-              A few smaller details do a lot of quiet work in a room like this: the brushed brass, the way the marble catches the light at the counter's edge, and the subtle warmth of the paneling brings it all together. None of it competes, which was exactly the goal.
+              The smaller details do a lot of the work in a room like this: the brushed brass, the honed marble, the two-toned paneling, all of it tying together seamlessly. I love letting the smaller details carry the space.
             </p>
           </div>
         </motion.div>
 
         {/* Two-up images: shower + tub */}
         <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          <div className="md:h-[58rem] overflow-hidden rounded-md">
+          <div className="group relative md:h-[58rem] overflow-hidden rounded-md">
             <img src="/images/PRIMARYBATH1.jpg" alt="His-and-hers steam shower with off-white zellige tile to the ceiling and brass Kohler shower heads in Castle Pines primary bathroom" className="w-full h-full object-cover" />
+            <PinButton
+              imageUrl="https://www.halcyonhaus.com/images/PRIMARYBATH1.jpg"
+              pageUrl={PAGE_URL}
+              description="His-and-hers steam shower with off-white zellige tile to the ceiling and brass Kohler shower heads in Castle Pines primary bathroom"
+            />
           </div>
-          <div className="md:h-[58rem] overflow-hidden rounded-md">
+          <div className="group relative md:h-[58rem] overflow-hidden rounded-md">
             <img src="/images/PRIMARYBATH2.jpg" alt="Freestanding tub with painted shiplap paneling and brass tub filler in Castle Pines primary bathroom" className="w-full h-full object-cover" />
+            <PinButton
+              imageUrl="https://www.halcyonhaus.com/images/PRIMARYBATH2.jpg"
+              pageUrl={PAGE_URL}
+              description="Freestanding tub with painted shiplap paneling and brass tub filler in Castle Pines primary bathroom"
+            />
           </div>
         </motion.div>
 
@@ -190,6 +236,10 @@ export default function CanyonCottagePrimaryBath() {
               <div><strong>Design &amp; Styling:</strong> Nikka Winchell, Halcyon Haus</div>
 
               <div><strong>Photography:</strong> Nikka Winchell, Halcyon Haus</div>
+            </div>
+
+            <div className="mt-10 pt-10 border-t border-neutral-200">
+              <ShareButton title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
             </div>
           </div>
         </section>
