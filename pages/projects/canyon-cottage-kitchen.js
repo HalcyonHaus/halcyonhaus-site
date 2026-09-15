@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import ShareButton from "../../components/ShareButton";
+import PinButton from "../../components/PinButton";
 
 // Subtle fade (opacity only)
 const subtleFade = {
@@ -10,19 +12,31 @@ const subtleFade = {
   viewport: { once: true }
 };
 
+const PAGE_URL = "https://www.halcyonhaus.com/projects/canyon-cottage-kitchen";
+const PAGE_TITLE = "Canyon Cottage Kitchen Renovation | Castle Pines Village | Halcyon Haus Design Studio";
+const PAGE_DESCRIPTION =
+  "Explore the Canyon Cottage Kitchen by Halcyon Haus, featuring Benjamin Moore Pashmina cabinets, a Venetian plaster range hood, reeded glass doors, mixed metal hardware, and vein-matched countertops in Castle Pines, Colorado.";
+
 export default function CanyonCottageKitchen() {
   return (
     <div className="min-h-screen text-black font-sans bg-[#fafafa]">
       <Head>
-        <title>Canyon Cottage Kitchen Renovation | Castle Pines Village | Halcyon Haus Design Studio</title>
-        <meta
-          name="description"
-          content="Explore the Canyon Cottage Kitchen by Halcyon Haus — featuring Benjamin Moore Pashmina cabinets, Venetian plaster range hood, reeded glass doors, mixed metal hardware, and vein-matched countertops in Castle Pines, Colorado."
-        />
+        <title>{PAGE_TITLE}</title>
+        <meta name="description" content={PAGE_DESCRIPTION} />
         <meta
           name="keywords"
           content="Benjamin Moore Pashmina kitchen, Venetian plaster hood, reeded glass cabinets, mixed metals kitchen, Castle Pines interior design, Halcyon Haus, Colorado kitchen remodel"
         />
+        <link rel="canonical" href={PAGE_URL} />
+        <meta property="og:title" content={PAGE_TITLE} />
+        <meta property="og:description" content={PAGE_DESCRIPTION} />
+        <meta property="og:image" content="https://www.halcyonhaus.com/images/HEROKITCHEN00.jpg" />
+        <meta property="og:url" content={PAGE_URL} />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={PAGE_TITLE} />
+        <meta name="twitter:description" content={PAGE_DESCRIPTION} />
+        <meta name="twitter:image" content="https://www.halcyonhaus.com/images/HEROKITCHEN00.jpg" />
         <link
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
           rel="stylesheet"
@@ -33,7 +47,12 @@ export default function CanyonCottageKitchen() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Article",
-              "headline": "Canyon Cottage Kitchen – Halcyon Haus",
+              "headline": "Canyon Cottage Kitchen: Halcyon Haus",
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": PAGE_URL
+              },
+              "image": ["https://www.halcyonhaus.com/images/HEROKITCHEN00.jpg"],
               "author": {
                 "@type": "Person",
                 "name": "Nikka Winchell"
@@ -43,12 +62,11 @@ export default function CanyonCottageKitchen() {
                 "name": "Halcyon Haus",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://halcyonhaus.com/logos/HHLOGO.JPG"
+                  "url": "https://www.halcyonhaus.com/logos/HHLOGO2.png"
                 }
               },
               "datePublished": "2025-09-01",
-              "description":
-                "Explore the Canyon Cottage Kitchen by Halcyon Haus — featuring Benjamin Moore Pashmina cabinets, Venetian plaster range hood, reeded glass doors, mixed metal hardware, and vein-matched countertops in Castle Pines, Colorado."
+              "description": PAGE_DESCRIPTION
             })
           }}
         />
@@ -70,13 +88,22 @@ export default function CanyonCottageKitchen() {
         <h1 className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
           CANYON COTTAGE KITCHEN
         </h1>
-        <h2 className="text-center text-sm uppercase tracking-widest text-gray-500 mt-2 mb-16">
+        <h2 className="text-center text-sm uppercase tracking-widest text-gray-500 mt-2 mb-6">
           Castle Pines, Colorado
         </h2>
 
+        <div className="mb-16">
+          <ShareButton title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
+        </div>
+
         {/* Hero Image */}
-        <motion.div {...subtleFade} className="mb-16">
+        <motion.div {...subtleFade} className="group relative mb-16">
           <img src="/images/HEROKITCHEN00.jpg" alt="Castle Pines kitchen with Benjamin Moore Pashmina cabinets and Venetian plaster range hood by Halcyon Haus" className="w-full rounded-md object-cover" />
+          <PinButton
+            imageUrl="https://www.halcyonhaus.com/images/HEROKITCHEN00.jpg"
+            pageUrl={PAGE_URL}
+            description="Castle Pines kitchen with Benjamin Moore Pashmina cabinets and Venetian plaster range hood by Halcyon Haus"
+          />
         </motion.div>
 
         {/* Intro Text */}
@@ -90,26 +117,43 @@ I knew from the beginning that the cabinetry was going to carry the room, so fin
 Once that decision was made, every other material followed.          </p>
           <p>
           The goal wasn’t to fill the room with statement pieces. It was to create a kitchen where everything worked together and nothing felt like it was competing for attention. The Mont Blanc quartzite has soft movement that complements the cabinetry rather than distracting from it, so we continued the stone up the backsplash instead of introducing another material. It creates a quieter backdrop while letting the natural veining become part of the architecture of the space.            </p>
-          
+
         </section>
 
         {/* Two-up images */}
         <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          <div className="md:h-[58rem] overflow-hidden rounded-md">
+          <div className="group relative md:h-[58rem] overflow-hidden rounded-md">
             <img src="/images/DSC03252.jpg" alt="Custom cabinet detail with unlacquered brass knobs and pulls in warm taupe kitchen" className="w-full h-full object-cover" />
+            <PinButton
+              imageUrl="https://www.halcyonhaus.com/images/DSC03252.jpg"
+              pageUrl={PAGE_URL}
+              description="Custom cabinet detail with unlacquered brass knobs and pulls in warm taupe kitchen"
+            />
           </div>
-          <div className="md:h-[58rem] overflow-hidden rounded-md">
+          <div className="group relative md:h-[58rem] overflow-hidden rounded-md">
             <img src="/images/PashminaKitchen1.jpg" alt="Kitchen angle featuring reeded glass uppers and polished nickel faucet in Colorado interior" className="w-full h-full object-cover" />
+            <PinButton
+              imageUrl="https://www.halcyonhaus.com/images/PashminaKitchen1.jpg"
+              pageUrl={PAGE_URL}
+              description="Kitchen angle featuring reeded glass uppers and polished nickel faucet in Colorado interior"
+            />
           </div>
         </motion.div>
 
 {/* Full Width Image */}
 <motion.div {...subtleFade} className="mb-16">
-  <img
-    src="/images/HERO1.JPG"
-    alt="Full kitchen view showing layered metal finishes and natural stone backsplash"
-    className="w-full rounded-md object-cover"
-  />
+  <div className="group relative">
+    <img
+      src="/images/HERO1.JPG"
+      alt="Full kitchen view showing layered metal finishes and natural stone backsplash"
+      className="w-full rounded-md object-cover"
+    />
+    <PinButton
+      imageUrl="https://www.halcyonhaus.com/images/HERO1.JPG"
+      pageUrl={PAGE_URL}
+      description="Full kitchen view showing layered metal finishes and natural stone backsplash"
+    />
+  </div>
 
   <section className="mt-16 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 px-4 md:px-0 max-w-5xl mx-auto">
     <p>
@@ -121,11 +165,18 @@ Once that decision was made, every other material followed.          </p>
        {/* Side image + text */}
 <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16 px-4 md:px-0 max-w-6xl mx-auto">
   <div className="md:col-span-6">
-    <img
-      src="/images/KITCHENBLOG3.JPG"
-      alt="Close-up of matched veining from counter to backsplash in Colorado kitchen remodel"
-      className="w-full rounded-md object-cover"
-    />
+    <div className="group relative">
+      <img
+        src="/images/KITCHENBLOG3.JPG"
+        alt="Close-up of matched veining from counter to backsplash in Colorado kitchen remodel"
+        className="w-full rounded-md object-cover"
+      />
+      <PinButton
+        imageUrl="https://www.halcyonhaus.com/images/KITCHENBLOG3.JPG"
+        pageUrl={PAGE_URL}
+        description="Close-up of matched veining from counter to backsplash in Colorado kitchen remodel"
+      />
+    </div>
   </div>
 
   <div className="md:col-span-6 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-4">
@@ -144,19 +195,29 @@ Once that decision was made, every other material followed.          </p>
 
 {/* Final two-up images */}
 <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-  <div className="md:h-[58rem] overflow-hidden rounded-md">
+  <div className="group relative md:h-[58rem] overflow-hidden rounded-md">
     <img
       src="/images/KITCHENBLOG2.JPG"
       alt="Side detail of Venetian plaster hood and spice cubbies in Canyon Cottage Kitchen"
       className="w-full h-full object-cover"
     />
+    <PinButton
+      imageUrl="https://www.halcyonhaus.com/images/KITCHENBLOG2.JPG"
+      pageUrl={PAGE_URL}
+      description="Side detail of Venetian plaster hood and spice cubbies in Canyon Cottage Kitchen"
+    />
   </div>
 
-  <div className="md:h-[58rem] overflow-hidden rounded-md">
+  <div className="group relative md:h-[58rem] overflow-hidden rounded-md">
     <img
       src="/images/KITCHENBLOG4.JPG"
       alt="Mixed metal hardware with latches and pulls in warm taupe cabinetry by Halcyon Haus"
       className="w-full h-full object-cover"
+    />
+    <PinButton
+      imageUrl="https://www.halcyonhaus.com/images/KITCHENBLOG4.JPG"
+      pageUrl={PAGE_URL}
+      description="Mixed metal hardware with latches and pulls in warm taupe cabinetry by Halcyon Haus"
     />
   </div>
 </motion.div>
@@ -190,6 +251,10 @@ Once that decision was made, every other material followed.          </p>
       <div><strong>Design & Styling:</strong> Nikka Winchell, Halcyon Haus</div>
 
       <div><strong>Photography:</strong> Nikka Winchell, Halcyon Haus</div>
+    </div>
+
+    <div className="mt-10 pt-10 border-t border-neutral-200">
+      <ShareButton title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
     </div>
   </div>
 
