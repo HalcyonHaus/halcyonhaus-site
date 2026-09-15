@@ -1,7 +1,35 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
+
+const testimonials = [
+  {
+    quote:
+      "Nikka has been wonderful to work with. She's extremely talented and knowledgeable. She has ideas I would have never thought of, making the design one of a kind and beautiful as well as functional. She is also very responsive and professional. I would 100% recommend!",
+    location: "Atlanta, GA",
+  },
+  {
+    quote:
+      "Nikka has been an incredible resource throughout the design process for multiple rooms in my house. She is professional, responsive, and has a great eye for design.",
+    location: "Las Vegas, NV",
+  },
+  {
+    quote:
+      "Incredible designer, sweetest human with impeccable taste! Really knows how to visualize spaces and then transform them. She is extremely knowledgeable, knows where to splurge and where to save, and was happy to work within our budget and be very honest with design recommendations.",
+    location: "Castle Pines, CO",
+  },
+  {
+    quote:
+      "Working with Halcyon Haus was one of the best decisions we made for our home. She has such an incredible eye for design and somehow pulled together spaces that are both beautiful and functional. If you're considering working with Halcyon Haus, I can't recommend her enough.",
+    location: "Highlands Ranch, CO",
+  },
+  {
+    quote:
+      "I have had the pleasure to work with Halcyon Haus. I find her to be extremely knowledgeable about current trends, design, choices, and quality of new construction as well as remodel projects. I would highly recommend her.",
+    location: "Greenwood Village, CO",
+  },
+];
 
 const processSteps = [
   {
@@ -86,6 +114,14 @@ const faqs = [
 export default function ServicesPage() {
   const [activeStep, setActiveStep] = useState(0);
   const [openFaq, setOpenFaq] = useState(null);
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="min-h-screen text-black font-sans" style={{ backgroundColor: "#fafafa" }}>
@@ -233,6 +269,61 @@ export default function ServicesPage() {
             </div>
           </div>
 
+        </div>
+
+        {/* In Their Words */}
+        <div className="mt-24 pt-16 border-t border-gray-200 max-w-2xl mx-auto text-center">
+          <h2
+            className="text-xl md:text-xl font-light tracking-[0.1em] text-center"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
+            IN THEIR WORDS
+          </h2>
+          <p className="mt-3 text-[11px] tracking-[0.25em] text-center uppercase text-gray-500 font-inter">
+            From Denver To Palm Springs And Beyond
+          </p>
+
+          <div className="mt-14 min-h-[260px] md:min-h-[220px] relative">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={testimonial.location}
+                className={activeTestimonial === index ? "block" : "hidden"}
+              >
+                <p
+                  className="text-3xl text-gray-300 leading-none"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                  aria-hidden="true"
+                >
+                  &#8220;
+                </p>
+                <p
+                  className="-mt-2 text-lg md:text-xl leading-relaxed text-gray-800 italic max-w-xl mx-auto"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  {testimonial.quote}
+                </p>
+                <p className="mt-6 text-gray-400 text-xs tracking-widest" aria-hidden="true">
+                  &#9733;&#9733;&#9733;&#9733;&#9733;
+                </p>
+                <p className="mt-3 text-[10px] tracking-[0.25em] uppercase text-gray-500 font-inter">
+                  {testimonial.location}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 flex justify-center gap-3">
+            {testimonials.map((testimonial, index) => (
+              <button
+                key={testimonial.location}
+                onClick={() => setActiveTestimonial(index)}
+                aria-label={`Show testimonial from ${testimonial.location}`}
+                className={`h-1.5 w-1.5 rounded-full transition-colors duration-300 ${
+                  activeTestimonial === index ? "bg-black" : "bg-gray-300 hover:bg-gray-400"
+                }`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Good to Know FAQ */}
