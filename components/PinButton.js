@@ -1,10 +1,65 @@
-// Small hover-reveal Pinterest pin button for an individual photo.
+import { useState, useEffect } from "react";
+import { Share2 } from "lucide-react";
+
+// Hover-reveal share button for an individual photo.
 // Parent element must include className="group relative" for the
 // hover reveal to work (same pattern already used in ProjectCarousel).
+//
+// Where the browser supports sharing an actual image file (Safari on
+// iPhone and Mac, Edge), this shares the real photo, so it can be sent
+// as an attachment in Messages, Mail, AirDrop, or into the Pinterest app
+// directly. Everywhere else, it falls back to the standard Pinterest
+// "pin this image" web link.
 export default function PinButton({ imageUrl, pageUrl, description }) {
+  const [canShareFiles, setCanShareFiles] = useState(false);
+
+  useEffect(() => {
+    if (typeof navigator === "undefined" || !navigator.canShare) return;
+    try {
+      const testFile = new File([], "test.jpg", { type: "image/jpeg" });
+      if (navigator.canShare({ files: [testFile] })) {
+        setCanShareFiles(true);
+      }
+    } catch (err) {
+      // canShare threw, treat as unsupported and use the Pinterest fallback.
+    }
+  }, []);
+
   const pinterestUrl = `https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(
     pageUrl
   )}&media=${encodeURIComponent(imageUrl)}&description=${encodeURIComponent(description)}`;
+
+  const handleNativeShare = async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    try {
+      const response = await fetch(imageUrl);
+      const blob = await response.blob();
+      const fileName = imageUrl.split("/").pop() || "photo.jpg";
+      const file = new File([blob], fileName, { type: blob.type || "image/jpeg" });
+
+      if (navigator.canShare({ files: [file] })) {
+        await navigator.share({ files: [file], text: description });
+        return;
+      }
+    } catch (err) {
+      // Fetch failed, share was cancelled, or activation was lost, fall
+      // back to the Pinterest link below rather than leaving a dead click.
+    }
+    window.open(pinterestUrl, "_blank", "noopener,noreferrer");
+  };
+
+  if (canShareFiles) {
+    return (
+      <button
+        onClick={handleNativeShare}
+        aria-label="Share this photo"
+        className="absolute top-3 right-3 z-10 flex items-center justify-center h-8 w-8 rounded-full bg-white/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white"
+      >
+        <Share2 size={15} strokeWidth={1.5} className="text-black" />
+      </button>
+    );
+  }
 
   return (
     <a
