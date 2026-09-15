@@ -315,7 +315,7 @@ export default function ServicesPage() {
                     &#8220;
                   </p>
                   <p
-                    className="-mt-1 text-sm md:text-lg leading-relaxed text-gray-800 italic max-w-3xl mx-auto"
+                    className="-mt-1 text-sm md:text-base leading-relaxed text-gray-800 italic max-w-4xl mx-auto"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
                     {testimonial.quote}
