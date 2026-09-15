@@ -36,7 +36,7 @@ const processSteps = [
   {
     title: "Discovery Call",
     description:
-      "A complimentary conversation where we get to know your space and talk through how we'd work together.",
+      "A complimentary conversation where we get to know your space and talk through what working together would look like.",
   },
   {
     title: "Design Consultation",
@@ -46,7 +46,7 @@ const processSteps = [
   {
     title: "Site Analysis & Scope",
     description:
-      "We measure the space, assess natural light and structural conditions, and define the full scope of the project together.",
+      "We measure the space, assess natural light and structural conditions, and define the full scope of the project.",
   },
   {
     title: "Space Planning",
@@ -56,7 +56,7 @@ const processSteps = [
   {
     title: "Concept & Mood Boards",
     description:
-      "Direction, palette, and material starting points come together here, reviewed with you at every step.",
+      "This is where direction, palette, and early material choices take shape, reviewed with you at every step.",
   },
   {
     title: "Material & Furnishings Selection",
@@ -71,7 +71,7 @@ const processSteps = [
   {
     title: "Execution & Installation",
     description:
-      "From contractor coordination to final styling, we bring the design to life and manage the details along the way.",
+      "Contractor coordination, ordering, tracking, and final installation: we manage the details so the design comes to life exactly as planned.",
   },
 ];
 
@@ -79,7 +79,7 @@ const faqs = [
   {
     question: "What's your process like?",
     answer:
-      "Getting to know you comes first. We spend time understanding how you live, what you want your home to feel like, and what would truly make the space work for your life. From there, we build out a full design process together, from concept through installation, tailored to your space and your vision.",
+      "Getting to know you comes first. We spend time understanding how you live and what you want your home to feel like, then shape the design around that. From there, we build out the full design process, concept through installation, centered on your space.",
   },
   {
     question: "Is there a fee for the discovery call?",
@@ -98,7 +98,7 @@ const faqs = [
   {
     question: "What if I already know my style, or have a clear vision?",
     answer:
-      "We're just as happy stepping into a supporting role, executing your vision with our knowledge of the process, from curating and sourcing to purchasing and installation.",
+      "We're just as happy stepping into a supporting role, executing your vision with our knowledge of the process: curating, sourcing, purchasing, and installing exactly what you have in mind.",
   },
   {
     question: "Do you work with my contractor, or bring your own team?",
@@ -185,32 +185,32 @@ export default function ServicesPage() {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
           <div className="md:col-span-12 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-10">
             <p className="text-center max-w-2xl mx-auto">
-              Whether you're renovating a full home or just refreshing a single space, Halcyon Haus offers flexible interior design services in Denver, Colorado and nationwide, tailored to your lifestyle and vision.
+              Halcyon Haus designs full home renovations and single-room refreshes alike, for clients in Denver, Colorado and nationwide, built around how you actually live.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div>
                 <h2 className="uppercase text-xs tracking-widest text-gray-500 mb-2">FULL-SERVICE DESIGN</h2>
                 <p>
-                  A comprehensive approach: layout, materials, and custom millwork to sourcing, styling, and install. Ideal for remodels, new builds, or full home transformations in Denver and beyond. Investment is scoped to your project and discussed during your consultation.
+                  Full attention to every layer of your home: materials, custom millwork, sourcing, and styling, carried through to install. Well suited to a remodel, a new build, or a full home transformation in Denver and beyond. Investment is scoped to your project and discussed during your consultation.
                 </p>
               </div>
               <div>
                 <h2 className="uppercase text-xs tracking-widest text-gray-500 mb-2">ROOM REFRESH</h2>
                 <p>
-                  For spaces that just need a considered update: new furnishings, layout, styling, and sourcing within your existing architecture. Priced as a flat project fee.
+                  Perfect for spaces that need a fresh update: new furnishings, layout and styling, and full sourcing within your existing or updated architecture.
                 </p>
               </div>
               <div>
                 <h2 className="uppercase text-xs tracking-widest text-gray-500 mb-2">VIRTUAL DESIGN</h2>
                 <p>
-                  A fully remote design experience: custom mood boards, layout guides, shoppable product lists, and styling instructions, delivered wherever you are.
+                  A fully remote design experience: custom mood boards, layout guides, shoppable product lists, and styling instructions.
                 </p>
               </div>
               <div>
                 <h2 className="uppercase text-xs tracking-widest text-gray-500 mb-2">HOURLY DESIGN SUPPORT</h2>
                 <p>
-                  Need a second opinion or a working session on a specific question? Book time directly for layout advice, sourcing direction, or a focused problem to solve.
+                  Need a second opinion or a working session on a specific question? Book time directly for layout advice, sourcing direction, or one specific problem you need solved.
                 </p>
               </div>
             </div>
@@ -235,7 +235,7 @@ export default function ServicesPage() {
             OUR PROCESS
           </h2>
           <p className="mt-3 text-[11px] tracking-[0.25em] text-center uppercase text-gray-500 font-inter">
-            From First Call To Final Styling
+            A Tailored Process To Streamline Your Project
           </p>
 
           <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
@@ -289,7 +289,7 @@ export default function ServicesPage() {
             TESTIMONIALS
           </h2>
           <p className="mt-3 text-[11px] tracking-[0.25em] text-center uppercase text-gray-500 font-inter">
-            From Denver To Palm Springs And Beyond
+            Kind Words From Clients Nationwide
           </p>
 
           <div className="mt-14 flex items-center justify-center gap-4 md:gap-8">
