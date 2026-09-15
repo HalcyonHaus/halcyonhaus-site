@@ -281,7 +281,7 @@ export default function ServicesPage() {
         </div>
 
         {/* Testimonials */}
-        <div className="mt-24 pt-16 border-t border-gray-200 max-w-2xl mx-auto text-center">
+        <div className="mt-24 pt-16 border-t border-gray-200 max-w-3xl mx-auto text-center">
           <h2
             className="text-xl md:text-xl font-light tracking-[0.1em] text-center"
             style={{ fontFamily: "'Playfair Display', serif" }}
@@ -315,7 +315,7 @@ export default function ServicesPage() {
                     &#8220;
                   </p>
                   <p
-                    className="-mt-1 text-sm md:text-base leading-relaxed text-gray-800 italic max-w-md mx-auto"
+                    className="-mt-1 text-sm md:text-base leading-relaxed text-gray-800 italic max-w-2xl mx-auto"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
                     {testimonial.quote}
