@@ -24,7 +24,11 @@ export default function ShareButton({ title, description }) {
   const handleShareClick = async () => {
     if (nativeShareAvailable) {
       try {
-        await navigator.share({ title, text: description, url: pageUrl });
+        // Safari's handling of title + text + url together is documented as
+        // unpredictable across share targets (Messages, Mail, etc). Passing
+        // only text and url, and skipping title, is the recommended,
+        // more reliable combination.
+        await navigator.share({ text: title, url: pageUrl });
       } catch (err) {
         // User cancelled the native share sheet, nothing to do.
       }
