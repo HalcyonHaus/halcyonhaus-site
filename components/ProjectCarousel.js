@@ -3,13 +3,17 @@ import Image from 'next/image';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { useSwipeable } from 'react-swipeable';
 
-export default function ProjectCarousel({ title, images }) {
+// hasDedicatedPage: true when this card sits inside a Next Link to a full
+// project page. In that case a click should just navigate, so the card
+// itself doesn't open the in-grid lightbox, that's reserved for projects
+// that don't have their own page yet.
+export default function ProjectCarousel({ title, location, images, hasDedicatedPage }) {
   const [mounted, setMounted] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [modalIndex, setModalIndex] = useState(0);
 
-  // Hydrate on client only — SSR renders static first image for crawlers
+  // Hydrate on client only: SSR renders static first image for crawlers
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -48,8 +52,19 @@ export default function ProjectCarousel({ title, images }) {
     trackMouse: true,
   });
 
-  // Descriptive alt text for SEO — tells Google what's in each image
-  const altText = `${title} — interior design by Nikka Winchell, Halcyon Haus Denver`;
+  // Descriptive alt text for SEO: tells Google what's in each image
+  const altText = `${title}: interior design by Nikka Winchell, Halcyon Haus Denver`;
+
+  const caption = (
+    <div className="mt-3 text-center pt-3">
+      <p className="font-inter uppercase tracking-widest text-xs">{title}</p>
+      {location && (
+        <p className="font-inter uppercase tracking-widest text-[10px] text-gray-500 mt-1">
+          {location}
+        </p>
+      )}
+    </div>
+  );
 
   // ── SSR / crawler render ──
   // Returns a static first image with full alt text so Google indexes the portfolio.
@@ -66,40 +81,40 @@ export default function ProjectCarousel({ title, images }) {
             priority
           />
         </div>
-        <p className="font-inter uppercase tracking-widest text-xs mt-3 text-center pt-3">{title}</p>
+        {caption}
       </div>
     );
   }
 
   // ── Full interactive carousel (client only) ──
+  // Single clear interaction model: the visible photo is always images[currentIndex].
+  // Arrows and swipe change it immediately, dots jump straight to a photo, and a
+  // click on the image itself either opens the full-screen gallery (projects with
+  // no page of their own) or does nothing extra (projects with a page, the
+  // surrounding Link handles the click).
   return (
     <div>
       <div
         {...handlers}
-        onClick={() => {
-          setIsOpen(true);
-          setModalIndex(currentIndex);
-        }}
-        className="group relative w-full aspect-[4/4.3] md:aspect-[4/4.9] overflow-hidden rounded-md cursor-pointer"
+        onClick={
+          hasDedicatedPage
+            ? undefined
+            : () => {
+                setIsOpen(true);
+                setModalIndex(currentIndex);
+              }
+        }
+        className={`group relative w-full aspect-[4/4.3] md:aspect-[4/4.9] overflow-hidden rounded-md ${
+          hasDedicatedPage ? '' : 'cursor-pointer'
+        }`}
       >
-        <>
-          <Image
-            src={images[currentIndex]}
-            alt={altText}
-            fill
-            style={{ objectFit: 'cover' }}
-            className="transition-opacity duration-500 opacity-100 group-hover:opacity-0"
-          />
-          {images.length > 1 && (
-            <Image
-              src={images[(currentIndex + 1) % images.length]}
-              alt={`${title} — detail view, Halcyon Haus interior design`}
-              fill
-              style={{ objectFit: 'cover' }}
-              className="transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-            />
-          )}
-        </>
+        <Image
+          src={images[currentIndex]}
+          alt={altText}
+          fill
+          style={{ objectFit: 'cover' }}
+          className="transition-transform duration-500 group-hover:scale-105"
+        />
         {images.length > 1 && (
           <>
             <button
@@ -116,19 +131,27 @@ export default function ProjectCarousel({ title, images }) {
             >
               <ChevronRight size={24} strokeWidth={1.2} className="text-white drop-shadow" />
             </button>
+            <div className="absolute bottom-2 w-full flex justify-center space-x-1.5 z-20">
+              {images.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={(e) => { e.preventDefault(); e.stopPropagation(); setCurrentIndex(idx); }}
+                  aria-label={`Go to image ${idx + 1} of ${title}`}
+                  className="p-1 -m-1"
+                >
+                  <span
+                    className={`block h-1.5 w-1.5 rounded-full transition-colors ${
+                      idx === currentIndex ? 'bg-white' : 'bg-white/50'
+                    }`}
+                  />
+                </button>
+              ))}
+            </div>
           </>
         )}
-        <div className="absolute bottom-2 w-full flex justify-center space-x-1 z-20">
-          {images.map((_, idx) => (
-            <div
-              key={idx}
-              className={`h-1.5 w-1.5 rounded-full ${idx === currentIndex ? 'bg-white' : 'bg-white/50'}`}
-            />
-          ))}
-        </div>
       </div>
 
-      <p className="font-inter uppercase tracking-widest text-xs mt-3 text-center pt-3">{title}</p>
+      {caption}
 
       {isOpen && (
         <div
@@ -157,7 +180,7 @@ export default function ProjectCarousel({ title, images }) {
           <div className="relative w-full h-full max-w-6xl max-h-[90vh] flex items-center justify-center">
             <Image
               src={images[modalIndex]}
-              alt={`${title} — image ${modalIndex + 1} of ${images.length}, Halcyon Haus interior design by Nikka Winchell`}
+              alt={`${title}: photo ${modalIndex + 1} of ${images.length}, interior design by Nikka Winchell, Halcyon Haus`}
               fill
               style={{ objectFit: 'contain' }}
               className="rounded-md"
