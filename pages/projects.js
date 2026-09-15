@@ -6,6 +6,7 @@ const projects = [
   {
     title: "Golden Grove",
     slug: "golden-grove",
+    location: "A 1950s ranch-style home, reimagined in the Tahquitz River Estates neighborhood of Palm Springs, California.",
     images: [
       "/images/GOLDENGROVEKITCHEN2.jpg",
       "/images/GOLDENGROVE-BATH.jpg",
@@ -19,6 +20,7 @@ const projects = [
   {
     title: "Canyon Cottage Kitchen",
     slug: "canyon-cottage-kitchen",
+    location: "A cottage-style kitchen renovation in Castle Pines Village, Colorado.",
     images: [
       "/images/KITCHENBLOG2.JPG",
       "/images/DSC03252.jpg",
@@ -28,7 +30,8 @@ const projects = [
   },
   {
     title: "Canyon Cottage Primary Bath",
-        slug: "canyon-cottage-primary-bath",
+    slug: "canyon-cottage-primary-bath",
+    location: "A cottage-style primary bath renovation in Castle Pines Village, Colorado.",
     images: [
       "/images/PRIMARYVANITY2.jpg",
       "/images/PRIMARYBATH00.JPG",
@@ -38,14 +41,33 @@ const projects = [
     ]
   },
   {
-    title: "Country Escape Dining",
+    title: "Orchard Oasis",
+    location: "A two-toned kitchen renovation in Denver's DTC/Greenwood Village neighborhood.",
+    images: [
+      "/images/TWOTONEDKITCHEN1.JPG",
+      "/images/DSC02219.jpeg",
+      "/images/DSC02198.jpeg"
+    ]
+  },
+  {
+    title: "Canyon Cottage Dining",
+    location: "A fresh take on a modern French country dining room, located in Castle Pines Village, Colorado.",
     images: [
       "/images/DINING1.JPG",
       "/images/DINING2.JPG"
     ]
   },
   {
+    title: "French Modern Primary",
+    location: "The same modern French country style carries into this Canyon Cottage primary suite, Castle Pines, Colorado.",
+    images: [
+      "/images/PRIMARY1.JPG",
+      "/images/PRIMARY2.JPG"
+    ]
+  },
+  {
     title: "Halcyon Haus",
+    location: "Her first home, and the one that gave Halcyon Haus its name, in Highlands Ranch, Colorado.",
     images: [
       "/images/DSC01677.jpeg",
       "/images/IMG_4599.jpeg",
@@ -59,22 +81,8 @@ const projects = [
     ]
   },
   {
-    title: "Anything But Monotone Kitchen",
-    images: [
-      "/images/TWOTONEDKITCHEN1.JPG",
-      "/images/DSC02219.jpeg",
-      "/images/DSC02198.jpeg"
-    ]
-  },
-  {
-    title: "French Modern Primary",
-    images: [
-      "/images/PRIMARY1.JPG",
-      "/images/PRIMARY2.JPG"
-    ]
-  },
-  {
-    title: "Mountain Escape Neutral Nursery",
+    title: "Halcyon Haus Nursery",
+    location: "Neutral tones with a playful nod to mountain adventure, in Highlands Ranch, Colorado.",
     images: [
       "/images/NURSERY0.JPG",
       "/images/NURSERY1.JPG",
@@ -85,7 +93,8 @@ const projects = [
     ]
   },
   {
-    title: "Full Circle Bedroom",
+    title: "Halcyon Haus Primary Suite",
+    location: "A second chapter in the same Highlands Ranch home, redesigned for the new owners.",
     images: [
       "/images/DFF440A7-0193-47CF-9773-5436061404B9.jpeg",
       "/images/DSC02113.jpeg"
@@ -164,7 +173,13 @@ export default function ProjectsPage() {
         <div className="flex flex-wrap justify-center gap-10 mt-16">
           {projects.map((project, index) => {
             const carousel = (
-              <ProjectCarousel key={index} title={project.title} images={project.images} />
+              <ProjectCarousel
+                key={index}
+                title={project.title}
+                location={project.location}
+                images={project.images}
+                hasDedicatedPage={Boolean(project.slug)}
+              />
             );
             const cardWidth = "w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.6667rem)]";
             return project.slug ? (
