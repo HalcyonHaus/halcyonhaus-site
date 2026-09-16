@@ -1,5 +1,22 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
+
+const philosophy = [
+  {
+    title: "Provenance",
+    body: "Every object carries a history, and that history is worth understanding before it's touched. Knowing where something came from, and what it's meant to the people who kept it, is what separates real preservation from guesswork."
+  },
+  {
+    title: "Preservation",
+    body: "Some homes have lived past their prime, but they still have a story to tell. A home's character was never in the studs and drywall, it lives in the space itself. The work is knowing which parts of that story to keep, and building something new around them."
+  },
+  {
+    title: "Permanence",
+    body: "Trends are fun, and there's always room for a playful moment. But underneath every choice is a material or finish built to age alongside the people living with it, homes made to outlast the moment they were designed in, not just fit inside it."
+  }
+];
 
 const PAGE_URL = "https://www.halcyonhaus.com/about";
 const PAGE_TITLE = "About Nikka Winchell | Denver Interior Designer, Halcyon Haus";
@@ -29,6 +46,8 @@ const personSchema = {
 };
 
 export default function AboutPage() {
+  const [openPhilosophy, setOpenPhilosophy] = useState(null);
+
   return (
     <div className="min-h-screen text-black font-sans" style={{ backgroundColor: "#fafafa" }}>
       <Head>
@@ -74,6 +93,14 @@ export default function AboutPage() {
           ABOUT ME
         </h1>
 
+        {/* Intro, full width, no image yet */}
+        <div className="mt-12 max-w-2xl mx-auto text-center">
+          <p className="text-sm leading-7 tracking-wide font-inter text-gray-700">
+            Halcyon Haus is a full-service interior design studio founded by me, Nikka Winchell. My work is rooted in transitional design: warm and collected, but most importantly, built around how you actually live.
+          </p>
+        </div>
+
+        {/* Portrait + personal note + Rooted Design dropdown */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
           <div className="md:col-span-6 flex flex-col items-center md:sticky md:top-24">
             <img
@@ -88,71 +115,72 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
+
           <div className="md:col-span-6 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6">
-            <p>
-              Halcyon Haus is a full-service interior design studio founded by me, Nikka Winchell. My work is rooted in transitional design: warm and collected, but most importantly, built around how you actually live.
-            </p>
             <p>
               I started Halcyon Haus in 2020, right after renovating my own home. Somewhere in that process, I realized how much it mattered to have a calm space to come back to. Growing up in California and eventually landing in Colorado gave me an appreciation for both easy, relaxed spaces and calm, grounded ones, and that mix shows up in every project I design.
             </p>
             <p className="text-right italic text-gray-500">- Nikka</p>
-            <p>
-              Based in Castle Rock, Colorado and Palm Springs, California, I take on projects across the country, in person and virtually.
-            </p>
 
-            <div className="pt-4 text-center">
-              <Link href="/contact" legacyBehavior>
-                <a className="inline-flex items-center gap-2 text-xs tracking-widest uppercase font-inter text-black border-b border-black pb-1 transition-all duration-300 hover:gap-3 hover:text-neutral-500 hover:border-neutral-500">
-                  Work With Me
-                  <span aria-hidden="true">&#8594;</span>
-                </a>
-              </Link>
+            {/* Rooted Design Philosophy, collapsible like the Services FAQ */}
+            <div className="pt-8 border-t border-gray-200">
+              <h2
+                className="text-center text-lg font-light tracking-[0.1em]"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                ROOTED DESIGN
+              </h2>
+              <p className="text-center text-sm mt-3 mb-6 text-gray-700">
+                Our design philosophy is rooted in the three P&apos;s:
+              </p>
+
+              <div>
+                {philosophy.map((item, index) => {
+                  const isOpen = openPhilosophy === index;
+                  return (
+                    <div key={item.title} className="border-b border-gray-200">
+                      <button
+                        onClick={() => setOpenPhilosophy(isOpen ? null : index)}
+                        className="w-full flex items-center justify-between py-4 text-left font-inter uppercase tracking-widest text-xs text-black"
+                        aria-expanded={isOpen}
+                      >
+                        <span>{item.title}</span>
+                        <ChevronDown
+                          size={16}
+                          strokeWidth={1.2}
+                          className={`flex-shrink-0 ml-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                        />
+                      </button>
+                      <div
+                        style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
+                        className="grid transition-[grid-template-rows] duration-300 ease-in-out"
+                      >
+                        <div className="overflow-hidden">
+                          <p className="pb-4 text-sm leading-7 font-inter text-gray-700">
+                            {item.body}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Rooted Design Philosophy */}
-        <div className="mt-24 max-w-3xl mx-auto">
-          <h2
-            className="text-center text-xl md:text-2xl font-light tracking-[0.1em] mb-8"
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
-            ROOTED DESIGN
-          </h2>
-          <p className="text-sm leading-7 tracking-wide font-inter text-gray-700 text-center mb-12">
-            Our design philosophy is rooted in the three P&apos;s:
+        {/* Location + CTA, full width below the portrait row */}
+        <div className="mt-16 max-w-2xl mx-auto text-center">
+          <p className="text-sm leading-7 tracking-wide font-inter text-gray-700">
+            Based in Castle Rock, Colorado and Palm Springs, California, I take on projects across the country, in person and virtually.
           </p>
-
-          <div className="space-y-10">
-            <div className="flex gap-6">
-              <span className="font-inter text-sm text-gray-400 flex-shrink-0">1</span>
-              <div>
-                <h3 className="font-inter uppercase tracking-widest text-xs mb-2">Provenance</h3>
-                <p className="text-sm leading-7 tracking-wide font-inter text-gray-700">
-                  Every object carries a history, and that history is worth understanding before it&apos;s touched. Knowing where something came from, and what it&apos;s meant to the people who kept it, is what separates real preservation from guesswork.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-6">
-              <span className="font-inter text-sm text-gray-400 flex-shrink-0">2</span>
-              <div>
-                <h3 className="font-inter uppercase tracking-widest text-xs mb-2">Preservation</h3>
-                <p className="text-sm leading-7 tracking-wide font-inter text-gray-700">
-                  Some homes have lived past their prime, but they still have a story to tell. A home&apos;s character was never in the studs and drywall, it lives in the space itself. The work is knowing which parts of that story to keep, and building something new around them.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-6">
-              <span className="font-inter text-sm text-gray-400 flex-shrink-0">3</span>
-              <div>
-                <h3 className="font-inter uppercase tracking-widest text-xs mb-2">Permanence</h3>
-                <p className="text-sm leading-7 tracking-wide font-inter text-gray-700">
-                  Trends are fun, and there&apos;s always room for a playful moment. But underneath every choice is a material or finish built to age alongside the people living with it, homes made to outlast the moment they were designed in, not just fit inside it.
-                </p>
-              </div>
-            </div>
+          <div className="pt-6">
+            <Link href="/contact" legacyBehavior>
+              <a className="inline-flex items-center gap-2 text-xs tracking-widest uppercase font-inter text-black border-b border-black pb-1 transition-all duration-300 hover:gap-3 hover:text-neutral-500 hover:border-neutral-500">
+                Work With Me
+                <span aria-hidden="true">&#8594;</span>
+              </a>
+            </Link>
           </div>
         </div>
 
