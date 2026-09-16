@@ -1,28 +1,56 @@
 import Head from "next/head";
 import Link from "next/link";
 
+const PAGE_URL = "https://www.halcyonhaus.com/about";
+const PAGE_TITLE = "About Nikka Winchell | Denver Interior Designer, Halcyon Haus";
+const PAGE_DESCRIPTION =
+  "Meet Nikka Winchell, founder of Halcyon Haus, a Denver interior design studio specializing in warm, transitional design for homes across Colorado and beyond.";
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Nikka Winchell",
+    "jobTitle": "Founder & Interior Designer",
+    "image": "https://www.halcyonhaus.com/images/DSC02864.JPG",
+    "url": PAGE_URL,
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Halcyon Haus",
+      "url": "https://www.halcyonhaus.com"
+    },
+    "sameAs": [
+      "https://www.instagram.com/halcyonhaus_",
+      "https://www.tiktok.com/@halcyonhaus_",
+      "https://www.shopltk.com/explore/halcyonhaus"
+    ]
+  }
+};
+
 export default function AboutPage() {
   return (
     <div className="min-h-screen text-black font-sans" style={{ backgroundColor: "#fafafa" }}>
       <Head>
-        <title>About Nikka Winchell | Denver Interior Designer, Halcyon Haus</title>
-        <meta
-          name="description"
-          content="Meet Nikka Winchell, founder of Halcyon Haus, a Denver interior design studio specializing in warm, transitional design for homes across Colorado and beyond."
-        />
-        <link rel="canonical" href="https://www.halcyonhaus.com/about" />
-        <meta property="og:title" content="About Nikka Winchell | Halcyon Haus Interior Design" />
-        <meta property="og:description" content="Meet Nikka Winchell, founder of Halcyon Haus, a Denver interior design studio rooted in thoughtful, transitional design." />
-        <meta property="og:image" content="https://www.halcyonhaus.com/images/HEROKITCHEN1.JPG" />
-        <meta property="og:url" content="https://www.halcyonhaus.com/about" />
+        <title>{PAGE_TITLE}</title>
+        <meta name="description" content={PAGE_DESCRIPTION} />
+        <link rel="canonical" href={PAGE_URL} />
+        <meta property="og:title" content={PAGE_TITLE} />
+        <meta property="og:description" content={PAGE_DESCRIPTION} />
+        <meta property="og:image" content="https://www.halcyonhaus.com/images/DSC02864.JPG" />
+        <meta property="og:url" content={PAGE_URL} />
         <meta property="og:type" content="profile" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About Nikka Winchell | Halcyon Haus" />
-        <meta name="twitter:description" content="Meet the designer behind Halcyon Haus, thoughtful, transitional interiors in Denver, CO." />
-        <meta name="twitter:image" content="https://www.halcyonhaus.com/images/HEROKITCHEN1.JPG" />
+        <meta name="twitter:title" content={PAGE_TITLE} />
+        <meta name="twitter:description" content={PAGE_DESCRIPTION} />
+        <meta name="twitter:image" content="https://www.halcyonhaus.com/images/DSC02864.JPG" />
         <link
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
           rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
       </Head>
 
@@ -47,30 +75,83 @@ export default function AboutPage() {
         </h1>
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-          <div className="md:col-span-5 flex justify-center md:sticky md:top-24">
+          <div className="md:col-span-6 flex flex-col items-center md:sticky md:top-24">
             <img
               src="/images/DSC02864.JPG"
               alt="Nikka Winchell, founder of Halcyon Haus interior design studio in Denver, Colorado"
-              className="w-[20rem] md:w-[24rem] h-[26rem] md:h-[30rem] rounded-md object-cover"
+              className="w-full max-w-[26rem] h-[30rem] md:h-[36rem] rounded-md object-cover"
             />
+            <div className="mt-5 text-center">
+              <p className="font-inter uppercase tracking-widest text-sm">Nikka Winchell</p>
+              <p className="font-inter uppercase tracking-widest text-[10px] text-gray-500 mt-1">
+                Founder, Halcyon Haus
+              </p>
+            </div>
           </div>
-          <div className="md:col-span-7 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6">
+          <div className="md:col-span-6 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6">
             <p>
-              Welcome to Halcyon Haus, an interior design studio founded by Nikka Winchell. Our work is rooted in transitional design: warm, considered, and built around how you actually live in a space.
+              Halcyon Haus is a full-service interior design studio founded by me, Nikka Winchell. My work is rooted in transitional design: warm and collected, but most importantly, built around how you actually live.
             </p>
             <p>
-              I started Halcyon Haus in 2020, right after renovating my own home. Somewhere in that process I realized how much having a calm space to come back to actually matters. Growing up in California and eventually landing in Colorado gave me an appreciation for both easy, relaxed spaces and calm, grounded ones, and that mix shows up in every project I design.
+              I started Halcyon Haus in 2020, right after renovating my own home. Somewhere in that process, I realized how much it mattered to have a calm space to come back to. Growing up in California and eventually landing in Colorado gave me an appreciation for both easy, relaxed spaces and calm, grounded ones, and that mix shows up in every project I design.
             </p>
+            <p className="text-right italic text-gray-500">- Nikka</p>
             <p>
-              Based in Denver, Colorado & Southern California - taking on projects across the country, in person and virtually. 
+              Based in Castle Rock, Colorado and Palm Springs, California, I take on projects across the country, in person and virtually.
             </p>
 
             <div className="pt-4 text-center">
               <Link href="/contact" legacyBehavior>
-                <a className="inline-block px-6 py-3 border border-black text-black text-xs tracking-widest uppercase font-inter hover:bg-black hover:text-white transition">
+                <a className="inline-flex items-center gap-2 text-xs tracking-widest uppercase font-inter text-black border-b border-black pb-1 transition-all duration-300 hover:gap-3 hover:text-neutral-500 hover:border-neutral-500">
                   Work With Me
+                  <span aria-hidden="true">&#8594;</span>
                 </a>
               </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Rooted Design Philosophy */}
+        <div className="mt-24 max-w-3xl mx-auto">
+          <h2
+            className="text-center text-xl md:text-2xl font-light tracking-[0.1em] mb-8"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
+            ROOTED DESIGN
+          </h2>
+          <p className="text-sm leading-7 tracking-wide font-inter text-gray-700 text-center mb-12">
+            Our design philosophy is rooted in the three P&apos;s:
+          </p>
+
+          <div className="space-y-10">
+            <div className="flex gap-6">
+              <span className="font-inter text-sm text-gray-400 flex-shrink-0">1</span>
+              <div>
+                <h3 className="font-inter uppercase tracking-widest text-xs mb-2">Provenance</h3>
+                <p className="text-sm leading-7 tracking-wide font-inter text-gray-700">
+                  Every object carries a history, and that history is worth understanding before it&apos;s touched. Knowing where something came from, and what it&apos;s meant to the people who kept it, is what separates real preservation from guesswork.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-6">
+              <span className="font-inter text-sm text-gray-400 flex-shrink-0">2</span>
+              <div>
+                <h3 className="font-inter uppercase tracking-widest text-xs mb-2">Preservation</h3>
+                <p className="text-sm leading-7 tracking-wide font-inter text-gray-700">
+                  Some homes have lived past their prime, but they still have a story to tell. A home&apos;s character was never in the studs and drywall, it lives in the space itself. The work is knowing which parts of that story to keep, and building something new around them.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-6">
+              <span className="font-inter text-sm text-gray-400 flex-shrink-0">3</span>
+              <div>
+                <h3 className="font-inter uppercase tracking-widest text-xs mb-2">Permanence</h3>
+                <p className="text-sm leading-7 tracking-wide font-inter text-gray-700">
+                  Trends are fun, and there&apos;s always room for a playful moment. But underneath every choice is a material or finish built to age alongside the people living with it, homes made to outlast the moment they were designed in, not just fit inside it.
+                </p>
+              </div>
             </div>
           </div>
         </div>
