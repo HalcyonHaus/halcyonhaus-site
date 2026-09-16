@@ -170,17 +170,20 @@ export default function AboutPage() {
             <a href="https://www.homesandgardens.com/decor/paint/benjamin-moore-pashmina" target="_blank" rel="noopener noreferrer" className="underline hover:text-black">Homes &amp; Gardens</a>, July 2026
           </p>
 
-          {/* First Row */}
-          <div className="flex justify-center space-x-16 mb-1.5 px-4">
+          {/* Brand logos, wraps naturally as more are added */}
+          <div className="flex flex-wrap justify-center gap-x-16 gap-y-6 px-4">
             <img src="/logos/potterybarn.png" alt="Pottery Barn" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
             <img src="/logos/westelm.png" alt="West Elm" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
             <img src="/logos/cratebarrel.png" alt="Crate & Barrel" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
-          </div>
-
-          {/* Second Row */}
-          <div className="flex justify-center space-x-16 px-4">
             <img src="/logos/amberinteriors.png" alt="Amber Interiors" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
             <img src="/logos/serenaandlily.png" alt="Serena & Lily" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+            <img src="/logos/afloral.png" alt="Afloral" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+            <img src="/logos/greenrow.png" alt="GreenRow" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+            <img src="/logos/quince.png" alt="Quince" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+            <img src="/logos/portolapaints.png" alt="Portola Paints" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+            <img src="/logos/benjaminmoore.png" alt="Benjamin Moore" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+            <img src="/logos/cletile.png" alt="CLE Tile" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+            <img src="/logos/ziatile.png" alt="Zia Tile" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
           </div>
         </div>
       </main>
