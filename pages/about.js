@@ -177,13 +177,13 @@ export default function AboutPage() {
             <img src="/logos/cratebarrel.png" alt="Crate & Barrel" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
             <img src="/logos/amberinteriors.png" alt="Amber Interiors" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
             <img src="/logos/serenaandlily.png" alt="Serena & Lily" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
-            <img src="/logos/afloral.png" alt="Afloral" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
-            <img src="/logos/greenrow.png" alt="GreenRow" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
-            <img src="/logos/quince.png" alt="Quince" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
-            <img src="/logos/portolapaints.png" alt="Portola Paints" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
-            <img src="/logos/benjaminmoore.png" alt="Benjamin Moore" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
-            <img src="/logos/cletile.png" alt="CLE Tile" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
-            <img src="/logos/ziatile.png" alt="Zia Tile" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+            <img src="/logos/aflorallogo.png" alt="Afloral" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+            <img src="/logos/greenrow_logo.png" alt="GreenRow" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+            <img src="/logos/quince-logo-bigger-file.png" alt="Quince" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+            <img src="/logos/portolopaintslogo.png" alt="Portola Paints" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+            <img src="/logos/benmoorelogo.png" alt="Benjamin Moore" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+            <img src="/logos/cletilelogo.png" alt="CLE Tile" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
+            <img src="/logos/ziatilelogo.png" alt="Zia Tile" className="h-14 w-auto max-w-[120px] object-contain grayscale" />
           </div>
         </div>
       </main>
