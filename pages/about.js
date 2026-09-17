@@ -1,7 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useState } from "react";
-import { ChevronDown } from "lucide-react";
 
 const philosophy = [
   {
@@ -29,7 +27,7 @@ const personSchema = {
   "mainEntity": {
     "@type": "Person",
     "name": "Nikka Winchell",
-    "jobTitle": "Founder & Interior Designer",
+    "jobTitle": "Founder & Principal Designer",
     "image": "https://www.halcyonhaus.com/images/DSC02864.JPG",
     "url": PAGE_URL,
     "worksFor": {
@@ -46,8 +44,6 @@ const personSchema = {
 };
 
 export default function AboutPage() {
-  const [openPhilosophy, setOpenPhilosophy] = useState(null);
-
   return (
     <div className="min-h-screen text-black font-sans" style={{ backgroundColor: "#fafafa" }}>
       <Head>
@@ -93,84 +89,15 @@ export default function AboutPage() {
           ABOUT ME
         </h1>
 
-        {/* Intro, full width, no image yet */}
-        <div className="mt-12 max-w-2xl mx-auto text-center">
-          <p className="text-sm leading-7 tracking-wide font-inter text-gray-700">
+        {/* Intro, wide and centered, no image yet */}
+        <div className="mt-12 max-w-3xl mx-auto text-center">
+          <p className="text-base leading-8 tracking-wide font-inter text-gray-700">
             Halcyon Haus is a full-service interior design studio founded by me, Nikka Winchell. My work is rooted in transitional design: warm and collected, but most importantly, built around how you actually live.
           </p>
         </div>
 
-        {/* Portrait + personal note + Rooted Design dropdown */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-          <div className="md:col-span-6 flex flex-col items-center md:sticky md:top-24">
-            <img
-              src="/images/DSC02864.JPG"
-              alt="Nikka Winchell, founder of Halcyon Haus interior design studio in Denver, Colorado"
-              className="w-full max-w-[26rem] h-[30rem] md:h-[36rem] rounded-md object-cover"
-            />
-            <div className="mt-5 text-center">
-              <p className="font-inter uppercase tracking-widest text-sm">Nikka Winchell</p>
-              <p className="font-inter uppercase tracking-widest text-[10px] text-gray-500 mt-1">
-                Founder, Halcyon Haus
-              </p>
-            </div>
-          </div>
-
-          <div className="md:col-span-6 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6">
-            <p>
-              I started Halcyon Haus in 2020, right after renovating my own home. Somewhere in that process, I realized how much it mattered to have a calm space to come back to. Growing up in California and eventually landing in Colorado gave me an appreciation for both easy, relaxed spaces and calm, grounded ones, and that mix shows up in every project I design.
-            </p>
-            <p className="text-right italic text-gray-500">- Nikka</p>
-
-            {/* Rooted Design Philosophy, collapsible like the Services FAQ */}
-            <div className="pt-8 border-t border-gray-200">
-              <h2
-                className="text-center text-lg font-light tracking-[0.1em]"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                ROOTED DESIGN
-              </h2>
-              <p className="text-center text-sm mt-3 mb-6 text-gray-700">
-                Our design philosophy is rooted in the three P&apos;s:
-              </p>
-
-              <div>
-                {philosophy.map((item, index) => {
-                  const isOpen = openPhilosophy === index;
-                  return (
-                    <div key={item.title} className="border-b border-gray-200">
-                      <button
-                        onClick={() => setOpenPhilosophy(isOpen ? null : index)}
-                        className="w-full flex items-center justify-between py-4 text-left font-inter uppercase tracking-widest text-xs text-black"
-                        aria-expanded={isOpen}
-                      >
-                        <span>{item.title}</span>
-                        <ChevronDown
-                          size={16}
-                          strokeWidth={1.2}
-                          className={`flex-shrink-0 ml-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
-                        />
-                      </button>
-                      <div
-                        style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
-                        className="grid transition-[grid-template-rows] duration-300 ease-in-out"
-                      >
-                        <div className="overflow-hidden">
-                          <p className="pb-4 text-sm leading-7 font-inter text-gray-700">
-                            {item.body}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Location + CTA, full width below the portrait row */}
-        <div className="mt-16 max-w-2xl mx-auto text-center">
+        {/* Location + CTA */}
+        <div className="mt-10 max-w-3xl mx-auto text-center">
           <p className="text-sm leading-7 tracking-wide font-inter text-gray-700">
             Based in Castle Rock, Colorado and Palm Springs, California, I take on projects across the country, in person and virtually.
           </p>
@@ -181,6 +108,49 @@ export default function AboutPage() {
                 <span aria-hidden="true">&#8594;</span>
               </a>
             </Link>
+          </div>
+        </div>
+
+        {/* Portrait + personal note */}
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+          <div className="md:col-span-6 flex flex-col items-center">
+            <img
+              src="/images/DSC02864.JPG"
+              alt="Nikka Winchell, founder of Halcyon Haus interior design studio in Denver, Colorado"
+              className="w-full max-w-[26rem] h-[30rem] md:h-[36rem] rounded-md object-cover"
+            />
+            <div className="mt-5 text-center">
+              <p className="font-inter uppercase tracking-widest text-sm">Nikka Winchell</p>
+              <p className="font-inter uppercase tracking-widest text-[10px] text-gray-500 mt-1">
+                Founder &amp; Principal Designer
+              </p>
+            </div>
+          </div>
+
+          <div className="md:col-span-6 flex flex-col justify-center h-full text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6">
+            <p>
+              I started Halcyon Haus in 2020, right after renovating my own home. Somewhere in that process, I realized how much it mattered to have a calm space to come back to. Growing up in California and eventually landing in Colorado gave me an appreciation for both easy, relaxed spaces and calm, grounded ones, and that mix shows up in every project I design.
+            </p>
+            <p className="text-right italic text-gray-500">- Nikka</p>
+          </div>
+        </div>
+
+        {/* Design Philosophy */}
+        <div className="mt-24 max-w-4xl mx-auto text-center">
+          <p
+            className="text-xl md:text-2xl italic font-light"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
+            Our design philosophy is rooted in the three P&apos;s.
+          </p>
+
+          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
+            {philosophy.map((item) => (
+              <div key={item.title}>
+                <h3 className="font-inter uppercase tracking-widest text-xs mb-3">{item.title}</h3>
+                <p className="text-sm leading-7 font-inter text-gray-700">{item.body}</p>
+              </div>
+            ))}
           </div>
         </div>
 
