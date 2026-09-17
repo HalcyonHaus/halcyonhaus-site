@@ -90,16 +90,16 @@ export default function AboutPage() {
         </h1>
 
         {/* Intro, wide and centered, no image yet */}
-        <div className="mt-12 max-w-4xl mx-auto text-center">
+        <div className="mt-12 max-w-5xl mx-auto text-center">
           <p className="text-sm leading-7 tracking-wide font-inter text-gray-700">
             Halcyon Haus is a full-service interior design studio founded by Nikka Winchell. We specialize in turn-key design services, from full builds to room reconfigurations, rooted in transitional design: warm and collected, but most importantly, built around how you actually live.
           </p>
         </div>
 
         {/* Location + CTA */}
-        <div className="mt-10 max-w-4xl mx-auto text-center">
+        <div className="mt-10 max-w-5xl mx-auto text-center">
           <p className="text-sm leading-7 tracking-wide font-inter text-gray-700">
-            Based in Castle Rock, Colorado and Palm Springs, California, I&apos;m currently taking on projects across the country, in person and virtually.
+            Based in Castle Rock, Colorado and Palm Springs, California. Currently taking on projects across the country, in person and virtually.
           </p>
           <div className="pt-6">
             <Link href="/contact" legacyBehavior>
@@ -129,7 +129,11 @@ export default function AboutPage() {
 
           <div className="md:col-span-6 flex flex-col justify-center h-full text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6">
             <p>
-              I started Halcyon Haus in 2020, in the midst of a massive undertaking renovating my own home. Somewhere in that process, I realized how much I needed to have a calm space to come back to. I decided to document that journey online, and naturally grew my business as people reached out looking to refine their own spaces. Many projects and years later, Halcyon Haus grew to be a full-service design firm that I&apos;m so proud to say grew from a little community just wanting their spaces to be their own.
+              I started Halcyon Haus in 2020, in the midst of a massive undertaking renovating my own home. Somewhere in that process, I realized how much I needed to have a calm space to come back to. I decided to document that journey online, and naturally grew my business as people reached out looking to refine their own spaces. Many{" "}
+              <Link href="/projects" legacyBehavior>
+                <a className="underline hover:text-black">projects</a>
+              </Link>{" "}
+              and years later, Halcyon Haus grew to be a full-service design firm that I&apos;m so proud to say grew from a little community just wanting their spaces to be their own.
             </p>
             <p>
               About me, I was born in Azerbaijan but grew up in California and eventually landed in Colorado. I feel a pretty deep tie to both easy, relaxed spaces and calm, grounded ones, and that mix shows up in every project I design. In fact, that&apos;s where &quot;Halcyon&quot; comes from: feeling a sense of peace is one of the most important aspects of feeling at home, and the one I value the most when creating a space.
