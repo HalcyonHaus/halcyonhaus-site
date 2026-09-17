@@ -106,7 +106,7 @@ export default function ContactPage() {
       </header>
 
       {/* Main Section */}
-      <main className="px-6 pt-24 pb-24 max-w-2xl mx-auto">
+      <main className="px-6 pt-24 pb-24 max-w-4xl mx-auto">
         <h1
           className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center uppercase mb-8"
           style={{ fontFamily: "'Playfair Display', serif" }}
@@ -223,6 +223,7 @@ export default function ContactPage() {
                             <option value="Full-Service Design">Full-Service Design</option>
                             <option value="Room Refresh">Room Refresh</option>
                             <option value="Virtual Design">Virtual Design</option>
+                            <option value="Hourly Design Support">Hourly Design Support</option>
                             <option value="Not sure yet">Not sure yet</option>
                           </select>
                           <svg
