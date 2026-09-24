@@ -50,11 +50,7 @@ export default function Document() {
                   "description": "Halcyon Haus is a Colorado-based interior design studio founded by Nikka Winchell, based in Castle Rock. Specializing in thoughtful, transitional design for residential projects, from full-service renovations and new builds to virtual design and room refreshes. Serving Denver, Castle Rock, Castle Pines, Greenwood Village, and Colorado's mountain communities, as well as Palm Springs, California and clients nationwide.",
                   "url": "https://www.halcyonhaus.com",
                   "priceRange": "$$$$",
-                  "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "5.0",
-                    "reviewCount": "6"
-                  },
+                  "telephone": "+1-303-440-3848",
                   "logo": {
                     "@type": "ImageObject",
                     "url": "https://www.halcyonhaus.com/logos/HHLOGO2.png"
