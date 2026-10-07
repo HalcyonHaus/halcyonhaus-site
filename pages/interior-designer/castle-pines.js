@@ -82,12 +82,12 @@ const PROCESS = [
 ];
 
 const GALLERY = [
-  { src: "/images/HEROKITCHEN00.jpg", alt: "Castle Pines kitchen with Benjamin Moore Pashmina cabinets and Venetian plaster range hood by Halcyon Haus" },
-  { src: "/images/PRIMARYBATH00.JPG", alt: "Castle Pines primary bathroom renovation with warm natural materials by Halcyon Haus" },
-  { src: "/images/DINING1.JPG", alt: "Modern French country dining room in Castle Pines Village by Halcyon Haus" },
-  { src: "/images/DSC03252.jpg", alt: "Custom cabinet detail with unlacquered brass knobs and pulls in warm taupe kitchen" },
-  { src: "/images/PRIMARYVANITY2.jpg", alt: "Primary bath vanity with natural stone and warm fixtures in Castle Pines" },
-  { src: "/images/DINING2.JPG", alt: "Dining room detail with collected, warm furnishings in Castle Pines Village" }
+  { src: "/images/PashminaKitchen1.jpg", alt: "Castle Pines kitchen with reeded glass uppers and polished nickel faucet by Halcyon Haus" },
+  { src: "/images/PRIMARYBATH00.JPG", alt: "Castle Pines primary bathroom with marble vanity and warm natural materials by Halcyon Haus" },
+  { src: "/images/DINING1.JPG", alt: "Modern French country dining room with scenic mural in Castle Pines Village by Halcyon Haus" },
+  { src: "/images/DSC03252.jpg", alt: "Custom cabinet detail with unlacquered brass knobs and pulls in warm taupe Castle Pines kitchen" },
+  { src: "/images/PRIMARY1.JPG", alt: "Castle Pines primary suite with layered neutral textures by Halcyon Haus" },
+  { src: "/images/KITCHENBLOG3.JPG", alt: "Vein-matched stone from counter to backsplash in a Castle Pines kitchen remodel by Halcyon Haus" }
 ];
 
 const FAQS = [
