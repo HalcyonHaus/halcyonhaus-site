@@ -23,7 +23,7 @@ const pageSchema = {
       name: "Halcyon Haus",
       description: PAGE_DESCRIPTION,
       url: PAGE_URL,
-      image: "https://www.halcyonhaus.com" + "/images/MAINKITCHEN.jpg",
+      image: "https://www.halcyonhaus.com" + "/images/GOLDENGROVE-MAINKITCHEN.jpg",
       founder: { "@type": "Person", name: "Nikka Winchell" },
       priceRange: "$$$",
       areaServed: [
@@ -153,13 +153,13 @@ export default function PalmSprings() {
         <link rel="canonical" href={PAGE_URL} />
         <meta property="og:title" content={PAGE_TITLE} />
         <meta property="og:description" content={PAGE_DESCRIPTION} />
-        <meta property="og:image" content={"https://www.halcyonhaus.com" + "/images/MAINKITCHEN.jpg"} />
+        <meta property="og:image" content={"https://www.halcyonhaus.com" + "/images/GOLDENGROVE-MAINKITCHEN.jpg"} />
         <meta property="og:url" content={PAGE_URL} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={PAGE_TITLE} />
         <meta name="twitter:description" content={PAGE_DESCRIPTION} />
-        <meta name="twitter:image" content={"https://www.halcyonhaus.com" + "/images/MAINKITCHEN.jpg"} />
+        <meta name="twitter:image" content={"https://www.halcyonhaus.com" + "/images/GOLDENGROVE-MAINKITCHEN.jpg"} />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       </Head>
@@ -192,7 +192,7 @@ export default function PalmSprings() {
         </div>
  
         <div className="mb-20">
-          <img src="/images/MAINKITCHEN.jpg" alt="Palm Springs mid-century kitchen renovation in Tahquitz River Estates by Halcyon Haus" className="w-full rounded-md object-cover" />
+          <img src="/images/GOLDENGROVE-MAINKITCHEN.jpg" alt="Palm Springs kitchen with burgundy cabinetry, copper hood, and fluted wood island by Halcyon Haus" className="w-full rounded-md object-cover" />
         </div>
  
         {/* LOCAL CONTEXT */}
