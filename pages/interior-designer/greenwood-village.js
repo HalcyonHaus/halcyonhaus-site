@@ -4,16 +4,16 @@
 // CTA, collapsible FAQ, and the SAME contact form as /contact (Formspree).
 // The form sends source: "Greenwood Village landing page" so you can tell leads apart.
 // URL: https://www.halcyonhaus.com/interior-designer/greenwood-village
-
+ 
 import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
-
+ 
 const PAGE_URL = "https://www.halcyonhaus.com/interior-designer/greenwood-village";
 const PAGE_TITLE = "Interior Designer in Greenwood Village, CO | Halcyon Haus";
 const PAGE_DESCRIPTION = "Boutique interior designer serving Greenwood Village, Colorado. Full-service kitchen, bath, and whole-home renovation by Nikka Winchell of Halcyon Haus. Featured in Homes & Gardens.";
-
+ 
 const pageSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -63,13 +63,13 @@ const pageSchema = {
     }
   ]
 };
-
+ 
 const PHILOSOPHY = [
   { name: "Provenance", body: "Every object carries a history, and that history is worth understanding before it's touched. Knowing where something came from is what separates real preservation from guesswork." },
   { name: "Preservation", body: "Some homes have lived past their prime but still have a story to tell. A home's character was never in the studs and drywall. The work is knowing which parts of that story to keep, and building something new around them." },
   { name: "Permanence", body: "Underneath every choice is a material or finish built to age alongside the people living with it. Homes made to outlast the moment they were designed in, not just fit inside it." }
 ];
-
+ 
 const PROCESS = [
   { title: "Discovery Call", description: "A complimentary conversation where we get to know your space and talk through what working together would look like." },
   { title: "Design Consultation", description: "On site for Denver area clients, or virtual elsewhere. We walk through your space together and talk scope, vision, and timeline." },
@@ -80,12 +80,12 @@ const PROCESS = [
   { title: "Drawings & Specifications", description: "2D layouts or 3D modeling as needed, with permitting coordinated for larger projects." },
   { title: "Execution & Installation", description: "Contractor coordination, ordering, tracking, and final installation. We manage the details so the design comes to life exactly as planned." }
 ];
-
+ 
 const GALLERY = [
   { src: "/images/DSC02219.jpeg", alt: "Greenwood Village kitchen detail with natural stone and warm finishes by Halcyon Haus" },
   { src: "/images/DSC02198.jpeg", alt: "Two-toned kitchen renovation detail in the Denver Tech Center area by Halcyon Haus" }
 ];
-
+ 
 const FAQS = [
   { q: "Do you preserve original features in older homes?", a: "Whenever it makes sense, yes. Greenwood Village has many established homes with millwork and detailing worth keeping. We update a home for how you live now while protecting the features that give it its character and sense of history." },
   { q: "What does full-service design include?", a: "Full-service covers the whole project: layout and space planning, cabinetry and custom millwork, tile and stone, lighting, plumbing fixtures, paint, sourcing, styling, and managing the install." },
@@ -94,7 +94,7 @@ const FAQS = [
   { q: "How much does a project cost?", a: "Investment varies widely with the scope of the work, so pricing is tailored to each project rather than listed as a flat number. Share your space, timeline, and budget below and we'll talk it through." },
   { q: "How do we get started?", a: "Fill out the form below with a little about your space and goals, and Nikka will follow up personally." }
 ];
-
+ 
 const PRESS = [
   { n: "Pottery Barn", s: "/logos/potterybarn.png" },
   { n: "West Elm", s: "/logos/westelm.png" },
@@ -102,13 +102,13 @@ const PRESS = [
   { n: "Amber Interiors", s: "/logos/amberinteriors.png" },
   { n: "Serena & Lily", s: "/logos/serenaandlily.png" }
 ];
-
+ 
 export default function GreenwoodVillage() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [detailsOpen, setDetailsOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
-
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -140,7 +140,7 @@ export default function GreenwoodVillage() {
       else { alert("Something went wrong. Please try again."); }
     } finally { setSubmitting(false); }
   };
-
+ 
   return (
     <div className="min-h-screen text-black font-sans bg-[#fafafa]">
       <Head>
@@ -160,7 +160,7 @@ export default function GreenwoodVillage() {
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       </Head>
-
+ 
       {/* Navigation */}
       <header className="absolute top-0 w-full z-20 px-6 pt-6 text-xs tracking-widest">
         <nav className="flex justify-center sm:justify-end space-x-6 uppercase font-inter text-xs">
@@ -171,7 +171,7 @@ export default function GreenwoodVillage() {
           <Link href="/contact" legacyBehavior><a className="transition-colors duration-300 text-black hover:text-neutral-400">Contact</a></Link>
         </nav>
       </header>
-
+ 
       <main className="pt-28 pb-24 max-w-[90rem] mx-auto px-4 md:px-10">
         {/* HERO */}
         <p className="text-center text-xs uppercase tracking-[0.2em] text-gray-500 mb-4">Greenwood Village, CO</p>
@@ -187,11 +187,11 @@ export default function GreenwoodVillage() {
             <span aria-hidden="true">&#8594;</span>
           </a>
         </div>
-
+ 
         <div className="mb-20">
           <img src="/images/TWOTONEDKITCHEN1.JPG" alt="Greenwood Village two-toned kitchen renovation by Halcyon Haus" className="w-full rounded-md object-cover" />
         </div>
-
+ 
         {/* LOCAL CONTEXT */}
         <section className="max-w-3xl mx-auto mb-24 px-4 md:px-0">
           <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -202,7 +202,7 @@ export default function GreenwoodVillage() {
             <p>That might mean refinishing or reworking original millwork rather than tearing it out, choosing materials that feel true to the period the home was built in, and letting new work sit quietly alongside the old. The result is a home that feels updated and current without losing the character that made it worth buying in the first place.</p>
           </div>
         </section>
-
+ 
         {/* PHILOSOPHY */}
         <section className="max-w-5xl mx-auto mb-24 px-4 md:px-0">
           <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-10 text-center" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -217,7 +217,7 @@ export default function GreenwoodVillage() {
             ))}
           </div>
         </section>
-
+ 
         {/* ANCHOR PROJECT */}
         <section className="max-w-6xl mx-auto mb-24 px-4 md:px-0">
           <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-10" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -244,7 +244,7 @@ export default function GreenwoodVillage() {
             ))}
           </div>
         </section>
-
+ 
         {/* TESTIMONIAL */}
         <section className="max-w-3xl mx-auto mb-24 px-4 md:px-0 text-center">
           <blockquote>
@@ -254,7 +254,7 @@ export default function GreenwoodVillage() {
             <cite className="not-italic text-xs uppercase tracking-[0.18em] text-gray-500">Greenwood Village, CO</cite>
           </blockquote>
         </section>
-
+ 
         {/* PROCESS */}
         <section className="max-w-5xl mx-auto mb-24 px-4 md:px-0">
           <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-10 text-center" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -274,7 +274,7 @@ export default function GreenwoodVillage() {
             ))}
           </ol>
         </section>
-
+ 
         {/* FEATURED IN */}
         <section className="max-w-5xl mx-auto mb-24 px-4 md:px-0 text-center">
           <h2 className="text-xs uppercase tracking-[0.22em] text-gray-500 mb-8 font-inter">Featured in</h2>
@@ -284,7 +284,7 @@ export default function GreenwoodVillage() {
             ))}
           </div>
         </section>
-
+ 
         {/* FAQ — collapsible, like the services page */}
         <section className="max-w-2xl mx-auto mb-24 px-4 md:px-0">
           <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-8 text-center" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -313,7 +313,7 @@ export default function GreenwoodVillage() {
             })}
           </div>
         </section>
-
+ 
         {/* CONTACT FORM — same as /contact, posts to Formspree, tagged as this page */}
         <section id="inquire" className="max-w-2xl mx-auto px-4 md:px-0">
           <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-4 text-center" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -322,7 +322,7 @@ export default function GreenwoodVillage() {
           <p className="font-inter text-sm leading-7 tracking-wide text-gray-700 text-center mb-10">
             Share your space, timeline, and budget and Nikka will follow up personally. Based in Castle Rock and Palm Springs, working across the Denver metro, the Coachella Valley, and virtually nationwide.
           </p>
-
+ 
           {!submitted ? (
             <form onSubmit={handleSubmit} className="space-y-6 text-sm">
               <div>
@@ -333,7 +333,7 @@ export default function GreenwoodVillage() {
                 <label htmlFor="email" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">Email <span className="text-gray-400">*</span></label>
                 <input type="email" id="email" name="email" required className="w-full border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white" />
               </div>
-
+ 
               <div className="border-t border-b border-gray-200">
                 <button type="button" onClick={() => setDetailsOpen(!detailsOpen)} aria-expanded={detailsOpen} className="w-full flex items-center justify-between py-4 text-left font-inter uppercase tracking-widest text-xs text-gray-700">
                   <span>More Details (Optional)</span>
@@ -426,12 +426,12 @@ export default function GreenwoodVillage() {
                   </div>
                 </div>
               </div>
-
+ 
               <div>
                 <label htmlFor="message" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">Tell me about your space <span className="text-gray-400">*</span></label>
                 <textarea id="message" name="message" rows="4" required className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white"></textarea>
               </div>
-
+ 
               <div className="flex justify-center mt-6">
                 <button type="submit" disabled={submitting} className="px-5 py-1.5 text-xs uppercase tracking-widest border border-gray-400 rounded-md hover:bg-gray-100 hover:text-black transition-colors duration-300 font-inter disabled:opacity-50">
                   {submitting ? "Sending..." : "Submit"}
@@ -443,7 +443,7 @@ export default function GreenwoodVillage() {
           )}
         </section>
       </main>
-
+ 
       <footer className="mt-8 pb-10 text-center text-xs text-gray-500 uppercase tracking-widest font-inter">
         <p className="mb-2">© {new Date().getFullYear()} Halcyon Haus</p>
       </footer>
