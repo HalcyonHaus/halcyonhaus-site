@@ -96,13 +96,13 @@ export default function GoldenGrove() {
           <ShareButton title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
         </div>
 
-        {/* Hero Image - main kitchen */}
+        {/* Hero Image - living room */}
         <motion.div {...subtleFade} className="group relative mb-16">
-          <img src="/images/GOLDENGROVE-MAINKITCHEN.jpg" alt="Palm Springs kitchen with burgundy cabinetry, copper hood, and fluted wood island, designed by Halcyon Haus" className="w-full rounded-md object-cover" />
+          <img src="/images/PSLIVINGHERO.jpg" alt="Palm Springs living room with rust velvet sofa, shearling armchairs, and a deep blue glazed tile fireplace wall, opening through sliding glass doors to the pool, designed by Halcyon Haus" className="w-full rounded-md object-cover" />
           <PinButton
-            imageUrl="https://www.halcyonhaus.com/images/GOLDENGROVE-MAINKITCHEN.jpg"
+            imageUrl="https://www.halcyonhaus.com/images/PSLIVINGHERO.jpg"
             pageUrl={PAGE_URL}
-            description="Palm Springs kitchen with burgundy cabinetry, copper hood, and fluted wood island, designed by Halcyon Haus"
+            description="Palm Springs living room with rust velvet sofa, shearling armchairs, and a deep blue glazed tile fireplace wall, opening through sliding glass doors to the pool, designed by Halcyon Haus"
           />
         </motion.div>
 
@@ -112,10 +112,10 @@ export default function GoldenGrove() {
             Golden Grove is a whole-home project inside a 1950s ranch home in Palm Springs. The goal was never to erase what made the house feel original, it was to keep that character intact while still bringing in something new.
           </p>
           <p>
-            I kept the original cabinetry in this kitchen and had it painted rather than replaced. There was nothing wrong with the layout, so it made more sense to work with what was already there.
+            When we first set out to reimagine this property, it was a house of small rooms that never made the most of the light. We opened up two of them to create one much larger living and dining space, and closed up a kitchenette to make a bedroom instead.
           </p>
           <p>
-            To bring in some texture, we added fluted walnut wood paneling, which plays off the quartz and the warmer metals throughout the space. The heritage brass hardware was chosen for some added warmth without the typical brass shine, creating a beautiful symmetry with the darker-toned burgundy cabinetry.
+            The Palm Springs sun does most of the work here. We wanted the pool to be the standout from inside the house, so the windows go big.
           </p>
         </section>
 
@@ -167,6 +167,46 @@ export default function GoldenGrove() {
             In the primary bath, I mixed two different tile types for a more random, collected look with the floral pattern, rather than laying everything out in a strict grid. Travertine floors ground the space and keep it from feeling too busy.
           </p>
         </section>
+
+        {/* Second Hero - main kitchen */}
+        <motion.div {...subtleFade} className="group relative mb-16">
+          <img src="/images/GOLDENGROVE-MAINKITCHEN.jpg" alt="Palm Springs kitchen with burgundy cabinetry, copper hood, and fluted wood island, designed by Halcyon Haus" className="w-full rounded-md object-cover" />
+          <PinButton
+            imageUrl="https://www.halcyonhaus.com/images/GOLDENGROVE-MAINKITCHEN.jpg"
+            pageUrl={PAGE_URL}
+            description="Palm Springs kitchen with burgundy cabinetry, copper hood, and fluted wood island, designed by Halcyon Haus"
+          />
+        </motion.div>
+
+        {/* Kitchen Text */}
+        <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 mb-16 px-4 md:px-0 max-w-5xl mx-auto">
+          <p>
+            I kept the original cabinetry in this kitchen and had it painted rather than replaced. There was nothing wrong with the layout, so it made more sense to work with what was already there.
+          </p>
+          <p>
+            To bring in some texture, we added fluted walnut wood paneling, which plays off the quartz and the warmer metals throughout the space. The heritage brass hardware was chosen for some added warmth without the typical brass shine, creating a beautiful symmetry with the darker-toned burgundy cabinetry.
+          </p>
+        </section>
+
+        {/* Two-up images: dining + green bath */}
+        <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          <div className="group relative md:h-[58rem] overflow-hidden rounded-md">
+            <img src="/images/DINING.jpg" alt="Dining room with dark wood table, sculptural upholstered chairs, and a tiered woven pendant, with glass doors open to the pool in Palm Springs home" className="w-full h-full object-cover" />
+            <PinButton
+              imageUrl="https://www.halcyonhaus.com/images/DINING.jpg"
+              pageUrl={PAGE_URL}
+              description="Dining room with dark wood table, sculptural upholstered chairs, and a tiered woven pendant, with glass doors open to the pool in Palm Springs home"
+            />
+          </div>
+          <div className="group relative md:h-[58rem] overflow-hidden rounded-md">
+            <img src="/images/GREENBATH2.jpg" alt="Tub surround in green zellige tile with an arched edge and brass shower fixtures in Palm Springs bathroom" className="w-full h-full object-cover" />
+            <PinButton
+              imageUrl="https://www.halcyonhaus.com/images/GREENBATH2.jpg"
+              pageUrl={PAGE_URL}
+              description="Tub surround in green zellige tile with an arched edge and brass shower fixtures in Palm Springs bathroom"
+            />
+          </div>
+        </motion.div>
 
         {/* Two-up images: powder room + pool */}
         <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
