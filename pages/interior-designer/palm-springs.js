@@ -82,7 +82,7 @@ const PROCESS = [
 ];
  
 const GALLERY = [
-  { src: "/images/DINING1.jpg", alt: "Palm Springs mid-century living room with warm plaster walls and collected furnishings by Halcyon Haus" },
+  { src: "/images/DINING1.JPG", alt: "Palm Springs mid-century living room with warm plaster walls and collected furnishings by Halcyon Haus" },
   { src: "/images/GOLDENGROVE-BEDROOM.jpg", alt: "Palm Springs mid-century bedroom with indoor-outdoor flow in Tahquitz River Estates by Halcyon Haus" },
   { src: "/images/GOLDENGROVE-BATH.jpg", alt: "Palm Springs mid-century bathroom renovation with warm desert palette by Halcyon Haus" },
   { src: "/images/GOLDENGROVE-POWDER.jpg", alt: "Palm Springs powder room with mid-century character by Halcyon Haus" },
