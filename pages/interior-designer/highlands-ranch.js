@@ -4,16 +4,16 @@
 // CTA, collapsible FAQ, and the SAME contact form as /contact (Formspree).
 // The form sends source: "Highlands Ranch landing page" so you can tell leads apart.
 // URL: https://www.halcyonhaus.com/interior-designer/highlands-ranch
-
+ 
 import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
-
+ 
 const PAGE_URL = "https://www.halcyonhaus.com/interior-designer/highlands-ranch";
 const PAGE_TITLE = "Interior Designer in Highlands Ranch, CO | Halcyon Haus";
 const PAGE_DESCRIPTION = "Boutique interior designer serving Highlands Ranch, Colorado. Full-service kitchen, bath, and whole-home renovation by Nikka Winchell of Halcyon Haus. Featured in Homes & Gardens.";
-
+ 
 const pageSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -63,13 +63,13 @@ const pageSchema = {
     }
   ]
 };
-
+ 
 const PHILOSOPHY = [
   { name: "Provenance", body: "Every object carries a history, and that history is worth understanding before it's touched. Knowing where something came from is what separates real preservation from guesswork." },
   { name: "Preservation", body: "Some homes have lived past their prime but still have a story to tell. A home's character was never in the studs and drywall. The work is knowing which parts of that story to keep, and building something new around them." },
   { name: "Permanence", body: "Underneath every choice is a material or finish built to age alongside the people living with it. Homes made to outlast the moment they were designed in, not just fit inside it." }
 ];
-
+ 
 const PROCESS = [
   { title: "Discovery Call", description: "A complimentary conversation where we get to know your space and talk through what working together would look like." },
   { title: "Design Consultation", description: "On site for Denver area clients, or virtual elsewhere. We walk through your space together and talk scope, vision, and timeline." },
@@ -80,16 +80,16 @@ const PROCESS = [
   { title: "Drawings & Specifications", description: "2D layouts or 3D modeling as needed, with permitting coordinated for larger projects." },
   { title: "Execution & Installation", description: "Contractor coordination, ordering, tracking, and final installation. We manage the details so the design comes to life exactly as planned." }
 ];
-
+ 
 const GALLERY = [
-  { src: "/images/DSC01677.jpeg", alt: "Highlands Ranch living space with warm neutral transitional design by Halcyon Haus" },
-  { src: "/images/NURSERY1.JPG", alt: "Highlands Ranch nursery in neutral tones with a mountain adventure theme by Halcyon Haus" },
+  { src: "/images/IMG_4599.jpeg", alt: "Highlands Ranch living space with warm neutral transitional design by Halcyon Haus" },
   { src: "/images/DSC02113.jpeg", alt: "Highlands Ranch primary suite redesign with layered neutral textures by Halcyon Haus" },
   { src: "/images/DSC01631.jpeg", alt: "Highlands Ranch interior detail with collected, warm furnishings by Halcyon Haus" },
-  { src: "/images/NURSERY4.JPG", alt: "Neutral nursery detail with natural materials in Highlands Ranch" },
-  { src: "/images/DSC01503.jpeg", alt: "Warm transitional living space in Highlands Ranch by Halcyon Haus" }
+  { src: "/images/NURSERY4.JPG", alt: "Neutral nursery detail with natural materials in Highlands Ranch by Halcyon Haus" },
+  { src: "/images/DSC01503.jpeg", alt: "Warm transitional living space in Highlands Ranch by Halcyon Haus" },
+  { src: "/images/DSC01662.jpeg", alt: "Collected, warm interior detail in a Highlands Ranch home by Halcyon Haus" }
 ];
-
+ 
 const FAQS = [
   { q: "Do you work on older Highlands Ranch homes?", a: "Yes, that's much of what we do here. Many Highlands Ranch homes were built from the 1980s through the 2000s and are now ready for their first real update. We refresh dated kitchens, baths, and finishes while keeping what makes the home comfortable." },
   { q: "What does full-service design include?", a: "Full-service covers the whole project: layout and space planning, cabinetry and custom millwork, tile and stone, lighting, plumbing fixtures, paint, sourcing, styling, and managing the install." },
@@ -98,7 +98,7 @@ const FAQS = [
   { q: "How much does a project cost?", a: "Investment varies widely with the scope of the work, so pricing is tailored to each project rather than listed as a flat number. Share your space, timeline, and budget below and we'll talk it through." },
   { q: "How do we get started?", a: "Fill out the form below with a little about your space and goals, and Nikka will follow up personally." }
 ];
-
+ 
 const PRESS = [
   { n: "Pottery Barn", s: "/logos/potterybarn.png" },
   { n: "West Elm", s: "/logos/westelm.png" },
@@ -106,13 +106,13 @@ const PRESS = [
   { n: "Amber Interiors", s: "/logos/amberinteriors.png" },
   { n: "Serena & Lily", s: "/logos/serenaandlily.png" }
 ];
-
+ 
 export default function HighlandsRanch() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [detailsOpen, setDetailsOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
-
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -144,7 +144,7 @@ export default function HighlandsRanch() {
       else { alert("Something went wrong. Please try again."); }
     } finally { setSubmitting(false); }
   };
-
+ 
   return (
     <div className="min-h-screen text-black font-sans bg-[#fafafa]">
       <Head>
@@ -164,7 +164,7 @@ export default function HighlandsRanch() {
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       </Head>
-
+ 
       {/* Navigation */}
       <header className="absolute top-0 w-full z-20 px-6 pt-6 text-xs tracking-widest">
         <nav className="flex justify-center sm:justify-end space-x-6 uppercase font-inter text-xs">
@@ -175,7 +175,7 @@ export default function HighlandsRanch() {
           <Link href="/contact" legacyBehavior><a className="transition-colors duration-300 text-black hover:text-neutral-400">Contact</a></Link>
         </nav>
       </header>
-
+ 
       <main className="pt-28 pb-24 max-w-[90rem] mx-auto px-4 md:px-10">
         {/* HERO */}
         <p className="text-center text-xs uppercase tracking-[0.2em] text-gray-500 mb-4">Highlands Ranch, CO</p>
@@ -191,11 +191,11 @@ export default function HighlandsRanch() {
             <span aria-hidden="true">&#8594;</span>
           </a>
         </div>
-
+ 
         <div className="mb-20">
           <img src="/images/DSC01677.jpeg" alt="Highlands Ranch home interior with warm transitional design by Halcyon Haus" className="w-full rounded-md object-cover" />
         </div>
-
+ 
         {/* LOCAL CONTEXT */}
         <section className="max-w-3xl mx-auto mb-24 px-4 md:px-0">
           <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -206,7 +206,7 @@ export default function HighlandsRanch() {
             <p>That work takes different forms. Sometimes it is reimagining a builder-grade kitchen with new cabinetry, stone, and lighting. Sometimes it is giving a large, open floor plan more definition so each space has a sense of purpose. And sometimes it is as focused as a nursery or a primary suite. Having designed multiple rooms in this community, including our own first home here, we know these houses well.</p>
           </div>
         </section>
-
+ 
         {/* PHILOSOPHY */}
         <section className="max-w-5xl mx-auto mb-24 px-4 md:px-0">
           <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-10 text-center" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -221,7 +221,7 @@ export default function HighlandsRanch() {
             ))}
           </div>
         </section>
-
+ 
         {/* ANCHOR PROJECT */}
         <section className="max-w-6xl mx-auto mb-24 px-4 md:px-0">
           <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-10" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -230,7 +230,7 @@ export default function HighlandsRanch() {
           <Link href="/projects" legacyBehavior>
             <a className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-10 group">
               <div className="overflow-hidden rounded-md">
-                <img src="/images/DSC01677.jpeg" alt="Highlands Ranch home interior with warm transitional design by Halcyon Haus" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
+                <img src="/images/NURSERY1.JPG" alt="Highlands Ranch nursery with neutral tones and natural materials by Halcyon Haus" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
               </div>
               <div>
                 <h3 className="text-xl mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>The Halcyon Haus Home</h3>
@@ -248,7 +248,7 @@ export default function HighlandsRanch() {
             ))}
           </div>
         </section>
-
+ 
         {/* TESTIMONIAL */}
         <section className="max-w-3xl mx-auto mb-24 px-4 md:px-0 text-center">
           <blockquote>
@@ -258,7 +258,7 @@ export default function HighlandsRanch() {
             <cite className="not-italic text-xs uppercase tracking-[0.18em] text-gray-500">Highlands Ranch, CO</cite>
           </blockquote>
         </section>
-
+ 
         {/* PROCESS */}
         <section className="max-w-5xl mx-auto mb-24 px-4 md:px-0">
           <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-10 text-center" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -278,7 +278,7 @@ export default function HighlandsRanch() {
             ))}
           </ol>
         </section>
-
+ 
         {/* FEATURED IN */}
         <section className="max-w-5xl mx-auto mb-24 px-4 md:px-0 text-center">
           <h2 className="text-xs uppercase tracking-[0.22em] text-gray-500 mb-8 font-inter">Featured in</h2>
@@ -288,7 +288,7 @@ export default function HighlandsRanch() {
             ))}
           </div>
         </section>
-
+ 
         {/* FAQ — collapsible, like the services page */}
         <section className="max-w-2xl mx-auto mb-24 px-4 md:px-0">
           <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-8 text-center" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -317,7 +317,7 @@ export default function HighlandsRanch() {
             })}
           </div>
         </section>
-
+ 
         {/* CONTACT FORM — same as /contact, posts to Formspree, tagged as this page */}
         <section id="inquire" className="max-w-2xl mx-auto px-4 md:px-0">
           <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-4 text-center" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -326,7 +326,7 @@ export default function HighlandsRanch() {
           <p className="font-inter text-sm leading-7 tracking-wide text-gray-700 text-center mb-10">
             Share your space, timeline, and budget and Nikka will follow up personally. Based in Castle Rock and Palm Springs, working across the Denver metro, the Coachella Valley, and virtually nationwide.
           </p>
-
+ 
           {!submitted ? (
             <form onSubmit={handleSubmit} className="space-y-6 text-sm">
               <div>
@@ -337,7 +337,7 @@ export default function HighlandsRanch() {
                 <label htmlFor="email" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">Email <span className="text-gray-400">*</span></label>
                 <input type="email" id="email" name="email" required className="w-full border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white" />
               </div>
-
+ 
               <div className="border-t border-b border-gray-200">
                 <button type="button" onClick={() => setDetailsOpen(!detailsOpen)} aria-expanded={detailsOpen} className="w-full flex items-center justify-between py-4 text-left font-inter uppercase tracking-widest text-xs text-gray-700">
                   <span>More Details (Optional)</span>
@@ -430,12 +430,12 @@ export default function HighlandsRanch() {
                   </div>
                 </div>
               </div>
-
+ 
               <div>
                 <label htmlFor="message" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">Tell me about your space <span className="text-gray-400">*</span></label>
                 <textarea id="message" name="message" rows="4" required className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white"></textarea>
               </div>
-
+ 
               <div className="flex justify-center mt-6">
                 <button type="submit" disabled={submitting} className="px-5 py-1.5 text-xs uppercase tracking-widest border border-gray-400 rounded-md hover:bg-gray-100 hover:text-black transition-colors duration-300 font-inter disabled:opacity-50">
                   {submitting ? "Sending..." : "Submit"}
@@ -447,7 +447,7 @@ export default function HighlandsRanch() {
           )}
         </section>
       </main>
-
+ 
       <footer className="mt-8 pb-10 text-center text-xs text-gray-500 uppercase tracking-widest font-inter">
         <p className="mb-2">© {new Date().getFullYear()} Halcyon Haus</p>
       </footer>
