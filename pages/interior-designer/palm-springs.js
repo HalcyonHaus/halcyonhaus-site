@@ -1,19 +1,19 @@
-// pages/interior-designer/palm-springs.js
-// Halcyon Haus — local SEO landing page for Palm Springs, CA.
+// pages/interior-designer/greenwood-village.js
+// Halcyon Haus — local SEO landing page for Greenwood Village, CO.
 // Matches the site: Pages Router, Tailwind, next/head SEO + JSON-LD, bordered
 // CTA, collapsible FAQ, and the SAME contact form as /contact (Formspree).
-// The form sends source: "Palm Springs landing page" so you can tell leads apart.
-// URL: https://www.halcyonhaus.com/interior-designer/palm-springs
-
+// The form sends source: "Greenwood Village landing page" so you can tell leads apart.
+// URL: https://www.halcyonhaus.com/interior-designer/greenwood-village
+ 
 import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
-
-const PAGE_URL = "https://www.halcyonhaus.com/interior-designer/palm-springs";
-const PAGE_TITLE = "Interior Designer in Palm Springs, CA | Halcyon Haus";
-const PAGE_DESCRIPTION = "Boutique interior designer serving Palm Springs, California. Full-service renovation of mid-century and ranch homes by Nikka Winchell of Halcyon Haus. Featured in Homes & Gardens.";
-
+ 
+const PAGE_URL = "https://www.halcyonhaus.com/interior-designer/greenwood-village";
+const PAGE_TITLE = "Interior Designer in Greenwood Village, CO | Halcyon Haus";
+const PAGE_DESCRIPTION = "Boutique interior designer serving Greenwood Village, Colorado. Full-service kitchen, bath, and whole-home renovation by Nikka Winchell of Halcyon Haus. Featured in Homes & Gardens.";
+ 
 const pageSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -23,18 +23,18 @@ const pageSchema = {
       name: "Halcyon Haus",
       description: PAGE_DESCRIPTION,
       url: PAGE_URL,
-      image: "https://www.halcyonhaus.com" + "/images/GOLDENGROVEKITCHEN2.jpg",
+      image: "https://www.halcyonhaus.com" + "/images/TWOTONEDKITCHEN1.JPG",
       founder: { "@type": "Person", name: "Nikka Winchell" },
       priceRange: "$$$",
       areaServed: [
-        { "@type": "City", name: "Palm Springs" },
-        { "@type": "City", name: "Rancho Mirage" },
-        { "@type": "City", name: "Palm Desert" },
-        { "@type": "City", name: "Cathedral City" },
-        { "@type": "City", name: "La Quinta" }
+        { "@type": "City", name: "Greenwood Village" },
+        { "@type": "City", name: "Cherry Hills Village" },
+        { "@type": "City", name: "Centennial" },
+        { "@type": "City", name: "Englewood" },
+        { "@type": "City", name: "Denver Tech Center" }
       ],
-      address: { "@type": "PostalAddress", addressLocality: "Palm Springs", addressRegion: "CA", addressCountry: "US" },
-      geo: { "@type": "GeoCoordinates", latitude: 33.8303, longitude: -116.5453 },
+      address: { "@type": "PostalAddress", addressLocality: "Greenwood Village", addressRegion: "CO", addressCountry: "US" },
+      geo: { "@type": "GeoCoordinates", latitude: 39.6172, longitude: -104.9508 },
       sameAs: [
         "https://www.instagram.com/halcyonhaus_",
         "https://www.tiktok.com/@halcyonhaus_",
@@ -46,30 +46,30 @@ const pageSchema = {
       "@id": PAGE_URL + "#service",
       serviceType: "Interior Design and Renovation",
       provider: { "@id": PAGE_URL + "#business" },
-      areaServed: { "@type": "City", name: "Palm Springs" },
-      description: "Full-service interior design and renovation in Palm Springs, California: kitchens, bathrooms, and whole-home remodels."
+      areaServed: { "@type": "City", name: "Greenwood Village" },
+      description: "Full-service interior design and renovation in Greenwood Village, Colorado: kitchens, bathrooms, and whole-home remodels."
     },
     {
       "@type": "FAQPage",
       "@id": PAGE_URL + "#faq",
       mainEntity: [
-        { "@type": "Question", name: "Do you specialize in mid-century homes?", acceptedAnswer: { "@type": "Answer", text: "We love them. Many Palm Springs homes date to the 1950s and 1960s, and our own desert project is a 1950s ranch in Tahquitz River Estates. We update these homes for how people live now while protecting the mid-century character that makes them special." } },
-        { "@type": "Question", name: "Are you actually based in Palm Springs?", acceptedAnswer: { "@type": "Answer", text: "Yes. Halcyon Haus works from both Castle Rock, Colorado and Palm Springs, California, so we're on the ground in the desert, not designing it from afar." } },
+        { "@type": "Question", name: "Do you preserve original features in older homes?", acceptedAnswer: { "@type": "Answer", text: "Whenever it makes sense, yes. Greenwood Village has many established homes with millwork and detailing worth keeping. We update a home for how you live now while protecting the features that give it its character and sense of history." } },
         { "@type": "Question", name: "What does full-service design include?", acceptedAnswer: { "@type": "Answer", text: "Full-service covers the whole project: layout and space planning, cabinetry and custom millwork, tile and stone, lighting, plumbing fixtures, paint, sourcing, styling, and managing the install." } },
         { "@type": "Question", name: "Do you work with my contractor, or bring your own?", acceptedAnswer: { "@type": "Answer", text: "Both work. We can collaborate with a contractor you already trust, or bring in builders from our network, and we stay involved through construction so the design is carried out the way it was drawn." } },
+        { "@type": "Question", name: "Is there a fee for the first call?", acceptedAnswer: { "@type": "Answer", text: "No. The discovery call is complimentary. It's a chance to get to know your space and talk through what working together would look like." } },
         { "@type": "Question", name: "How much does a project cost?", acceptedAnswer: { "@type": "Answer", text: "Investment varies widely with the scope of the work, so pricing is tailored to each project rather than listed as a flat number. Share your space, timeline, and budget below and we'll talk it through." } },
         { "@type": "Question", name: "How do we get started?", acceptedAnswer: { "@type": "Answer", text: "Fill out the form below with a little about your space and goals, and Nikka will follow up personally." } }
       ]
     }
   ]
 };
-
+ 
 const PHILOSOPHY = [
   { name: "Provenance", body: "Every object carries a history, and that history is worth understanding before it's touched. Knowing where something came from is what separates real preservation from guesswork." },
   { name: "Preservation", body: "Some homes have lived past their prime but still have a story to tell. A home's character was never in the studs and drywall. The work is knowing which parts of that story to keep, and building something new around them." },
   { name: "Permanence", body: "Underneath every choice is a material or finish built to age alongside the people living with it. Homes made to outlast the moment they were designed in, not just fit inside it." }
 ];
-
+ 
 const PROCESS = [
   { title: "Discovery Call", description: "A complimentary conversation where we get to know your space and talk through what working together would look like." },
   { title: "Design Consultation", description: "On site for Denver area clients, or virtual elsewhere. We walk through your space together and talk scope, vision, and timeline." },
@@ -80,25 +80,21 @@ const PROCESS = [
   { title: "Drawings & Specifications", description: "2D layouts or 3D modeling as needed, with permitting coordinated for larger projects." },
   { title: "Execution & Installation", description: "Contractor coordination, ordering, tracking, and final installation. We manage the details so the design comes to life exactly as planned." }
 ];
-
+ 
 const GALLERY = [
-  { src: "/images/GOLDENGROVEKITCHEN2.jpg", alt: "Palm Springs mid-century kitchen renovation in Tahquitz River Estates by Halcyon Haus" },
-  { src: "/images/GOLDENGROVE-BATH.jpg", alt: "Palm Springs mid-century bathroom renovation with warm desert palette by Halcyon Haus" },
-  { src: "/images/GOLDENGROVE-BEDROOM.jpg", alt: "Palm Springs mid-century bedroom with indoor-outdoor flow by Halcyon Haus" },
-  { src: "/images/GOLDENGROVE-POWDER.jpg", alt: "Palm Springs powder room with mid-century character by Halcyon Haus" },
-  { src: "/images/GOLDENGROVE-POOL.jpg", alt: "Palm Springs outdoor living and pool area of a 1950s ranch by Halcyon Haus" },
-  { src: "/images/GOLDENGROVE-DOOR.jpg", alt: "Mid-century entry detail of a Tahquitz River Estates home by Halcyon Haus" }
+  { src: "/images/DSC02219.jpeg", alt: "Greenwood Village kitchen detail with natural stone and warm finishes by Halcyon Haus" },
+  { src: "/images/DSC02198.jpeg", alt: "Two-toned kitchen renovation detail in the Denver Tech Center area by Halcyon Haus" }
 ];
-
+ 
 const FAQS = [
-  { q: "Do you specialize in mid-century homes?", a: "We love them. Many Palm Springs homes date to the 1950s and 1960s, and our own desert project is a 1950s ranch in Tahquitz River Estates. We update these homes for how people live now while protecting the mid-century character that makes them special." },
-  { q: "Are you actually based in Palm Springs?", a: "Yes. Halcyon Haus works from both Castle Rock, Colorado and Palm Springs, California, so we're on the ground in the desert, not designing it from afar." },
+  { q: "Do you preserve original features in older homes?", a: "Whenever it makes sense, yes. Greenwood Village has many established homes with millwork and detailing worth keeping. We update a home for how you live now while protecting the features that give it its character and sense of history." },
   { q: "What does full-service design include?", a: "Full-service covers the whole project: layout and space planning, cabinetry and custom millwork, tile and stone, lighting, plumbing fixtures, paint, sourcing, styling, and managing the install." },
   { q: "Do you work with my contractor, or bring your own?", a: "Both work. We can collaborate with a contractor you already trust, or bring in builders from our network, and we stay involved through construction so the design is carried out the way it was drawn." },
+  { q: "Is there a fee for the first call?", a: "No. The discovery call is complimentary. It's a chance to get to know your space and talk through what working together would look like." },
   { q: "How much does a project cost?", a: "Investment varies widely with the scope of the work, so pricing is tailored to each project rather than listed as a flat number. Share your space, timeline, and budget below and we'll talk it through." },
   { q: "How do we get started?", a: "Fill out the form below with a little about your space and goals, and Nikka will follow up personally." }
 ];
-
+ 
 const PRESS = [
   { n: "Pottery Barn", s: "/logos/potterybarn.png" },
   { n: "West Elm", s: "/logos/westelm.png" },
@@ -106,18 +102,18 @@ const PRESS = [
   { n: "Amber Interiors", s: "/logos/amberinteriors.png" },
   { n: "Serena & Lily", s: "/logos/serenaandlily.png" }
 ];
-
-export default function PalmSprings() {
+ 
+export default function GreenwoodVillage() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [detailsOpen, setDetailsOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
-
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     const data = {
-      source: "Palm Springs landing page",
+      source: "Greenwood Village landing page",
       name: form.name.value,
       email: form.email.value,
       projectType: form.projectType.value,
@@ -144,27 +140,27 @@ export default function PalmSprings() {
       else { alert("Something went wrong. Please try again."); }
     } finally { setSubmitting(false); }
   };
-
+ 
   return (
     <div className="min-h-screen text-black font-sans bg-[#fafafa]">
       <Head>
         <title>{PAGE_TITLE}</title>
         <meta name="description" content={PAGE_DESCRIPTION} />
-        <meta name="keywords" content="interior designer Palm Springs, Palm Springs mid century renovation, Palm Springs kitchen remodel designer, Tahquitz River Estates design, California interior designer, Halcyon Haus, Nikka Winchell" />
+        <meta name="keywords" content="interior designer Greenwood Village, Greenwood Village kitchen remodel designer, Greenwood Village renovation, DTC interior design, Cherry Hills interior designer, Colorado interior designer, Halcyon Haus, Nikka Winchell" />
         <link rel="canonical" href={PAGE_URL} />
         <meta property="og:title" content={PAGE_TITLE} />
         <meta property="og:description" content={PAGE_DESCRIPTION} />
-        <meta property="og:image" content={"https://www.halcyonhaus.com" + "/images/GOLDENGROVEKITCHEN2.jpg"} />
+        <meta property="og:image" content={"https://www.halcyonhaus.com" + "/images/TWOTONEDKITCHEN1.JPG"} />
         <meta property="og:url" content={PAGE_URL} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={PAGE_TITLE} />
         <meta name="twitter:description" content={PAGE_DESCRIPTION} />
-        <meta name="twitter:image" content={"https://www.halcyonhaus.com" + "/images/GOLDENGROVEKITCHEN2.jpg"} />
+        <meta name="twitter:image" content={"https://www.halcyonhaus.com" + "/images/TWOTONEDKITCHEN1.JPG"} />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       </Head>
-
+ 
       {/* Navigation */}
       <header className="absolute top-0 w-full z-20 px-6 pt-6 text-xs tracking-widest">
         <nav className="flex justify-center sm:justify-end space-x-6 uppercase font-inter text-xs">
@@ -175,15 +171,15 @@ export default function PalmSprings() {
           <Link href="/contact" legacyBehavior><a className="transition-colors duration-300 text-black hover:text-neutral-400">Contact</a></Link>
         </nav>
       </header>
-
+ 
       <main className="pt-28 pb-24 max-w-[90rem] mx-auto px-4 md:px-10">
         {/* HERO */}
-        <p className="text-center text-xs uppercase tracking-[0.2em] text-gray-500 mb-4">Palm Springs, CA</p>
+        <p className="text-center text-xs uppercase tracking-[0.2em] text-gray-500 mb-4">Greenwood Village, CO</p>
         <h1 className="text-3xl md:text-5xl font-light tracking-[0.06em] text-center mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
-          Interior Designer in Palm Springs
+          Interior Designer in Greenwood Village
         </h1>
         <p className="font-inter text-sm md:text-base leading-7 tracking-wide text-gray-700 max-w-3xl mx-auto text-center mb-10">
-          Halcyon Haus is a full-service design studio working with homeowners in Palm Springs and across the Coachella Valley. With a second base in Palm Springs, we take on renovations rooted in warm, transitional design, with deep respect for the mid-century architecture the desert is known for.
+          Halcyon Haus is a full-service design studio working with homeowners across Greenwood Village and the Denver Tech Center. We take on renovations rooted in warm, transitional design, with a particular respect for the established, well-built homes this area is known for.
         </p>
         <div className="text-center mb-20">
           <a href="#inquire" className="inline-flex items-center gap-2 text-xs tracking-widest uppercase font-inter text-black border-b border-black pb-1 transition-all duration-300 hover:gap-3 hover:text-neutral-500 hover:border-neutral-500">
@@ -191,22 +187,22 @@ export default function PalmSprings() {
             <span aria-hidden="true">&#8594;</span>
           </a>
         </div>
-
+ 
         <div className="mb-20">
-          <img src="/images/GOLDENGROVEKITCHEN2.jpg" alt="Palm Springs mid-century kitchen renovation in Tahquitz River Estates by Halcyon Haus" className="w-full rounded-md object-cover" />
+          <img src="/images/TWOTONEDKITCHEN1.JPG" alt="Greenwood Village two-toned kitchen renovation by Halcyon Haus" className="w-full rounded-md object-cover" />
         </div>
-
+ 
         {/* LOCAL CONTEXT */}
         <section className="max-w-3xl mx-auto mb-24 px-4 md:px-0">
           <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
-            Renovation design for Palm Springs homes
+            Renovation design for Greenwood Village homes
           </h2>
           <div className="font-inter text-sm leading-7 tracking-wide text-gray-700 space-y-5">
-            <p>Palm Springs homes are a different conversation than Colorado. Many were built in the 1950s and 1960s, the heart of the desert's mid-century era, and they come with architectural DNA worth protecting: clean lines, indoor-outdoor flow, and a relationship to light and landscape that newer homes rarely match. Our own Palm Springs project, a 1950s ranch in the Tahquitz River Estates, was exactly this kind of home.</p>
-            <p>The work here is about honoring that era while making the home livable for today. That means updating kitchens and baths with materials that feel right for a desert mid-century, opening the home to its outdoor spaces, and resisting the urge to erase original character in favor of whatever is current. Warm, grounded, and true to where it sits.</p>
+            <p>Greenwood Village is one of the more established pockets of the south metro, known for larger lots and homes with real architectural character. Many were built in an era when millwork, trim, and craftsmanship were the standard, and that is worth protecting. Our approach here leans toward preservation: keeping the features that give a home its sense of history while updating everything around them for how people live now.</p>
+            <p>That might mean refinishing or reworking original millwork rather than tearing it out, choosing materials that feel true to the period the home was built in, and letting new work sit quietly alongside the old. The result is a home that feels updated and current without losing the character that made it worth buying in the first place.</p>
           </div>
         </section>
-
+ 
         {/* PHILOSOPHY */}
         <section className="max-w-5xl mx-auto mb-24 px-4 md:px-0">
           <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-10 text-center" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -221,26 +217,26 @@ export default function PalmSprings() {
             ))}
           </div>
         </section>
-
+ 
         {/* ANCHOR PROJECT */}
         <section className="max-w-6xl mx-auto mb-24 px-4 md:px-0">
           <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-10" style={{ fontFamily: "'Playfair Display', serif" }}>
-            A recent Palm Springs project
+            A recent Greenwood Village project
           </h2>
-          <Link href="/projects/golden-grove" legacyBehavior>
+          <Link href="/projects" legacyBehavior>
             <a className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-10 group">
               <div className="overflow-hidden rounded-md">
-                <img src="/images/GOLDENGROVEKITCHEN2.jpg" alt="Palm Springs mid-century kitchen renovation in Tahquitz River Estates by Halcyon Haus" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
+                <img src="/images/TWOTONEDKITCHEN1.JPG" alt="Greenwood Village two-toned kitchen renovation by Halcyon Haus" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
               </div>
               <div>
-                <h3 className="text-xl mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>Golden Grove</h3>
-                <p className="text-xs uppercase tracking-[0.18em] text-gray-500 mb-4">Tahquitz River Estates, Palm Springs</p>
-                <p className="font-inter text-sm leading-7 tracking-wide text-gray-700 mb-5">A 1950s ranch-style home reimagined in the Tahquitz River Estates neighborhood of Palm Springs. A full renovation across kitchen, baths, bedrooms, and outdoor living, updated for how people live in the desert now while staying true to the home's mid-century roots.</p>
+                <h3 className="text-xl mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>Orchard Oasis</h3>
+                <p className="text-xs uppercase tracking-[0.18em] text-gray-500 mb-4">Greenwood Village / DTC</p>
+                <p className="font-inter text-sm leading-7 tracking-wide text-gray-700 mb-5">A two-toned kitchen renovation in the Greenwood Village and DTC area. Warm wood paired with a soft painted finish, natural stone, and considered lighting, updated for how the family lives while keeping the home's existing character intact.</p>
                 <span className="text-xs uppercase tracking-[0.14em] border-b border-neutral-400 pb-0.5">View the project</span>
               </div>
             </a>
           </Link>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
             {GALLERY.map((g) => (
               <div key={g.src} className="overflow-hidden rounded-md md:h-[28rem]">
                 <img src={g.src} alt={g.alt} className="w-full h-full object-cover" />
@@ -248,17 +244,17 @@ export default function PalmSprings() {
             ))}
           </div>
         </section>
-
+ 
         {/* TESTIMONIAL */}
         <section className="max-w-3xl mx-auto mb-24 px-4 md:px-0 text-center">
           <blockquote>
             <p className="text-lg md:text-2xl leading-relaxed mb-5" style={{ fontFamily: "'Playfair Display', serif" }}>
-              &ldquo;Nikka has been wonderful to work with. She's extremely talented and knowledgeable. She has ideas I would have never thought of, making the design one of a kind and beautiful as well as functional. She is also very responsive and professional. I would 100% recommend!&rdquo;
+              &ldquo;I have had the pleasure to work with Halcyon Haus. I find her to be extremely knowledgeable about current trends, design, choices, and quality of new construction as well as remodel projects. I would highly recommend her.&rdquo;
             </p>
-            <cite className="not-italic text-xs uppercase tracking-[0.18em] text-gray-500">Palm Springs project client</cite>
+            <cite className="not-italic text-xs uppercase tracking-[0.18em] text-gray-500">Greenwood Village, CO</cite>
           </blockquote>
         </section>
-
+ 
         {/* PROCESS */}
         <section className="max-w-5xl mx-auto mb-24 px-4 md:px-0">
           <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-10 text-center" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -278,7 +274,7 @@ export default function PalmSprings() {
             ))}
           </ol>
         </section>
-
+ 
         {/* FEATURED IN */}
         <section className="max-w-5xl mx-auto mb-24 px-4 md:px-0 text-center">
           <h2 className="text-xs uppercase tracking-[0.22em] text-gray-500 mb-8 font-inter">Featured in</h2>
@@ -288,11 +284,11 @@ export default function PalmSprings() {
             ))}
           </div>
         </section>
-
+ 
         {/* FAQ — collapsible, like the services page */}
         <section className="max-w-2xl mx-auto mb-24 px-4 md:px-0">
           <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-8 text-center" style={{ fontFamily: "'Playfair Display', serif" }}>
-            Palm Springs design questions, answered
+            Greenwood Village design questions, answered
           </h2>
           <div>
             {FAQS.map((faq, index) => {
@@ -317,16 +313,16 @@ export default function PalmSprings() {
             })}
           </div>
         </section>
-
+ 
         {/* CONTACT FORM — same as /contact, posts to Formspree, tagged as this page */}
         <section id="inquire" className="max-w-2xl mx-auto px-4 md:px-0">
           <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-4 text-center" style={{ fontFamily: "'Playfair Display', serif" }}>
-            Start your Palm Springs project
+            Start your Greenwood Village project
           </h2>
           <p className="font-inter text-sm leading-7 tracking-wide text-gray-700 text-center mb-10">
             Share your space, timeline, and budget and Nikka will follow up personally. Based in Castle Rock and Palm Springs, working across the Denver metro, the Coachella Valley, and virtually nationwide.
           </p>
-
+ 
           {!submitted ? (
             <form onSubmit={handleSubmit} className="space-y-6 text-sm">
               <div>
@@ -337,7 +333,7 @@ export default function PalmSprings() {
                 <label htmlFor="email" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">Email <span className="text-gray-400">*</span></label>
                 <input type="email" id="email" name="email" required className="w-full border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white" />
               </div>
-
+ 
               <div className="border-t border-b border-gray-200">
                 <button type="button" onClick={() => setDetailsOpen(!detailsOpen)} aria-expanded={detailsOpen} className="w-full flex items-center justify-between py-4 text-left font-inter uppercase tracking-widest text-xs text-gray-700">
                   <span>More Details (Optional)</span>
@@ -430,12 +426,12 @@ export default function PalmSprings() {
                   </div>
                 </div>
               </div>
-
+ 
               <div>
                 <label htmlFor="message" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">Tell me about your space <span className="text-gray-400">*</span></label>
                 <textarea id="message" name="message" rows="4" required className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white"></textarea>
               </div>
-
+ 
               <div className="flex justify-center mt-6">
                 <button type="submit" disabled={submitting} className="px-5 py-1.5 text-xs uppercase tracking-widest border border-gray-400 rounded-md hover:bg-gray-100 hover:text-black transition-colors duration-300 font-inter disabled:opacity-50">
                   {submitting ? "Sending..." : "Submit"}
@@ -447,7 +443,7 @@ export default function PalmSprings() {
           )}
         </section>
       </main>
-
+ 
       <footer className="mt-8 pb-10 text-center text-xs text-gray-500 uppercase tracking-widest font-inter">
         <p className="mb-2">© {new Date().getFullYear()} Halcyon Haus</p>
       </footer>
