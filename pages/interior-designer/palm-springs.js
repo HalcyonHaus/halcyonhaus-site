@@ -23,7 +23,7 @@ const pageSchema = {
       name: "Halcyon Haus",
       description: PAGE_DESCRIPTION,
       url: PAGE_URL,
-      image: "https://www.halcyonhaus.com" + "/images/GOLDENGROVEKITCHEN2.jpg",
+      image: "https://www.halcyonhaus.com" + "/images/MAINKITCHEN.jpg",
       founder: { "@type": "Person", name: "Nikka Winchell" },
       priceRange: "$$$",
       areaServed: [
@@ -82,9 +82,8 @@ const PROCESS = [
 ];
  
 const GALLERY = [
-  { src: "/images/GOLDENGROVEKITCHEN2.jpg", alt: "Palm Springs mid-century kitchen renovation in Tahquitz River Estates by Halcyon Haus" },
+  { src: "/images/GOLDENGROVE-BEDROOM.jpg", alt: "Palm Springs mid-century bedroom with indoor-outdoor flow in Tahquitz River Estates by Halcyon Haus" },
   { src: "/images/GOLDENGROVE-BATH.jpg", alt: "Palm Springs mid-century bathroom renovation with warm desert palette by Halcyon Haus" },
-  { src: "/images/GOLDENGROVE-BEDROOM.jpg", alt: "Palm Springs mid-century bedroom with indoor-outdoor flow by Halcyon Haus" },
   { src: "/images/GOLDENGROVE-POWDER.jpg", alt: "Palm Springs powder room with mid-century character by Halcyon Haus" },
   { src: "/images/GOLDENGROVE-POOL.jpg", alt: "Palm Springs outdoor living and pool area of a 1950s ranch by Halcyon Haus" },
   { src: "/images/GOLDENGROVE-DOOR.jpg", alt: "Mid-century entry detail of a Tahquitz River Estates home by Halcyon Haus" }
@@ -154,13 +153,13 @@ export default function PalmSprings() {
         <link rel="canonical" href={PAGE_URL} />
         <meta property="og:title" content={PAGE_TITLE} />
         <meta property="og:description" content={PAGE_DESCRIPTION} />
-        <meta property="og:image" content={"https://www.halcyonhaus.com" + "/images/GOLDENGROVEKITCHEN2.jpg"} />
+        <meta property="og:image" content={"https://www.halcyonhaus.com" + "/images/MAINKITCHEN.jpg"} />
         <meta property="og:url" content={PAGE_URL} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={PAGE_TITLE} />
         <meta name="twitter:description" content={PAGE_DESCRIPTION} />
-        <meta name="twitter:image" content={"https://www.halcyonhaus.com" + "/images/GOLDENGROVEKITCHEN2.jpg"} />
+        <meta name="twitter:image" content={"https://www.halcyonhaus.com" + "/images/MAINKITCHEN.jpg"} />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       </Head>
@@ -193,7 +192,7 @@ export default function PalmSprings() {
         </div>
  
         <div className="mb-20">
-          <img src="/images/GOLDENGROVEKITCHEN2.jpg" alt="Palm Springs mid-century kitchen renovation in Tahquitz River Estates by Halcyon Haus" className="w-full rounded-md object-cover" />
+          <img src="/images/MAINKITCHEN.jpg" alt="Palm Springs mid-century kitchen renovation in Tahquitz River Estates by Halcyon Haus" className="w-full rounded-md object-cover" />
         </div>
  
         {/* LOCAL CONTEXT */}
@@ -230,7 +229,7 @@ export default function PalmSprings() {
           <Link href="/projects/golden-grove" legacyBehavior>
             <a className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-10 group">
               <div className="overflow-hidden rounded-md">
-                <img src="/images/GOLDENGROVEKITCHEN2.jpg" alt="Palm Springs mid-century kitchen renovation in Tahquitz River Estates by Halcyon Haus" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
+                <img src="/images/GOLDENGROVE-KITCHEN.jpg" alt="Palm Springs mid-century kitchen with warm wood and natural light in Tahquitz River Estates by Halcyon Haus" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
               </div>
               <div>
                 <h3 className="text-xl mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>Golden Grove</h3>
