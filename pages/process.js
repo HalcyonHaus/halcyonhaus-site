@@ -36,7 +36,7 @@ const IMG = {
   vertModel: "/images/MM Laundry Vertical.jpg",
   topView: "/images/MM LaundryTopElevation.jpg",
   floorPlan: "/images/MMLaundryFloorPlan.jpg",
-  moodBoard: "/images/MMLaundryMoodBoard.jpg",
+  moodBoard: "/images/HH Moodboard Laundry.jpg",
 };
 const abs = (src) => encodeURI(SITE_URL + src);
 
@@ -45,21 +45,21 @@ const ALT = {
   topView: "Plan view of the laundry room showing cabinetry, stone counters, and wood flooring in place",
   vertModel: "3D model of the laundry room with burgundy inset cabinetry, vertical paneling, and a stacked washer and dryer",
   vertRender: "Rendering of the finished laundry room with oxblood cabinetry, red-veined stone counters, brass hardware, and a patterned Roman shade",
-  moodBoard: "Laundry room mood board by Halcyon Haus with red-veined stone, walnut, Dove Wing paint, an oxblood paint color, a patterned shade fabric, a brass knob, a pleated brass sconce, and a plum mudroom for inspiration",
+  moodBoard: "Laundry room mood board by Halcyon Haus with red-veined stone, walnut, Dove Wing paint, an oxblood paint color, a patterned shade fabric, a brass knob, a pleated brass sconce, and a rendering of the laundry with oxblood cabinets and a farmhouse sink",
 };
 
 const FAQS = [
   {
     q: "Do you outsource your drawings?",
-    a: "No. I produce the drawings myself for every project that needs them: dimensioned floor plans, interior elevations, reflected ceiling plans, 3D models, and renderings, all drawn in SketchUp and LayOut.",
+    a: "No. We produce our own drawings for every project that needs them: dimensioned floor plans, interior elevations, reflected ceiling plans, 3D models, and renderings, all drawn in SketchUp and LayOut.",
   },
   {
     q: "How does the mood board work?",
-    a: "I pull together the paint colors, stone, wood, hardware, lighting, and fabrics for your space, and we go through the board together. You see and feel the physical samples in person before anything is finalized.",
+    a: "We start with inspiration photos to find the tone and overall feel of the room, then source the paint colors, stone, wood, hardware, lighting, and fabrics. We go through the board together, then lay out the real samples in person so you can see and feel every finish before anything is finalized.",
   },
   {
     q: "Is there a design presentation?",
-    a: "Yes. Once the concept comes together, I present the ideas to you: the mood board, the plans, and the 3D model and rendering. You give feedback, and I refine the design until it is right.",
+    a: "Yes. Once the concept comes together, we present the ideas to you: the mood board, the plans, and the 3D model and rendering. You give feedback, and we refine the design until it is right.",
   },
   {
     q: "Do you provide 3D renderings?",
@@ -71,19 +71,19 @@ const FAQS = [
   },
   {
     q: "Do you work with my contractor, or bring your own?",
-    a: "Both work. I can collaborate with a contractor you already trust or bring in builders from my network, and I stay involved through construction so the design is carried out the way it was drawn.",
+    a: "Both work. We can collaborate with a contractor you already trust or bring in builders from our network, and we stay involved through construction so the design is carried out the way it was drawn.",
   },
   {
     q: "Do you order the furnishings and finishes?",
-    a: "Yes. I purchase the furnishings, tile, and fixtures and track every order. Construction materials stay with your contractor.",
+    a: "Yes. We purchase the furnishings, tile, and fixtures and track every order. Construction materials stay with your contractor.",
   },
   {
     q: "Where do you work?",
-    a: "Halcyon Haus is based in Castle Rock, Colorado and Palm Springs, California. I work on site across the Denver metro and the Coachella Valley, and virtually everywhere else.",
+    a: "Halcyon Haus is based in Castle Rock, Colorado and Palm Springs, California. We work on site across the Denver metro and the Coachella Valley, and virtually everywhere else.",
   },
   {
     q: "How do we get started?",
-    a: "With a complimentary discovery call. Send a note through the contact page with a little about your space, and I will follow up personally.",
+    a: "With a complimentary discovery call. Send a note through the contact page with a little about your space, and Nikka will follow up personally.",
   },
 ];
 
@@ -368,34 +368,43 @@ export default function Process() {
           </motion.div>
           <div className={textBlock}>
             <p>
-              Every project starts with measurements. I draw the room to scale with every wall, window, door, and
+              Every project starts with measurements. We draw the room to scale with every wall, window, door, and
               clearance dimensioned, so the design is built on the real space and not a guess.
             </p>
             <p>
-              From there, I plan the layout: where the cabinetry runs, where the appliances sit, and how the room works
+              From there, we plan the layout: where the cabinetry runs, where the appliances sit, and how the room works
               day to day. The plans also map lighting, outlets, and fixture locations. Finishes come after the plan is right.
             </p>
           </div>
         </section>
 
-        {/* Mood board and paint colors */}
+        {/* Mood board: board with the sourcing story beside it */}
         <section className="mb-24">
           <SectionHead title="THE MOOD BOARD" subtitle="Paint Colors, Materials, And Finishes" />
-          <motion.div {...subtleFade} className="group relative mb-16 mx-auto max-w-4xl aspect-square overflow-hidden rounded-md border border-neutral-200 bg-white">
-            <Image src={IMG.moodBoard} alt={ALT.moodBoard} fill sizes="(max-width: 896px) 100vw, 896px" className="object-cover" />
-            <PinButton imageUrl={abs(IMG.moodBoard)} pageUrl={PAGE_URL} description={ALT.moodBoard} />
-          </motion.div>
-          <div className={textBlock}>
-            <p>
-              Once the layout is set, the look comes together on a mood board. I select the paint colors, stone, wood,
-              hardware, lighting, and fabrics and pull them side by side, so you can see how every piece works together
-              before anything is ordered. For this laundry, that meant Dove Wing on the paneling, a deep oxblood on the
-              cabinetry, red-veined stone, walnut shelving, brass knobs, and a pleated sconce.
-            </p>
-            <p>
-              We go through the mood board together at a design presentation, where I walk you through the ideas. You
-              see and feel the physical samples in person before anything is finalized.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            <motion.div
+              {...subtleFade}
+              className="group relative lg:col-span-7 aspect-square overflow-hidden rounded-md border border-neutral-200 bg-white"
+            >
+              <Image src={IMG.moodBoard} alt={ALT.moodBoard} fill sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover" />
+              <PinButton imageUrl={abs(IMG.moodBoard)} pageUrl={PAGE_URL} description={ALT.moodBoard} />
+            </motion.div>
+            <div className="lg:col-span-5 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 px-4 md:px-0">
+              <p>
+                Every room starts with a feeling. We go through inspiration photos together and figure out the tone of
+                the room and the overall vibe before a single material is chosen.
+              </p>
+              <p>
+                From there, we source the materials: paint colors, stone, wood, hardware, lighting, and fabric, pulled
+                together on a mood board so you can see how every piece works side by side. For this laundry, that meant
+                Dove Wing on the paneling, a deep oxblood on the cabinetry, red-veined stone, walnut shelving, brass
+                knobs, and a pleated sconce.
+              </p>
+              <p>
+                Then we bring in the actual samples and lay them out in person, the same way they sit on the board. You
+                see and feel every finish, and we make sure each one is exactly what we want before anything is ordered.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -408,7 +417,7 @@ export default function Process() {
           </motion.div>
           <div className={textBlock}>
             <p>
-              Then I build the room in 3D, with the cabinetry, counters, trim, and fixtures at their real size.
+              Then we build the room in 3D, with the cabinetry, counters, trim, and fixtures at their real size.
               Proportions and sightlines get worked out here, before anything is ordered.
             </p>
             <p>
@@ -424,7 +433,7 @@ export default function Process() {
           <div className={textBlock.replace("space-y-6", "space-y-10")}>
             <p>
               Once the design is approved, your builder receives a complete set of drawings. Every trade works from the
-              same plans, and every revision is dated, so the questions do not land on you. I stay involved through
+              same plans, and every revision is dated, so the questions do not land on you. We stay involved through
               construction: coordinating with your contractor, ordering and tracking furnishings, tile, and fixtures, and
               seeing the installation through.
             </p>
@@ -480,18 +489,18 @@ export default function Process() {
         {/* Where to start */}
         <section className="mt-24">
           <div className={textBlock.replace("space-y-6", "space-y-10")}>
-            <div className="border-t border-neutral-200 pt-10">
+            <div className="border-t border-neutral-200 pt-10 text-center">
               <h3 className="uppercase tracking-[0.2em] text-xs mb-6 text-neutral-500" style={{ fontFamily: "'Inter', sans-serif" }}>
                 Where To Start
               </h3>
               <p>
-                Every project begins with a complimentary discovery call. Tell me about the house, the rooms you are
+                Every project begins with a complimentary discovery call. Tell us about the house, the rooms you are
                 thinking about, and your timeline.
               </p>
               <p className="mt-6">
                 <Link href="/contact" legacyBehavior>
                   <a className="inline-flex items-center gap-2 text-xs tracking-widest uppercase font-inter text-black border-b border-black pb-1 transition-all duration-300 hover:gap-3 hover:text-neutral-500 hover:border-neutral-500">
-                    Work With Me
+                    Work With Us
                     <span aria-hidden="true">&#8594;</span>
                   </a>
                 </Link>
