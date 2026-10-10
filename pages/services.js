@@ -202,7 +202,12 @@ export default function ServicesPage() {
                 </div>
                 <h2 className="uppercase text-xs tracking-widest text-gray-500 mb-2">FULL-SERVICE DESIGN</h2>
                 <p>
-                  Full attention to every layer of your home: materials, custom millwork, sourcing, and styling, carried through to install. Well suited to a remodel, a new build, or a full home transformation in Denver and beyond. Investment is scoped to your project and discussed during your consultation.
+                  Full attention to every layer of your home: materials, custom millwork, sourcing, and styling, carried through to install. Well suited to a remodel, a new build, or a full home transformation in Denver and beyond. Investment is scoped to your project and discussed during your consultation.{" "}
+                  <Link href="/process" legacyBehavior>
+                    <a className="text-gray-500 underline underline-offset-4 decoration-gray-300 transition-colors duration-300 hover:text-black hover:decoration-black">
+                      Learn more here.
+                    </a>
+                  </Link>
                 </p>
               </div>
               <div>
