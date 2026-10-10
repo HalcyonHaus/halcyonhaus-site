@@ -11,7 +11,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import ShareButton from "../components/ShareButton";
 import PinButton from "../components/PinButton";
 
@@ -27,7 +27,7 @@ const SITE_URL = "https://www.halcyonhaus.com";
 const PAGE_URL = SITE_URL + "/process";
 const PAGE_TITLE = "The Design Process: Floor Plans to 3D Renderings | Halcyon Haus";
 const PAGE_DESCRIPTION =
-  "What it is like to work with Halcyon Haus: measured floor plans, a mood board and paint colors, a 3D model, and a rendering you approve before anything is built.";
+  "What it is like to work with Halcyon Haus: measured floor plans, a mood board with real samples, a design presentation, and a 3D rendering you approve before anything is built.";
 
 const IMG = {
   wideRender: "/images/MMLaundryWideRender.png",
@@ -36,6 +36,7 @@ const IMG = {
   vertModel: "/images/MM Laundry Vertical.jpg",
   topView: "/images/MM LaundryTopElevation.jpg",
   floorPlan: "/images/MMLaundryFloorPlan.jpg",
+  moodBoard: "/images/MMLaundryMoodBoard.jpg",
 };
 const abs = (src) => encodeURI(SITE_URL + src);
 
@@ -44,7 +45,47 @@ const ALT = {
   topView: "Plan view of the laundry room showing cabinetry, stone counters, and wood flooring in place",
   vertModel: "3D model of the laundry room with burgundy inset cabinetry, vertical paneling, and a stacked washer and dryer",
   vertRender: "Rendering of the finished laundry room with oxblood cabinetry, red-veined stone counters, brass hardware, and a patterned Roman shade",
+  moodBoard: "Laundry room mood board by Halcyon Haus with red-veined stone, walnut, Dove Wing paint, an oxblood paint color, a patterned shade fabric, a brass knob, a pleated brass sconce, and a plum mudroom for inspiration",
 };
+
+const FAQS = [
+  {
+    q: "Do you outsource your drawings?",
+    a: "No. I produce the drawings myself for every project that needs them: dimensioned floor plans, interior elevations, reflected ceiling plans, 3D models, and renderings, all drawn in SketchUp and LayOut.",
+  },
+  {
+    q: "How does the mood board work?",
+    a: "I pull together the paint colors, stone, wood, hardware, lighting, and fabrics for your space, and we go through the board together. You see and feel the physical samples in person before anything is finalized.",
+  },
+  {
+    q: "Is there a design presentation?",
+    a: "Yes. Once the concept comes together, I present the ideas to you: the mood board, the plans, and the 3D model and rendering. You give feedback, and I refine the design until it is right.",
+  },
+  {
+    q: "Do you provide 3D renderings?",
+    a: "Yes. On renovation projects, the room is modeled in 3D and rendered before construction starts, so you can see the finished space and make changes while the walls can still move.",
+  },
+  {
+    q: "What drawings does my contractor receive?",
+    a: "A complete set: floor plans, interior elevations, reflected ceiling plans, tile layouts, finish and fixture schedules, and manufacturer cut sheets. Every revision is dated. Structural, mechanical, and anything behind the walls stays with your contractor and engineer.",
+  },
+  {
+    q: "Do you work with my contractor, or bring your own?",
+    a: "Both work. I can collaborate with a contractor you already trust or bring in builders from my network, and I stay involved through construction so the design is carried out the way it was drawn.",
+  },
+  {
+    q: "Do you order the furnishings and finishes?",
+    a: "Yes. I purchase the furnishings, tile, and fixtures and track every order. Construction materials stay with your contractor.",
+  },
+  {
+    q: "Where do you work?",
+    a: "Halcyon Haus is based in Castle Rock, Colorado and Palm Springs, California. I work on site across the Denver metro and the Coachella Valley, and virtually everywhere else.",
+  },
+  {
+    q: "How do we get started?",
+    a: "With a complimentary discovery call. Send a note through the contact page with a little about your space, and I will follow up personally.",
+  },
+];
 
 const DRAWING_SET = [
   "Floor plans",
@@ -67,7 +108,7 @@ const pageSchema = {
       isPartOf: { "@id": SITE_URL + "/#website" },
       about: { "@id": PAGE_URL + "#service" },
       primaryImageOfPage: { "@type": "ImageObject", url: abs(IMG.wideRender) },
-      image: [abs(IMG.wideRender), abs(IMG.floorPlan), abs(IMG.topView), abs(IMG.vertModel), abs(IMG.vertRender)],
+      image: [abs(IMG.wideRender), abs(IMG.floorPlan), abs(IMG.topView), abs(IMG.moodBoard), abs(IMG.vertModel), abs(IMG.vertRender)],
       breadcrumb: { "@id": PAGE_URL + "#breadcrumb" },
     },
     {
@@ -84,7 +125,7 @@ const pageSchema = {
       serviceType: "Interior Design and Renovation",
       name: "Full-Service Interior Design and Renovation",
       description:
-        "Kitchen, bath, and main-level renovation design: measured floor plans, space planning, mood boards and paint colors, 3D modeling, renderings, a complete drawing set for your builder, and installation.",
+        "Kitchen, bath, and main-level renovation design: measured floor plans, space planning, mood boards with physical samples, a design presentation, 3D modeling, renderings, a complete drawing set for your builder, and installation.",
       provider: { "@id": SITE_URL + "/#business" },
       areaServed: [
         { "@type": "City", name: "Castle Rock" },
@@ -94,6 +135,15 @@ const pageSchema = {
         { "@type": "City", name: "Denver" },
         { "@type": "City", name: "Palm Springs" },
       ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": PAGE_URL + "#faq",
+      mainEntity: FAQS.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     },
   ],
 };
@@ -234,6 +284,8 @@ function ModelToRender() {
 }
 
 export default function Process() {
+  const [openFaq, setOpenFaq] = useState(null);
+
   return (
     <div className="min-h-screen text-black font-sans bg-[#fafafa]">
       <Head>
@@ -241,7 +293,7 @@ export default function Process() {
         <meta name="description" content={PAGE_DESCRIPTION} />
         <meta
           name="keywords"
-          content="interior design process, working with an interior designer, renovation design process, interior design floor plan, mood board, paint colors, 3D interior design rendering, interior designer Castle Rock, interior designer Denver, interior designer Palm Springs, Halcyon Haus, Nikka Winchell"
+          content="interior design process, working with an interior designer, renovation design process, interior design floor plan, interior design mood board, paint colors, design presentation, 3D interior design rendering, SketchUp drawings, interior designer Castle Rock, interior designer Denver, interior designer Palm Springs, Halcyon Haus, Nikka Winchell"
         />
         <link rel="canonical" href={PAGE_URL} />
         <meta property="og:title" content={PAGE_TITLE} />
@@ -301,6 +353,10 @@ export default function Process() {
             Before anything is ordered or built, the room is measured, planned, pulled together on a mood board, modeled
             in 3D, and rendered. You see the finished space first, while it is still easy to change.
           </p>
+          <p>
+            Halcyon Haus is based in Castle Rock, Colorado and Palm Springs, California, working across the Denver
+            metro, the Coachella Valley, and virtually nationwide.
+          </p>
         </section>
 
         {/* Measured and planned */}
@@ -325,13 +381,21 @@ export default function Process() {
         {/* Mood board and paint colors */}
         <section className="mb-24">
           <SectionHead title="THE MOOD BOARD" subtitle="Paint Colors, Materials, And Finishes" />
+          <motion.div {...subtleFade} className="group relative mb-16 mx-auto max-w-4xl aspect-square overflow-hidden rounded-md border border-neutral-200 bg-white">
+            <Image src={IMG.moodBoard} alt={ALT.moodBoard} fill sizes="(max-width: 896px) 100vw, 896px" className="object-cover" />
+            <PinButton imageUrl={abs(IMG.moodBoard)} pageUrl={PAGE_URL} description={ALT.moodBoard} />
+          </motion.div>
           <div className={textBlock}>
             <p>
               Once the layout is set, the look comes together on a mood board. I select the paint colors, stone, wood,
               hardware, lighting, and fabrics and pull them side by side, so you can see how every piece works together
-              before anything is ordered.
+              before anything is ordered. For this laundry, that meant Dove Wing on the paneling, a deep oxblood on the
+              cabinetry, red-veined stone, walnut shelving, brass knobs, and a pleated sconce.
             </p>
-            <p>We review it together and refine it until every selection feels right for the house.</p>
+            <p>
+              We go through the mood board together at a design presentation, where I walk you through the ideas. You
+              see and feel the physical samples in person before anything is finalized.
+            </p>
           </div>
         </section>
 
@@ -376,6 +440,46 @@ export default function Process() {
               </ul>
             </div>
 
+          </div>
+        </section>
+
+        {/* FAQ, same as the Services page */}
+        <section className="mt-24 pt-16 border-t border-gray-200 max-w-2xl mx-auto">
+          <SectionHead title="FAQ" subtitle="Working With Halcyon Haus" />
+          <div>
+            {FAQS.map((faq, index) => {
+              const isOpen = openFaq === index;
+              return (
+                <div key={faq.q} className="border-b border-gray-200">
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? null : index)}
+                    className="w-full flex items-center justify-between py-5 text-left font-inter text-sm tracking-wide text-black"
+                    aria-expanded={isOpen}
+                  >
+                    <span>{faq.q}</span>
+                    <ChevronDown
+                      size={16}
+                      strokeWidth={1.2}
+                      className={`flex-shrink-0 ml-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                  <div
+                    style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
+                    className="grid transition-[grid-template-rows] duration-300 ease-in-out"
+                  >
+                    <div className="overflow-hidden">
+                      <p className="pb-5 text-sm leading-7 font-inter italic text-gray-600">{faq.a}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Where to start */}
+        <section className="mt-24">
+          <div className={textBlock.replace("space-y-6", "space-y-10")}>
             <div className="border-t border-neutral-200 pt-10">
               <h3 className="uppercase tracking-[0.2em] text-xs mb-6 text-neutral-500" style={{ fontFamily: "'Inter', sans-serif" }}>
                 Where To Start
