@@ -43,7 +43,7 @@ export default function Document() {
               "@context": "https://schema.org",
               "@graph": [
                 {
-                  "@type": "InteriorDesigner",
+                  "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
                   "@id": "https://www.halcyonhaus.com/#business",
                   "name": "Halcyon Haus",
                   "alternateName": ["Halcyon Haus Interior Design", "Halcyon Haus Design Studio"],
