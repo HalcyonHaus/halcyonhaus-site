@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
@@ -188,26 +189,62 @@ export default function ServicesPage() {
               Halcyon Haus designs full home renovations and single-room refreshes alike, for clients in Denver, Colorado and nationwide, built around how you actually live.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
               <div>
+                <div className="relative aspect-[4/5] overflow-hidden rounded-md mb-6">
+                  <Image
+                    src="/images/KITCHENBLOG4.JPG"
+                    alt="Kitchen with taupe cabinetry, reeded glass uppers, and a marble arched backsplash designed by Halcyon Haus"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 480px"
+                    className="object-cover"
+                  />
+                </div>
                 <h2 className="uppercase text-xs tracking-widest text-gray-500 mb-2">FULL-SERVICE DESIGN</h2>
                 <p>
                   Full attention to every layer of your home: materials, custom millwork, sourcing, and styling, carried through to install. Well suited to a remodel, a new build, or a full home transformation in Denver and beyond. Investment is scoped to your project and discussed during your consultation.
                 </p>
               </div>
               <div>
+                <div className="relative aspect-[4/5] overflow-hidden rounded-md mb-6">
+                  <Image
+                    src="/images/GOLDENGROVE-BATH.jpg"
+                    alt="Arched walk-in shower with floral zellige tile, unlacquered brass fixtures, and brick floors designed by Halcyon Haus"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 480px"
+                    className="object-cover"
+                  />
+                </div>
                 <h2 className="uppercase text-xs tracking-widest text-gray-500 mb-2">ROOM REFRESH</h2>
                 <p>
                   Perfect for spaces that need a fresh update: new furnishings, layout and styling, and full sourcing within your existing or updated architecture.
                 </p>
               </div>
               <div>
+                <div className="relative aspect-[4/5] overflow-hidden rounded-md mb-6">
+                  <Image
+                    src="/images/GOLDENGROVE-BEDROOM.jpg"
+                    alt="Bedroom with plaster walls, a woven pendant light, and burgundy velvet bolster pillows designed by Halcyon Haus"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 480px"
+                    className="object-cover"
+                  />
+                </div>
                 <h2 className="uppercase text-xs tracking-widest text-gray-500 mb-2">VIRTUAL DESIGN</h2>
                 <p>
                   A fully remote design experience: custom mood boards, layout guides, shoppable product lists, and styling instructions.
                 </p>
               </div>
               <div>
+                <div className="relative aspect-[4/5] overflow-hidden rounded-md mb-6">
+                  <Image
+                    src="/images/PRIMARYVANITY1.jpg"
+                    alt="Bathroom vanity with a fluted wood cabinet, marble top, brass faucet, and pleated shade sconces designed by Halcyon Haus"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 480px"
+                    className="object-cover"
+                  />
+                </div>
                 <h2 className="uppercase text-xs tracking-widest text-gray-500 mb-2">HOURLY DESIGN SUPPORT</h2>
                 <p>
                   Need a second opinion or a working session on a specific question? Book time directly for layout advice, sourcing direction, or one specific problem you need solved.
