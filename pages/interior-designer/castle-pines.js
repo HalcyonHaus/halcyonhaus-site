@@ -230,8 +230,7 @@ export default function CastlePines() {
           <Link href="/projects/canyon-cottage-kitchen" legacyBehavior>
             <a className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-10 group">
               <div className="overflow-hidden rounded-md">
-                <img src="/images/HEROKITCHEN00.jpg" alt="Castle Pines kitchen with Benjamin Moore Pashmina cabinets and Venetian plaster range hood by Halcyon Haus" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
-              </div>
+                <img src="/images/CCKITCHEN2.JPG" alt="Canyon Cottage kitchen in Castle Pines Village with Pashmina cabinetry, a quartzite island, and a brass pendant by Halcyon Haus" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" />              </div>
               <div>
                 <h3 className="text-xl mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>Canyon Cottage</h3>
                 <p className="text-xs uppercase tracking-[0.18em] text-gray-500 mb-4">Castle Pines Village</p>
