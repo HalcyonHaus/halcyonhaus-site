@@ -1,166 +1,98 @@
-// pages/interior-designer/greenwood-village.js
-// Halcyon Haus — local SEO landing page for Greenwood Village, CO.
-// Matches the site: Pages Router, Tailwind, next/head SEO + JSON-LD, bordered
-// CTA, collapsible FAQ, and the SAME contact form as /contact (Formspree).
-// The form sends source: "Greenwood Village landing page" so you can tell leads apart.
-// URL: https://www.halcyonhaus.com/interior-designer/greenwood-village
- 
-import { useState } from "react";
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown } from "lucide-react";
- 
-const PAGE_URL = "https://www.halcyonhaus.com/interior-designer/greenwood-village";
-const PAGE_TITLE = "Interior Designer in Greenwood Village, CO | Halcyon Haus";
-const PAGE_DESCRIPTION = "Boutique interior designer serving Greenwood Village, Colorado. Full-service kitchen, bath, and whole-home renovation by Nikka Winchell of Halcyon Haus. Featured in Homes & Gardens.";
- 
-const pageSchema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": ["LocalBusiness", "InteriorDesignService", "HomeAndConstructionBusiness"],
-      "@id": PAGE_URL + "#business",
-      name: "Halcyon Haus",
-      description: PAGE_DESCRIPTION,
-      url: PAGE_URL,
-      image: "https://www.halcyonhaus.com" + "/images/TwoTonedAngleHero.jpg",
-      founder: { "@type": "Person", name: "Nikka Winchell" },
-      priceRange: "$$$",
-      areaServed: [
-        { "@type": "City", name: "Greenwood Village" },
-        { "@type": "City", name: "Cherry Hills Village" },
-        { "@type": "City", name: "Centennial" },
-        { "@type": "City", name: "Englewood" },
-        { "@type": "City", name: "Denver Tech Center" }
-      ],
-      address: { "@type": "PostalAddress", addressLocality: "Greenwood Village", addressRegion: "CO", addressCountry: "US" },
-      geo: { "@type": "GeoCoordinates", latitude: 39.6172, longitude: -104.9508 },
-      sameAs: [
-        "https://www.instagram.com/halcyonhaus_",
-        "https://www.tiktok.com/@halcyonhaus_",
-        "https://www.shopltk.com/explore/halcyonhaus"
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": PAGE_URL + "#service",
-      serviceType: "Interior Design and Renovation",
-      provider: { "@id": PAGE_URL + "#business" },
-      areaServed: { "@type": "City", name: "Greenwood Village" },
-      description: "Full-service interior design and renovation in Greenwood Village, Colorado: kitchens, bathrooms, and whole-home remodels."
-    },
-    {
-      "@type": "FAQPage",
-      "@id": PAGE_URL + "#faq",
-      mainEntity: [
-        { "@type": "Question", name: "Do you preserve original features in older homes?", acceptedAnswer: { "@type": "Answer", text: "Whenever it makes sense, yes. Greenwood Village has many established homes with millwork and detailing worth keeping. We update a home for how you live now while protecting the features that give it its character and sense of history." } },
-        { "@type": "Question", name: "What does full-service design include?", acceptedAnswer: { "@type": "Answer", text: "Full-service covers the whole project: layout and space planning, cabinetry and custom millwork, tile and stone, lighting, plumbing fixtures, paint, sourcing, styling, and managing the install." } },
-        { "@type": "Question", name: "Do you work with my contractor, or bring your own?", acceptedAnswer: { "@type": "Answer", text: "Both work. We can collaborate with a contractor you already trust, or bring in builders from our network, and we stay involved through construction so the design is carried out the way it was drawn." } },
-        { "@type": "Question", name: "Is there a fee for the first call?", acceptedAnswer: { "@type": "Answer", text: "No. The discovery call is complimentary. It's a chance to get to know your space and talk through what working together would look like." } },
-        { "@type": "Question", name: "How much does a project cost?", acceptedAnswer: { "@type": "Answer", text: "Investment varies widely with the scope of the work, so pricing is tailored to each project rather than listed as a flat number. Share your space, timeline, and budget below and we'll talk it through." } },
-        { "@type": "Question", name: "How do we get started?", acceptedAnswer: { "@type": "Answer", text: "Fill out the form below with a little about your space and goals, and Nikka will follow up personally." } }
-      ]
-    }
-  ]
+import { motion } from "framer-motion";
+import ShareButton from "../../components/ShareButton";
+import PinButton from "../../components/PinButton";
+
+// Subtle fade (opacity only)
+const subtleFade = {
+  initial: { opacity: 0 },
+  whileInView: { opacity: 1 },
+  transition: { duration: 0.5, ease: "easeOut" },
+  viewport: { once: true }
 };
- 
-const PHILOSOPHY = [
-  { name: "Provenance", body: "Every object carries a history, and that history is worth understanding before it's touched. Knowing where something came from is what separates real preservation from guesswork." },
-  { name: "Preservation", body: "Some homes have lived past their prime but still have a story to tell. A home's character was never in the studs and drywall. The work is knowing which parts of that story to keep, and building something new around them." },
-  { name: "Permanence", body: "Underneath every choice is a material or finish built to age alongside the people living with it. Homes made to outlast the moment they were designed in, not just fit inside it." }
-];
- 
-const PROCESS = [
-  { title: "Discovery Call", description: "A complimentary conversation where we get to know your space and talk through what working together would look like." },
-  { title: "Design Consultation", description: "On site for Denver area clients, or virtual elsewhere. We walk through your space together and talk scope, vision, and timeline." },
-  { title: "Site Analysis & Scope", description: "We measure the space, assess natural light and structural conditions, and define the full scope of the project." },
-  { title: "Space Planning", description: "Floor plans are developed and layouts tested until the flow and function feel right, before any style decisions are made." },
-  { title: "Concept & Mood Boards", description: "Direction, palette, and early material choices take shape, reviewed with you at every step." },
-  { title: "Material & Furnishings Selection", description: "Every finish, fixture, and piece of furniture is refined until the space is fully specified." },
-  { title: "Drawings & Specifications", description: "2D layouts or 3D modeling as needed, with permitting coordinated for larger projects." },
-  { title: "Execution & Installation", description: "Contractor coordination, ordering, tracking, and final installation. We manage the details so the design comes to life exactly as planned." }
-];
- 
-const GALLERY = [
-  { src: "/images/TwoTonedAngle1.jpg", alt: "Custom arched range hood with spice niche and pot filler in a Greenwood Village kitchen by Halcyon Haus" },
-  { src: "/images/TwoTonedAngleLong.jpg", alt: "Honey maple island with quartz countertop and white pendants in a Denver Tech Center area kitchen by Halcyon Haus" }
-];
- 
-const FAQS = [
-  { q: "Do you preserve original features in older homes?", a: "Whenever it makes sense, yes. Greenwood Village has many established homes with millwork and detailing worth keeping. We update a home for how you live now while protecting the features that give it its character and sense of history." },
-  { q: "What does full-service design include?", a: "Full-service covers the whole project: layout and space planning, cabinetry and custom millwork, tile and stone, lighting, plumbing fixtures, paint, sourcing, styling, and managing the install." },
-  { q: "Do you work with my contractor, or bring your own?", a: "Both work. We can collaborate with a contractor you already trust, or bring in builders from our network, and we stay involved through construction so the design is carried out the way it was drawn." },
-  { q: "Is there a fee for the first call?", a: "No. The discovery call is complimentary. It's a chance to get to know your space and talk through what working together would look like." },
-  { q: "How much does a project cost?", a: "Investment varies widely with the scope of the work, so pricing is tailored to each project rather than listed as a flat number. Share your space, timeline, and budget below and we'll talk it through." },
-  { q: "How do we get started?", a: "Fill out the form below with a little about your space and goals, and Nikka will follow up personally." }
-];
- 
-const PRESS = [
-  { n: "Pottery Barn", s: "/logos/potterybarn.png" },
-  { n: "West Elm", s: "/logos/westelm.png" },
-  { n: "Crate & Barrel", s: "/logos/cratebarrel.png" },
-  { n: "Amber Interiors", s: "/logos/amberinteriors.png" },
-  { n: "Serena & Lily", s: "/logos/serenaandlily.png" }
-];
- 
-export default function GreenwoodVillage() {
-  const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [detailsOpen, setDetailsOpen] = useState(false);
-  const [openFaq, setOpenFaq] = useState(null);
- 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const data = {
-      source: "Greenwood Village landing page",
-      name: form.name.value,
-      email: form.email.value,
-      projectType: form.projectType.value,
-      budget: form.budget.value,
-      timeline: form.timeline.value,
-      startDate: form.startDate.value,
-      rooms: form.rooms.value,
-      currentLikes: form.currentLikes.value,
-      currentDislikes: form.currentDislikes.value,
-      desiredFeel: form.desiredFeel.value,
-      workedWithDesigner: form.workedWithDesigner.value,
-      inspirationLink: form.inspirationLink.value,
-      referralSource: form.referralSource.value,
-      message: form.message.value,
-    };
-    setSubmitting(true);
-    try {
-      const res = await fetch("https://formspree.io/f/mkgbrrnw", {
-        method: "POST",
-        headers: { Accept: "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (res.ok) { form.reset(); setSubmitted(true); }
-      else { alert("Something went wrong. Please try again."); }
-    } finally { setSubmitting(false); }
-  };
- 
+
+const SITE_URL = "https://www.halcyonhaus.com";
+const PAGE_URL = SITE_URL + "/projects/orchard-oasis-kitchen";
+const PAGE_TITLE = "Orchard Oasis Kitchen Renovation | Greenwood Village | Halcyon Haus Design Studio";
+const PAGE_DESCRIPTION =
+  "A two-toned kitchen renovation near the Denver Tech Center in Greenwood Village, Colorado by Halcyon Haus: honey maple lowers, soft white uppers, a custom range hood, quartz counters, and a zellige-look tile backsplash.";
+
+const IMG = {
+  hero: "/images/TwoTonedAngleHero.jpg",
+  range: "/images/TwoTonedAngle1.jpg",
+  rangeIsland: "/images/TwoTonedAngle2.jpg",
+  island: "/images/TwoTonedAngleLong.jpg",
+  long: "/images/TwoTonedLong.jpg",
+  close: "/images/TwoTonedClose.jpg",
+  pantry: "/images/TwoTonedSquarePanrty.jpg",
+};
+
+const ALT = {
+  hero: "Two-toned kitchen in Greenwood Village with honey maple lower cabinets, soft white uppers, a custom arched range hood, and white pendants, designed by Halcyon Haus",
+  range: "Custom arched range hood with a spice niche and pot filler above a double-oven range in a Greenwood Village kitchen",
+  rangeIsland: "Range wall with zellige-look tile, soft white uppers, and a maple island with brass pulls in a Greenwood Village kitchen",
+  island: "Large honey maple island with quartz countertop, white pendants, and woven counter stools in a Greenwood Village kitchen",
+  long: "Two-toned kitchen with maple lower cabinets, quartz counters, and zellige-look tile backsplash near the Denver Tech Center",
+  close: "Honey maple drawers with lacquered brass pulls beneath soft white uppers and open wood shelving",
+  pantry: "Floor-to-ceiling soft white pantry cabinets with long lacquered brass pulls beside the refrigerator in a Greenwood Village kitchen",
+};
+
+// JSON-LD lives in a constant outside the JSX so the build stays clean
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Orchard Oasis Kitchen: Halcyon Haus",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": PAGE_URL },
+  "image": [SITE_URL + IMG.hero, SITE_URL + IMG.range, SITE_URL + IMG.island],
+  "author": { "@type": "Person", "name": "Nikka Winchell" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Halcyon Haus",
+    "logo": { "@type": "ImageObject", "url": SITE_URL + "/logos/HHLOGO2.png" }
+  },
+  "datePublished": "2026-10-12",
+  "description": PAGE_DESCRIPTION
+};
+
+// Tall image for the two-up rows, same proportions as the other project pages
+function TallImage({ src, alt }) {
+  return (
+    <div className="group relative aspect-[2/3] md:aspect-auto md:h-[58rem] overflow-hidden rounded-md">
+      <Image src={src} alt={alt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+      <PinButton imageUrl={SITE_URL + src} pageUrl={PAGE_URL} description={alt} />
+    </div>
+  );
+}
+
+export default function OrchardOasisKitchen() {
   return (
     <div className="min-h-screen text-black font-sans bg-[#fafafa]">
       <Head>
         <title>{PAGE_TITLE}</title>
         <meta name="description" content={PAGE_DESCRIPTION} />
-        <meta name="keywords" content="interior designer Greenwood Village, Greenwood Village kitchen remodel designer, Greenwood Village renovation, DTC interior design, Cherry Hills interior designer, Colorado interior designer, Halcyon Haus, Nikka Winchell" />
+        <meta
+          name="keywords"
+          content="Greenwood Village kitchen remodel, DTC kitchen renovation, two-toned kitchen, maple kitchen cabinets, custom range hood, zellige-look tile backsplash, quartz countertops, Greenwood Village interior designer, Halcyon Haus"
+        />
         <link rel="canonical" href={PAGE_URL} />
         <meta property="og:title" content={PAGE_TITLE} />
         <meta property="og:description" content={PAGE_DESCRIPTION} />
-        <meta property="og:image" content={"https://www.halcyonhaus.com" + "/images/TwoTonedAngleHero.jpg"} />
+        <meta property="og:image" content={SITE_URL + IMG.hero} />
         <meta property="og:url" content={PAGE_URL} />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={PAGE_TITLE} />
         <meta name="twitter:description" content={PAGE_DESCRIPTION} />
-        <meta name="twitter:image" content={"https://www.halcyonhaus.com" + "/images/TwoTonedAngleHero.jpg"} />
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
+        <meta name="twitter:image" content={SITE_URL + IMG.hero} />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
+          rel="stylesheet"
+        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       </Head>
- 
+
       {/* Navigation */}
       <header className="absolute top-0 w-full z-20 px-6 pt-6 text-xs tracking-widest">
         <nav className="flex justify-center sm:justify-end space-x-6 uppercase font-inter text-xs">
@@ -171,282 +103,159 @@ export default function GreenwoodVillage() {
           <Link href="/contact" legacyBehavior><a className="transition-colors duration-300 text-black hover:text-neutral-400">Contact</a></Link>
         </nav>
       </header>
- 
-      <main className="pt-28 pb-24 max-w-[90rem] mx-auto px-4 md:px-10">
-        {/* HERO */}
-        <p className="text-center text-xs uppercase tracking-[0.2em] text-gray-500 mb-4">Greenwood Village, CO</p>
-        <h1 className="text-3xl md:text-5xl font-light tracking-[0.06em] text-center mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
-          Interior Designer in Greenwood Village
+
+      {/* Main Content */}
+      <main className="pt-24 pb-24 max-w-[90rem] mx-auto px-4 md:px-10">
+        <h1 className="text-2xl md:text-2xl font-light tracking-[0.1em] text-center mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
+          ORCHARD OASIS KITCHEN
         </h1>
-        <p className="font-inter text-sm md:text-base leading-7 tracking-wide text-gray-700 max-w-3xl mx-auto text-center mb-10">
-          Halcyon Haus is a full-service design studio working with homeowners across Greenwood Village and the Denver Tech Center. We take on renovations rooted in warm, transitional design, with a particular respect for the established, well-built homes this area is known for.
-        </p>
-        <div className="text-center mb-20">
-          <a href="#inquire" className="inline-flex items-center gap-2 text-xs tracking-widest uppercase font-inter text-black border-b border-black pb-1 transition-all duration-300 hover:gap-3 hover:text-neutral-500 hover:border-neutral-500">
-            Work With Me
-            <span aria-hidden="true">&#8594;</span>
-          </a>
+        <h2 className="text-center text-sm uppercase tracking-widest text-gray-500 mt-2 mb-6">
+          Greenwood Village, Colorado
+        </h2>
+
+        <div className="mb-16">
+          <ShareButton title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
         </div>
- 
-        <div className="mb-20">
-          <img src="/images/TwoTonedAngleHero.jpg" alt="Greenwood Village two-toned kitchen renovation with maple lowers, soft white uppers, and a custom range hood by Halcyon Haus" className="w-full rounded-md object-cover" />
-        </div>
- 
-        {/* LOCAL CONTEXT */}
-        <section className="max-w-3xl mx-auto mb-24 px-4 md:px-0">
-          <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
-            Renovation design for Greenwood Village homes
-          </h2>
-          <div className="font-inter text-sm leading-7 tracking-wide text-gray-700 space-y-5">
-            <p>Greenwood Village is one of the more established pockets of the south metro, known for larger lots and homes with real architectural character. Many were built in an era when millwork, trim, and craftsmanship were the standard, and that is worth protecting. Our approach here leans toward preservation: keeping the features that give a home its sense of history while updating everything around them for how people live now.</p>
-            <p>That might mean refinishing or reworking original millwork rather than tearing it out, choosing materials that feel true to the period the home was built in, and letting new work sit quietly alongside the old. The result is a home that feels updated and current without losing the character that made it worth buying in the first place.</p>
-          </div>
-        </section>
- 
-        {/* PHILOSOPHY */}
-        <section className="max-w-5xl mx-auto mb-24 px-4 md:px-0">
-          <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-10 text-center" style={{ fontFamily: "'Playfair Display', serif" }}>
-            How we approach a home
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {PHILOSOPHY.map((p) => (
-              <div key={p.name}>
-                <h3 className="text-lg tracking-wide mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>{p.name}</h3>
-                <p className="font-inter text-sm leading-7 tracking-wide text-gray-700">{p.body}</p>
-              </div>
-            ))}
-          </div>
-        </section>
- 
-        {/* ANCHOR PROJECT */}
-        <section className="max-w-6xl mx-auto mb-24 px-4 md:px-0">
-          <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-10" style={{ fontFamily: "'Playfair Display', serif" }}>
-            A recent Greenwood Village project
-          </h2>
-          <Link href="/projects/orchard-oasis-kitchen" legacyBehavior>
-            <a className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-10 group">
-              <div className="overflow-hidden rounded-md">
-                <img src="/images/TwoTonedAngleHero.jpg" alt="Greenwood Village two-toned kitchen renovation with maple lowers, soft white uppers, and a custom range hood by Halcyon Haus" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
-              </div>
-              <div>
-                <h3 className="text-xl mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>Orchard Oasis</h3>
-                <p className="text-xs uppercase tracking-[0.18em] text-gray-500 mb-4">Greenwood Village / DTC</p>
-                <p className="font-inter text-sm leading-7 tracking-wide text-gray-700 mb-5">A two-toned kitchen renovation in the Greenwood Village and DTC area. Honey maple lowers paired with soft white uppers, a custom range hood, and a zellige-look backsplash run to the ceiling, updated for how the family lives while keeping the home's existing character intact.</p>
-                <span className="text-xs uppercase tracking-[0.14em] border-b border-neutral-400 pb-0.5">View the project</span>
-              </div>
-            </a>
-          </Link>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-            {GALLERY.map((g) => (
-              <div key={g.src} className="overflow-hidden rounded-md md:h-[28rem]">
-                <img src={g.src} alt={g.alt} className="w-full h-full object-cover" />
-              </div>
-            ))}
-          </div>
-        </section>
- 
-        {/* TESTIMONIAL */}
-        <section className="max-w-3xl mx-auto mb-24 px-4 md:px-0 text-center">
-          <blockquote>
-            <p className="text-lg md:text-2xl leading-relaxed mb-5" style={{ fontFamily: "'Playfair Display', serif" }}>
-              &ldquo;I have had the pleasure to work with Halcyon Haus. I find her to be extremely knowledgeable about current trends, design, choices, and quality of new construction as well as remodel projects. I would highly recommend her.&rdquo;
-            </p>
-            <cite className="not-italic text-xs uppercase tracking-[0.18em] text-gray-500">Greenwood Village, CO</cite>
-          </blockquote>
-        </section>
- 
-        {/* PROCESS */}
-        <section className="max-w-5xl mx-auto mb-24 px-4 md:px-0">
-          <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-10 text-center" style={{ fontFamily: "'Playfair Display', serif" }}>
-            How we work
-          </h2>
-          <ol className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
-            {PROCESS.map((step, i) => (
-              <li key={step.title} className="border-t border-neutral-200 pt-4">
-                <div className="flex gap-4">
-                  <span className="text-xs tracking-[0.2em] text-gray-400 pt-1">{String(i + 1).padStart(2, "0")}</span>
-                  <div>
-                    <h3 className="text-base mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>{step.title}</h3>
-                    <p className="font-inter text-sm leading-7 tracking-wide text-gray-700">{step.description}</p>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </section>
- 
-        {/* FEATURED IN */}
-        <section className="max-w-5xl mx-auto mb-24 px-4 md:px-0 text-center">
-          <h2 className="text-xs uppercase tracking-[0.22em] text-gray-500 mb-8 font-inter">Featured in</h2>
-          <div className="flex flex-wrap justify-center items-center gap-10 opacity-70">
-            {PRESS.map((l) => (
-              <img key={l.n} src={l.s} alt={l.n + " logo"} className="h-6 md:h-7 w-auto object-contain" />
-            ))}
-          </div>
-        </section>
- 
-        {/* FAQ — collapsible, like the services page */}
-        <section className="max-w-2xl mx-auto mb-24 px-4 md:px-0">
-          <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-8 text-center" style={{ fontFamily: "'Playfair Display', serif" }}>
-            Greenwood Village design questions, answered
-          </h2>
-          <div>
-            {FAQS.map((faq, index) => {
-              const isOpen = openFaq === index;
-              return (
-                <div key={faq.q} className="border-b border-gray-200">
-                  <button
-                    onClick={() => setOpenFaq(isOpen ? null : index)}
-                    className="w-full flex items-center justify-between py-5 text-left font-inter text-sm tracking-wide text-black"
-                    aria-expanded={isOpen}
-                  >
-                    <span>{faq.q}</span>
-                    <ChevronDown size={16} strokeWidth={1.2} className={`flex-shrink-0 ml-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
-                  </button>
-                  <div style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }} className="grid transition-[grid-template-rows] duration-300 ease-in-out">
-                    <div className="overflow-hidden">
-                      <p className="pb-5 text-sm leading-7 font-inter italic text-gray-600">{faq.a}</p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
- 
-        {/* CONTACT FORM — same as /contact, posts to Formspree, tagged as this page */}
-        <section id="inquire" className="max-w-2xl mx-auto px-4 md:px-0">
-          <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-4 text-center" style={{ fontFamily: "'Playfair Display', serif" }}>
-            Start your Greenwood Village project
-          </h2>
-          <p className="font-inter text-sm leading-7 tracking-wide text-gray-700 text-center mb-10">
-            Share your space, timeline, and budget and Nikka will follow up personally. Based in Castle Rock and Palm Springs, working across the Denver metro, the Coachella Valley, and virtually nationwide.
+
+        {/* Hero Image */}
+        <motion.div {...subtleFade} className="group relative mb-16">
+          <Image
+            src={IMG.hero}
+            alt={ALT.hero}
+            width={2048}
+            height={1463}
+            priority
+            sizes="(max-width: 1440px) 100vw, 1360px"
+            className="w-full h-auto rounded-md object-cover"
+          />
+          <PinButton imageUrl={SITE_URL + IMG.hero} pageUrl={PAGE_URL} description={ALT.hero} />
+        </motion.div>
+
+        {/* Intro Text */}
+        <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 mb-16 px-4 md:px-0 max-w-5xl mx-auto">
+          <p>
+            Orchard Oasis is an original home near the Denver Tech Center in Greenwood Village. The kitchen was built
+            around a small, angled island with the range set in the middle of it. It needed to be completely reimagined.
           </p>
- 
-          {!submitted ? (
-            <form onSubmit={handleSubmit} className="space-y-6 text-sm">
-              <div>
-                <label htmlFor="name" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">Name <span className="text-gray-400">*</span></label>
-                <input type="text" id="name" name="name" required className="w-full border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white" />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">Email <span className="text-gray-400">*</span></label>
-                <input type="email" id="email" name="email" required className="w-full border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white" />
-              </div>
- 
-              <div className="border-t border-b border-gray-200">
-                <button type="button" onClick={() => setDetailsOpen(!detailsOpen)} aria-expanded={detailsOpen} className="w-full flex items-center justify-between py-4 text-left font-inter uppercase tracking-widest text-xs text-gray-700">
-                  <span>More Details (Optional)</span>
-                  <ChevronDown size={16} strokeWidth={1.2} className={`flex-shrink-0 ml-4 transition-transform duration-300 ${detailsOpen ? "rotate-180" : ""}`} />
-                </button>
-                <div style={{ gridTemplateRows: detailsOpen ? "1fr" : "0fr" }} className="grid transition-[grid-template-rows] duration-300 ease-in-out">
-                  <div className="overflow-hidden">
-                    <div className="pb-6 space-y-6">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                          <label htmlFor="projectType" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">Project Type</label>
-                          <select id="projectType" name="projectType" defaultValue="" className="w-full appearance-none border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white text-gray-700">
-                            <option value="">Select one</option>
-                            <option value="Full-Service Design">Full-Service Design</option>
-                            <option value="Room Refresh">Room Refresh</option>
-                            <option value="Virtual Design">Virtual Design</option>
-                            <option value="The Walk & Plan">The Walk & Plan</option>
-                            <option value="Not sure yet">Not sure yet</option>
-                          </select>
-                        </div>
-                        <div>
-                          <label htmlFor="timeline" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">Timeline</label>
-                          <select id="timeline" name="timeline" defaultValue="" className="w-full appearance-none border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white text-gray-700">
-                            <option value="">Select one</option>
-                            <option value="ASAP">ASAP</option>
-                            <option value="1-3 months">1-3 months</option>
-                            <option value="3-6 months">3-6 months</option>
-                            <option value="Just exploring">Just exploring</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div>
-                        <label htmlFor="budget" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">Estimated Budget</label>
-                        <select id="budget" name="budget" defaultValue="" className="w-full appearance-none border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white text-gray-700">
-                          <option value="">Select one</option>
-                          <option value="Under $10k">Under $10k</option>
-                          <option value="$10k-$50k">$10k-$50k</option>
-                          <option value="$50k-$150k">$50k-$150k</option>
-                          <option value="$150k+">$150k+</option>
-                          <option value="Not sure yet">Not sure yet</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label htmlFor="startDate" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">Desired Start Date</label>
-                        <input type="date" id="startDate" name="startDate" className="w-full border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white text-gray-700" />
-                      </div>
-                      <div>
-                        <label htmlFor="rooms" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">Which Room(s)</label>
-                        <input type="text" id="rooms" name="rooms" placeholder="e.g. Kitchen, primary bath" className="w-full border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white placeholder:text-gray-400" />
-                      </div>
-                      <div>
-                        <label htmlFor="currentLikes" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">What Do You Love About the Space Now</label>
-                        <input type="text" id="currentLikes" name="currentLikes" placeholder="Anything worth keeping or building on" className="w-full border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white placeholder:text-gray-400" />
-                      </div>
-                      <div>
-                        <label htmlFor="currentDislikes" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">What&apos;s Not Working Right Now</label>
-                        <input type="text" id="currentDislikes" name="currentDislikes" placeholder="The stuff that's bugging you" className="w-full border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white placeholder:text-gray-400" />
-                      </div>
-                      <div>
-                        <label htmlFor="desiredFeel" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">How Should the Space Feel</label>
-                        <input type="text" id="desiredFeel" name="desiredFeel" placeholder="e.g. calm, warm, elevated" className="w-full border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white placeholder:text-gray-400" />
-                      </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                          <label htmlFor="workedWithDesigner" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">Worked With a Designer Before</label>
-                          <select id="workedWithDesigner" name="workedWithDesigner" defaultValue="" className="w-full appearance-none border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white text-gray-700">
-                            <option value="">Select one</option>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                          </select>
-                        </div>
-                        <div>
-                          <label htmlFor="inspirationLink" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">Inspiration Link</label>
-                          <input type="text" id="inspirationLink" name="inspirationLink" placeholder="Pinterest board, etc." className="w-full border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white placeholder:text-gray-400" />
-                        </div>
-                      </div>
-                      <div>
-                        <label htmlFor="referralSource" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">How Did You Hear About Halcyon Haus</label>
-                        <select id="referralSource" name="referralSource" defaultValue="" className="w-full appearance-none border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white text-gray-700">
-                          <option value="">Select one</option>
-                          <option value="Instagram">Instagram</option>
-                          <option value="TikTok">TikTok</option>
-                          <option value="Google Search">Google Search</option>
-                          <option value="Referral">Referral</option>
-                          <option value="Press/Publication">Press/Publication</option>
-                          <option value="Other">Other</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
- 
-              <div>
-                <label htmlFor="message" className="block text-gray-700 mb-2 uppercase tracking-widest text-xs font-inter">Tell me about your space <span className="text-gray-400">*</span></label>
-                <textarea id="message" name="message" rows="4" required className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-gray-400 text-sm bg-white"></textarea>
-              </div>
- 
-              <div className="flex justify-center mt-6">
-                <button type="submit" disabled={submitting} className="px-5 py-1.5 text-xs uppercase tracking-widest border border-gray-400 rounded-md hover:bg-gray-100 hover:text-black transition-colors duration-300 font-inter disabled:opacity-50">
-                  {submitting ? "Sending..." : "Submit"}
-                </button>
-              </div>
-            </form>
-          ) : (
-            <p className="text-center mt-10 text-sm text-gray-700 font-inter">Thank you, I&apos;ll be in touch soon!</p>
-          )}
+          <p>
+            The room itself was generous, which gave us space to rethink the layout from the ground up. The range moved
+            to its own wall beneath a custom hood, and the island became one large, simple work surface with room to
+            gather.
+          </p>
+        </section>
+
+        {/* Two-up images */}
+        <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          <TallImage src={IMG.range} alt={ALT.range} />
+          <TallImage src={IMG.rangeIsland} alt={ALT.rangeIsland} />
+        </motion.div>
+
+        {/* Two-toned text */}
+        <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-6 mb-16 px-4 md:px-0 max-w-5xl mx-auto">
+          <p>
+            We opted for a two-toned kitchen. The lower cabinets and island are a honey-toned maple, paired with soft
+            white uppers and a range hood custom built to match them. Polished nickel and lacquered brass carry through
+            the plumbing and hardware.
+          </p>
+          <p>
+            The goal was an updated, contemporary kitchen that still holds true to the home&apos;s roots. We brought in
+            finishes that ground the space and keep it from leaning too modern.
+          </p>
+        </section>
+
+        {/* Side image + text */}
+        <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16 px-4 md:px-0 max-w-6xl mx-auto">
+          <div className="md:col-span-6">
+            <div className="group relative aspect-[2/3] overflow-hidden rounded-md">
+              <Image src={IMG.island} alt={ALT.island} fill sizes="(max-width: 768px) 100vw, 560px" className="object-cover" />
+              <PinButton imageUrl={SITE_URL + IMG.island} pageUrl={PAGE_URL} description={ALT.island} />
+            </div>
+          </div>
+          <div className="md:col-span-6 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-4">
+            <p>
+              The zellige-look backsplash runs to the ceiling and wraps around the room to emphasize longer lines. The
+              natural variation in the tile highlights the two-toned cabinetry without overpowering it.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Function text */}
+        <section className="mt-16 mb-16 max-w-5xl mx-auto px-4 md:px-0">
+          <p className="font-inter text-sm leading-7 tracking-wide text-gray-700">
+            Function guided the materials as much as the look. We chose quartz countertops over natural stone, and a
+            ceramic tile over true zellige or anything porous, so the kitchen holds up to everyday cooking with very
+            little upkeep. Living finishes are beautiful, and this kitchen shows you can still get that warmth and
+            character from materials made for real life.
+          </p>
+        </section>
+
+        {/* Pantry: text + square image */}
+        <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16 px-4 md:px-0 max-w-6xl mx-auto">
+          <div className="order-2 md:order-1 md:col-span-6 text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-4">
+            <p>
+              With the room opened up, we were able to plan storage into every wall. A full run of floor-to-ceiling
+              pantry cabinets sits beside the refrigerator, finished in the same soft white as the uppers so it reads as
+              part of the architecture instead of a separate piece.
+            </p>
+            <p>
+              Long lacquered brass pulls tie the pantry back to the rest of the hardware, and a small niche built into
+              the hood keeps everyday spices right at the range.
+            </p>
+          </div>
+          <div className="order-1 md:order-2 md:col-span-6">
+            <div className="group relative aspect-[9/10] overflow-hidden rounded-md">
+              <Image src={IMG.pantry} alt={ALT.pantry} fill sizes="(max-width: 768px) 100vw, 560px" className="object-cover" />
+              <PinButton imageUrl={SITE_URL + IMG.pantry} pageUrl={PAGE_URL} description={ALT.pantry} />
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Final two-up images */}
+        <motion.div {...subtleFade} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          <TallImage src={IMG.long} alt={ALT.long} />
+          <TallImage src={IMG.close} alt={ALT.close} />
+        </motion.div>
+
+        {/* Closing Text */}
+        <section className="text-sm leading-7 tracking-wide font-inter text-gray-700 space-y-10 px-4 md:px-0 max-w-5xl mx-auto">
+          <p>
+            Orchard Oasis is a full kitchen renovation in Greenwood Village, designed around how the family cooks and
+            gathers.{" "}
+            <Link href="/interior-designer/greenwood-village" legacyBehavior>
+              <a className="text-gray-500 underline underline-offset-4 decoration-gray-300 transition-colors duration-300 hover:text-black hover:decoration-black">
+                See our Greenwood Village design services.
+              </a>
+            </Link>
+          </p>
+
+          <div className="border-t border-neutral-200 pt-10">
+            <h3 className="uppercase tracking-[0.2em] text-xs mb-6 text-neutral-500" style={{ fontFamily: "'Inter', sans-serif" }}>
+              Project Details
+            </h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-12 text-sm">
+              <div><strong>Location:</strong> Greenwood Village, Colorado</div>
+              <div><strong>Project Type:</strong> Kitchen Renovation</div>
+
+              <div><strong>Lower Cabinets &amp; Island:</strong> Honey-toned maple</div>
+              <div><strong>Upper Cabinets:</strong> Soft white</div>
+
+              <div><strong>Range Hood:</strong> Custom, matched to the upper cabinets</div>
+              <div><strong>Countertops:</strong> Quartz</div>
+
+              <div><strong>Backsplash:</strong> Zellige-look ceramic tile, run to the ceiling</div>
+              <div><strong>Finishes:</strong> Polished nickel and lacquered brass</div>
+
+              <div><strong>Design &amp; Styling:</strong> Nikka Winchell, Halcyon Haus</div>
+              <div><strong>Photography:</strong> Nikka Winchell, Halcyon Haus</div>
+            </div>
+
+            <div className="mt-10 pt-10 border-t border-neutral-200">
+              <ShareButton title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
+            </div>
+          </div>
         </section>
       </main>
- 
-      <footer className="mt-8 pb-10 text-center text-xs text-gray-500 uppercase tracking-widest font-inter">
-        <p className="mb-2">© {new Date().getFullYear()} Halcyon Haus</p>
-      </footer>
     </div>
   );
 }
