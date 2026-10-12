@@ -226,7 +226,7 @@ export default function GreenwoodVillage() {
           <Link href="/projects/orchard-oasis-kitchen" legacyBehavior>
             <a className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-10 group">
               <div className="overflow-hidden rounded-md">
-                <img src="/images/TwoTonedAngleHero.jpg" alt="Greenwood Village two-toned kitchen renovation with maple lowers, soft white uppers, and a custom range hood by Halcyon Haus" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
+                <img src="/images/TwoTonedLong.jpg" alt="Greenwood Village two-toned kitchen renovation with maple lowers, soft white uppers, and a custom range hood by Halcyon Haus" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
               </div>
               <div>
                 <h3 className="text-xl mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>Orchard Oasis</h3>
