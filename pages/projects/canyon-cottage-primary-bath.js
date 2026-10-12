@@ -147,9 +147,9 @@ export default function CanyonCottagePrimaryBath() {
             />
           </div>
           <div className="group relative md:h-[58rem] overflow-hidden rounded-md">
-            <img src="/images/PRIMARYVANITY4.jpg" alt="Vanity corner with silhouette portrait art and pleated sconce in Castle Pines primary bathroom" className="w-full h-full object-cover" />
+            <img src="/images/CCTubViewCenter.jpg" alt="Vanity corner with silhouette portrait art and pleated sconce in Castle Pines primary bathroom" className="w-full h-full object-cover" />
             <PinButton
-              imageUrl="https://www.halcyonhaus.com/images/PRIMARYVANITY4.jpg"
+              imageUrl="https://www.halcyonhaus.com/images/CCTubViewCenter.jpg"
               pageUrl={PAGE_URL}
               description="Vanity corner with silhouette portrait art and pleated sconce in Castle Pines primary bathroom"
             />
@@ -191,9 +191,9 @@ export default function CanyonCottagePrimaryBath() {
             />
           </div>
           <div className="group relative md:h-[58rem] overflow-hidden rounded-md">
-            <img src="/images/PRIMARYBATH2.jpg" alt="Freestanding tub with painted shiplap paneling and brass tub filler in Castle Pines primary bathroom" className="w-full h-full object-cover" />
+            <img src="/images/PRIMARYVANITY4.jpg" alt="Freestanding tub with painted shiplap paneling and brass tub filler in Castle Pines primary bathroom" className="w-full h-full object-cover" />
             <PinButton
-              imageUrl="https://www.halcyonhaus.com/images/PRIMARYBATH2.jpg"
+              imageUrl="https://www.halcyonhaus.com/images/PRIMARYVANITY4.jpg"
               pageUrl={PAGE_URL}
               description="Freestanding tub with painted shiplap paneling and brass tub filler in Castle Pines primary bathroom"
             />
