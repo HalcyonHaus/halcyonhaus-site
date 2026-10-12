@@ -9,6 +9,15 @@ import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
+import BeforeAfter from "../../components/BeforeAfter";
+
+// Before + after photos for the top of the page (files in public/images)
+const BEFORE_AFTER = {
+  rangeBefore: "/images/CCViewShotBefore.jpg",
+  rangeAfter: "/images/CCViewShot.jpg",
+  cornerBefore: "/images/CCSideshotBefore.jpg",
+  cornerAfter: "/images/CCSideShot.jpg",
+};
  
 const PAGE_URL = "https://www.halcyonhaus.com/interior-designer/castle-pines";
 const PAGE_TITLE = "Interior Designer in Castle Pines & Castle Rock, CO | Halcyon Haus";
@@ -192,9 +201,30 @@ export default function CastlePines() {
           </a>
         </div>
  
-        <div className="mb-20">
-          <img src="/images/HERO1.JPG" alt="Castle Pines kitchen with Benjamin Moore Pashmina cabinets and Venetian plaster range hood by Halcyon Haus" className="w-full rounded-md object-cover" />
+        {/* BEFORE + AFTER (drag to compare) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+          <BeforeAfter
+            before={BEFORE_AFTER.rangeBefore}
+            after={BEFORE_AFTER.rangeAfter}
+            beforeAlt="Castle Pines kitchen before the renovation, with oak cabinets, black granite, and a cooktop island"
+            afterAlt="Castle Pines kitchen after the renovation, with a Venetian plaster range hood, quartzite backsplash, and Benjamin Moore Pashmina cabinets by Halcyon Haus"
+            label="Compare the range wall before and after"
+            priority
+            className="aspect-[3/4]"
+          />
+          <BeforeAfter
+            before={BEFORE_AFTER.cornerBefore}
+            after={BEFORE_AFTER.cornerAfter}
+            beforeAlt="Castle Pines kitchen corner before the renovation, with oak cabinets, a glass block window, and black granite counters"
+            afterAlt="Castle Pines kitchen corner after the renovation, with Pashmina cabinetry, brass hardware, a new window, and quartzite counters by Halcyon Haus"
+            label="Compare the kitchen corner before and after"
+            priority
+            className="aspect-[3/4]"
+          />
         </div>
+        <p className="text-center text-[11px] uppercase tracking-[0.2em] text-gray-500 font-inter mb-20">
+          Drag to see the before
+        </p>
  
         {/* LOCAL CONTEXT */}
         <section className="max-w-3xl mx-auto mb-24 px-4 md:px-0">
