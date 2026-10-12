@@ -12,8 +12,27 @@ const images = [
   { src: "/images/HEROKITCHEN03.jpg", alt: "Two-toned burgundy Palm Springs kitchen designed by Halcyon Haus" }
 ];
 
-export default function HomePage() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+// Tells Google which photo represents the homepage (used for search thumbnails)
+const homePageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://www.halcyonhaus.com/#webpage",
+  "url": "https://www.halcyonhaus.com",
+  "name": "Halcyon Haus | Interior Designer in Denver, CO",
+  "about": { "@id": "https://www.halcyonhaus.com/#business" },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://www.halcyonhaus.com/logos/og-thumbnail-v2.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "image": [
+    "https://www.halcyonhaus.com/logos/og-thumbnail-v2.jpg",
+    "https://www.halcyonhaus.com/images/HEROKITCHEN00.jpg"
+  ]
+};
+
+export default function HomePage() {  const [currentIndex, setCurrentIndex] = useState(0);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
@@ -42,7 +61,8 @@ export default function HomePage() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Halcyon Haus | Interior Designer in Denver, CO" />
         <meta name="twitter:description" content="Interior design rooted in warmth, balance, and California ease." />
-        <meta name="twitter:image" content="https://www.halcyonhaus.com/logos/og-thumbnail.jpg" />
+        <meta name="twitter:image" content="https://www.halcyonhaus.com/logos/og-thumbnail-v2.jpg" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homePageSchema) }} />
         <link
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap"
           rel="stylesheet"
