@@ -92,11 +92,11 @@ const PROCESS = [
  
 const GALLERY = [
   { src: "/images/CCBathtubView.jpg", alt: "Castle Pines kitchen with reeded glass uppers and polished nickel faucet by Halcyon Haus" },
-  { src: "/images/PRIMARYBATH00.JPG", alt: "Castle Pines primary bathroom with marble vanity and warm natural materials by Halcyon Haus" },
+  { src: "/images/KITCHENBLOG3,JPG", alt: "Castle Pines primary bathroom with marble vanity and warm natural materials by Halcyon Haus" },
   { src: "/images/DINING1.JPG", alt: "Modern French country dining room with scenic mural in Castle Pines Village by Halcyon Haus" },
   { src: "/images/DSC03252.jpg", alt: "Custom cabinet detail with unlacquered brass knobs and pulls in warm taupe Castle Pines kitchen" },
   { src: "/images/PRIMARY1.JPG", alt: "Castle Pines primary suite with layered neutral textures by Halcyon Haus" },
-  { src: "/images/KITCHENBLOG3.JPG", alt: "Vein-matched stone from counter to backsplash in a Castle Pines kitchen remodel by Halcyon Haus" }
+  { src: "/images/PRIMARYBATH2.jpg", alt: "Vein-matched stone from counter to backsplash in a Castle Pines kitchen remodel by Halcyon Haus" }
 ];
  
 const FAQS = [
