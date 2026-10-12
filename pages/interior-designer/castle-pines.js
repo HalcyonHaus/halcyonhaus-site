@@ -98,7 +98,7 @@ const GALLERY = [
   { src: "/images/DINING1.JPG", alt: "Modern French country dining room with scenic mural in Castle Pines Village by Halcyon Haus" },
   { src: "/images/DSC03252.jpg", alt: "Custom cabinet detail with unlacquered brass knobs and pulls in warm taupe Castle Pines kitchen" },
   { src: "/images/PRIMARY1.JPG", alt: "Castle Pines primary suite with layered neutral textures by Halcyon Haus" },
-  { src: "/images/PRIMARYBATH2.jpg", alt: "Freestanding tub with painted paneling and a brass tub filler in a Castle Pines primary bathroom by Halcyon Haus", pos: "center bottom" }
+  { src: "/images/CCTubViewCenter.jpg", alt: "Freestanding tub with painted paneling and a brass tub filler in a Castle Pines primary bathroom by Halcyon Haus", pos: "center bottom" }
 ];
  
 const FAQS = [
