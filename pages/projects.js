@@ -42,11 +42,13 @@ const projects = [
   },
   {
     title: "Orchard Oasis",
+    slug: "orchard-oasis-kitchen",
     location: "A two-toned kitchen renovation in Denver's DTC/Greenwood Village neighborhood.",
     images: [
-      "/images/TWOTONEDKITCHEN1.JPG",
-      "/images/DSC02219.jpeg",
-      "/images/DSC02198.jpeg"
+      "/images/TwoTonedAngleHero.jpg",
+      "/images/TwoTonedAngle1.jpg",
+      "/images/TwoTonedAngleLong.jpg",
+      "/images/TwoTonedClose.jpg"
     ]
   },
   {
