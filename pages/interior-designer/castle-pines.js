@@ -5,10 +5,12 @@
 // The form sends source: "Castle Pines landing page" so you can tell leads apart.
 // URL: https://www.halcyonhaus.com/interior-designer/castle-pines
  
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { useSwipeable } from "react-swipeable";
+import PinButton from "../../components/PinButton";
 import BeforeAfter from "../../components/BeforeAfter";
 
 // Before + after photos for the top of the page (files in public/images)
@@ -91,12 +93,12 @@ const PROCESS = [
 ];
  
 const GALLERY = [
-  { src: "/images/PRIMARYVANITY2.jpg", alt: "Castle Pines kitchen with reeded glass uppers and polished nickel faucet by Halcyon Haus" },
-  { src: "/images/KITCHENBLOG3.JPG", alt: "Castle Pines primary bathroom with marble vanity and warm natural materials by Halcyon Haus" },
+  { src: "/images/PRIMARYVANITY2.jpg", alt: "Castle Pines primary bathroom vanity with warm natural materials by Halcyon Haus" },
+  { src: "/images/KITCHENBLOG3.JPG", alt: "Vein-matched quartzite from counter to backsplash in a Castle Pines kitchen remodel by Halcyon Haus" },
   { src: "/images/DINING1.JPG", alt: "Modern French country dining room with scenic mural in Castle Pines Village by Halcyon Haus" },
   { src: "/images/DSC03252.jpg", alt: "Custom cabinet detail with unlacquered brass knobs and pulls in warm taupe Castle Pines kitchen" },
   { src: "/images/PRIMARY1.JPG", alt: "Castle Pines primary suite with layered neutral textures by Halcyon Haus" },
-  { src: "/images/PRIMARYBATH2.jpg", alt: "Vein-matched stone from counter to backsplash in a Castle Pines kitchen remodel by Halcyon Haus" }
+  { src: "/images/PRIMARYBATH2.jpg", alt: "Freestanding tub with painted paneling and a brass tub filler in a Castle Pines primary bathroom by Halcyon Haus", pos: "center bottom" }
 ];
  
 const FAQS = [
@@ -121,6 +123,28 @@ export default function CastlePines() {
   const [submitting, setSubmitting] = useState(false);
   const [detailsOpen, setDetailsOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
+
+  // Gallery lightbox: index of the open photo, or null when closed
+  const [lightbox, setLightbox] = useState(null);
+  const showPrev = () => setLightbox((i) => (i === 0 ? GALLERY.length - 1 : i - 1));
+  const showNext = () => setLightbox((i) => (i === GALLERY.length - 1 ? 0 : i + 1));
+  const swipe = useSwipeable({ onSwipedLeft: showNext, onSwipedRight: showPrev, trackMouse: true });
+
+  useEffect(() => {
+    if (lightbox === null) return;
+    const onKey = (e) => {
+      if (e.key === "ArrowRight") showNext();
+      else if (e.key === "ArrowLeft") showPrev();
+      else if (e.key === "Escape") setLightbox(null);
+    };
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [lightbox]);
  
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -270,9 +294,18 @@ export default function CastlePines() {
             </a>
           </Link>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {GALLERY.map((g) => (
-              <div key={g.src} className="overflow-hidden rounded-md md:h-[28rem]">
-                <img src={g.src} alt={g.alt} className="w-full h-full object-cover" />
+            {GALLERY.map((g, i) => (
+              <div
+                key={g.src}
+                role="button"
+                tabIndex={0}
+                aria-label={"View larger: " + g.alt}
+                onClick={() => setLightbox(i)}
+                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setLightbox(i); } }}
+                className="group relative overflow-hidden rounded-md md:h-[28rem] cursor-pointer"
+              >
+                <img src={g.src} alt={g.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" style={{ objectPosition: g.pos || "center" }} />
+                <PinButton imageUrl={"https://www.halcyonhaus.com" + g.src} pageUrl={PAGE_URL} description={g.alt} />
               </div>
             ))}
           </div>
@@ -282,7 +315,7 @@ export default function CastlePines() {
         <section className="max-w-3xl mx-auto mb-24 px-4 md:px-0 text-center">
           <blockquote>
             <p className="text-lg md:text-2xl leading-relaxed mb-5" style={{ fontFamily: "'Playfair Display', serif" }}>
-              &ldquo;Incredible designer, sweetest human with impeccable taste! Really knows how to visualize spaces and then transform them. She is extremely knowledgeable, knows where to splurge and where to save, and was happy to work within our budget and be very honest with design recommendations.&rdquo;
+              &ldquo;Incredible designer with impeccable taste! Really knows how to visualize spaces and then transform them. She is extremely knowledgeable, knows where to splurge and where to save, and was happy to work within our budget and be very honest with design recommendations.&rdquo;
             </p>
             <cite className="not-italic text-xs uppercase tracking-[0.18em] text-gray-500">Castle Pines, CO</cite>
           </blockquote>
@@ -476,6 +509,51 @@ export default function CastlePines() {
           )}
         </section>
       </main>
+
+      {/* Gallery lightbox */}
+      {lightbox !== null && (
+        <div
+          {...swipe}
+          className="fixed inset-0 z-50 bg-[#fafafa]/95 flex items-center justify-center p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Castle Pines photo gallery"
+          onClick={() => setLightbox(null)}
+        >
+          <button
+            onClick={(e) => { e.stopPropagation(); setLightbox(null); }}
+            className="absolute top-4 right-4 z-10 text-black hover:text-neutral-600"
+            aria-label="Close gallery"
+          >
+            <X size={24} />
+          </button>
+          <button
+            onClick={(e) => { e.stopPropagation(); showPrev(); }}
+            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 text-black hover:text-neutral-600"
+            aria-label="Previous photo"
+          >
+            <ChevronLeft size={32} />
+          </button>
+          <div className="group relative inline-block" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={GALLERY[lightbox].src}
+              alt={GALLERY[lightbox].alt}
+              className="block max-w-[86vw] md:max-w-[80vw] max-h-[88vh] w-auto h-auto rounded-md"
+            />
+            <PinButton imageUrl={"https://www.halcyonhaus.com" + GALLERY[lightbox].src} pageUrl={PAGE_URL} description={GALLERY[lightbox].alt} />
+          </div>
+          <button
+            onClick={(e) => { e.stopPropagation(); showNext(); }}
+            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 text-black hover:text-neutral-600"
+            aria-label="Next photo"
+          >
+            <ChevronRight size={32} />
+          </button>
+          <p className="absolute bottom-4 left-0 right-0 text-center text-[11px] uppercase tracking-[0.2em] text-gray-500 font-inter">
+            {lightbox + 1} / {GALLERY.length}
+          </p>
+        </div>
+      )}
  
       <footer className="mt-8 pb-10 text-center text-xs text-gray-500 uppercase tracking-widest font-inter">
         <p className="mb-2">© {new Date().getFullYear()} Halcyon Haus</p>
