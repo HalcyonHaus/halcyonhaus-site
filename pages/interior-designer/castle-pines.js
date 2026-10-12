@@ -23,7 +23,7 @@ const pageSchema = {
       name: "Halcyon Haus",
       description: PAGE_DESCRIPTION,
       url: PAGE_URL,
-      image: "https://www.halcyonhaus.com" + "/images/HEROKITCHEN00.jpg",
+      image: "https://www.halcyonhaus.com" + "/images/HERO1.JPG",
       founder: { "@type": "Person", name: "Nikka Winchell" },
       priceRange: "$$$",
       areaServed: [
@@ -154,13 +154,13 @@ export default function CastlePines() {
         <link rel="canonical" href={PAGE_URL} />
         <meta property="og:title" content={PAGE_TITLE} />
         <meta property="og:description" content={PAGE_DESCRIPTION} />
-        <meta property="og:image" content={"https://www.halcyonhaus.com" + "/images/HEROKITCHEN00.jpg"} />
+        <meta property="og:image" content={"https://www.halcyonhaus.com" + "/images/HERO1.JPG"} />
         <meta property="og:url" content={PAGE_URL} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={PAGE_TITLE} />
         <meta name="twitter:description" content={PAGE_DESCRIPTION} />
-        <meta name="twitter:image" content={"https://www.halcyonhaus.com" + "/images/HEROKITCHEN00.jpg"} />
+        <meta name="twitter:image" content={"https://www.halcyonhaus.com" + "/images/HERO1.JPG"} />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       </Head>
@@ -193,7 +193,7 @@ export default function CastlePines() {
         </div>
  
         <div className="mb-20">
-          <img src="/images/HEROKITCHEN00.jpg" alt="Castle Pines kitchen with Benjamin Moore Pashmina cabinets and Venetian plaster range hood by Halcyon Haus" className="w-full rounded-md object-cover" />
+          <img src="/images/HERO1.JPG" alt="Castle Pines kitchen with Benjamin Moore Pashmina cabinets and Venetian plaster range hood by Halcyon Haus" className="w-full rounded-md object-cover" />
         </div>
  
         {/* LOCAL CONTEXT */}
