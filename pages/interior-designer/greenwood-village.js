@@ -23,7 +23,7 @@ const pageSchema = {
       name: "Halcyon Haus",
       description: PAGE_DESCRIPTION,
       url: PAGE_URL,
-      image: "https://www.halcyonhaus.com" + "/images/TWOTONEDKITCHEN1.JPG",
+      image: "https://www.halcyonhaus.com" + "/images/TwoTonedAngleHero.jpg",
       founder: { "@type": "Person", name: "Nikka Winchell" },
       priceRange: "$$$",
       areaServed: [
@@ -82,8 +82,8 @@ const PROCESS = [
 ];
  
 const GALLERY = [
-  { src: "/images/DSC02219.jpeg", alt: "Greenwood Village kitchen detail with natural stone and warm finishes by Halcyon Haus" },
-  { src: "/images/DSC02198.jpeg", alt: "Two-toned kitchen renovation detail in the Denver Tech Center area by Halcyon Haus" }
+  { src: "/images/TwoTonedAngle1.jpg", alt: "Custom arched range hood with spice niche and pot filler in a Greenwood Village kitchen by Halcyon Haus" },
+  { src: "/images/TwoTonedAngleLong.jpg", alt: "Honey maple island with quartz countertop and white pendants in a Denver Tech Center area kitchen by Halcyon Haus" }
 ];
  
 const FAQS = [
@@ -150,13 +150,13 @@ export default function GreenwoodVillage() {
         <link rel="canonical" href={PAGE_URL} />
         <meta property="og:title" content={PAGE_TITLE} />
         <meta property="og:description" content={PAGE_DESCRIPTION} />
-        <meta property="og:image" content={"https://www.halcyonhaus.com" + "/images/TWOTONEDKITCHEN1.JPG"} />
+        <meta property="og:image" content={"https://www.halcyonhaus.com" + "/images/TwoTonedAngleHero.jpg"} />
         <meta property="og:url" content={PAGE_URL} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={PAGE_TITLE} />
         <meta name="twitter:description" content={PAGE_DESCRIPTION} />
-        <meta name="twitter:image" content={"https://www.halcyonhaus.com" + "/images/TWOTONEDKITCHEN1.JPG"} />
+        <meta name="twitter:image" content={"https://www.halcyonhaus.com" + "/images/TwoTonedAngleHero.jpg"} />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       </Head>
@@ -189,7 +189,7 @@ export default function GreenwoodVillage() {
         </div>
  
         <div className="mb-20">
-          <img src="/images/TWOTONEDKITCHEN1.JPG" alt="Greenwood Village two-toned kitchen renovation by Halcyon Haus" className="w-full rounded-md object-cover" />
+          <img src="/images/TwoTonedAngleHero.jpg" alt="Greenwood Village two-toned kitchen renovation with maple lowers, soft white uppers, and a custom range hood by Halcyon Haus" className="w-full rounded-md object-cover" />
         </div>
  
         {/* LOCAL CONTEXT */}
@@ -223,15 +223,15 @@ export default function GreenwoodVillage() {
           <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-10" style={{ fontFamily: "'Playfair Display', serif" }}>
             A recent Greenwood Village project
           </h2>
-          <Link href="/projects" legacyBehavior>
+          <Link href="/projects/orchard-oasis-kitchen" legacyBehavior>
             <a className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-10 group">
               <div className="overflow-hidden rounded-md">
-                <img src="/images/TWOTONEDKITCHEN1.JPG" alt="Greenwood Village two-toned kitchen renovation by Halcyon Haus" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
+                <img src="/images/TwoTonedAngleHero.jpg" alt="Greenwood Village two-toned kitchen renovation with maple lowers, soft white uppers, and a custom range hood by Halcyon Haus" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
               </div>
               <div>
                 <h3 className="text-xl mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>Orchard Oasis</h3>
                 <p className="text-xs uppercase tracking-[0.18em] text-gray-500 mb-4">Greenwood Village / DTC</p>
-                <p className="font-inter text-sm leading-7 tracking-wide text-gray-700 mb-5">A two-toned kitchen renovation in the Greenwood Village and DTC area. Warm wood paired with a soft painted finish, natural stone, and considered lighting, updated for how the family lives while keeping the home's existing character intact.</p>
+                <p className="font-inter text-sm leading-7 tracking-wide text-gray-700 mb-5">A two-toned kitchen renovation in the Greenwood Village and DTC area. Honey maple lowers paired with soft white uppers, a custom range hood, and a zellige-look backsplash run to the ceiling, updated for how the family lives while keeping the home's existing character intact.</p>
                 <span className="text-xs uppercase tracking-[0.14em] border-b border-neutral-400 pb-0.5">View the project</span>
               </div>
             </a>
