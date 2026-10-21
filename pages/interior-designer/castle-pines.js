@@ -22,8 +22,8 @@ const BEFORE_AFTER = {
 };
  
 const PAGE_URL = "https://www.halcyonhaus.com/interior-designer/castle-pines";
-const PAGE_TITLE = "Interior Designer in Castle Pines & Castle Rock, CO | Halcyon Haus";
-const PAGE_DESCRIPTION = "Boutique interior designer serving Castle Pines and Castle Rock, Colorado. Full-service kitchen, bath, and whole-home renovation by Nikka Winchell of Halcyon Haus. Featured in Homes & Gardens.";
+const PAGE_TITLE = "Interior Designer in Castle Pines & Castle Rock, CO | Home Renovation Design | Halcyon Haus";
+const PAGE_DESCRIPTION = "Boutique interior designer for home renovations in Castle Pines, Castle Rock, and Parker, Colorado. Full-service kitchen remodel, bath, and whole-home renovation design by Nikka Winchell of Halcyon Haus. Featured in Homes & Gardens.";
  
 const pageSchema = {
   "@context": "https://schema.org",
@@ -40,6 +40,7 @@ const pageSchema = {
       areaServed: [
         { "@type": "City", name: "Castle Pines" },
         { "@type": "City", name: "Castle Rock" },
+        { "@type": "City", name: "Parker" },
         { "@type": "City", name: "Lone Tree" },
         { "@type": "City", name: "Highlands Ranch" },
         { "@type": "City", name: "Greenwood Village" }
@@ -57,14 +58,14 @@ const pageSchema = {
       "@id": PAGE_URL + "#service",
       serviceType: "Interior Design and Renovation",
       provider: { "@id": PAGE_URL + "#business" },
-      areaServed: [{ "@type": "City", name: "Castle Pines" }, { "@type": "City", name: "Castle Rock" }],
+      areaServed: [{ "@type": "City", name: "Castle Pines" }, { "@type": "City", name: "Castle Rock" }, { "@type": "City", name: "Parker" }],
       description: "Full-service interior design and renovation in Castle Pines and Castle Rock, Colorado: kitchens, bathrooms, and whole-home remodels."
     },
     {
       "@type": "FAQPage",
       "@id": PAGE_URL + "#faq",
       mainEntity: [
-        { "@type": "Question", name: "Do you work in both Castle Pines and Castle Rock?", acceptedAnswer: { "@type": "Answer", text: "Yes. Halcyon Haus is based in Castle Rock and works throughout both Castle Rock and Castle Pines, along with the surrounding south Denver metro, including Lone Tree, Highlands Ranch, and Greenwood Village, as well as virtually nationwide." } },
+        { "@type": "Question", name: "Do you work in both Castle Pines and Castle Rock?", acceptedAnswer: { "@type": "Answer", text: "Yes. Halcyon Haus is based in Castle Rock and works throughout Castle Rock, Castle Pines, and Parker, along with the surrounding south Denver metro, including Lone Tree, Highlands Ranch, and Greenwood Village, as well as virtually nationwide." } },
         { "@type": "Question", name: "What does full-service design include?", acceptedAnswer: { "@type": "Answer", text: "Full-service covers the whole project: layout and space planning, cabinetry and custom millwork, tile and stone, lighting, plumbing fixtures, paint, sourcing, styling, and managing the install." } },
         { "@type": "Question", name: "Do you work with my contractor, or bring your own?", acceptedAnswer: { "@type": "Answer", text: "Both work. We can collaborate with a contractor you already trust, or bring in builders from our network, and we stay involved through construction so the design is carried out the way it was drawn." } },
         { "@type": "Question", name: "Is there a fee for the first call?", acceptedAnswer: { "@type": "Answer", text: "No. The discovery call is complimentary. It's a chance to get to know your space and talk through what working together would look like." } },
@@ -102,7 +103,7 @@ const GALLERY = [
 ];
  
 const FAQS = [
-  { q: "Do you work in both Castle Pines and Castle Rock?", a: "Yes. Halcyon Haus is based in Castle Rock and works throughout both Castle Rock and Castle Pines, along with the surrounding south Denver metro, including Lone Tree, Highlands Ranch, and Greenwood Village, as well as virtually nationwide." },
+  { q: "Do you work in both Castle Pines and Castle Rock?", a: "Yes. Halcyon Haus is based in Castle Rock and works throughout Castle Rock, Castle Pines, and Parker, along with the surrounding south Denver metro, including Lone Tree, Highlands Ranch, and Greenwood Village, as well as virtually nationwide." },
   { q: "What does full-service design include?", a: "Full-service covers the whole project: layout and space planning, cabinetry and custom millwork, tile and stone, lighting, plumbing fixtures, paint, sourcing, styling, and managing the install." },
   { q: "Do you work with my contractor, or bring your own?", a: "Both work. We can collaborate with a contractor you already trust, or bring in builders from our network, and we stay involved through construction so the design is carried out the way it was drawn." },
   { q: "Is there a fee for the first call?", a: "No. The discovery call is complimentary. It's a chance to get to know your space and talk through what working together would look like." },
@@ -183,7 +184,7 @@ export default function CastlePines() {
       <Head>
         <title>{PAGE_TITLE}</title>
         <meta name="description" content={PAGE_DESCRIPTION} />
-        <meta name="keywords" content="interior designer Castle Pines, interior designer Castle Rock, Castle Rock kitchen remodel designer, Castle Pines renovation, Castle Pines Village interior design, Castle Rock interior design, Colorado interior designer, Halcyon Haus, Nikka Winchell" />
+        <meta name="keywords" content="interior designer Castle Pines, interior designer Castle Rock, home renovation Castle Pines, Castle Pines kitchen remodel, Castle Rock kitchen remodel designer, Castle Pines renovation, interior designer Parker CO, Castle Pines Village interior design, Castle Rock interior design, Colorado interior designer, Halcyon Haus, Nikka Winchell" />
         <link rel="canonical" href={PAGE_URL} />
         <meta property="og:title" content={PAGE_TITLE} />
         <meta property="og:description" content={PAGE_DESCRIPTION} />
@@ -211,12 +212,12 @@ export default function CastlePines() {
  
       <main className="pt-28 pb-24 max-w-[90rem] mx-auto px-4 md:px-10">
         {/* HERO */}
-        <p className="text-center text-xs uppercase tracking-[0.2em] text-gray-500 mb-4">Castle Pines &amp; Castle Rock, CO</p>
+        <p className="text-center text-xs uppercase tracking-[0.2em] text-gray-500 mb-4">Castle Pines, Castle Rock &amp; Parker, CO</p>
         <h1 className="text-3xl md:text-5xl font-light tracking-[0.06em] text-center mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
-          Interior Designer in Castle Pines &amp; Castle Rock
+          Interior Design &amp; Home Renovation in Castle Pines &amp; Castle Rock
         </h1>
         <p className="font-inter text-sm md:text-base leading-7 tracking-wide text-gray-700 max-w-3xl mx-auto text-center mb-10">
-          Halcyon Haus is a full-service design studio working with homeowners across Castle Pines, Castle Pines Village, and Castle Rock. Based right here in Castle Rock, we take on turn-key renovations, from full builds to room reconfigurations, rooted in warm, transitional design that is built around how you actually live.
+          Halcyon Haus is a full-service design studio working with homeowners across Castle Pines, Castle Pines Village, Castle Rock, and Parker. Based right here in Castle Rock, we take on turn-key home renovations, from full builds and kitchen remodels to room reconfigurations, rooted in warm, transitional design that is built around how you actually live.
         </p>
         <div className="text-center mb-20">
           <a href="#inquire" className="inline-flex items-center gap-2 text-xs tracking-widest uppercase font-inter text-black border-b border-black pb-1 transition-all duration-300 hover:gap-3 hover:text-neutral-500 hover:border-neutral-500">
@@ -256,8 +257,8 @@ export default function CastlePines() {
             Renovation design for Castle Pines & Castle Rock homes
           </h2>
           <div className="font-inter text-sm leading-7 tracking-wide text-gray-700 space-y-5">
-            <p>Many homes around Castle Pines Village, Castle Rock, and the surrounding golf communities were built with good bones and rooms that no longer fit how families live today. That is the work Halcyon Haus is built for: reworking a kitchen around how you actually cook and gather, defining spaces so each room has a clear purpose, and choosing materials that feel settled and warm rather than trend-driven.</p>
-            <p>Sometimes that means taking a large, open great room and giving it more definition and intimacy. Other times it is updating a dated kitchen or primary bath with new cabinetry, stone, and fixtures while keeping the footprint. Every home is different, and the plan follows the house and the people in it rather than a formula.</p>
+            <p>Many homes around Castle Pines Village, Castle Rock, Parker, and the surrounding golf communities were built with good bones and rooms that no longer fit how families live today. That is the work Halcyon Haus is built for: reworking a kitchen around how you actually cook and gather, defining spaces so each room has a clear purpose, and choosing materials that feel settled and warm rather than trend-driven.</p>
+            <p>Sometimes that means taking a large, open great room and giving it more definition and intimacy. Other times it is a kitchen remodel or primary bath renovation with new cabinetry, stone, and fixtures while keeping the footprint. Every home is different, and the plan follows the house and the people in it rather than a formula.</p>
           </div>
         </section>
  
