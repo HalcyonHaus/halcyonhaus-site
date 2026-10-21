@@ -69,7 +69,7 @@ const projects = [
   },
   {
     title: "Halcyon Haus",
-    slug: "halcyon-haus-highlands-ranch",
+    slug: "halcyon-haus",
     location: "Her first home, and the one that gave Halcyon Haus its name, in Highlands Ranch, Colorado.",
     images: [
       "/images/DSC01677.jpeg",
@@ -85,7 +85,7 @@ const projects = [
   },
   {
     title: "Halcyon Haus Nursery",
-    slug: "halcyon-haus-highlands-ranch",
+    slug: "halcyon-haus",
     location: "Neutral tones with a playful nod to mountain adventure, in Highlands Ranch, Colorado.",
     images: [
       "/images/NURSERY0.JPG",
