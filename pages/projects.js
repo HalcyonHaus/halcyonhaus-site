@@ -98,7 +98,7 @@ const projects = [
   },
   {
     title: "Halcyon Haus Boys' Room",
-    slug: "halcyon-haus-highlands-ranch",
+    slug: "halcyon-haus",
     location: "A second chapter in the same Highlands Ranch home, redesigned for the new owners.",
     images: [
       "/images/DFF440A7-0193-47CF-9773-5436061404B9.jpeg",
