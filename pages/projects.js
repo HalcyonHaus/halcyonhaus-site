@@ -69,6 +69,7 @@ const projects = [
   },
   {
     title: "Halcyon Haus",
+    slug: "halcyon-haus-highlands-ranch",
     location: "Her first home, and the one that gave Halcyon Haus its name, in Highlands Ranch, Colorado.",
     images: [
       "/images/DSC01677.jpeg",
@@ -84,6 +85,7 @@ const projects = [
   },
   {
     title: "Halcyon Haus Nursery",
+    slug: "halcyon-haus-highlands-ranch",
     location: "Neutral tones with a playful nod to mountain adventure, in Highlands Ranch, Colorado.",
     images: [
       "/images/NURSERY0.JPG",
@@ -95,7 +97,8 @@ const projects = [
     ]
   },
   {
-    title: "Halcyon Haus Primary Suite",
+    title: "Halcyon Haus Boys' Room",
+    slug: "halcyon-haus-highlands-ranch",
     location: "A second chapter in the same Highlands Ranch home, redesigned for the new owners.",
     images: [
       "/images/DFF440A7-0193-47CF-9773-5436061404B9.jpeg",
