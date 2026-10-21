@@ -82,12 +82,12 @@ const PROCESS = [
 ];
  
 const GALLERY = [
-  { src: "/images/IMG_4599.jpeg", alt: "Highlands Ranch living space with warm neutral transitional design by Halcyon Haus" },
-  { src: "/images/DSC02113.jpeg", alt: "Highlands Ranch primary suite redesign with layered neutral textures by Halcyon Haus" },
-  { src: "/images/DSC01631.jpeg", alt: "Highlands Ranch interior detail with collected, warm furnishings by Halcyon Haus" },
-  { src: "/images/NURSERY4.JPG", alt: "Neutral nursery detail with natural materials in Highlands Ranch by Halcyon Haus" },
-  { src: "/images/DSC01503.jpeg", alt: "Warm transitional living space in Highlands Ranch by Halcyon Haus" },
-  { src: "/images/DSC01662.jpeg", alt: "Collected, warm interior detail in a Highlands Ranch home by Halcyon Haus" }
+  { src: "/images/IMG_4599.jpeg", alt: "Highlands Ranch bedroom with a wood platform bed, white bedding, and a vintage seascape painting by Halcyon Haus" },
+  { src: "/images/DSC02113.jpeg", alt: "Highlands Ranch boys' bedroom with navy paneling, a spindle bed, and plaid bedding by Halcyon Haus" },
+  { src: "/images/DSC01631.jpeg", alt: "Highlands Ranch bedroom with a gray quilt, white pillows, and vintage art by Halcyon Haus" },
+  { src: "/images/NURSERY4.JPG", alt: "Neutral nursery with a white crib and a patchwork mountain quilt in Highlands Ranch by Halcyon Haus" },
+  { src: "/images/DSC01503.jpeg", alt: "Floating wood double vanity with black fixtures and brass sconces in a Highlands Ranch bathroom by Halcyon Haus" },
+  { src: "/images/DSC01662.jpeg", alt: "Collected gallery wall of vintage art above a wood dresser in a Highlands Ranch home by Halcyon Haus" }
 ];
  
 const FAQS = [
@@ -227,7 +227,7 @@ export default function HighlandsRanch() {
           <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-10" style={{ fontFamily: "'Playfair Display', serif" }}>
             A recent Highlands Ranch project
           </h2>
-          <Link href="/projects" legacyBehavior>
+          <Link href="/projects/halcyon-haus-highlands-ranch" legacyBehavior>
             <a className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-10 group">
               <div className="overflow-hidden rounded-md">
                 <img src="/images/NURSERY1.JPG" alt="Highlands Ranch nursery with neutral tones and natural materials by Halcyon Haus" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
@@ -235,7 +235,7 @@ export default function HighlandsRanch() {
               <div>
                 <h3 className="text-xl mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>The Halcyon Haus Home</h3>
                 <p className="text-xs uppercase tracking-[0.18em] text-gray-500 mb-4">Highlands Ranch</p>
-                <p className="font-inter text-sm leading-7 tracking-wide text-gray-700 mb-5">The home that gave the studio its name. We have designed multiple chapters of this Highlands Ranch house, from the original rooms to a nursery with a playful nod to mountain adventure, to a primary suite redesigned for its new owners. Neutral tones, natural textures, and spaces that feel calm and lived-in.</p>
+                <p className="font-inter text-sm leading-7 tracking-wide text-gray-700 mb-5">The home that gave the studio its name. We have designed multiple chapters of this Highlands Ranch house, from the original rooms to the nursery, boys' room, and primary suite we redesigned for its new owners. Neutral tones, natural textures, and spaces that feel calm and lived-in.</p>
                 <span className="text-xs uppercase tracking-[0.14em] border-b border-neutral-400 pb-0.5">View the project</span>
               </div>
             </a>
