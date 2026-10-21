@@ -14,7 +14,7 @@ const subtleFade = {
 };
 
 const SITE_URL = "https://www.halcyonhaus.com";
-const PAGE_URL = SITE_URL + "/projects/halcyon-haus-highlands-ranch";
+const PAGE_URL = SITE_URL + "/projects/halcyon-haus";
 const PAGE_TITLE = "The Original Halcyon Haus | Highlands Ranch Home Renovation | Halcyon Haus Design Studio";
 const PAGE_DESCRIPTION =
   "The Highlands Ranch home where Halcyon Haus began: hand-scraped floors, a new staircase, and a bathroom oasis, later redesigned again for its new owners with a nursery, boys' room, and primary suite.";
