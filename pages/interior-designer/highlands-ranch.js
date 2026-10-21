@@ -227,7 +227,7 @@ export default function HighlandsRanch() {
           <h2 className="text-2xl md:text-3xl font-light tracking-[0.04em] mb-10" style={{ fontFamily: "'Playfair Display', serif" }}>
             A recent Highlands Ranch project
           </h2>
-          <Link href="/projects/halcyon-haus-highlands-ranch" legacyBehavior>
+          <Link href="/projects/halcyon-haus" legacyBehavior>
             <a className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-10 group">
               <div className="overflow-hidden rounded-md">
                 <img src="/images/NURSERY1.JPG" alt="Highlands Ranch nursery with neutral tones and natural materials by Halcyon Haus" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
